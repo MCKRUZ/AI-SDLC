@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 0: Discovery & Ideation Architecture</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #1a202c;
+        }
+        .container { 
+            max-width: 1400px; 
+            margin: 0 auto;
+        }
+        .hero {
+            background: white;
+            border-radius: 16px;
+            padding: 48px;
+            margin-bottom: 32px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero .subtitle {
+            font-size: 20px;
+            color: #4a5568;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        .hero .tagline {
+            display: inline-block;
+            background: #f7fafc;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            font-size: 16px;
+            color: #2d3748;
+            font-weight: 500;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .nav-tab {
+            padding: 12px 24px;
+            background: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #4a5568;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .nav-tab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .nav-tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .content-section {
+            display: none;
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #1a202c;
+        }
+        
+        .principle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+        .principle-card {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+        .principle-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #2d3748;
+        }
+        .principle-card p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        
+        .framework-layer {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 32px;
+            margin: 24px 0;
+            border-left: 6px solid #667eea;
+        }
+        .layer-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            margin-right: 16px;
+        }
+        .layer-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a202c;
+        }
+        .layer-description {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        
+        .agent-showcase {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 32px 0;
+            color: white;
+        }
+        .agent-showcase h3 {
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+        .agent-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .agent-feature {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        .agent-feature h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .agent-feature p {
+            font-size: 14px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .workflow-diagram {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 32px;
+            margin: 32px 0;
+        }
+        .workflow-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .workflow-step {
+            display: flex;
+            align-items: start;
+            gap: 20px;
+        }
+        .step-number {
+            min-width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        .step-content {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .step-content h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #2d3748;
+        }
+        .step-content p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        .step-artifacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .artifact-tag {
+            background: #edf2f7;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #2d3748;
+            font-weight: 500;
+        }
+        
+        .code-example {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 24px;
+            border-radius: 8px;
+            margin: 24px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .code-comment {
+            color: #68d391;
+        }
+        .code-keyword {
+            color: #9f7aea;
+        }
+        .code-string {
+            color: #fbd38d;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+        }
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .comparison-table td {
+            padding: 16px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .comparison-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+        
+        .checklist {
+            background: #f7fafc;
+            padding: 24px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #667eea;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .callout {
+            background: #fffaf0;
+            border-left: 4px solid #ed8936;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        .callout-title {
+            font-weight: 700;
+            color: #7c2d12;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .callout-content {
+            color: #744210;
+            line-height: 1.6;
+        }
+        
+        .info-box {
+            background: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        .info-box-title {
+            font-weight: 700;
+            color: #2c5282;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .info-box-content {
+            color: #2c5282;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .hero { padding: 32px 24px; }
+            .hero h1 { font-size: 32px; }
+            .content-section { padding: 24px; }
+            .principle-grid { grid-template-columns: 1fr; }
+            .agent-features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>Phase 0: Discovery & Ideation</h1>
+            <div class="subtitle">
+                A tool-agnostic, specification-driven architecture for AI-native software development that prioritizes understanding before building
+            </div>
+            <div class="tagline">
+                💡 Specifications as Executable Artifacts • 🤝 Human-AI Collaboration • 📊 Context Engineering
+            </div>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showSection('philosophy')">Core Philosophy</button>
+            <button class="nav-tab" onclick="showSection('framework')">Three-Layer Framework</button>
+            <button class="nav-tab" onclick="showSection('agents')">Agent Architecture</button>
+            <button class="nav-tab" onclick="showSection('workflow')">Discovery Workflow</button>
+            <button class="nav-tab" onclick="showSection('context')">Context Engineering</button>
+            <button class="nav-tab" onclick="showSection('implementation')">Implementation Patterns</button>
+        </div>
+
+        <!-- Philosophy Section -->
+        <div id="philosophy" class="content-section active">
+            <h2 class="section-title">Core Philosophy: Spec-First, Tool-Agnostic</h2>
+            
+            <p style="font-size: 18px; line-height: 1.8; margin-bottom: 32px; color: #4a5568;">
+                Phase 0 transforms discovery from an ad-hoc process into a systematic, repeatable practice. 
+                Instead of jumping to solutions, we invest deeply in understanding the problem space through 
+                structured conversations, validated documentation, and strategic context management.
+            </p>
+
+            <div class="principle-grid">
+                <div class="principle-card">
+                    <h3>🎯 Specifications as Executable Artifacts</h3>
+                    <p>
+                        Requirements documents become the "source of truth" that drive all downstream work. 
+                        The specification itself becomes executable—directly generating implementations rather 
+                        than just guiding them.
+                    </p>
+                </div>
+                <div class="principle-card">
+                    <h3>🤝 Human-AI Collaboration</h3>
+                    <p>
+                        Agents facilitate structured discovery through multi-turn conversations with validation 
+                        loops, not one-shot generations. The human remains in control, with AI amplifying their 
+                        ability to extract and synthesize information.
+                    </p>
+                </div>
+                <div class="principle-card">
+                    <h3>🧠 Context Engineering</h3>
+                    <p>
+                        Strategic management of information flow maintains focus and prevents context collapse. 
+                        Agents receive exactly the right context at the right time—no more, no less.
+                    </p>
+                </div>
+                <div class="principle-card">
+                    <h3>🔄 Incremental Refinement</h3>
+                    <p>
+                        Multi-phase approach over single-pass attempts. Each iteration adds clarity without 
+                        discarding valuable insights from previous conversations.
+                    </p>
+                </div>
+                <div class="principle-card">
+                    <h3>✅ Validation Before Implementation</h3>
+                    <p>
+                        Built-in checkpoints and review cycles ensure completeness before moving to the next phase. 
+                        Problems caught in discovery cost hours, not weeks.
+                    </p>
+                </div>
+                <div class="principle-card">
+                    <h3>🛠️ Tool Agnostic</h3>
+                    <p>
+                        This strategy works with or without code because it focuses on structured thinking and 
+                        documentation. Can be enhanced programmatically, but doesn't require it.
+                    </p>
+                </div>
+            </div>
+
+            <div class="callout">
+                <div class="callout-title">⚠️ Why This Matters</div>
+                <div class="callout-content">
+                    Most AI-assisted development fails not because of model limitations, but because teams don't 
+                    provide adequate context or skip foundational discovery. This architecture ensures AI agents 
+                    have the structured information they need to be genuinely helpful.
+                </div>
+            </div>
+        </div>
+
+        <!-- Framework Section -->
+        <div id="framework" class="content-section">
+            <h2 class="section-title">Three-Layer Framework</h2>
+            
+            <p style="font-size: 18px; line-height: 1.8; margin-bottom: 32px; color: #4a5568;">
+                The framework combines Markdown prompt engineering, agentic primitives, and context engineering 
+                to transform ad-hoc AI experimentation into reliable, repeatable processes.
+            </p>
+
+            <div class="framework-layer">
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <span class="layer-number">1</span>
+                    <span class="layer-title">Markdown Prompt Engineering</span>
+                </div>
+                <div class="layer-description">
+                    Structured prompts using Markdown (headers, lists, links) guide AI reasoning and produce 
+                    predictable, consistent outputs. The hierarchical structure of Markdown naturally organizes 
+                    complex information and makes it easier for both humans and AI to parse.
+                </div>
+                <div style="background: white; padding: 16px; border-radius: 8px; margin-top: 16px;">
+                    <strong>Application in Discovery:</strong>
+                    <ul style="margin: 12px 0 0 20px; line-height: 1.8; color: #4a5568;">
+                        <li>Templated markdown documents for interviews, requirements, and analysis</li>
+                        <li>Headers create logical separation of concerns (Problem | Solution | Constraints)</li>
+                        <li>Lists and tables organize stakeholder feedback systematically</li>
+                        <li>Reduced ambiguity through consistent formatting</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="framework-layer">
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <span class="layer-number">2</span>
+                    <span class="layer-title">Agentic Primitives</span>
+                </div>
+                <div class="layer-description">
+                    Reusable, configurable building blocks (like .instructions.md, .prompt.md, .spec.md, .memory.md) 
+                    that encapsulate roles, rules, and workflows. These primitives document both successes and 
+                    failures, creating an evolving knowledge base.
+                </div>
+                <div style="background: white; padding: 16px; border-radius: 8px; margin-top: 16px;">
+                    <strong>Discovery Phase Primitives:</strong>
+                    <ul style="margin: 12px 0 0 20px; line-height: 1.8; color: #4a5568;">
+                        <li><code>.discovery-facilitator.instructions.md</code> - Interview protocols and frameworks</li>
+                        <li><code>.problem.spec.md</code> - Problem statement templates</li>
+                        <li><code>.feasibility.memory.md</code> - Accumulated technical knowledge</li>
+                        <li><code>.stakeholder.context.md</code> - Persistent stakeholder information</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="framework-layer">
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <span class="layer-number">3</span>
+                    <span class="layer-title">Context Engineering</span>
+                </div>
+                <div class="layer-description">
+                    Strategic management of contextual information to optimize AI performance within memory constraints. 
+                    Just like humans, LLMs have finite memory—providing the right context (not just more context) 
+                    is critical for effectiveness.
+                </div>
+                <div style="background: white; padding: 16px; border-radius: 8px; margin-top: 16px;">
+                    <strong>Techniques for Discovery:</strong>
+                    <ul style="margin: 12px 0 0 20px; line-height: 1.8; color: #4a5568;">
+                        <li><strong>Session Splitting:</strong> Separate interviews for different stakeholder groups</li>
+                        <li><strong>Modular Instructions:</strong> Targeted questioning based on role (technical vs. business)</li>
+                        <li><strong>Memory Files:</strong> Persistent knowledge across discovery sessions</li>
+                        <li><strong>Selective Context:</strong> Only load relevant prior discoveries for each conversation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-box-title">💡 Key Insight</div>
+                <div class="info-box-content">
+                    These three layers work together synergistically. Markdown provides structure, primitives 
+                    provide reusability, and context engineering provides focus. Remove any layer, and 
+                    reliability degrades significantly.
+                </div>
+            </div>
+        </div>
+
+        <!-- Agents Section -->
+        <div id="agents" class="content-section">
+            <h2 class="section-title">Agent Architecture</h2>
+
+            <div class="agent-showcase">
+                <h3>Stage 1: Discovery Facilitator</h3>
+                <p style="margin-bottom: 24px; opacity: 0.95;">
+                    Conducts structured interviews using systematic frameworks (Five Whys, Jobs-to-be-Done) 
+                    to extract and validate requirements without bias toward solutions.
+                </p>
+                <div class="agent-features">
+                    <div class="agent-feature">
+                        <h4>🎤 Structured Interviewing</h4>
+                        <p>Generate contextually-aware questions that adapt based on stakeholder responses, 
+                        identifying gaps and ambiguities in real-time.</p>
+                    </div>
+                    <div class="agent-feature">
+                        <h4>👂 Active Listening</h4>
+                        <p>Paraphrase stakeholder statements for validation, extract implicit requirements, 
+                        and flag contradictions between different stakeholders.</p>
+                    </div>
+                    <div class="agent-feature">
+                        <h4>📝 Documentation Generation</h4>
+                        <p>Create problem statements, success criteria matrices, and constraint documents 
+                        with clear rationales and traceability.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-example">
+<span class="code-comment">## .discovery-facilitator.instructions.md</span>
+
+<span class="code-keyword">### Role</span>
+You are an expert business analyst conducting discovery interviews to 
+uncover the true problem space before any solutions are discussed.
+
+<span class="code-keyword">### Question Generation Framework</span>
+
+<span class="code-keyword">#### Five Whys Protocol</span>
+For each stated problem:
+- Ask <span class="code-string">"why is this a problem?"</span> five levels deep
+- Document each layer separately
+- Identify root causes vs symptoms
+
+<span class="code-keyword">#### Jobs-to-be-Done Framework</span>
+For each user goal:
+- What job are they trying to accomplish?
+- What is their current solution?
+- What are the pain points?
+- What would success look like?
+
+<span class="code-keyword">### Output Artifacts</span>
+1. Interview Transcript (raw conversation)
+2. Problem Statement (synthesized from transcript)
+3. Success Criteria (measurable outcomes)
+4. Constraints Document (technical, business, regulatory)
+            </div>
+
+            <div class="agent-showcase" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <h3>Stage 2: Feasibility Analyzer</h3>
+                <p style="margin-bottom: 24px; opacity: 0.95;">
+                    Evaluates technical viability, risks, and technology fit without prescribing specific solutions. 
+                    Focuses on what's possible, not what tools to use.
+                </p>
+                <div class="agent-features">
+                    <div class="agent-feature">
+                        <h4>🔍 Technology Landscape</h4>
+                        <p>Research current approaches to similar problems, identify proven patterns and 
+                        anti-patterns, evaluate maturity of potential solutions.</p>
+                    </div>
+                    <div class="agent-feature">
+                        <h4>⚠️ Risk Identification</h4>
+                        <p>Analyze technical, business, and external risks with likelihood and impact 
+                        assessments, plus mitigation strategies.</p>
+                    </div>
+                    <div class="agent-feature">
+                        <h4>✓ Constraint Validation</h4>
+                        <p>Verify stated constraints are real vs assumed, identify hidden constraints, 
+                        document tradeoffs clearly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-table">
+                <table style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Discovery Facilitator</th>
+                            <th>Feasibility Analyzer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Primary Focus</strong></td>
+                            <td>Understanding the problem space</td>
+                            <td>Evaluating solution viability</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Stakeholder Interaction</strong></td>
+                            <td>High - continuous conversation</td>
+                            <td>Medium - targeted validation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Research Depth</strong></td>
+                            <td>Domain and business context</td>
+                            <td>Technical precedents and risks</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Output Type</strong></td>
+                            <td>Qualitative requirements</td>
+                            <td>Quantitative assessments</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Decision Authority</strong></td>
+                            <td>None - facilitates understanding</td>
+                            <td>Advisory - provides recommendations</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Workflow Section -->
+        <div id="workflow" class="content-section">
+            <h2 class="section-title">Discovery Workflow</h2>
+
+            <p style="font-size: 18px; line-height: 1.8; margin-bottom: 32px; color: #4a5568;">
+                The discovery workflow follows a structured progression from initial problem articulation through 
+                validated feasibility assessment, with multiple validation loops ensuring completeness.
+            </p>
+
+            <div class="workflow-diagram">
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Initial Problem Articulation</h4>
+                            <p>
+                                Stakeholder provides high-level description of the problem or opportunity. 
+                                Discovery Facilitator begins structured questioning using Five Whys to move 
+                                from symptoms to root causes.
+                            </p>
+                            <div class="step-artifacts">
+                                <span class="artifact-tag">📄 Initial Problem Description</span>
+                                <span class="artifact-tag">🎯 Stakeholder Context</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Multi-Stakeholder Interviews</h4>
+                            <p>
+                                Conduct separate sessions with different stakeholder groups (executives, 
+                                technical teams, end users). Each session uses role-appropriate questioning 
+                                and builds on prior interviews through memory files.
+                            </p>
+                            <div class="step-artifacts">
+                                <span class="artifact-tag">📋 Interview Transcripts</span>
+                                <span class="artifact-tag">🔄 Cross-Reference Notes</span>
+                                <span class="artifact-tag">⚠️ Contradiction Log</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Problem Statement Synthesis</h4>
+                            <p>
+                                Synthesize all interview findings into a clear, validated problem statement 
+                                with quantified business impact, identified root causes, and measurable 
+                                success criteria. Use incremental delta updates to preserve detail.
+                            </p>
+                            <div class="step-artifacts">
+                                <span class="artifact-tag">📊 Problem Statement v1.0</span>
+                                <span class="artifact-tag">💰 Impact Quantification</span>
+                                <span class="artifact-tag">🎯 Success Criteria</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Stakeholder Validation Loop</h4>
+                            <p>
+                                Present synthesized problem statement to all stakeholder groups for 
+                                confirmation. Resolve any contradictions or misunderstandings before 
+                                proceeding to feasibility analysis.
+                            </p>
+                            <div class="step-artifacts">
+                                <span class="artifact-tag">✅ Approval Matrix</span>
+                                <span class="artifact-tag">🔄 Revision Log</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Technical Feasibility Research</h4>
+                            <p>
+                                Feasibility Analyzer researches similar implementations, identifies proven 
+                                patterns, assesses technical risks, and evaluates organizational capability 
+                                gaps. No technology prescriptions—only viability assessment.
+                            </p>
+                            <div class="step-artifacts">
+                                <span class="artifact-tag">🔬 Case Study Analysis</span>
+                                <span class="artifact-tag">⚠️ Risk Register</span>
+                                <span class="artifact-tag">📈 Capability Gap Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Feasibility Recommendation</h4>
+                            <p>
+                                Generate comprehensive feasibility report with Go/No-Go/Conditional 
+                                recommendation. Include confidence level, supporting evidence, and 
+                                mitigation strategies for identified risks.
+                            </p>
+                            <div class="step-artifacts">
+                                <span class="artifact-tag">📋 Feasibility Report</span>
+                                <span class="artifact-tag">🎲 Confidence Score</span>
+                                <span class="artifact-tag">🛡️ Mitigation Plans</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <h4>Phase 0 Completion Validation</h4>
+                            <p>
+                                Review all artifacts against completion checklist. Ensure problem is 
+                                fully understood, feasibility is assessed, and team is aligned before 
+                                transitioning to specification phase.
+                            </p>
+                            <div class="step-artifacts">
+                                <span class="artifact-tag">✅ Completion Checklist</span>
+                                <span class="artifact-tag">📦 Artifact Package</span>
+                                <span class="artifact-tag">➡️ Phase 1 Handoff</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout">
+                <div class="callout-title">🔄 Iterative Nature</div>
+                <div class="callout-content">
+                    This workflow is rarely linear. New information from feasibility analysis may trigger 
+                    additional stakeholder interviews. Contradictions discovered in validation may require 
+                    revisiting earlier steps. The key is maintaining traceability through all iterations.
+                </div>
+            </div>
+        </div>
+
+        <!-- Context Engineering Section -->
+        <div id="context" class="content-section">
+            <h2 class="section-title">Context Engineering Strategies</h2>
+
+            <p style="font-size: 18px; line-height: 1.8; margin-bottom: 32px; color: #4a5568;">
+                Effective context engineering ensures AI agents have exactly the information they need—no more, 
+                no less. This prevents context overload, maintains focus, and avoids the common pitfall of 
+                "context collapse" where important details are lost over time.
+            </p>
+
+            <div class="framework-layer">
+                <h3 style="font-size: 22px; margin-bottom: 16px;">Memory Management</h3>
+                <p style="color: #4a5568; line-height: 1.8; margin-bottom: 16px;">
+                    Separate persistent context (always loaded) from session-specific context (loaded only 
+                    when relevant). This reduces token usage and improves response quality by eliminating noise.
+                </p>
+                <div class="code-example">
+<span class="code-comment">## .discovery.memory.md</span>
+
+<span class="code-keyword">### Persistent Context</span> <span class="code-comment">(loaded in all discovery sessions)</span>
+- Organization: Acme Corp
+- Industry: SaaS B2B
+- Team Size: 50 engineers
+- Current Tech Stack: .NET, React, PostgreSQL
+- Previous Projects: [list with outcomes]
+
+<span class="code-keyword">### Session-Specific Context</span> <span class="code-comment">(loaded only when relevant)</span>
+- Stakeholder Role: Support Team Lead
+- Prior Interviews: CEO (003), CTO (005)
+- Related Projects: Customer Portal Redesign (2024)
+                </div>
+            </div>
+
+            <div class="framework-layer">
+                <h3 style="font-size: 22px; margin-bottom: 16px;">Session Splitting</h3>
+                <p style="color: #4a5568; line-height: 1.8; margin-bottom: 16px;">
+                    Use distinct agent sessions for different stakeholder groups and analysis types. 
+                    Each session maintains its own context, preventing cross-contamination and overload.
+                </p>
+                <div style="background: white; padding: 20px; border-radius: 8px;">
+                    <strong>Discovery Phase Sessions:</strong>
+                    <ul style="margin: 12px 0 0 20px; line-height: 1.8; color: #4a5568;">
+                        <li><strong>Executive Interviews:</strong> Business goals, strategic constraints, success criteria</li>
+                        <li><strong>Technical Interviews:</strong> Current system limitations, integration needs, technical debt</li>
+                        <li><strong>User Interviews:</strong> Actual usage patterns, workarounds, feature desires</li>
+                        <li><strong>Synthesis Session:</strong> Combine findings, resolve conflicts, generate artifacts</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="framework-layer">
+                <h3 style="font-size: 22px; margin-bottom: 16px;">Avoiding Context Collapse</h3>
+                <p style="color: #4a5568; line-height: 1.8; margin-bottom: 16px;">
+                    Context collapse occurs when iterative rewriting loses crucial details over time. 
+                    Solution: Use incremental delta updates rather than monolithic rewrites.
+                </p>
+                <div class="code-example">
+<span class="code-keyword">## Version 1:</span> Initial problem statement
+<span class="code-string">"Support team is overwhelmed"</span>
+
+<span class="code-keyword">## Version 2:</span> After CEO interview <span class="code-comment">(DELTA)</span>
+<span class="code-string">"Support team is overwhelmed"</span>
++ Root cause: 60% of tickets are repetitive FAQs
++ Business impact: $200K annual revenue loss from churn
+
+<span class="code-keyword">## Version 3:</span> After Support Lead interview <span class="code-comment">(DELTA)</span>
+<span class="code-string">"Support team is overwhelmed"</span>
++ Root cause: 60% of tickets are repetitive FAQs
++ Business impact: $200K annual revenue loss from churn
++ Team morale impact: 40% turnover in last 12 months
++ Current workaround: FAQ page that customers don't find
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-box-title">🧠 Context Engineering Benefits</div>
+                <div class="info-box-content">
+                    <ul style="margin: 12px 0 0 20px; line-height: 1.8;">
+                        <li><strong>Reduced Token Usage:</strong> Only relevant context loaded, lowering costs</li>
+                        <li><strong>Improved Accuracy:</strong> Less noise means better signal detection</li>
+                        <li><strong>Faster Response:</strong> Smaller context windows = faster processing</li>
+                        <li><strong>Better Reasoning:</strong> Agents can focus on what matters</li>
+                        <li><strong>Preserved History:</strong> Delta updates maintain full audit trail</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Implementation Section -->
+        <div id="implementation" class="content-section">
+            <h2 class="section-title">Implementation Patterns</h2>
+
+            <p style="font-size: 18px; line-height: 1.8; margin-bottom: 32px; color: #4a5568;">
+                This architecture can be implemented in multiple ways, from pure conversation-based workflows 
+                to fully automated systems. The choice depends on your team's maturity, tooling, and needs.
+            </p>
+
+            <div class="comparison-table">
+                <table style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Pattern</th>
+                            <th>Best For</th>
+                            <th>Complexity</th>
+                            <th>Automation Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Conversational</strong></td>
+                            <td>Small teams, rapid iteration, exploratory projects</td>
+                            <td>Low</td>
+                            <td>Manual with AI facilitation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Template-Based</strong></td>
+                            <td>Standardized processes, compliance requirements</td>
+                            <td>Medium</td>
+                            <td>Semi-automated artifact generation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Programmatic</strong></td>
+                            <td>Enterprise scale, complex integrations, analytics</td>
+                            <td>High</td>
+                            <td>Fully automated with human checkpoints</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="framework-layer">
+                <h3 style="font-size: 22px; margin-bottom: 16px;">Pattern 1: Conversational (Tool-Agnostic)</h3>
+                <p style="color: #4a5568; line-height: 1.8; margin-bottom: 16px;">
+                    Pure conversation between human and AI agent following structured protocols. 
+                    All artifacts created manually in markdown files with AI assistance for synthesis and validation.
+                </p>
+                <div style="background: white; padding: 20px; border-radius: 8px;">
+                    <strong>Workflow:</strong>
+                    <ol style="margin: 12px 0 0 20px; line-height: 1.8; color: #4a5568;">
+                        <li>Human initiates discovery conversation with agent</li>
+                        <li>Agent follows .instructions.md protocol for questioning</li>
+                        <li>Human and agent collaboratively create problem-statement.md</li>
+                        <li>Agent validates completeness using checklist</li>
+                        <li>Human approves and moves to feasibility phase</li>
+                    </ol>
+                    <p style="margin-top: 16px;"><strong>Tools Needed:</strong> Any AI chat interface (Claude, ChatGPT, etc.) + text editor</p>
+                </div>
+            </div>
+
+            <div class="framework-layer">
+                <h3 style="font-size: 22px; margin-bottom: 16px;">Pattern 2: Template-Based (Semi-Automated)</h3>
+                <p style="color: #4a5568; line-height: 1.8; margin-bottom: 16px;">
+                    Uses spec-kit style slash commands and templates to scaffold artifacts. 
+                    AI generates initial drafts from templates, human refines through iterative conversation.
+                </p>
+                <div class="code-example">
+<span class="code-comment"># Example slash command workflow</span>
+
+<span class="code-keyword">/discovery.initialize</span> <span class="code-string">"E-commerce checkout optimization"</span>
+<span class="code-comment"># Creates .discovery folder with templates</span>
+
+<span class="code-keyword">/discovery.interview</span> <span class="code-string">role="CEO"</span> framework=<span class="code-string">"five-whys"</span>
+<span class="code-comment"># Conducts structured interview, saves transcript</span>
+
+<span class="code-keyword">/discovery.synthesize</span>
+<span class="code-comment"># Generates problem statement from all interviews</span>
+
+<span class="code-keyword">/discovery.validate</span>
+<span class="code-comment"># Checks completeness against checklist</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 8px; margin-top: 16px;">
+                    <p style="margin-top: 0;"><strong>Tools Needed:</strong> Claude Code, Gemini CLI, or GitHub Copilot + spec-kit templates</p>
+                </div>
+            </div>
+
+            <div class="framework-layer">
+                <h3 style="font-size: 22px; margin-bottom: 16px;">Pattern 3: Programmatic (Advanced)</h3>
+                <p style="color: #4a5568; line-height: 1.8; margin-bottom: 16px;">
+                    Full implementation with validation pipelines, automated traceability, and integration 
+                    with project management systems. Suitable for enterprise-scale operations.
+                </p>
+                <div class="code-example">
+<span class="code-keyword">public class</span> DiscoveryOrchestrator
+{
+    <span class="code-keyword">public async Task&lt;DiscoveryPackage&gt;</span> <span class="code-string">ExecuteDiscoveryPhase</span>(
+        ProjectInitiation initiation)
+    {
+        <span class="code-comment">// 1. Conduct multi-stakeholder interviews</span>
+        <span class="code-keyword">var</span> interviews = <span class="code-keyword">await</span> <span class="code-string">ConductInterviews</span>(
+            initiation.Stakeholders
+        );
+        
+        <span class="code-comment">// 2. Synthesize problem statement with delta tracking</span>
+        <span class="code-keyword">var</span> problemStatement = <span class="code-keyword">await</span> <span class="code-string">SynthesizeProblemStatement</span>(
+            interviews,
+            <span class="code-string">useDeltaUpdates:</span> <span class="code-keyword">true</span>
+        );
+        
+        <span class="code-comment">// 3. Validate with stakeholders</span>
+        <span class="code-keyword">var</span> validation = <span class="code-keyword">await</span> <span class="code-string">ValidateWithStakeholders</span>(
+            problemStatement
+        );
+        
+        <span class="code-comment">// 4. Conduct feasibility analysis</span>
+        <span class="code-keyword">var</span> feasibility = <span class="code-keyword">await</span> <span class="code-string">AnalyzeFeasibility</span>(
+            problemStatement,
+            initiation.Constraints
+        );
+        
+        <span class="code-comment">// 5. Generate traceability matrix</span>
+        <span class="code-keyword">var</span> traceability = <span class="code-keyword">await</span> <span class="code-string">GenerateTraceability</span>(
+            interviews,
+            problemStatement,
+            feasibility
+        );
+        
+        <span class="code-keyword">return new</span> <span class="code-string">DiscoveryPackage</span>
+        {
+            ProblemStatement = problemStatement,
+            FeasibilityReport = feasibility,
+            Interviews = interviews,
+            TraceabilityMatrix = traceability,
+            CompletionStatus = <span class="code-keyword">await</span> <span class="code-string">ValidateCompleteness</span>()
+        };
+    }
+}
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 8px; margin-top: 16px;">
+                    <p style="margin-top: 0;"><strong>Tools Needed:</strong> Custom C# application + LLM API + project management integration</p>
+                </div>
+            </div>
+
+            <div class="checklist">
+                <h3 style="font-size: 22px; margin-bottom: 16px;">Phase 0 Completion Validation</h3>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div>
+                        <strong>Problem Definition:</strong> Problem statement is clear, specific, and traces back to stakeholder interviews
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div>
+                        <strong>Root Cause Analysis:</strong> Root causes identified through Five Whys (not just symptoms)
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div>
+                        <strong>Business Impact:</strong> Impact is quantified with specific metrics (revenue, cost, time, etc.)
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div>
+                        <strong>Success Criteria:</strong> Measurable success criteria defined with clear acceptance thresholds
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div>
+                        <strong>Constraints:</strong> All constraints validated as real (not assumed) with documented rationale
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div>
+                        <strong>Feasibility:</strong> Technical viability assessed with confidence level and risk mitigation plans
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div>
+                        <strong>Stakeholder Alignment:</strong> All stakeholder groups reviewed and approved findings
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div>
+                        <strong>Documentation:</strong> All artifacts complete, traceable, and free of contradictions
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div>
+                        <strong>Handoff Readiness:</strong> Package ready for Phase 1 (Specification) with no open questions
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout">
+                <div class="callout-title">🎯 Success Metric</div>
+                <div class="callout-content">
+                    A successful Phase 0 completion means Phase 1 (Specification) proceeds without needing 
+                    to revisit discovery. If you find yourself going back to "clarify the problem," 
+                    Phase 0 wasn't complete. The goal is one-pass implementation success through 
+                    comprehensive context.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
