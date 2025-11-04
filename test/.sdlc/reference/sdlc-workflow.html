@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Native Software Development Lifecycle</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(to bottom right, #f8fafc, #e2e8f0);
+            min-height: 100vh;
+            padding: 24px;
+        }
+        .container { max-width: 1280px; margin: 0 auto; }
+        .header {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+        .header h1 { font-size: 30px; font-weight: bold; color: #1e293b; margin-bottom: 8px; }
+        .header p { color: #64748b; margin-bottom: 16px; }
+        .header-info { display: flex; gap: 16px; font-size: 14px; flex-wrap: wrap; }
+        .info-item { display: flex; align-items: center; gap: 8px; color: #334155; }
+        .phases { display: flex; flex-direction: column; gap: 16px; }
+        .phase { background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: hidden; }
+        .phase-header {
+            width: 100%;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 2px solid;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            text-align: left;
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        .phase-header:hover { opacity: 0.8; }
+        .chevron { width: 24px; height: 24px; transition: transform 0.2s; }
+        .chevron.expanded { transform: rotate(90deg); }
+        .phase-content { display: none; padding: 24px; }
+        .phase-content.show { display: block; }
+        .stage { border-left: 4px solid #cbd5e1; padding-left: 16px; margin-bottom: 24px; }
+        .stage h3 { font-size: 18px; font-weight: 600; color: #1e293b; margin-bottom: 12px; }
+        .stage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .card { padding: 12px; border-radius: 6px; border: 1px solid; }
+        .card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card ul { list-style: none; font-size: 14px; color: #334155; }
+        .card li { display: flex; align-items: start; gap: 4px; margin-bottom: 4px; }
+        .inputs { background: #f0fdf4; border-color: #bbf7d0; }
+        .inputs h4 { color: #166534; }
+        .inputs .bullet { color: #16a34a; margin-top: 4px; }
+        .agents { background: #eff6ff; border-color: #bfdbfe; }
+        .agents h4 { color: #1e40af; }
+        .outputs { background: #fff7ed; border-color: #fed7aa; }
+        .outputs h4 { color: #9a3412; }
+        .outputs .bullet { color: #ea580c; margin-top: 4px; }
+        .agent-button {
+            width: 100%;
+            text-align: left;
+            font-size: 14px;
+            background: white;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #bfdbfe;
+            cursor: pointer;
+            transition: border-color 0.2s;
+            margin-bottom: 8px;
+        }
+        .agent-button:hover { border-color: #60a5fa; }
+        .agent-name { font-weight: 500; color: #1e3a8a; }
+        .agent-purpose { font-size: 12px; color: #64748b; }
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            z-index: 1000;
+        }
+        .modal.show { display: flex; }
+        .modal-content {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+            max-width: 672px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 24px;
+        }
+        .modal-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 16px; }
+        .modal-title { font-size: 24px; font-weight: bold; color: #1e293b; }
+        .modal-subtitle { color: #64748b; margin-top: 4px; }
+        .close-button {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 32px;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+        }
+        .close-button:hover { color: #475569; }
+        .modal-section { margin-bottom: 16px; }
+        .modal-section h4 { font-weight: 600; color: #1e293b; margin-bottom: 8px; }
+        .modal-section ul { list-style-disc; list-style-position: inside; color: #334155; }
+        .modal-section li { margin-bottom: 4px; }
+        .tools { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tool-tag {
+            padding: 4px 12px;
+            background: #dbeafe;
+            color: #1e40af;
+            border-radius: 9999px;
+            font-size: 14px;
+        }
+        .prompt-box {
+            background: #f8fafc;
+            padding: 16px;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+            font-size: 14px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+        }
+        .bg-purple { background: #f3e8ff; border-color: #d8b4fe; }
+        .bg-blue { background: #dbeafe; border-color: #93c5fd; }
+        .bg-green { background: #dcfce7; border-color: #86efac; }
+        .bg-yellow { background: #fef9c3; border-color: #fde047; }
+        .bg-orange { background: #fed7aa; border-color: #fdba74; }
+        .bg-red { background: #fecaca; border-color: #fca5a5; }
+        .bg-pink { background: #fce7f3; border-color: #f9a8d4; }
+        .bg-indigo { background: #e0e7ff; border-color: #c7d2fe; }
+        .bg-teal { background: #ccfbf1; border-color: #5eead4; }
+        @media (max-width: 768px) { .stage-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI-Native Software Development Lifecycle</h1>
+            <p>Complete workflow from inception to production with AI agents, artifacts, and automated processes</p>
+            <div class="header-info">
+                <div class="info-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    <span>Artifacts: Inputs & Outputs</span>
+                </div>
+                <div class="info-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2">
+                        <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                        <rect x="9" y="9" width="6" height="6"></rect>
+                    </svg>
+                    <span>AI Agents: Capabilities & Tools</span>
+                </div>
+            </div>
+        </div>
+        <div class="phases" id="phasesContainer"></div>
+    </div>
+
+    <div class="modal" id="agentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <div class="modal-title" id="modalTitle"></div>
+                    <div class="modal-subtitle" id="modalSubtitle"></div>
+                </div>
+                <button class="close-button" onclick="closeModal()">Ã—</button>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script>
+        // Full phase data from original React component
+        const phases = [
+  {
+    id: 'discovery',
+    name: 'Phase 0: Discovery & Ideation',
+    color: 'bg-purple',
+    stages: [
+      {
+        name: 'Problem Definition',
+        inputs: ['Stakeholder interviews', 'Market research', 'Business goals'],
+        outputs: ['Problem statement', 'Success criteria', 'Constraints document'],
+        agents: [{
+          name: 'Discovery Agent',
+          purpose: 'Conduct structured interviews and extract requirements',
+          capabilities: ['Question generation', 'Answer analysis', 'Requirement extraction'],
+          tools: ['conversation_search', 'web_search', 'document generation'],
+          prompt: 'System: You are a business analyst AI. Conduct discovery interviews using the Five Whys technique and Jobs-to-be-Done framework.'
+        }]
+      },
+      {
+        name: 'Feasibility Analysis',
+        inputs: ['Problem statement', 'Technical constraints', 'Budget/timeline'],
+        outputs: ['Feasibility report', 'Risk assessment', 'Technology recommendations'],
+        agents: [{
+          name: 'Feasibility Analyzer',
+          purpose: 'Evaluate technical and business viability',
+          capabilities: ['Technology assessment', 'Risk analysis', 'Cost estimation'],
+          tools: ['web_search', 'Context7 docs', 'analysis tool'],
+          prompt: 'System: Analyze technical feasibility considering current technology landscape, team skills, and resource constraints.'
+        }]
+      }
+    ]
+  },
+  {
+    id: 'specification',
+    name: 'Phase 1: Specification & Design',
+    color: 'bg-blue',
+    stages: [
+      {
+        name: 'Requirements Engineering',
+        inputs: ['Problem statement', 'Stakeholder needs', 'Success criteria'],
+        outputs: ['Functional requirements', 'Non-functional requirements', 'User stories', 'Acceptance criteria'],
+        agents: [{
+          name: 'Requirements Engineer',
+          purpose: 'Transform business needs into structured requirements',
+          capabilities: ['User story generation', 'Acceptance criteria definition', 'Requirement validation'],
+          tools: ['document generation', 'validation checks'],
+          prompt: 'System: Generate comprehensive user stories following the format: As a [role], I want [feature] so that [benefit]. Include acceptance criteria using Given-When-Then format.'
+        }]
+      },
+      {
+        name: 'System Architecture',
+        inputs: ['Requirements', 'Technical constraints', 'Scale projections'],
+        outputs: ['Architecture diagrams', 'System design doc', 'Technology stack', 'API contracts', 'Data models'],
+        agents: [{
+          name: 'Architecture Agent',
+          purpose: 'Design system architecture and component interactions',
+          capabilities: ['Architecture pattern selection', 'Diagram generation', 'API design'],
+          tools: ['Mermaid diagrams', 'web_search for best practices', 'Context7'],
+          prompt: 'System: Design scalable architecture following SOLID principles. Consider microservices vs monolith, database choices, and integration patterns.'
+        }]
+      },
+      {
+        name: 'Interface Design',
+        inputs: ['User stories', 'Brand guidelines', 'Accessibility requirements'],
+        outputs: ['Wireframes', 'UI specifications', 'Component library spec', 'Design system'],
+        agents: [{
+          name: 'UX Architect',
+          purpose: 'Design user interfaces and interactions',
+          capabilities: ['Wireframe generation', 'User flow mapping', 'Accessibility checking'],
+          tools: ['HTML artifacts', 'React artifacts', 'SVG generation'],
+          prompt: 'System: Design user interfaces following Nielsen\'s heuristics and WCAG 2.1 AA standards. Create responsive, accessible designs.'
+        }]
+      },
+      {
+        name: 'Specification Review',
+        inputs: ['All specification documents'],
+        outputs: ['Validated specifications', 'Traceability matrix', 'Test plan outline'],
+        agents: [{
+          name: 'Spec Validator',
+          purpose: 'Review specifications for completeness and consistency',
+          capabilities: ['Completeness checking', 'Ambiguity detection', 'Consistency validation'],
+          tools: ['document analysis', 'cross-reference checking'],
+          prompt: 'System: Review specifications for ambiguity, completeness, testability, and consistency. Flag unclear requirements and suggest improvements.'
+        }]
+      }
+    ]
+  },
+  {
+    id: 'planning',
+    name: 'Phase 2: Planning & Setup',
+    color: 'bg-green',
+    stages: [
+      {
+        name: 'Project Planning',
+        inputs: ['Specifications', 'Team capacity', 'Timeline constraints'],
+        outputs: ['Sprint plan', 'Task breakdown', 'Dependency map', 'Resource allocation'],
+        agents: [{
+          name: 'Planning Agent',
+          purpose: 'Break down work and create development schedule',
+          capabilities: ['Task decomposition', 'Estimation', 'Dependency analysis'],
+          tools: ['analysis tool', 'calendar integration'],
+          prompt: 'System: Decompose specifications into 2-5 day tasks. Identify dependencies and critical path. Estimate using story points.'
+        }]
+      },
+      {
+        name: 'Environment Setup',
+        inputs: ['Technology stack', 'Infrastructure requirements'],
+        outputs: ['Repository structure', 'Development environment', 'CI/CD pipeline', 'Configuration templates'],
+        agents: [{
+          name: 'DevOps Scaffolder',
+          purpose: 'Set up development infrastructure and tooling',
+          capabilities: ['Project scaffolding', 'Pipeline generation', 'Configuration management'],
+          tools: ['code generation', 'Context7 for framework docs'],
+          prompt: 'System: Generate complete project structure with linting, testing, and CI/CD configured. Follow framework best practices.'
+        }]
+      },
+      {
+        name: 'Quality Framework',
+        inputs: ['Requirements', 'Quality standards'],
+        outputs: ['Test strategy', 'Quality gates', 'Definition of Done', 'Code standards'],
+        agents: [{
+          name: 'Quality Architect',
+          purpose: 'Define testing and quality assurance strategy',
+          capabilities: ['Test plan generation', 'Quality gate definition', 'Standards documentation'],
+          tools: ['document generation'],
+          prompt: 'System: Create comprehensive test strategy covering unit, integration, e2e, performance, and security testing. Define quality gates for each stage.'
+        }]
+      }
+    ]
+  },
+  {
+    id: 'development',
+    name: 'Phase 3: Development',
+    color: 'bg-yellow',
+    stages: [
+      {
+        name: 'Feature Development',
+        inputs: ['Task specification', 'API contracts', 'Design system'],
+        outputs: ['Feature code', 'Unit tests', 'Component documentation'],
+        agents: [
+          {
+            name: 'Code Generator',
+            purpose: 'Generate production-quality code from specifications',
+            capabilities: ['Code generation', 'Test generation', 'Documentation'],
+            tools: ['artifacts', 'Context7', 'code analysis'],
+            prompt: 'System: Generate clean, tested code following the specification. Include comprehensive unit tests, error handling, and inline documentation.'
+          },
+          {
+            name: 'TDD Assistant',
+            purpose: 'Implement test-driven development workflow',
+            capabilities: ['Test-first development', 'Red-green-refactor cycle'],
+            tools: ['repl for testing', 'code generation'],
+            prompt: 'System: Write failing tests first based on acceptance criteria, then implement minimal code to pass. Refactor for quality.'
+          }
+        ]
+      },
+      {
+        name: 'Code Review',
+        inputs: ['Code changes', 'Test results', 'Coding standards'],
+        outputs: ['Review feedback', 'Approved code', 'Refactoring suggestions'],
+        agents: [{
+          name: 'Code Reviewer',
+          purpose: 'Automated code quality and standards review',
+          capabilities: ['Code analysis', 'Best practice validation', 'Security scanning'],
+          tools: ['code analysis', 'pattern matching'],
+          prompt: 'System: Review code for SOLID principles, security vulnerabilities, performance issues, and maintainability. Provide specific, actionable feedback.'
+        }]
+      },
+      {
+        name: 'Integration',
+        inputs: ['Feature code', 'API contracts', 'Integration tests'],
+        outputs: ['Integrated system', 'Integration test results', 'API documentation'],
+        agents: [{
+          name: 'Integration Agent',
+          purpose: 'Validate component integration and API contracts',
+          capabilities: ['Contract testing', 'Integration validation', 'API doc generation'],
+          tools: ['repl', 'web_fetch for API testing'],
+          prompt: 'System: Validate all integrations against API contracts. Generate integration tests and update API documentation with examples.'
+        }]
+      },
+      {
+        name: 'Documentation',
+        inputs: ['Code', 'Architecture', 'API specs'],
+        outputs: ['Technical docs', 'API reference', 'Architecture decision records'],
+        agents: [{
+          name: 'Documentation Agent',
+          purpose: 'Generate and maintain technical documentation',
+          capabilities: ['Doc generation', 'Code explanation', 'Diagram creation'],
+          tools: ['markdown generation', 'Mermaid diagrams'],
+          prompt: 'System: Generate clear, comprehensive documentation. Include setup instructions, architecture overview, API reference, and troubleshooting guides.'
+        }]
+      }
+    ]
+  },
+  {
+    id: 'testing',
+    name: 'Phase 4: Testing & Quality Assurance',
+    color: 'bg-orange',
+    stages: [
+      {
+        name: 'Automated Testing',
+        inputs: ['Application code', 'Test specifications'],
+        outputs: ['Test results', 'Coverage reports', 'Bug reports'],
+        agents: [{
+          name: 'Test Automation Agent',
+          purpose: 'Generate and execute comprehensive test suites',
+          capabilities: ['Test generation', 'Test execution', 'Result analysis'],
+          tools: ['repl', 'code generation'],
+          prompt: 'System: Generate comprehensive tests covering happy paths, edge cases, and error conditions. Aim for 80%+ code coverage.'
+        }]
+      },
+      {
+        name: 'Performance Testing',
+        inputs: ['Application', 'Performance requirements', 'Load profiles'],
+        outputs: ['Performance metrics', 'Bottleneck analysis', 'Optimization recommendations'],
+        agents: [{
+          name: 'Performance Analyzer',
+          purpose: 'Conduct performance testing and optimization',
+          capabilities: ['Load testing', 'Performance profiling', 'Optimization suggestions'],
+          tools: ['analysis tool', 'web_search for benchmarks'],
+          prompt: 'System: Analyze application performance under load. Identify bottlenecks and suggest optimizations based on performance requirements.'
+        }]
+      },
+      {
+        name: 'Security Testing',
+        inputs: ['Application', 'Security requirements', 'Threat model'],
+        outputs: ['Vulnerability report', 'Security recommendations', 'Compliance checklist'],
+        agents: [{
+          name: 'Security Auditor',
+          purpose: 'Identify security vulnerabilities and compliance issues',
+          capabilities: ['Vulnerability scanning', 'Compliance checking', 'Security recommendations'],
+          tools: ['code analysis', 'web_search for CVEs'],
+          prompt: 'System: Audit application for OWASP Top 10 vulnerabilities. Check authentication, authorization, data protection, and dependency security.'
+        }]
+      },
+      {
+        name: 'User Acceptance Testing',
+        inputs: ['Application', 'User stories', 'Acceptance criteria'],
+        outputs: ['UAT results', 'User feedback', 'Defect log'],
+        agents: [{
+          name: 'UAT Coordinator',
+          purpose: 'Facilitate and track user acceptance testing',
+          capabilities: ['Test case generation', 'Feedback analysis', 'Defect tracking'],
+          tools: ['document generation', 'reminder creation'],
+          prompt: 'System: Generate UAT test cases from user stories. Track results and categorize feedback into bugs, enhancements, and documentation needs.'
+        }]
+      }
+    ]
+  },
+  {
+    id: 'deployment',
+    name: 'Phase 5: Deployment',
+    color: 'bg-red',
+    stages: [
+      {
+        name: 'Deployment Preparation',
+        inputs: ['Application package', 'Infrastructure specs', 'Configuration'],
+        outputs: ['Deployment scripts', 'Environment configs', 'Rollback plan', 'Runbook'],
+        agents: [{
+          name: 'Deployment Planner',
+          purpose: 'Prepare deployment strategy and artifacts',
+          capabilities: ['Deployment script generation', 'Configuration management', 'Runbook creation'],
+          tools: ['code generation', 'documentation'],
+          prompt: 'System: Generate deployment scripts for blue-green deployment. Create runbooks for deployment, rollback, and common issues.'
+        }]
+      },
+      {
+        name: 'Infrastructure Provisioning',
+        inputs: ['Infrastructure specs', 'Resource requirements'],
+        outputs: ['Provisioned infrastructure', 'Network configuration', 'Monitoring setup'],
+        agents: [{
+          name: 'Infrastructure Agent',
+          purpose: 'Provision and configure infrastructure',
+          capabilities: ['IaC generation', 'Resource provisioning', 'Configuration'],
+          tools: ['code generation for IaC'],
+          prompt: 'System: Generate infrastructure as code (Terraform/CloudFormation). Include auto-scaling, load balancing, and disaster recovery.'
+        }]
+      },
+      {
+        name: 'Release Execution',
+        inputs: ['Deployment scripts', 'Validated build'],
+        outputs: ['Deployed application', 'Deployment logs', 'Health check results'],
+        agents: [{
+          name: 'Release Manager',
+          purpose: 'Execute and monitor deployment process',
+          capabilities: ['Deployment execution', 'Health monitoring', 'Issue detection'],
+          tools: ['event creation', 'reminder creation'],
+          prompt: 'System: Execute deployment with health checks at each stage. Monitor for errors and trigger rollback if thresholds exceeded.'
+        }]
+      },
+      {
+        name: 'Post-Deployment Validation',
+        inputs: ['Deployed application', 'Smoke test suite'],
+        outputs: ['Validation results', 'Performance baseline', 'Incident reports'],
+        agents: [{
+          name: 'Validation Agent',
+          purpose: 'Verify successful deployment and system health',
+          capabilities: ['Smoke testing', 'Metric validation', 'Alert monitoring'],
+          tools: ['repl for testing', 'web_fetch for endpoints'],
+          prompt: 'System: Run smoke tests on production. Validate all critical paths function correctly. Compare metrics to baseline.'
+        }]
+      }
+    ]
+  },
+  {
+    id: 'operations',
+    name: 'Phase 6: Operations & Monitoring',
+    color: 'bg-pink',
+    stages: [
+      {
+        name: 'Observability',
+        inputs: ['Application logs', 'Metrics', 'Traces', 'User analytics'],
+        outputs: ['Dashboards', 'Alerts', 'Incident reports', 'SLI/SLO tracking'],
+        agents: [{
+          name: 'Observability Agent',
+          purpose: 'Monitor system health and performance',
+          capabilities: ['Log analysis', 'Anomaly detection', 'Alert management'],
+          tools: ['analysis tool', 'web_fetch for metrics'],
+          prompt: 'System: Monitor logs and metrics for anomalies. Correlate issues across services. Generate alerts for SLO violations.'
+        }]
+      },
+      {
+        name: 'Incident Management',
+        inputs: ['Alerts', 'Error logs', 'User reports'],
+        outputs: ['Incident tickets', 'Root cause analysis', 'Remediation plans'],
+        agents: [{
+          name: 'Incident Responder',
+          purpose: 'Triage and coordinate incident response',
+          capabilities: ['Issue triage', 'Root cause analysis', 'Communication'],
+          tools: ['web_search', 'conversation_search', 'message composition'],
+          prompt: 'System: Triage incidents by severity. Correlate with recent changes. Suggest remediation based on similar past incidents.'
+        }]
+      },
+      {
+        name: 'User Support',
+        inputs: ['User questions', 'Error reports', 'Feature requests'],
+        outputs: ['Support responses', 'Bug reports', 'Feature backlog'],
+        agents: [{
+          name: 'Support Agent',
+          purpose: 'Provide user assistance and gather feedback',
+          capabilities: ['Question answering', 'Issue classification', 'Feedback analysis'],
+          tools: ['conversation_search', 'web_search', 'documentation'],
+          prompt: 'System: Answer user questions using documentation. Classify issues as bugs, enhancement requests, or documentation gaps.'
+        }]
+      }
+    ]
+  },
+  {
+    id: 'analysis',
+    name: 'Phase 7: Analysis & Optimization',
+    color: 'bg-indigo',
+    stages: [
+      {
+        name: 'Usage Analysis',
+        inputs: ['Analytics data', 'User behavior', 'Performance metrics'],
+        outputs: ['Usage reports', 'Feature adoption', 'User journey maps'],
+        agents: [{
+          name: 'Analytics Agent',
+          purpose: 'Analyze user behavior and feature usage',
+          capabilities: ['Data analysis', 'Pattern recognition', 'Visualization'],
+          tools: ['analysis tool', 'CSV processing', 'React charts'],
+          prompt: 'System: Analyze user behavior patterns. Identify underutilized features, common user journeys, and friction points.'
+        }]
+      },
+      {
+        name: 'Performance Optimization',
+        inputs: ['Performance metrics', 'Bottleneck analysis'],
+        outputs: ['Optimization recommendations', 'Performance improvement plan'],
+        agents: [{
+          name: 'Performance Optimizer',
+          purpose: 'Identify and recommend performance improvements',
+          capabilities: ['Performance analysis', 'Optimization suggestions', 'Impact estimation'],
+          tools: ['analysis tool', 'web_search for best practices'],
+          prompt: 'System: Analyze performance metrics over time. Identify degradation trends. Recommend optimizations with estimated impact.'
+        }]
+      },
+      {
+        name: 'Business Intelligence',
+        inputs: ['Business metrics', 'KPIs', 'Revenue data'],
+        outputs: ['Business reports', 'ROI analysis', 'Strategic recommendations'],
+        agents: [{
+          name: 'Business Analyst',
+          purpose: 'Provide business insights and recommendations',
+          capabilities: ['Metric analysis', 'Trend identification', 'Forecasting'],
+          tools: ['analysis tool', 'visualization', 'Excel processing'],
+          prompt: 'System: Analyze business metrics against goals. Identify trends and anomalies. Forecast future performance and suggest strategic adjustments.'
+        }]
+      },
+      {
+        name: 'Technical Debt Assessment',
+        inputs: ['Code metrics', 'Issue backlog', 'Architecture'],
+        outputs: ['Tech debt report', 'Refactoring priorities', 'Modernization roadmap'],
+        agents: [{
+          name: 'Technical Debt Analyzer',
+          purpose: 'Assess and prioritize technical debt',
+          capabilities: ['Code quality analysis', 'Debt quantification', 'Priority recommendation'],
+          tools: ['code analysis', 'web_search'],
+          prompt: 'System: Analyze codebase for technical debt. Quantify impact on velocity and risk. Prioritize refactoring based on business value and risk.'
+        }]
+      }
+    ]
+  },
+  {
+    id: 'evolution',
+    name: 'Phase 8: Evolution & Iteration',
+    color: 'bg-teal',
+    stages: [
+      {
+        name: 'Feedback Synthesis',
+        inputs: ['User feedback', 'Analytics', 'Support tickets', 'Performance data'],
+        outputs: ['Insights report', 'Prioritized improvements', 'Feature requests'],
+        agents: [{
+          name: 'Feedback Synthesizer',
+          purpose: 'Aggregate and analyze all feedback sources',
+          capabilities: ['Multi-source analysis', 'Theme extraction', 'Priority scoring'],
+          tools: ['analysis tool', 'conversation_search'],
+          prompt: 'System: Synthesize feedback from all sources. Identify themes and pain points. Score by frequency, impact, and alignment with goals.'
+        }]
+      },
+      {
+        name: 'Roadmap Planning',
+        inputs: ['Business goals', 'User needs', 'Technical constraints', 'Market trends'],
+        outputs: ['Product roadmap', 'Feature specifications', 'Release plan'],
+        agents: [{
+          name: 'Roadmap Planner',
+          purpose: 'Create strategic product roadmap',
+          capabilities: ['Priority ranking', 'Resource allocation', 'Release planning'],
+          tools: ['web_search for trends', 'document generation', 'calendar'],
+          prompt: 'System: Create balanced roadmap considering user value, technical feasibility, and business goals. Plan releases with clear milestones.'
+        }]
+      },
+      {
+        name: 'Continuous Improvement',
+        inputs: ['Retrospective notes', 'Process metrics', 'Team feedback'],
+        outputs: ['Process improvements', 'Tool recommendations', 'Training plans'],
+        agents: [{
+          name: 'Process Optimizer',
+          purpose: 'Improve development processes and workflows',
+          capabilities: ['Process analysis', 'Bottleneck identification', 'Best practice recommendations'],
+          tools: ['conversation_search', 'web_search'],
+          prompt: 'System: Analyze team velocity and process metrics. Identify bottlenecks and inefficiencies. Recommend process improvements and tooling.'
+        }]
+      }
+    ]
+  }
+];
+
+        function renderPhases() {
+            const container = document.getElementById('phasesContainer');
+            
+            phases.forEach(phase => {
+                const phaseDiv = document.createElement('div');
+                phaseDiv.className = 'phase';
+                
+                const header = document.createElement('button');
+                header.className = `phase-header ${phase.color}`;
+                header.innerHTML = `
+                    <span>${phase.name}</span>
+                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                `;
+                header.onclick = () => togglePhase(phase.id);
+                
+                const content = document.createElement('div');
+                content.className = 'phase-content';
+                content.id = `phase-${phase.id}`;
+                
+                phase.stages.forEach(stage => {
+                    const stageDiv = document.createElement('div');
+                    stageDiv.className = 'stage';
+                    
+                    const stageTitle = document.createElement('h3');
+                    stageTitle.textContent = stage.name;
+                    stageDiv.appendChild(stageTitle);
+                    
+                    const grid = document.createElement('div');
+                    grid.className = 'stage-grid';
+                    
+                    // Inputs card
+                    const inputsCard = document.createElement('div');
+                    inputsCard.className = 'card inputs';
+                    inputsCard.innerHTML = `
+                        <h4>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            Inputs
+                        </h4>
+                        <ul>
+                            ${stage.inputs.map(input => `
+                                <li><span class="bullet">â€¢</span> <span>${input}</span></li>
+                            `).join('')}
+                        </ul>
+                    `;
+                    
+                    // Agents card
+                    const agentsCard = document.createElement('div');
+                    agentsCard.className = 'card agents';
+                    let agentsHTML = `
+                        <h4>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                                <rect x="9" y="9" width="6" height="6"></rect>
+                                <line x1="9" y1="1" x2="9" y2="4"></line>
+                                <line x1="15" y1="1" x2="15" y2="4"></line>
+                                <line x1="9" y1="20" x2="9" y2="23"></line>
+                                <line x1="15" y1="20" x2="15" y2="23"></line>
+                                <line x1="20" y1="9" x2="23" y2="9"></line>
+                                <line x1="20" y1="14" x2="23" y2="14"></line>
+                                <line x1="1" y1="9" x2="4" y2="9"></line>
+                                <line x1="1" y1="14" x2="4" y2="14"></line>
+                            </svg>
+                            AI Agents
+                        </h4>
+                        <div>
+                    `;
+                    
+                    stage.agents.forEach((agent, idx) => {
+                        const agentData = JSON.stringify(agent).replace(/'/g, '&#39;').replace(/"/g, '&quot;');
+                        agentsHTML += `
+                            <button class="agent-button" onclick='showAgent(${agentData})'>
+                                <div class="agent-name">${agent.name}</div>
+                                <div class="agent-purpose">${agent.purpose}</div>
+                            </button>
+                        `;
+                    });
+                    
+                    agentsHTML += '</div>';
+                    agentsCard.innerHTML = agentsHTML;
+                    
+                    // Outputs card
+                    const outputsCard = document.createElement('div');
+                    outputsCard.className = 'card outputs';
+                    outputsCard.innerHTML = `
+                        <h4>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            Outputs
+                        </h4>
+                        <ul>
+                            ${stage.outputs.map(output => `
+                                <li><span class="bullet">â€¢</span> <span>${output}</span></li>
+                            `).join('')}
+                        </ul>
+                    `;
+                    
+                    grid.appendChild(inputsCard);
+                    grid.appendChild(agentsCard);
+                    grid.appendChild(outputsCard);
+                    
+                    stageDiv.appendChild(grid);
+                    content.appendChild(stageDiv);
+                });
+                
+                phaseDiv.appendChild(header);
+                phaseDiv.appendChild(content);
+                container.appendChild(phaseDiv);
+            });
+        }
+
+        function togglePhase(phaseId) {
+            const content = document.getElementById(`phase-${phaseId}`);
+            const phaseElements = document.querySelectorAll('.phase');
+            
+            phaseElements.forEach(phase => {
+                const phaseContent = phase.querySelector(`#phase-${phaseId}`);
+                if (phaseContent) {
+                    const chevron = phase.querySelector('.chevron');
+                    phaseContent.classList.toggle('show');
+                    chevron.classList.toggle('expanded');
+                }
+            });
+        }
+
+        function showAgent(agent) {
+            document.getElementById('modalTitle').textContent = agent.name;
+            document.getElementById('modalSubtitle').textContent = agent.purpose;
+            
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <div class="modal-section">
+                    <h4>Capabilities</h4>
+                    <ul>
+                        ${agent.capabilities.map(cap => `<li>${cap}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h4>Tools Used</h4>
+                    <div class="tools">
+                        ${agent.tools.map(tool => `<span class="tool-tag">${tool}</span>`).join('')}
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h4>System Prompt</h4>
+                    <div class="prompt-box">${agent.prompt}</div>
+                </div>
+            `;
+            
+            document.getElementById('agentModal').classList.add('show');
+        }
+
+        function closeModal() {
+            document.getElementById('agentModal').classList.remove('show');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('agentModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', renderPhases);
+    </script>
+</body>
+</html>

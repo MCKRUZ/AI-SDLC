@@ -40,6 +40,7 @@ The **Agentic SDLC Framework** is a comprehensive, structured approach to softwa
 ### What Makes It "Agentic"?
 
 This framework uses **agentic AI** - specialized AI personas with:
+
 - **Clear roles and responsibilities** (Discovery Facilitator, Technical Architect, Planning Agent, etc.)
 - **Decision-making frameworks** (when to escalate, what quality standards to meet)
 - **Contextual awareness** (what information to load for each activity)
@@ -54,6 +55,7 @@ The AI agents **generate and propose**, while humans **validate and decide**. Th
 ### Problems This Solves
 
 ❌ **Traditional SDLC Issues**:
+
 - Requirements are vague and incomplete
 - Architecture decisions are poorly documented
 - Planning estimates are wildly inaccurate
@@ -62,6 +64,7 @@ The AI agents **generate and propose**, while humans **validate and decide**. Th
 - Teams reinvent processes each time
 
 ✅ **What This Framework Provides**:
+
 - **Structured discovery** ensures problems are validated before solutions
 - **Quality gates** prevent bad requirements from becoming bad code
 - **Traceability** maintains coherence from problem → requirement → task → code
@@ -84,6 +87,7 @@ The AI agents **generate and propose**, while humans **validate and decide**. Th
 ### 1. Tool-Agnostic Foundation
 
 The framework works **conversationally first**:
+
 - Core workflows use human-AI dialogue
 - Templates are markdown-based
 - Validation can be human-driven
@@ -94,6 +98,7 @@ Code and automation are **optional enhancements**, not requirements.
 ### 2. Specification Before Implementation
 
 Every phase produces **validated artifacts** before moving forward:
+
 - Phase 0: Validate the **problem** before designing solutions
 - Phase 1: Validate the **design** before planning implementation
 - Phase 2: Validate the **plan** before writing code
@@ -103,6 +108,7 @@ Every phase produces **validated artifacts** before moving forward:
 ### 3. Human Amplification, Not Replacement
 
 AI agents **generate**, humans **decide**:
+
 - Agents propose requirements → Humans approve
 - Agents design architecture → Humans review
 - Agents create plans → Humans validate
@@ -112,6 +118,7 @@ Domain experts remain in control. AI accelerates, humans ensure correctness.
 ### 4. Context Engineering
 
 Prevent **context collapse** through intentional design:
+
 - **Session splitting**: One focus per conversation
 - **Explicit context loading**: Load only what's needed when needed
 - **Delta updates**: Incremental refinement, not full rewrites
@@ -120,6 +127,7 @@ Prevent **context collapse** through intentional design:
 ### 5. Knowledge Accumulation
 
 The framework gets **smarter over time**:
+
 - **Memory files** capture organizational context
 - **Lessons learned** inform future estimates
 - **Prior projects** provide reference patterns
@@ -155,7 +163,9 @@ Each project makes the next one better.
 ### The Three Pillars
 
 #### 1. Primitives (`.sdlc/primitives/`)
+
 **Reusable building blocks** used across all projects:
+
 - **Agents**: Specialized AI personas (Discovery Facilitator, Architect, etc.)
 - **Templates**: Artifact structures (problem statements, specs, plans)
 - **Workflows**: Multi-step processes (discovery, architecture design)
@@ -163,7 +173,9 @@ Each project makes the next one better.
 - **Checklists**: Quality gates and completion criteria
 
 #### 2. Memory (`.sdlc/memory/`)
+
 **Organizational knowledge** that persists across projects:
+
 - **Organization Context**: Company info, culture, structure
 - **Technical Stack**: Current technologies, standards, constraints
 - **Prior Projects**: Historical data, outcomes, patterns
@@ -171,7 +183,9 @@ Each project makes the next one better.
 - **Decisions**: Key organizational and technical decisions
 
 #### 3. Config (`.sdlc/config/`)
+
 **Phase configurations** defining HOW each phase operates:
+
 - **phase0_config.md**: Discovery methodologies, interview frameworks
 - **phase1_config.md**: Requirements approaches, architecture standards
 - **phase2_config.md**: Task sizing, sprint planning, infrastructure
@@ -179,9 +193,11 @@ Each project makes the next one better.
 ### The SDLC Phases
 
 #### Phase 0: Discovery & Ideation
+
 **Validate the problem before designing solutions**
 
 **Key Activities**:
+
 - Stakeholder interviews
 - Problem statement definition
 - Feasibility assessment
@@ -189,6 +205,7 @@ Each project makes the next one better.
 - Success criteria definition
 
 **Deliverables**:
+
 - Problem statement (validated)
 - Feasibility report
 - Risk register
@@ -198,9 +215,11 @@ Each project makes the next one better.
 ---
 
 #### Phase 1: Specification & Design
+
 **Define WHAT to build and HOW it will be architected**
 
 **Key Activities**:
+
 - Requirements elicitation
 - Technical specification
 - System architecture design
@@ -208,6 +227,7 @@ Each project makes the next one better.
 - Project constitution creation
 
 **Deliverables**:
+
 - Technical specification
 - System architecture (C4 model)
 - Data model
@@ -218,9 +238,11 @@ Each project makes the next one better.
 ---
 
 #### Phase 2: Planning & Setup
+
 **Prepare infrastructure and create implementation plan**
 
 **Key Activities**:
+
 - Task decomposition
 - Sprint planning
 - Repository setup
@@ -228,6 +250,7 @@ Each project makes the next one better.
 - Quality framework establishment
 
 **Deliverables**:
+
 - Task breakdown
 - Sprint plan
 - Repository structure
@@ -248,25 +271,31 @@ These two file types work together but serve different purposes:
 **Purpose**: Define **HOW** phases operate
 
 **Characteristics**:
+
 - Organization-wide settings
 - Long-lived (months to years)
 - Infrequent updates (when methodology changes)
 - Shared across all projects
 
 **Files**:
+
 - `phase0_config.md` - Discovery methodologies, quality standards
 - `phase1_config.md` - Requirements approaches, architecture frameworks
 - `phase2_config.md` - Task sizing, sprint planning, infrastructure standards
 
 **Example Content**:
+
 ```markdown
 ## Interview Methodology
+
 Current Mode: jobs-to-be-done + five-whys
 
 ## Feasibility Scoring
+
 Minimum Threshold: 3.0/5.0 average across dimensions
 
 ## Quality Standards
+
 Problem Statement Score: 80/100 minimum
 ```
 
@@ -277,31 +306,37 @@ Problem Statement Score: 80/100 minimum
 **Purpose**: Track **WHERE** the project currently is
 
 **Characteristics**:
+
 - Project-specific
 - Short-lived (duration of project)
 - Frequent updates (after each milestone)
 - Unique per project
 
 **Files**:
+
 - `phase0-context.md` - Current discovery progress
 - `phase1-context.md` - Current specification status
 - `phase2-context.md` - Current planning status
 
 **Example Content**:
+
 ```markdown
 ## Current Status
+
 Phase 0 Stage: Problem Statement Refinement
 Interviews Complete: 5/7
 Problem Statement Version: v3
 Feasibility Score: 3.8/5.0
 
 ## Next Steps
+
 - Complete remaining 2 interviews
 - Finalize problem statement v4
 - Run validation checklist
 ```
 
 **Think of it this way**:
+
 - **Config** = The rules of the game (chess rules)
 - **Context** = The current board state (your current game position)
 
@@ -312,7 +347,9 @@ Feasibility Score: 3.8/5.0
 Based on GitHub's agentic primitives framework:
 
 #### 1. Instructions Files
+
 Define specialized AI agent personas:
+
 - **Role and responsibilities**: What this agent does
 - **Decision-making logic**: When to act autonomously vs escalate
 - **Quality standards**: What "good" looks like
@@ -324,7 +361,9 @@ Define specialized AI agent personas:
 ---
 
 #### 2. Chat Modes
+
 Focused interaction patterns for specific contexts:
+
 - **Purpose**: When to use this mode
 - **Prerequisites**: What context to load
 - **Interaction patterns**: How to engage effectively
@@ -336,7 +375,9 @@ Focused interaction patterns for specific contexts:
 ---
 
 #### 3. Workflows
+
 Multi-step orchestration prompts:
+
 - **Entry criteria**: What's needed to start
 - **Process steps**: Detailed step-by-step instructions
 - **Decision points**: Where human input is required
@@ -348,7 +389,9 @@ Multi-step orchestration prompts:
 ---
 
 #### 4. Memory Files
+
 Persistent context loaded across sessions:
+
 - **Organization context**: Company info, culture
 - **Technical stack**: Current technologies
 - **Prior projects**: Historical outcomes
@@ -360,7 +403,9 @@ Persistent context loaded across sessions:
 ---
 
 #### 5. Templates
+
 Reusable artifact structures:
+
 - **Required sections**: What must be included
 - **Guidance text**: How to fill each section
 - **Examples**: Reference content
@@ -377,19 +422,22 @@ Projects are broken into **focused sessions** to prevent context collapse:
 #### Session Splitting Strategies
 
 **When to Split**:
+
 - Switching between major artifacts (spec → architecture)
 - Moving from creation to validation mode
 - Phase transitions (Phase 0 → Phase 1)
 - Context window exceeds 75% usage
 
 **How to Split**:
+
 1. Complete current activity
 2. Save all artifacts
 3. Update context file with current state
 4. Start new session
 5. Load only relevant context for next activity
 
-**Example**: 
+**Example**:
+
 - Session 1: Conduct 3 stakeholder interviews
 - Session 2: Synthesize problem statement from interviews
 - Session 3: Conduct 3 more interviews
@@ -402,6 +450,7 @@ Projects are broken into **focused sessions** to prevent context collapse:
 Each phase has **validation checkpoints** before proceeding:
 
 #### Phase 0 Quality Gate
+
 - ✅ All key stakeholders interviewed
 - ✅ Problem statement score ≥80/100
 - ✅ Feasibility score ≥3.0/5.0
@@ -410,6 +459,7 @@ Each phase has **validation checkpoints** before proceeding:
 - ✅ Stakeholder alignment achieved
 
 #### Phase 1 Quality Gate
+
 - ✅ All artifacts score ≥80/100
 - ✅ INVEST score ≥12/18 for all user stories
 - ✅ Traceability ≥90% (Phase 0 → Phase 1)
@@ -418,6 +468,7 @@ Each phase has **validation checkpoints** before proceeding:
 - ✅ All approvals obtained
 
 #### Phase 2 Quality Gate
+
 - ✅ All requirements mapped to tasks (100%)
 - ✅ All tasks assigned to sprints
 - ✅ Dependencies resolved
@@ -488,16 +539,21 @@ project-root/
 ### Key Directories Explained
 
 #### `.sdlc/primitives/agents/`
+
 Contains all agent instruction files organized by phase. Each agent has a specialized role with clear responsibilities, decision-making logic, and step-by-step workflows.
 
 #### `.sdlc/primitives/templates/`
+
 Provides structure for all deliverables. Templates include guidance text, examples, and validation criteria to ensure consistent, high-quality artifacts.
 
 #### `.sdlc/memory/`
+
 Persistent organizational knowledge that gets smarter over time. Memory files are loaded across all projects to provide relevant context and lessons learned.
 
 #### `projects/[project-name]/phase[N]/`
+
 Per-project work organized by phase. Each phase has:
+
 - **Context file**: Tracks current state
 - **Interviews/**: Raw inputs (Phase 0 only)
 - **Working/**: Iterative drafts with version history
@@ -516,42 +572,50 @@ Per-project work organized by phase. Each phase has:
 
 **Key Agents**:
 
-| Phase | Agent | Role |
-|-------|-------|------|
-| 0 | Discovery Facilitator | Conducts interviews, synthesizes insights |
-| 0 | Feasibility Analyzer | Assesses technical/business/resource feasibility |
-| 1 | Analyst Agent | Creates specifications and user stories |
-| 1 | Architect Agent | Designs system architecture |
-| 1 | PM Agent | Creates product requirements and prioritizes |
-| 1 | Constitution Agent | Defines project values and constraints |
-| 1 | Validator Agent | Validates artifacts against quality standards |
-| 2 | Planning Agent | Decomposes tasks and plans sprints |
-| 2 | DevOps Scaffolder | Sets up repository and infrastructure |
-| 2 | Quality Architect | Designs testing strategy |
+| Phase | Agent                 | Role                                             |
+| ----- | --------------------- | ------------------------------------------------ |
+| 0     | Discovery Facilitator | Conducts interviews, synthesizes insights        |
+| 0     | Feasibility Analyzer  | Assesses technical/business/resource feasibility |
+| 1     | Analyst Agent         | Creates specifications and user stories          |
+| 1     | Architect Agent       | Designs system architecture                      |
+| 1     | PM Agent              | Creates product requirements and prioritizes     |
+| 1     | Constitution Agent    | Defines project values and constraints           |
+| 1     | Validator Agent       | Validates artifacts against quality standards    |
+| 2     | Planning Agent        | Decomposes tasks and plans sprints               |
+| 2     | DevOps Scaffolder     | Sets up repository and infrastructure            |
+| 2     | Quality Architect     | Designs testing strategy                         |
 
 **Structure**:
+
 ```markdown
 # Agent Name
 
 ## Role and Responsibilities
+
 [What this agent does]
 
 ## Scope and Boundaries
+
 [What's in scope, what's out of scope]
 
 ## Decision-Making Logic
+
 [When to act autonomously vs escalate]
 
 ## Workflows
+
 [Step-by-step processes]
 
 ## Quality Standards
+
 [What "good" looks like]
 
 ## Context Loading
+
 [What information to load]
 
 ## Examples
+
 [Reference patterns]
 ```
 
@@ -564,6 +628,7 @@ Per-project work organized by phase. Each phase has:
 **Purpose**: Define how each phase operates - methodologies, standards, thresholds.
 
 **Key Sections**:
+
 - **Phase Mode**: Approach to use (discovery-driven, parallel-tracks, etc.)
 - **Agent Settings**: Preferences for each agent (methodologies, frameworks)
 - **Workflow Orchestration**: How activities sequence and coordinate
@@ -571,6 +636,7 @@ Per-project work organized by phase. Each phase has:
 - **Handoff Criteria**: Requirements to proceed to next phase
 
 **When to Modify**:
+
 - Team expertise changes
 - Project complexity varies
 - Organizational standards evolve
@@ -585,6 +651,7 @@ Per-project work organized by phase. Each phase has:
 **Purpose**: Track the current state of a specific project phase.
 
 **Key Sections**:
+
 - **Current Status**: What stage we're in, what's being worked on
 - **Artifact Status**: Completion %, quality scores, versions
 - **Progress Tracking**: Milestones, completion estimates
@@ -593,6 +660,7 @@ Per-project work organized by phase. Each phase has:
 - **Context Loading Guide**: What agents should load for activities
 
 **Update Frequency**:
+
 - After each major milestone
 - After each artifact iteration
 - When blockers arise or resolve
@@ -610,23 +678,27 @@ Per-project work organized by phase. Each phase has:
 **Key Templates by Phase**:
 
 **Phase 0**:
+
 - `problem-statement_template.md`
 - `interview-transcript_template.md`
 - `feasibility-report_template.md`
 - `risk-register_template.md`
 
 **Phase 1**:
+
 - `spec_template.md`
 - `architecture_template.md`
 - `prd_template.md`
 - `constitution_template.md`
 
 **Phase 2**:
+
 - `task-breakdown_template.md`
 - `sprint-plan_template.md`
 - `test-plan_template.md`
 
 **Structure**:
+
 - Required sections with guidance text
 - Optional sections marked clearly
 - Examples where helpful
@@ -641,6 +713,7 @@ Per-project work organized by phase. Each phase has:
 **Purpose**: Multi-step orchestration prompts for complex activities.
 
 **Key Workflows**:
+
 - `discovery-workflow_prompt.md` - End-to-end Phase 0 process
 - `requirements-discovery_prompt.md` - Creating specifications
 - `architecture-design_prompt.md` - System architecture design
@@ -648,6 +721,7 @@ Per-project work organized by phase. Each phase has:
 - `sprint-planning_prompt.md` - Sprint planning and capacity management
 
 **Structure**:
+
 - Entry criteria (what's needed to start)
 - Process steps (detailed instructions)
 - Decision points (where human input required)
@@ -663,6 +737,7 @@ Per-project work organized by phase. Each phase has:
 **Purpose**: Ensure nothing is missed before proceeding to next phase.
 
 **Coverage**:
+
 - Artifact completeness
 - Quality scoring results
 - Traceability validation
@@ -680,18 +755,21 @@ The framework supports three usage patterns, from fully manual to fully automate
 
 ## Pattern 1: Conversational (Fully Manual)
 
-**Best For**: 
+**Best For**:
+
 - Learning the system
 - Solo developers or very small teams
 - Simple projects
 - Maximum control and transparency
 
 **Requirements**:
+
 - Access to AI assistant (Claude, ChatGPT, etc.)
 - Ability to manage files manually
 - Text editor for markdown files
 
 **Advantages**:
+
 - ✅ No tooling required
 - ✅ Full visibility into every step
 - ✅ Learn methodology deeply
@@ -699,6 +777,7 @@ The framework supports three usage patterns, from fully manual to fully automate
 - ✅ No code to maintain
 
 **Disadvantages**:
+
 - ❌ Manual file management
 - ❌ Repetitive context loading
 - ❌ Prone to human error
@@ -750,8 +829,8 @@ We're ready to begin. Let's start with planning our stakeholder interviews.
 **3. Conduct Interview**
 
 ```
-I'm about to interview our CEO about this project. 
-Please guide me through the interview using the Jobs-to-be-Done 
+I'm about to interview our CEO about this project.
+Please guide me through the interview using the Jobs-to-be-Done
 and Five Whys methodology.
 
 [AI guides interview with structured questions]
@@ -778,7 +857,7 @@ using the interview template.
 After 3-5 interviews:
 
 ```
-I've completed interviews with CEO, CTO, and 3 end users. 
+I've completed interviews with CEO, CTO, and 3 end users.
 Here are all the transcripts:
 [paste interview transcripts]
 
@@ -806,7 +885,7 @@ Please refine the problem statement to address this feedback.
 **7. Assess Feasibility**
 
 ```
-Please assess the feasibility of solving this problem using the 
+Please assess the feasibility of solving this problem using the
 four-dimension framework (technical, business, resource, timeline).
 
 Problem Statement: [paste final problem statement]
@@ -851,18 +930,21 @@ Here are all our artifacts:
 ### Pattern 1 Best Practices
 
 **Context Management**:
+
 - Start new conversation when switching major activities
 - Keep conversation focused on single artifact
 - Save all work incrementally to files
 - Update context file regularly
 
 **File Organization**:
+
 - Use consistent naming conventions
 - Keep version history in working/ directory
 - Move only validated artifacts to artifacts/
 - Document decisions as you go
 
 **Quality Assurance**:
+
 - Use checklists religiously
 - Get peer reviews on major artifacts
 - Validate traceability manually
@@ -873,17 +955,20 @@ Here are all our artifacts:
 ## Pattern 2: Semi-Automated (CLI Tools)
 
 **Best For**:
+
 - Small to medium teams
 - Regular project cadence
 - Teams with some technical capability
 - Balance of control and efficiency
 
 **Requirements**:
+
 - Command-line interface (CLI) tool
 - Basic terminal/command prompt skills
 - Git for version control
 
 **Advantages**:
+
 - ✅ Faster than manual
 - ✅ Consistent context loading
 - ✅ Automated validation
@@ -891,6 +976,7 @@ Here are all our artifacts:
 - ✅ Less human error
 
 **Disadvantages**:
+
 - ❌ Requires CLI tool installation and setup
 - ❌ Less visibility into process
 - ❌ Learning curve for commands
@@ -1187,18 +1273,21 @@ sdlc config reset [--phase=<N>]
 ### Pattern 2 Best Practices
 
 **Configuration**:
+
 - Customize configs before first project
 - Review configs after each project (lessons learned)
 - Keep configs under version control
 - Document any deviations from defaults
 
 **Team Collaboration**:
+
 - Use shared git repository for projects
 - Commit after each major milestone
 - Use feature branches for parallel work
 - Tag releases at phase completions
 
 **Automation**:
+
 - Add custom commands for common tasks
 - Create project templates for similar work
 - Integrate with existing tools (Jira, Slack)
@@ -1209,18 +1298,21 @@ sdlc config reset [--phase=<N>]
 ## Pattern 3: Fully Automated (API/SDK)
 
 **Best For**:
+
 - Large teams and enterprises
 - High project volume
 - Organizations with technical capability
 - Integration with existing tools
 
 **Requirements**:
+
 - Custom application using API/SDK
 - Development resources
 - Infrastructure for hosting
 - Integration architecture
 
 **Advantages**:
+
 - ✅ Highly automated workflow
 - ✅ Integrates with existing tools
 - ✅ Scalable to many projects
@@ -1229,6 +1321,7 @@ sdlc config reset [--phase=<N>]
 - ✅ Custom business logic
 
 **Disadvantages**:
+
 - ❌ Significant upfront investment
 - ❌ Complex to build and maintain
 - ❌ Less flexible
@@ -1265,20 +1358,20 @@ public class Program
     {
         // 1. Initialize Project
         var project = await InitializeProjectAsync();
-        
+
         // 2. Run Phase 0 (Discovery)
         var phase0Result = await RunPhase0Async(project);
-        
+
         if (phase0Result.GoDecision == GoDecision.Go)
         {
             // 3. Run Phase 1 (Specification)
             var phase1Result = await RunPhase1Async(project, phase0Result);
-            
+
             if (phase1Result.ValidationStatus == ValidationStatus.Passed)
             {
                 // 4. Run Phase 2 (Planning)
                 var phase2Result = await RunPhase2Async(project, phase1Result);
-                
+
                 if (phase2Result.ReadyForPhase3)
                 {
                     // 5. Kickoff Phase 3 (Implementation)
@@ -1303,7 +1396,7 @@ public static async Task<Phase0Result> RunPhase0Async(Project project)
         options.MinimumStakeholderInterviews = 5;
         options.AutoSynthesis = true;
     });
-    
+
     // Load organizational context
     await phase0.LoadContextAsync(new[] {
         "organization_context.md",
@@ -1311,7 +1404,7 @@ public static async Task<Phase0Result> RunPhase0Async(Project project)
         "prior-projects_memory.md",
         "lessons-learned_memory.md"
     });
-    
+
     // Define stakeholders
     var stakeholders = new[] {
         new Stakeholder { Role = "CEO", Name = "Jane Doe", Priority = Priority.Critical },
@@ -1320,29 +1413,29 @@ public static async Task<Phase0Result> RunPhase0Async(Project project)
         new Stakeholder { Role = "Lead Developer", Name = "Mike Chen", Priority = Priority.Medium },
         new Stakeholder { Role = "Support Lead", Name = "Emily Brown", Priority = Priority.Medium }
     };
-    
+
     // Schedule and conduct interviews
     var interviews = new List<Interview>();
     foreach (var stakeholder in stakeholders)
     {
         // Schedule interview
         var appointment = await phase0.ScheduleInterviewAsync(stakeholder, duration: 60);
-        
+
         // Send calendar invite with interview guide
         await SendInterviewInviteAsync(stakeholder, appointment);
-        
+
         // Conduct interview (interactive or recorded)
         var interview = await phase0.ConductInterviewAsync(
             stakeholder: stakeholder,
             framework: InterviewFramework.JobsToBeDonePlusFiveWhys,
             duration: 60
         );
-        
+
         interviews.Add(interview);
-        
+
         // Auto-save transcript
         await interview.SaveTranscriptAsync($"interviews/{interviews.Count:000}-{stakeholder.Role.ToLower()}-interview.md");
-        
+
         // Update context
         await phase0.UpdateContextAsync(context =>
         {
@@ -1350,71 +1443,71 @@ public static async Task<Phase0Result> RunPhase0Async(Project project)
             context.LastUpdate = DateTime.Now;
         });
     }
-    
+
     // Synthesize problem statement
     var problemStatement = await phase0.SynthesizeProblemStatementAsync(
         interviews: interviews,
         applyFiveWhys: true
     );
-    
+
     // Save version 1
     await problemStatement.SaveAsync("working/problem-statement-v1.md");
-    
+
     // Iterative refinement loop
     int version = 1;
     while (!await problemStatement.IsValidatedAsync())
     {
         // Get stakeholder feedback
         var feedback = await GetStakeholderFeedbackAsync(problemStatement, stakeholders);
-        
+
         // Refine problem statement
         problemStatement = await problemStatement.RefineAsync(feedback);
-        
+
         version++;
         await problemStatement.SaveAsync($"working/problem-statement-v{version}.md");
-        
+
         // Prevent infinite loops
         if (version >= 5) break;
     }
-    
+
     // Finalize problem statement
     var finalProblemStatement = await problemStatement.FinalizeAsync();
     await finalProblemStatement.SaveAsync("artifacts/problem-statement.final.md");
-    
+
     // Assess feasibility
     var feasibilityReport = await phase0.AssessFeasibilityAsync(
         problemStatement: finalProblemStatement,
         framework: FeasibilityFramework.FourDimension
     );
-    
+
     await feasibilityReport.SaveAsync("artifacts/feasibility-report.md");
-    
+
     // Identify and assess risks
     var riskRegister = await phase0.IdentifyRisksAsync(
         problemStatement: finalProblemStatement,
         feasibilityReport: feasibilityReport
     );
-    
+
     await riskRegister.SaveAsync("artifacts/risk-register.md");
-    
+
     // Define success criteria
     var successCriteria = await phase0.DefineSuccessCriteriaAsync(
         problemStatement: finalProblemStatement,
         stakeholders: stakeholders,
         ensureSMART: true
     );
-    
+
     await successCriteria.SaveAsync("artifacts/success-criteria.md");
-    
+
     // Create stakeholder alignment document
     var alignment = await phase0.AssessStakeholderAlignmentAsync(
         problemStatement: finalProblemStatement,
         stakeholders: stakeholders,
         interviews: interviews
     );
-    
+
     await alignment.SaveAsync("artifacts/stakeholder-alignment.md");
-    
+
     // Validate Phase 0
     var validation = await phase0.ValidateAsync(new ValidationOptions
     {
@@ -1423,9 +1516,9 @@ public static async Task<Phase0Result> RunPhase0Async(Project project)
         CalculateQualityScores = true,
         GenerateReport = true
     });
-    
+
     await validation.SaveReportAsync("validation/phase0-validation-report.md");
-    
+
     // Get approvals
     var approvals = await GetApprovalsAsync(
         phase: phase0,
@@ -1436,12 +1529,12 @@ public static async Task<Phase0Result> RunPhase0Async(Project project)
             successCriteria
         }
     );
-    
+
     await approvals.SaveAsync("validation/phase0-approval.md");
-    
+
     // Complete Phase 0
     await phase0.CompleteAsync();
-    
+
     return new Phase0Result
     {
         ProblemStatement = finalProblemStatement,
@@ -1459,7 +1552,7 @@ public static async Task<Phase0Result> RunPhase0Async(Project project)
 
 ```csharp
 public static async Task<Phase1Result> RunPhase1Async(
-    Project project, 
+    Project project,
     Phase0Result phase0Result)
 {
     // Initialize Phase 1
@@ -1469,98 +1562,98 @@ public static async Task<Phase1Result> RunPhase1Async(
         options.ArchitectureFramework = ArchitectureFramework.C4Model;
         options.PrioritizationFramework = PrioritizationFramework.RICE;
     });
-    
+
     // Load Phase 0 artifacts
     await phase1.LoadPhase0ArtifactsAsync(phase0Result);
-    
+
     // === Parallel Track 1: Requirements Specification ===
     var specTask = Task.Run(async () =>
     {
         // Create specification using Analyst Agent
         var analyst = await phase1.GetAgentAsync<AnalystAgent>();
-        
+
         var spec = await analyst.CreateSpecificationAsync(
             problemStatement: phase0Result.ProblemStatement,
             successCriteria: phase0Result.SuccessCriteria
         );
-        
+
         // Validate INVEST compliance
         await spec.ValidateInvestComplianceAsync(minimumScore: 12);
-        
+
         // Save final spec
         await spec.SaveAsync("artifacts/spec.md");
-        
+
         return spec;
     });
-    
+
     // === Parallel Track 2: Architecture Design ===
     var architectureTask = Task.Run(async () =>
     {
         // Create architecture using Architect Agent
         var architect = await phase1.GetAgentAsync<ArchitectAgent>();
-        
+
         var architecture = await architect.DesignArchitectureAsync(
             problemStatement: phase0Result.ProblemStatement,
             constraints: phase0Result.Constraints,
             framework: ArchitectureFramework.C4Model
         );
-        
+
         // Create ADRs for key decisions
         var adrs = await architect.DocumentDecisionsAsync(architecture);
-        
+
         foreach (var adr in adrs)
         {
             await adr.SaveAsync($"adrs/{adr.Number:000}-{adr.Slug}.md");
         }
-        
+
         // Save architecture
         await architecture.SaveAsync("artifacts/architecture.md");
-        
+
         return architecture;
     });
-    
+
     // Wait for both tracks
     await Task.WhenAll(specTask, architectureTask);
-    
+
     var spec = await specTask;
     var architecture = await architectureTask;
-    
+
     // === Create Constitution ===
     var constitutionAgent = await phase1.GetAgentAsync<ConstitutionAgent>();
-    
+
     var constitution = await constitutionAgent.CreateConstitutionAsync(
         phase0Artifacts: phase0Result,
         spec: spec,
         architecture: architecture
     );
-    
+
     await constitution.SaveAsync("artifacts/constitution.md");
-    
+
     // === Create PRD ===
     var pmAgent = await phase1.GetAgentAsync<PMAgent>();
-    
+
     var prd = await pmAgent.CreatePRDAsync(
         spec: spec,
         architecture: architecture,
         constitution: constitution,
         prioritizationFramework: PrioritizationFramework.RICE
     );
-    
+
     await prd.SaveAsync("artifacts/prd.md");
-    
+
     // === Create Data Model ===
     var dataModel = await architecture.ExtractDataModelAsync();
     await dataModel.SaveAsync("artifacts/data-model.md");
-    
+
     // === Create API Specification ===
     var apiSpec = await architecture.GenerateAPISpecificationAsync(
         format: APISpecFormat.OpenAPI30
     );
     await apiSpec.SaveAsync("artifacts/api-spec.json");
-    
+
     // === Validate Phase 1 ===
     var validator = await phase1.GetAgentAsync<ValidatorAgent>();
-    
+
     var validation = await validator.ValidateAsync(new ValidationOptions
     {
         ValidateCompleteness = true,
@@ -1569,12 +1662,12 @@ public static async Task<Phase1Result> RunPhase1Async(
         ValidateQuality = true,
         MinimumQualityScore = 80
     });
-    
+
     await validation.SaveReportAsync("validation/phase1-validation-report.md");
-    
+
     // === Complete Phase 1 ===
     await phase1.CompleteAsync();
-    
+
     return new Phase1Result
     {
         Spec = spec,
@@ -1605,42 +1698,42 @@ public static async Task<Phase2Result> RunPhase2Async(
         options.TeamSize = 5;
         options.VelocityEstimation = VelocityEstimation.Conservative;
     });
-    
+
     // Load Phase 1 artifacts
     await phase2.LoadPhase1ArtifactsAsync(phase1Result);
-    
+
     // === Parallel Workstream 1: Planning ===
     var planningTask = Task.Run(async () =>
     {
         var planningAgent = await phase2.GetAgentAsync<PlanningAgent>();
-        
+
         // Decompose requirements into tasks
         var taskBreakdown = await planningAgent.DecomposeTasksAsync(
             spec: phase1Result.Spec,
             architecture: phase1Result.Architecture
         );
-        
+
         await taskBreakdown.SaveAsync("artifacts/task-breakdown.md");
-        
+
         // Map dependencies
         var dependencyMap = await planningAgent.MapDependenciesAsync(taskBreakdown);
         await dependencyMap.SaveAsync("artifacts/dependency-map.md");
-        
+
         // Plan sprints
         var sprintPlan = await planningAgent.PlanSprintsAsync(
             taskBreakdown: taskBreakdown,
             dependencies: dependencyMap,
             teamCapacity: options.TeamSize * 8 // 8 points per dev per sprint
         );
-        
+
         await sprintPlan.SaveAsync("artifacts/sprint-plan.md");
-        
+
         // Generate individual sprint plans
         foreach (var sprint in sprintPlan.Sprints)
         {
             await sprint.SaveAsync($"artifacts/sprints/sprint-{sprint.Number}-plan.md");
         }
-        
+
         return new PlanningArtifacts
         {
             TaskBreakdown = taskBreakdown,
@@ -1648,35 +1741,35 @@ public static async Task<Phase2Result> RunPhase2Async(
             SprintPlan = sprintPlan
         };
     });
-    
+
     // === Parallel Workstream 2: Infrastructure ===
     var infraTask = Task.Run(async () =>
     {
         var devOpsAgent = await phase2.GetAgentAsync<DevOpsScaffolderAgent>();
-        
+
         // Set up repository
         var repoStructure = await devOpsAgent.SetupRepositoryAsync(
             architecture: phase1Result.Architecture,
             branchingStrategy: BranchingStrategy.GitHubFlow
         );
-        
+
         await repoStructure.SaveAsync("artifacts/repository-structure.md");
-        
+
         // Provision infrastructure
         var environmentConfig = await devOpsAgent.ProvisionInfrastructureAsync(
             architecture: phase1Result.Architecture,
             environments: new[] { "dev", "staging", "prod" },
             asCode: true
         );
-        
+
         await environmentConfig.SaveAsync("artifacts/environment-config.md");
-        
+
         // Set up CI/CD
         var cicdConfig = await devOpsAgent.SetupCICDAsync(
             repository: repoStructure,
             environments: environmentConfig
         );
-        
+
         return new InfrastructureArtifacts
         {
             RepositoryStructure = repoStructure,
@@ -1684,43 +1777,43 @@ public static async Task<Phase2Result> RunPhase2Async(
             CICDConfig = cicdConfig
         };
     });
-    
+
     // === Parallel Workstream 3: Quality ===
     var qualityTask = Task.Run(async () =>
     {
         var qualityAgent = await phase2.GetAgentAsync<QualityArchitectAgent>();
-        
+
         // Create test plan
         var testPlan = await qualityAgent.CreateTestPlanAsync(
             spec: phase1Result.Spec,
             architecture: phase1Result.Architecture,
             strategy: TestStrategy.TestPyramidWithE2E
         );
-        
+
         await testPlan.SaveAsync("artifacts/test-plan.md");
-        
+
         // Define quality gates
         var qualityGates = await qualityAgent.DefineQualityGatesAsync(
             testPlan: testPlan,
             automationLevel: AutomationLevel.Progressive
         );
-        
+
         await qualityGates.SaveAsync("artifacts/quality-gates.md");
-        
+
         return new QualityArtifacts
         {
             TestPlan = testPlan,
             QualityGates = qualityGates
         };
     });
-    
+
     // Wait for all workstreams
     await Task.WhenAll(planningTask, infraTask, qualityTask);
-    
+
     var planningArtifacts = await planningTask;
     var infraArtifacts = await infraTask;
     var qualityArtifacts = await qualityTask;
-    
+
     // === Validate Phase 2 ===
     var validation = await phase2.ValidateAsync(new ValidationOptions
     {
@@ -1729,12 +1822,12 @@ public static async Task<Phase2Result> RunPhase2Async(
         ValidateInfrastructure = true,
         ValidateQualityFramework = true
     });
-    
+
     await validation.SaveReportAsync("validation/phase2-validation-report.md");
-    
+
     // === Complete Phase 2 ===
     await phase2.CompleteAsync();
-    
+
     return new Phase2Result
     {
         TaskBreakdown = planningArtifacts.TaskBreakdown,
@@ -1760,14 +1853,14 @@ public static async Task<Phase2Result> RunPhase2Async(
 public static async Task SyncWithJiraAsync(Phase2Result phase2Result)
 {
     var jiraClient = new JiraClient(config.JiraApiKey);
-    
+
     // Create epic for project
     var epic = await jiraClient.CreateEpicAsync(new Epic
     {
         Summary = project.Name,
         Description = phase2Result.TaskBreakdown.Summary
     });
-    
+
     // Create stories and tasks
     foreach (var task in phase2Result.TaskBreakdown.Tasks)
     {
@@ -1779,14 +1872,14 @@ public static async Task SyncWithJiraAsync(Phase2Result phase2Result)
             Epic = epic,
             AcceptanceCriteria = task.AcceptanceCriteria
         });
-        
+
         // Link dependencies
         foreach (var dependency in task.Dependencies)
         {
             await jiraClient.CreateLinkAsync(story, dependency, LinkType.Blocks);
         }
     }
-    
+
     // Create sprints
     foreach (var sprint in phase2Result.SprintPlan.Sprints)
     {
@@ -1797,7 +1890,7 @@ public static async Task SyncWithJiraAsync(Phase2Result phase2Result)
             StartDate = sprint.StartDate,
             EndDate = sprint.EndDate
         });
-        
+
         // Assign tasks to sprint
         foreach (var task in sprint.Tasks)
         {
@@ -1813,16 +1906,16 @@ public static async Task SyncWithJiraAsync(Phase2Result phase2Result)
 public static async Task SyncWithAzureDevOpsAsync(Phase2Result phase2Result)
 {
     var adoClient = new AzureDevOpsClient(config.AdoToken);
-    
+
     // Create project
     var adoProject = await adoClient.CreateProjectAsync(project.Name);
-    
+
     // Create repository
     var repo = await adoClient.CreateRepositoryAsync(
         project: adoProject,
         structure: phase2Result.RepositoryStructure
     );
-    
+
     // Set up pipelines
     foreach (var pipeline in phase2Result.CICDConfig.Pipelines)
     {
@@ -1831,10 +1924,10 @@ public static async Task SyncWithAzureDevOpsAsync(Phase2Result phase2Result)
             definition: pipeline
         );
     }
-    
+
     // Create work items
     var workItemClient = adoClient.GetWorkItemClient();
-    
+
     foreach (var task in phase2Result.TaskBreakdown.Tasks)
     {
         await workItemClient.CreateWorkItemAsync(new WorkItem
@@ -1855,24 +1948,28 @@ public static async Task SyncWithAzureDevOpsAsync(Phase2Result phase2Result)
 ### Pattern 3 Best Practices
 
 **Architecture**:
+
 - Use microservices or modular architecture
 - Implement proper error handling and retries
 - Log all operations for audit trail
 - Design for extensibility
 
 **Integration**:
+
 - Use webhooks for real-time sync
 - Implement idempotent operations
 - Handle API rate limits gracefully
 - Cache frequently accessed data
 
 **Monitoring**:
+
 - Track project health metrics
 - Monitor agent performance
 - Alert on validation failures
 - Generate analytics dashboards
 
 **Security**:
+
 - Encrypt sensitive data
 - Implement role-based access control
 - Audit all operations
@@ -1885,16 +1982,19 @@ public static async Task SyncWithAzureDevOpsAsync(Phase2Result phase2Result)
 ### Prerequisites
 
 **For All Patterns**:
+
 - Access to AI assistant (Claude, ChatGPT, etc.)
 - Basic understanding of SDLC concepts
 - Text editor (VS Code, Sublime, etc.)
 
 **For Pattern 2 (CLI)**:
+
 - Node.js or .NET runtime
 - Command-line skills
 - Git (recommended)
 
 **For Pattern 3 (API)**:
+
 - Development skills (C#, TypeScript, Python)
 - API/SDK from framework provider
 - Infrastructure for hosting
@@ -1913,6 +2013,7 @@ cd agentic-sdlc
 **Step 2: Review Core Files**
 
 Read these files to understand the system:
+
 - `.sdlc/reference/README.md` (this file)
 - `.sdlc/reference/directory-structure.md`
 - `.sdlc/reference/sdlc-workflow.html`
@@ -1920,15 +2021,17 @@ Read these files to understand the system:
 **Step 3: Customize Config**
 
 Update config files for your organization:
-- `.sdlc/config/phase0_config.md`
-- `.sdlc/config/phase1_config.md`
-- `.sdlc/config/phase2_config.md`
+
+- `.sdlc/config/phase0.config.md`
+- `.sdlc/config/phase1.config.md`
+- `.sdlc/config/phase2.config.md`
 
 **Step 4: Fill Memory Files**
 
 Add organizational context:
-- `.sdlc/memory/organization_context.md`
-- `.sdlc/memory/technical-stack_context.md`
+
+- `.sdlc/memory/organization.context.md`
+- `.sdlc/memory/technical-stack.context.md`
 
 **Step 5: Start Your First Project**
 
@@ -1954,7 +2057,9 @@ cp .sdlc/primitives/templates/phase0-context_template.md \
 **Duration**: 1-2 weeks
 
 **Key Activities**:
+
 1. **Stakeholder Interviews** (5-10 interviews)
+
    - Executive sponsor
    - Product owner
    - End users (2-3)
@@ -1962,18 +2067,21 @@ cp .sdlc/primitives/templates/phase0-context_template.md \
    - Support/operations
 
 2. **Problem Statement** (3-5 iterations)
+
    - Initial draft after 2-3 interviews
    - Refinement after feedback
    - Five Whys root cause analysis
    - Final validation
 
 3. **Feasibility Assessment**
+
    - Technical feasibility (can we build it?)
    - Business feasibility (should we build it?)
    - Resource feasibility (do we have what we need?)
    - Timeline feasibility (can we deliver in time?)
 
 4. **Risk & Success**
+
    - Identify major risks
    - Define mitigation strategies
    - Create SMART success metrics
@@ -1984,6 +2092,7 @@ cp .sdlc/primitives/templates/phase0-context_template.md \
    - Get approval to proceed
 
 **Deliverables**:
+
 - ✅ Problem statement (validated)
 - ✅ Feasibility report (≥3.0/5.0)
 - ✅ Risk register
@@ -1991,6 +2100,7 @@ cp .sdlc/primitives/templates/phase0-context_template.md \
 - ✅ Stakeholder alignment
 
 **Exit Criteria**:
+
 - All key stakeholders interviewed
 - Problem clearly defined
 - Feasibility confirmed
@@ -2006,13 +2116,16 @@ cp .sdlc/primitives/templates/phase0-context_template.md \
 **Duration**: 2-4 weeks
 
 **Key Activities**:
+
 1. **Requirements Specification**
+
    - User stories with acceptance criteria
    - Non-functional requirements
    - Edge cases and dependencies
    - INVEST validation
 
 2. **Architecture Design**
+
    - C4 Context diagram (system in environment)
    - C4 Container diagram (major components)
    - Technology selection with ADRs
@@ -2020,6 +2133,7 @@ cp .sdlc/primitives/templates/phase0-context_template.md \
    - NFR decomposition
 
 3. **Constitution Creation**
+
    - Project values and principles
    - Non-negotiables (must haves)
    - Anti-patterns (must not do)
@@ -2027,6 +2141,7 @@ cp .sdlc/primitives/templates/phase0-context_template.md \
    - Quality standards
 
 4. **Product Requirements**
+
    - MVP definition
    - Success metrics
    - Release strategy
@@ -2039,6 +2154,7 @@ cp .sdlc/primitives/templates/phase0-context_template.md \
    - Stakeholder approval
 
 **Deliverables**:
+
 - ✅ Technical specification
 - ✅ System architecture (C4 diagrams)
 - ✅ Data model
@@ -2048,6 +2164,7 @@ cp .sdlc/primitives/templates/phase0-context_template.md \
 - ✅ Architecture Decision Records
 
 **Exit Criteria**:
+
 - All artifacts score ≥80
 - Traceability ≥90%
 - Zero critical issues
@@ -2065,6 +2182,7 @@ cp .sdlc/primitives/templates/phase0-context_template.md \
 **Key Activities**:
 
 **Workstream 1: Planning**
+
 - Decompose requirements to tasks
 - Estimate using story points
 - Map dependencies
@@ -2072,6 +2190,7 @@ cp .sdlc/primitives/templates/phase0-context_template.md \
 - Define Sprint 0 (infrastructure)
 
 **Workstream 2: Infrastructure**
+
 - Set up code repository
 - Define repository structure
 - Provision environments (dev, staging, prod)
@@ -2079,6 +2198,7 @@ cp .sdlc/primitives/templates/phase0-context_template.md \
 - Set up monitoring
 
 **Workstream 3: Quality**
+
 - Design test strategy
 - Set up test frameworks
 - Define quality gates
@@ -2086,6 +2206,7 @@ cp .sdlc/primitives/templates/phase0-context_template.md \
 - Configure automated checks
 
 **Deliverables**:
+
 - ✅ Task breakdown
 - ✅ Dependency map
 - ✅ Sprint plan (all sprints)
@@ -2095,6 +2216,7 @@ cp .sdlc/primitives/templates/phase0-context_template.md \
 - ✅ Quality gates
 
 **Exit Criteria**:
+
 - All requirements mapped to tasks
 - Dependencies resolved
 - Infrastructure ready
@@ -2117,13 +2239,15 @@ cp .sdlc/primitives/templates/phase0-context_template.md \
 **Week 1: Stakeholder Interviews**
 
 Conducted 7 interviews:
+
 1. CEO (30 min) - Business context and urgency
 2. VP Product (60 min) - Product vision and constraints
 3. CTO (60 min) - Technical feasibility and architecture
 4. UX Designer (45 min) - Current pain points
-5-7. Customers (30 min each) - Jobs-to-be-done analysis
+   5-7. Customers (30 min each) - Jobs-to-be-done analysis
 
 **Key Insight from Interviews**:
+
 - Users abandon because checkout requires account creation
 - Mobile experience is particularly poor
 - Payment options are limited
@@ -2132,11 +2256,13 @@ Conducted 7 interviews:
 **Week 2: Synthesis and Validation**
 
 **Problem Statement Evolution**:
+
 - v1: "Checkout process is too long" (too vague)
 - v2: "Users abandon because we require account creation" (getting closer)
 - v3 (Final): "Users need to complete purchases quickly without creating accounts, especially on mobile, while feeling secure about payment. Root cause: We designed for company convenience (data collection) not user needs."
 
 **Five Whys Analysis**:
+
 - Why do users abandon? → Checkout takes too long
 - Why does checkout take too long? → Must create account
 - Why must they create account? → That's our policy
@@ -2145,12 +2271,14 @@ Conducted 7 interviews:
 - **Root Cause**: Prioritizing data collection over conversion
 
 **Feasibility Assessment** (4.2/5.0):
+
 - Technical: 4/5 (guest checkout is standard)
 - Business: 5/5 (higher conversion = more revenue)
 - Resource: 4/5 (team available, 3 months effort)
 - Timeline: 4/5 (can ship in 3 months)
 
 **Success Metrics**:
+
 - Reduce cart abandonment from 35% to 20% (primary)
 - Increase mobile conversion by 40% (primary)
 - Maintain or improve security ratings (secondary)
@@ -2165,11 +2293,13 @@ Conducted 7 interviews:
 **Week 1-2: Requirements and Architecture**
 
 **Technical Specification** (spec.md):
+
 - 12 user stories covering guest checkout flow
 - 28 acceptance criteria using Given-When-Then
 - INVEST scores: 14.5/18 average (excellent)
 
 **Example User Story**:
+
 ```markdown
 ## US-001: Guest Checkout Option
 
@@ -2178,6 +2308,7 @@ I want to checkout without creating an account,
 So that I can complete my purchase quickly.
 
 **Acceptance Criteria**:
+
 1. Given I'm on the cart page
    When I click "Checkout"
    Then I see options for "Guest Checkout" and "Sign In"
@@ -2196,33 +2327,38 @@ So that I can complete my purchase quickly.
 ```
 
 **System Architecture** (architecture.md):
+
 - C4 Context: E-commerce system with payment gateway integration
 - C4 Container: React SPA, Node.js API, PostgreSQL
 - Technology decisions: 3 ADRs created
 
 **ADR Example - 001: Guest Checkout Storage**:
+
 ```markdown
 # ADR 001: Guest Checkout Session Storage
 
 **Status**: Accepted
 **Date**: 2025-10-15
 
-**Context**: 
+**Context**:
 We need to store guest checkout data temporarily without
 creating user accounts.
 
-**Decision**: 
+**Decision**:
 Use secure session storage (Redis) with 24-hour TTL.
 After order completion, migrate to order history.
 
 **Consequences**:
-+ No database pollution with incomplete guest data
-+ Fast session retrieval
-+ Automatic cleanup
-- Requires Redis infrastructure
-- Need migration logic post-purchase
+
+- No database pollution with incomplete guest data
+- Fast session retrieval
+- Automatic cleanup
+
+* Requires Redis infrastructure
+* Need migration logic post-purchase
 
 **Alternatives Considered**:
+
 1. Store in database immediately (rejected: data pollution)
 2. Use browser localStorage (rejected: security concerns)
 ```
@@ -2230,14 +2366,17 @@ After order completion, migrate to order history.
 **Week 3: Constitution and PRD**
 
 **Constitution** (constitution.md):
+
 ```markdown
 ## Non-Negotiables
+
 - User privacy: Never sell customer data
 - Security: PCI-DSS compliance required
 - Performance: Page load <2 seconds
 - Accessibility: WCAG 2.1 AA compliance
 
 ## Anti-Patterns
+
 - Do NOT require account creation for purchase
 - Do NOT collect unnecessary user data
 - Do NOT compromise mobile experience
@@ -2245,26 +2384,31 @@ After order completion, migrate to order history.
 ```
 
 **PRD - MVP Definition**:
+
 ```markdown
 ## Must Have (Sprint 1-2)
+
 - Guest checkout flow
 - Mobile-optimized UI
 - Essential payment methods (cards, PayPal)
 - Basic trust badges
 
 ## Should Have (Sprint 3-4)
+
 - Additional payment methods (Apple Pay, Google Pay)
 - Save info for later (without account)
 - Enhanced trust signals
 - A/B testing framework
 
 ## Could Have (Future)
+
 - One-click checkout for returning guests
 - Social login integration
 - Cryptocurrency payment
 ```
 
-**Validation**: 
+**Validation**:
+
 - All artifacts scored 85+
 - Traceability: 94%
 - Approved by all stakeholders
@@ -2276,102 +2420,123 @@ After order completion, migrate to order history.
 **Week 1-2: Task Decomposition and Sprint Planning**
 
 **Task Breakdown**:
+
 - 43 tasks total from 12 user stories
 - Average task size: 6 story points
 - Total effort: 258 story points
 
 **Dependency Analysis**:
+
 - Critical path: 7 sprints (14 weeks)
 - Parallel tracks identified for optimization
 - 0 circular dependencies
 
 **Sprint Plan** (5 sprints, 2 weeks each):
+
 ```markdown
 ## Sprint 0: Infrastructure (Weeks 1-2)
+
 **Goal**: Set up development environment and CI/CD
 **Capacity**: 40 points
 **Tasks**: Repository setup, staging environment, CI pipeline
 **Team**: Full team
 
 ## Sprint 1: Core Guest Flow (Weeks 3-4)
+
 **Goal**: Implement basic guest checkout
 **Capacity**: 40 points
-**Tasks**: 
+**Tasks**:
+
 - Guest checkout option UI
 - Email capture
 - Basic validation
 - Session management
-**Team**: 2 frontend, 2 backend, 1 QA
+  **Team**: 2 frontend, 2 backend, 1 QA
 
 ## Sprint 2: Payment Integration (Weeks 5-6)
+
 **Goal**: Integrate payment processing
 **Capacity**: 40 points
 **Tasks**:
+
 - Payment gateway integration
 - Security implementation
 - Error handling
 - Receipt generation
-**Team**: 2 backend, 1 frontend, 2 QA
+  **Team**: 2 backend, 1 frontend, 2 QA
 
 ## Sprint 3: Mobile Optimization (Weeks 7-8)
+
 **Goal**: Optimize for mobile devices
 **Capacity**: 40 points
 **Tasks**:
+
 - Responsive design
 - Mobile payment methods
 - Performance optimization
 - Mobile-specific testing
-**Team**: 3 frontend, 1 backend, 1 QA
+  **Team**: 3 frontend, 1 backend, 1 QA
 
 ## Sprint 4: Polish and Testing (Weeks 9-10)
+
 **Goal**: Complete testing and prepare for launch
 **Capacity**: 40 points
 **Tasks**:
+
 - E2E testing
 - Security audit
 - Performance testing
 - Bug fixes
-**Team**: Full team
+  **Team**: Full team
 ```
 
 **Week 2-3: Infrastructure and Quality**
 
 **Repository Setup**:
+
 - Monorepo structure with frontend and backend
 - GitHub Actions CI/CD
 - Branch protection rules configured
 
 **Infrastructure Provisioned**:
+
 - Development: AWS ECS dev cluster
 - Staging: Production-like environment
 - Production: Auto-scaling ECS cluster with CloudFront
 
 **Test Strategy**:
+
 ```markdown
 ## Unit Tests
+
 **Target**: 80% coverage
 **Framework**: Jest (frontend), Mocha (backend)
 
 ## Integration Tests
+
 **Target**: 60% of critical paths
 **Framework**: Cypress
 
 ## E2E Tests
+
 **Target**: 100% of checkout flow
 **Framework**: Playwright
 
 ## Performance Tests
+
 **Target**: <2s page load, <500ms API response
 **Tool**: Lighthouse, k6
 ```
 
 **Quality Gates**:
+
 1. Code commit: Linting passes
 2. PR: Unit tests pass, coverage ≥80%
 3. Staging: Integration tests pass
 4. Production: E2E tests pass, performance benchmarks met
 
 **Validation**:
+
 - All requirements → tasks: 100%
 - Infrastructure ready: ✅
 - Team onboarded: ✅
@@ -2382,17 +2547,20 @@ After order completion, migrate to order history.
 #### Results (After Implementation)
 
 **Metrics Achieved** (3 months post-launch):
+
 - Cart abandonment: 35% → 18% (exceeded goal of 20%)
 - Mobile conversion: +52% (exceeded goal of +40%)
 - Average checkout time: 8 min → 2.5 min
 - Customer satisfaction: +23%
 
 **Business Impact**:
+
 - Revenue increase: +18% ($2.1M annually)
 - ROI: 7x within 6 months
 - Customer complaints: -45%
 
 **Lessons Learned**:
+
 - Discovery investment (1.5 weeks) prevented 3 months of wrong solution
 - Mobile-first design from Phase 1 critical for success
 - Parallel workstreams in Phase 2 saved 2 weeks
@@ -2405,18 +2573,21 @@ After order completion, migrate to order history.
 ### For Individuals
 
 **Clarity and Structure**:
+
 - No more guessing what to do next
 - Clear processes for each phase
 - Quality gates prevent mistakes
 - Templates accelerate work
 
 **Learning and Growth**:
+
 - Learn professional SDLC practices
 - Build portfolio of well-documented projects
 - Develop systematic thinking
 - Improve decision-making skills
 
 **Career Advancement**:
+
 - Demonstrate professional rigor
 - Show ability to manage complex projects
 - Provide proof of systematic approach
@@ -2427,24 +2598,28 @@ After order completion, migrate to order history.
 ### For Teams
 
 **Coordination**:
+
 - Everyone follows same process
 - Clear handoffs between phases
 - Parallel workstreams well-defined
 - Reduced miscommunication
 
 **Quality**:
+
 - Consistent artifact quality
 - Fewer defects reach production
 - Better architecture decisions
 - Improved requirements clarity
 
 **Velocity**:
+
 - AI accelerates grunt work
 - Less rework due to quality gates
 - Faster onboarding of new members
 - Reusable patterns and templates
 
 **Knowledge Sharing**:
+
 - Accumulated organizational wisdom
 - Documentation as work proceeds
 - Lessons learned captured
@@ -2455,30 +2630,35 @@ After order completion, migrate to order history.
 ### For Organizations
 
 **Standardization**:
+
 - Consistent SDLC across teams
 - Predictable quality levels
 - Comparable metrics
 - Easier resource allocation
 
 **Scalability**:
+
 - New teams adopt quickly
 - Process handles growth
 - Can run multiple projects
 - Distributed teams coordinate
 
 **Risk Reduction**:
+
 - Problems caught early
 - Quality gates prevent bad code
 - Traceability enables audits
 - Decision documentation
 
 **Continuous Improvement**:
+
 - Data-driven refinements
 - Lessons learned applied
 - Historical data improves estimates
 - Process evolves with organization
 
 **Cost Savings**:
+
 - Fewer failed projects (validate problems first)
 - Less rework (quality gates)
 - Faster development (AI assistance)
@@ -2497,6 +2677,7 @@ A: No. While we have phase gates, work within phases is highly iterative. You ca
 **Q: How long does each phase take?**
 
 A: Typical timelines:
+
 - Phase 0: 1-2 weeks
 - Phase 1: 2-4 weeks
 - Phase 2: 2-3 weeks
@@ -2507,6 +2688,7 @@ For smaller projects, phases can be compressed. For larger projects, they extend
 **Q: Do I have to use all three usage patterns?**
 
 A: No. Choose one:
+
 - **Pattern 1** (Manual): Best for learning and small projects
 - **Pattern 2** (CLI): Best for regular use and medium teams
 - **Pattern 3** (API): Best for large organizations and high volume
@@ -2518,6 +2700,7 @@ A: Yes! The framework is tool-agnostic. Pattern 2 and 3 include integrations wit
 **Q: What if my team doesn't want to change?**
 
 A: Start small:
+
 1. Use it yourself on a side project
 2. Demonstrate results
 3. Offer to pilot on one team project
@@ -2532,6 +2715,7 @@ Show, don't tell.
 **Q: What AI models work with this?**
 
 A: Any capable AI assistant:
+
 - Claude (Sonnet 3.5+)
 - ChatGPT (GPT-4+)
 - Other LLMs with sufficient context window
@@ -2543,6 +2727,7 @@ The framework is model-agnostic.
 A: The framework itself is free and open source.
 
 Costs:
+
 - **Pattern 1**: Only AI API costs ($20-100/month for most projects)
 - **Pattern 2**: AI costs + potential CLI tool license
 - **Pattern 3**: AI costs + development + infrastructure
@@ -2562,6 +2747,7 @@ A: Yes! The discovery and planning processes work for any project. You'd just ad
 **Q: Can we skip Phase 0 if we know the problem?**
 
 A: Not recommended. Even "known" problems benefit from validation. Phase 0 often reveals:
+
 - Misalignments between stakeholders
 - Root causes deeper than symptoms
 - Constraints you didn't know about
@@ -2572,6 +2758,7 @@ Budget 1-2 weeks. It's worth it.
 **Q: What if feasibility is low in Phase 0?**
 
 A: That's a success! You learned the project isn't viable before wasting months. Options:
+
 - No-go (save resources)
 - Pivot (solve different problem)
 - Conditional-go (mitigate risks first)
@@ -2579,6 +2766,7 @@ A: That's a success! You learned the project isn't viable before wasting months.
 **Q: How do we handle changing requirements?**
 
 A: The framework expects changes:
+
 - **During phase**: Update working versions, maintain traceability
 - **After phase**: Assess impact, potentially re-validate
 - **During implementation**: Follow change control process defined in constitution
@@ -2586,6 +2774,7 @@ A: The framework expects changes:
 **Q: What if we don't have stakeholders to interview?**
 
 A: You always have stakeholders:
+
 - Internal product: Business owners, users, operations
 - Side project: Yourself (as user), potential users, technical constraints
 - Consulting: Client, end users, client's team
@@ -2599,6 +2788,7 @@ If truly solo: Interview yourself systematically, but be rigorous about root cau
 **Q: Can we customize the templates?**
 
 A: Absolutely! Templates are markdown - edit freely. Just maintain:
+
 - Required sections (per your organization's standards)
 - Validation criteria
 - Consistent structure across projects
@@ -2606,6 +2796,7 @@ A: Absolutely! Templates are markdown - edit freely. Just maintain:
 **Q: Can we change the phase structure?**
 
 A: Yes, but carefully. The three phases (Discover, Specify, Plan) represent natural breakpoints:
+
 - Validating problem before designing solution
 - Validating design before implementing
 - Preparing infrastructure before coding
@@ -2615,6 +2806,7 @@ If you modify, ensure quality gates remain.
 **Q: Can we use different methodologies?**
 
 A: Yes! Config files let you choose:
+
 - Interview methods (Jobs-to-be-Done, Contextual Inquiry, etc.)
 - Requirements approaches (User Stories, Use Cases, etc.)
 - Architecture frameworks (C4, 4+1 Views, arc42, etc.)
@@ -2631,6 +2823,7 @@ The framework is methodology-agnostic - it's a structure, not a religion.
 We welcome contributions!
 
 **Ways to Contribute**:
+
 - Report bugs or issues
 - Suggest enhancements
 - Submit templates for different domains
@@ -2640,6 +2833,7 @@ We welcome contributions!
 - Build CLI tools or SDKs
 
 **Contribution Process**:
+
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
@@ -2647,6 +2841,7 @@ We welcome contributions!
 5. Submit a pull request
 
 **Contribution Guidelines**:
+
 - Follow existing file naming conventions
 - Use markdown for documentation
 - Include examples in templates
@@ -2658,6 +2853,7 @@ We welcome contributions!
 ### Areas We Need Help
 
 **High Priority**:
+
 - Industry-specific templates (healthcare, finance, etc.)
 - Integration examples (Jira, Azure DevOps, GitHub Projects)
 - CLI tool implementation (Node.js or .NET)
@@ -2665,12 +2861,14 @@ We welcome contributions!
 - Video tutorials
 
 **Medium Priority**:
+
 - Additional chatmode definitions
 - More workflow prompts
 - Quality scoring automation
 - Traceability analysis tools
 
 **Low Priority**:
+
 - Visual workflow diagram improvements
 - Additional language translations
 - Alternative template formats
@@ -2726,6 +2924,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## Acknowledgments
 
 This framework builds on ideas from:
+
 - **BMAD Method** (Agent-based development)
 - **GitHub Spec-Kit** (Specification-driven development)
 - **GitHub Agentic Primitives** (Instructions, chatmodes, workflows, memory)
@@ -2741,12 +2940,14 @@ Special thanks to the open-source community for inspiration and feedback.
 Ready to get started?
 
 ### For New Users
+
 1. ⭐ Star this repository
 2. 📖 Read the [Quick Start Guide](#quick-start-pattern-1)
 3. 🎯 Start your first project using Pattern 1
 4. 💬 Join our Discord for support
 
 ### For Teams
+
 1. 📋 Review and customize config files
 2. 🏢 Fill in memory files with your organization's context
 3. 👥 Train team on the framework
@@ -2754,6 +2955,7 @@ Ready to get started?
 5. 📈 Measure results and iterate
 
 ### For Organizations
+
 1. 🎯 Define SDLC standardization goals
 2. 🛠️ Choose usage pattern (2 or 3)
 3. 🔧 Build or license necessary tools
@@ -2766,4 +2968,4 @@ Ready to get started?
 
 ---
 
-*Last updated: 2025-10-31 | Version 2.0 | [Changelog](#)*
+_Last updated: 2025-10-31 | Version 2.0 | [Changelog](#)_
