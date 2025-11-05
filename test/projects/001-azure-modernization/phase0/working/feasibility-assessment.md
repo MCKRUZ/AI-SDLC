@@ -1,450 +1,520 @@
-# Feasibility Assessment - Azure Modernization Initiative
+# Feasibility Assessment - Contoso Manufacturing Azure Modernization
 
-**Last Updated**: 2025-11-04 (After Interview 2)  
-**Status**: PRELIMINARY - Discovery Phase (18% complete)  
-**Confidence Level**: LOW (Need more stakeholder input)  
-**Next Review**: After Interview 5 (50% stakeholder coverage)
+**Project**: Azure Modernization Initiative  
+**Phase**: Phase 0 - Discovery & Ideation  
+**Assessment Date**: After Interview 5 (Kevin Martinez)  
+**Overall Feasibility Score**: 50/100 (Moderate-High Risk, Trending Down ⬇️)  
+**Confidence Level**: 65%  
+**Recommendation**: CONDITIONAL GO (requires four-way alignment and budget realism)
 
 ---
 
 ## Executive Summary
 
-**Overall Feasibility Score**: 52/100 (MODERATE - High Risk)
+After 5 of 11 stakeholder interviews, feasibility has **declined from 58/100 to 50/100**. Kevin's interview revealed critical infrastructure constraints that significantly impact technical, financial, and timeline feasibility. The initiative is technically POSSIBLE but faces HIGH RISK without immediate course correction.
 
-**Go/No-Go Recommendation**: CONDITIONAL GO
-- Project is feasible BUT requires significant changes to expectations, timeline, and approach
-- Critical risks must be mitigated before Phase 1
-- Budget, timeline, and scope require realignment
+**Critical Findings**:
+- Infrastructure crisis (exponential hardware failures) adds $2.5M Year 1 requirement
+- Network bottleneck adds 6-8 months to timeline if not resolved
+- Year 1-2 costs DOUBLE to $8.75-9.75M/year (confirms Jennifer's assessment)
+- 50/50 chance cloud costs match on-prem with zero ROI
+- $1.4-2M staffing gap not budgeted
+- Four-way alignment has NOT occurred yet (15 days to board presentation)
 
-**Key Findings**:
-- ✅ **Business case is compelling** - SOC 2 compliance is existential (30% revenue risk)
-- ⚠️ **Technical feasibility is challenged** - Significant hidden complexity and constraints
-- ❌ **Timeline expectations are unrealistic** - 90-day wins vs. "years not quarters"
-- ❌ **Organizational readiness is low** - Zero cloud skills, team burnout, SAP trauma
-- ⚠️ **Financial feasibility is uncertain** - Cost expectations misaligned with reality
+**The initiative can succeed IF**:
+1. Four-way alignment meeting happens within 2 weeks
+2. Timeline reset to 3 years (not 18 months)
+3. Budget increased to $10-15M over 3 years
+4. Infrastructure stabilization funded ($2.5M Year 1)
+5. Network capacity resolved immediately
+6. Cloud expertise staffing approved ($1.4-2M Year 1)
+7. Operational discipline commitment from leadership
 
----
-
-## Feasibility Scoring Framework
-
-**Scoring Scale**: 0-100
-- 90-100: Highly Feasible (Low Risk)
-- 70-89: Feasible (Moderate Risk)
-- 50-69: Challenging (High Risk)
-- 30-49: Very Challenging (Very High Risk)
-- 0-29: Not Feasible (Extreme Risk)
-
-**Dimensions Evaluated**:
-1. Business Feasibility (Benefit & Necessity)
-2. Technical Feasibility (Can it be done?)
-3. Organizational Feasibility (Are they ready?)
-4. Financial Feasibility (Can they afford it?)
-5. Timeline Feasibility (Is schedule realistic?)
+**Without these corrections**: Likelihood of failure is HIGH (70-80%).
 
 ---
 
-## 1. Business Feasibility (Score: 85/100 - HIGHLY FEASIBLE)
+## Feasibility Scoring
 
-### Business Drivers (Strength: VERY STRONG)
+### Overall Score: 50/100 (Moderate-High Risk)
 
-**Existential Drivers**:
-- ✅ **SOC 2 Compliance Mandate**: Detroit Dynamics (30% of revenue = $90M) requires SOC 2 Type II by end of 2026
-  - Source: Interview 1 (Michael Chen)
-  - Impact: Cannot achieve with current systems
-  - Alternative: None - lose customer or modernize
+**Previous Score** (After Interview 4): 58/100  
+**Change**: ⬇️ -8 points  
+**Trend**: Declining (each interview reveals more constraints)
 
-- ✅ **PE Firm Expectations**: Stratton Partners requires 30% operational efficiency in 3 years, already 1 year behind
-  - Source: Interview 1 (Michael Chen)
-  - Impact: Executive team at risk if no progress
-  - Alternative: Leadership change, company sale
+### Component Scores
 
-- ✅ **Security/Insurance Crisis**: Cyber insurance premium doubled with cancellation warning, ransomware near-miss
-  - Source: Interview 1 (Michael Chen)
-  - Impact: Potential business shutdown from breach
-  - Alternative: None - current systems are indefensible
-
-**Operational Drivers**:
-- ✅ **System Reliability Crisis**: 6-hour batch processes failing bi-monthly, blocking production
-  - Source: Interview 1 (Michael), Interview 2 (Sarah)
-  - Impact: $500K per failure, 3 failures/year = $1.5M annually
-  - Alternative: None - system degrading
-
-- ✅ **Competitive Disadvantage**: Customers demanding modern capabilities (APIs, real-time data, customer portal)
-  - Source: Interview 1 (Michael)
-  - Impact: Cannot win new business
-  - Alternative: None - market moving away
-
-**Opportunity Value**:
-- Potential $3M annual operational cost reduction (50% of $6M IT budget)
-- Real-time operational visibility enabling better decisions
-- Modern customer experience improving competitiveness
-- Ability to attract technical talent
-
-**Risk of Inaction**:
-- Loss of $90M customer contract (30% of revenue)
-- Inability to secure cyber insurance
-- Catastrophic security breach
-- Continued $1.5M+ annual productivity losses
-- Inability to compete for new customers
-
-**Business Feasibility Score Justification**:
-- Strong: 85/100
-- The business case is compelling and urgent
-- Multiple forcing functions (compliance, PE, security, operations)
-- High cost of inaction
-- Deduction: -15 points for past SAP failure creating skepticism
+| Dimension | Score | Change | Confidence | Status |
+|-----------|-------|--------|------------|--------|
+| **Technical Feasibility** | 55/100 | ⬇️ -10 | 75% | Moderate-High Risk |
+| **Financial Feasibility** | 45/100 | ⬇️ -5 | 70% | High Risk |
+| **Timeline Feasibility** | 35/100 | ⬇️ -5 | 80% | Very High Risk |
+| **Organizational Feasibility** | 55/100 | ⬇️ -5 | 60% | Moderate-High Risk |
+| **Operational Feasibility** | 60/100 | → 0 | 65% | Moderate Risk |
 
 ---
 
-## 2. Technical Feasibility (Score: 45/100 - VERY CHALLENGING)
+## Technical Feasibility: 55/100 (Moderate-High Risk)
 
-### Technical Complexity Assessment
+**Previous Score**: 65/100  
+**Change**: ⬇️ -10 points  
+**Key Factors**: Infrastructure crisis, network bottleneck, expertise gap, black box systems
 
-**System Architecture Challenges** (SEVERE):
-- ❌ **Black Box Components**: COM+ components with no source code cannot be recompiled
-  - Source: Interview 2 (Sarah)
-  - Impact: Must work around or completely replace systems
-  - Mitigation: Complete inventory (Interview Raj Patel), plan replacement
+### Strengths (+)
+- Azure is proven technology (thousands of successful migrations)
+- Microsoft support available
+- Pilot approach possible (non-critical systems first)
+- Some team members have Azure training (Mark)
 
-- ❌ **Integration Nightmare**: 17 systems with direct database connections, no middleware layer
-  - Source: Interview 2 (Sarah)
-  - Impact: Point-to-point changes cascade through entire architecture
-  - Mitigation: Build integration layer before migration
+### Critical Constraints (-)
+- **Infrastructure Crisis** (New):
+  - 247 servers, 8.4 years average age (3+ years past standard)
+  - Exponential failure rate: Q2: 4, Q3: 8, Q4: 14 failures
+  - Storage at 87% capacity, crisis at 90% by Q2 2025
+  - $2.5M minimum stabilization required DURING migration
+  - Risk: Critical system failure mid-migration derails initiative
+  
+- **Network Capacity Bottleneck** (New):
+  - Current 200 Mbps circuit requires 6-7 MONTHS for 50TB data transfer
+  - Adds 6-8 months to timeline if not resolved
+  - Solutions: $60K circuit upgrade OR $9K Azure Data Box
+  - Hard constraint - cannot overcome with planning
+  
+- **Expertise Gap** (New):
+  - Current team lacks Azure skills (especially cloud networking, IaC, cost management)
+  - Only Mark has Azure training, never at scale
+  - Cannot train fast enough while firefighting hardware failures
+  - Need $1.4-2M Year 1 for contractors and new hires
+  
+- **Black Box Systems** (Confirmed):
+  - Lost source code for COM+ components
+  - 30+ undocumented Access databases
+  - 847 Crystal Reports with unknown dependencies
+  - Reverse engineering required (months of work)
 
-- ❌ **Shadow IT Crisis**: 30+ undocumented Access databases running critical functions
-  - Source: Interview 2 (Sarah)
-  - Impact: Will discover critical dependencies AFTER breaking them
-  - Mitigation: Comprehensive discovery phase before any changes
+### Impact on Score
+- Infrastructure crisis: -5 points (may force emergency action regardless of cloud plans)
+- Network bottleneck: -3 points (adds 6-8 months to timeline)
+- Expertise gap: -2 points (quality/security risk without proper skills)
 
-- ❌ **Brittle Codebase**: Example - 47 stored procedures for one field, 23 break if column added
-  - Source: Interview 2 (Sarah)
-  - Impact: Any change is "terrifying" - unknown blast radius
-  - Mitigation: Extensive testing, pilot approaches
-
-**Infrastructure Constraints** (SEVERE):
-- ❌ **Hardware EOL Crisis**: 60% of servers past end-of-life, buying parts on eBay
-  - Source: Interview 2 (Sarah)
-  - Impact: Critical failure could force emergency migration
-  - Mitigation: Accelerate infrastructure workstream, emergency plan
-
-- ❌ **Test Environment Inadequacy**: 6 months stale, 30% missing data, often 3+ months to provision
-  - Source: Interview 2 (Sarah)
-  - Impact: Cannot safely test migrations
-  - Mitigation: Cloud test environments as early priority
-
-**Vendor Lock-ins & Constraints** (SEVERE):
-- ❌ **"Do Not Touch" Systems**: PLC integration (proprietary protocol, vendor out of business), EDI gateway (50+ partners won't change), Payroll (fixed EBCDIC format)
-  - Source: Interview 2 (Sarah)
-  - Impact: Some systems literally cannot be modernized
-  - Mitigation: Accept constraints, design around them
-
-- ⚠️ **MES System Constraints**: 2 years/$1M to replace, vendor demands $75K/year for schedule coordination
-  - Source: Interview 2 (Sarah)
-  - Impact: Vendor lock-in creates operational constraints
-  - Mitigation: Build abstraction layer, long-term replacement plan
-
-**Technical Feasibility Score Justification**:
-- Very Challenging: 45/100
-- Extreme hidden complexity beyond what's documented
-- Multiple black box components and constraints
-- Brittle architecture makes changes risky
-- Some systems literally cannot be modernized
-- Positive: Cloud technology is proven and mature
-- Positive: Vendor support available (Microsoft Azure)
+### Mitigation Required
+- ✅ Allocate $2.5M infrastructure stabilization Year 1
+- ✅ Resolve network capacity within 30 days
+- ✅ Contract cloud architects immediately ($1.4-2M budget)
+- ✅ System inventory and documentation BEFORE migration starts
+- ✅ Prioritize systems with source code for early migration
 
 ---
 
-## 3. Organizational Feasibility (Score: 35/100 - VERY CHALLENGING)
+## Financial Feasibility: 45/100 (High Risk)
 
-### Organizational Readiness Assessment
+**Previous Score**: 50/100  
+**Change**: ⬇️ -5 points  
+**Key Factors**: Hidden costs, parallel running unbudgeted, 50/50 chance of zero ROI
 
-**Skills & Capability** (CRITICAL GAP):
-- ❌ **Zero Cloud Experience**: 45-person IT team has zero Azure experience
-  - Source: Interview 2 (Sarah)
-  - Impact: Cannot safely execute cloud migration
-  - Mitigation: 6+ month intensive training program required
+### Strengths (+)
+- Jennifer (CFO) understands investment-before-returns model
+- Board has approved technology initiatives before
+- SOC 2 compliance creates business justification
+- Long-term ROI possible (IF disciplined)
 
-- ❌ **Team Burnout**: 80/20 maintenance vs. innovation ratio, team exhausted from firefighting
-  - Source: Interview 2 (Sarah)
-  - Impact: No capacity for transformation while maintaining BAU
-  - Mitigation: External augmentation, reduce BAU load
+### Critical Constraints (-)
+- **Year 1-2 Cost Reality** (Confirmed):
+  - Current: $4.5M/year
+  - Year 1-2: $8.75-9.75M/year (DOUBLE)
+  - Breakdown: $2.5M infrastructure + $6-8M migration + $4.5M/year on-prem parallel
+  - Total Year 1-2: $17.5-19.5M
+  
+- **Hidden Costs** (New):
+  - $1-2M/year in costs most people don't budget
+  - Data egress: $200-500K/year
+  - Azure services tax: $150K/year  
+  - DR: $300K/year
+  - Management tools: $100-150K/year
+  - Training: $50K/year
+  - Consulting: $200-500K Years 1-2
+  
+- **Parallel Running** (New):
+  - $800K-1.2M infrastructure costs for 8-10 critical systems
+  - Likely not budgeted (Michael unaware per Kevin)
+  - Application costs additional (total $1.5-2M)
+  
+- **Licensing Trap** (New):
+  - $800K catch-up needed for Software Assurance
+  - 60% of servers have lapsed SA (budget cuts 3 years ago)
+  - Without catch-up: Azure costs 40% higher than planned
+  
+- **Cloud Cost Spiral Risk** (New):
+  - Kevin's confidence: 50/50 chance cloud costs match on-prem ($5M/year)
+  - Zero savings if organizational culture doesn't change
+  - "Build, accumulate, never clean up" culture
+  - Risk: 600 underutilized VMs at $300/month = $2.16M/year wasted
 
-- ❌ **Attrition Risk**: Best people actively job hunting
-  - Source: Interview 2 (Sarah)
-  - Impact: Knowledge loss during migration when most needed
-  - Mitigation: Retention plan, aggressive documentation
+### Impact on Score
+- Hidden costs revelation: -2 points (budget gap triggers Jennifer's kill criteria)
+- Parallel running unbudgeted: -2 points ($800K-1.2M surprise)
+- 50/50 ROI risk: -1 point (may spend $10-15M for zero return)
 
-- ⚠️ **Adaptation Challenges**: Senior staff may not be able/willing to adapt to cloud
-  - Source: Interview 2 (Sarah)
-  - Impact: Forced retraining creates resentment and failure
-  - Mitigation: Honest assessment, transition planning
+### Financial Reality Check
+**Michael's Promise**: 50% savings ($2.25M/year) in 18 months  
+**Reality**:
+- Year 1-2: LOSE $4.25-5.25M/year (costs double)
+- Year 3: Maybe $1M savings (if disciplined)
+- Year 4+: Maybe $1.5M/year savings (optimistic) OR $0 savings (realistic, 50/50 chance)
 
-**Change Readiness** (LOW):
-- ❌ **SAP Trauma**: 2018 failed $2M implementation created organizational PTSD
-  - Source: Interview 1 (Michael), Interview 2 (Sarah)
-  - Impact: "Transformation = Failure" mindset, extreme risk aversion
-  - Mitigation: Explicitly acknowledge lessons, demonstrate differences
+**Cumulative Cash Flow**:
+- Year 1-2: -$8.5-10.5M (vs baseline)
+- Year 3: -$7.5-9.5M cumulative
+- Year 4: -$6-8M cumulative
+- Year 5: -$4.5-6.5M cumulative
+- **Breakeven**: Year 6-7 IF optimistic scenario
 
-- ⚠️ **Union Considerations**: Unionized workforce (UAW), automation could trigger labor action
-  - Source: Interview 2 (Sarah)
-  - Impact: Work stoppages would halt production
-  - Mitigation: Early engagement, frame as augmentation not replacement
-
-- ⚠️ **CFO Skepticism**: Jennifer Walsh expects 3X cost overruns, can kill funding
-  - Source: Interview 1 (Michael), Interview 2 (Sarah)
-  - Impact: Budget cut mid-project
-  - Mitigation: Reset expectations, transparent financial management
-
-**Leadership Alignment** (PARTIAL):
-- ✅ **Executive Sponsorship**: CEO hired Michael specifically for this
-  - Source: Interview 1 (Michael)
-  - Impact: Strong top-down support
-  - Risk: Can erode if early promises not met
-
-- ⚠️ **Timeline Misalignment**: Michael promises 90-day wins, Sarah says "years not quarters"
-  - Source: Interview 1 (Michael), Interview 2 (Sarah)
-  - Impact: Credibility collapse when expectations not met
-  - Mitigation: MUST align before board presentation
-
-- ⚠️ **Vision vs. Reality Gap**: Michael doesn't yet understand full complexity
-  - Source: Interview 2 (Sarah) - 60 days tenure vs 15 years knowledge
-  - Impact: Unrealistic commitments, poor decisions
-  - Mitigation: Discovery phase education, Sarah's input valued
-
-**Organizational Feasibility Score Justification**:
-- Very Challenging: 35/100
-- Critical skills gap with no quick solution
-- Team exhausted, burning out, best people leaving
-- SAP trauma creates organizational paralysis
-- Leadership expectations misaligned with reality
-- CFO can veto project
-- Union risks
-- Positive: Strong executive sponsorship
-- Positive: Sarah has expertise if properly engaged
-
----
-
-## 4. Financial Feasibility (Score: 50/100 - UNCERTAIN)
-
-### Financial Assessment
-
-**Budget Reality** (UNKNOWN - Interview 3 Critical):
-- ❓ **No Confirmed Budget**: Michael mentions expectations, no actual budget confirmed
-  - Source: Interview 1 (Michael)
-  - Impact: Cannot plan without budget reality
-  - Next Step: Interview 3 (CFO Jennifer Walsh) CRITICAL
-
-- ⚠️ **Cost Expectation Mismatch**: Michael promises 50% reduction, Sarah says costs increase short-term
-  - Source: Interview 1 (Michael), Interview 2 (Sarah)
-  - Impact: Board expects savings, will get bills
-  - Mitigation: Reset expectations immediately
-
-**Cost Drivers** (Known):
-- **Migration Costs** (Estimated $2-5M):
-  - External consulting/augmentation
-  - Internal staff time (opportunity cost)
-  - Training (6 months × 45 people)
-  - Parallel running infrastructure
-  - Emergency hardware purchases
-
-- **Short-Term Cost Increases**:
-  - Cloud learning curve tax (inefficient early usage)
-  - Parallel running (double infrastructure temporarily)
-  - Rearchitecture work (not just lift-and-shift)
-  - Vendor negotiations (e.g., MES system, EDI partners)
-
-- **Deferred Costs Coming Due**:
-  - Hardware EOL replacement ($4M capital budget, only $800K approved)
-  - Emergency fixes (last year: $1.2M on emergency hardware)
-
-**Potential ROI** (Long-term):
-- IT operational cost reduction: $3M annually (50% of $6M budget) - but Year 3+
-- Productivity gains: $1.5M annually (eliminate batch failure costs)
-- Risk reduction: Avoid $90M customer loss, security breach costs
-- Opportunity value: Real-time data, customer portal, competitive advantage
-
-**Financial Feasibility Score Justification**:
-- Uncertain: 50/100
-- ROI is strong long-term
-- Business case is compelling
-- Major uncertainty: No confirmed budget
-- Major risk: Short-term costs vs. savings expectations
-- Major risk: CFO can cut funding
-- Need Interview 3 (CFO) to score accurately
+### Mitigation Required
+- ✅ Comprehensive cost model including ALL costs (Kevin + Sarah + Jennifer)
+- ✅ Realistic budget $10-15M over 3 years with contingency
+- ✅ Explicit parallel running line item ($1M)
+- ✅ Licensing catch-up budgeted ($800K)
+- ✅ Operational discipline from Day 1 (weekly cost reviews, auto-shutdown, 90-day cleanup)
+- ✅ Cultural change initiative (rationalize BEFORE migrating)
 
 ---
 
-## 5. Timeline Feasibility (Score: 30/100 - NOT FEASIBLE AS STATED)
+## Timeline Feasibility: 35/100 (Very High Risk)
 
-### Timeline Assessment
+**Previous Score**: 40/100  
+**Change**: ⬇️ -5 points  
+**Key Factors**: Network adds 6-8 months, hardware crisis urgent, 18 months impossible
 
-**Stated Timeline** (Michael's Expectation):
-- 90-day wins required
-- 18-month total transformation
-- Board presentation in 30 days
-- SOC 2 compliance by end of 2026 (22 months)
+### Strengths (+)
+- Christmas shutdown provides tactical cutover windows
+- Sunday 4-hour maintenance windows available
+- Phased approach possible (non-critical first)
 
-**Realistic Timeline** (Sarah's Assessment):
-- "Years, not quarters"
-- Even Phase 1 is 9-12 months
-- 6-month training prerequisite
-- Shadow IT discovery adds months
-- SOC 2 achievable if prioritized
+### Critical Constraints (-)
+- **Michael's Promise**: 18 months to completion
+- **All Four Stakeholders Say**: 3+ years minimum
+  - Sarah: "Years not quarters"
+  - Jennifer: 3-5 years
+  - Robert: 2-3 years per major system
+  - Kevin: 3 years minimum
+  
+- **Network Bottleneck** (New):
+  - 6-8 months JUST for data transfer (if not resolved)
+  - This is before ANY migration work begins
+  - Michael's 18 months becomes 24-26 months (network alone)
+  
+- **Infrastructure Stabilization** (New):
+  - Immediate: 3-6 months to stabilize ($2.5M spend)
+  - Must happen BEFORE migration can start safely
+  - Hardware failures accelerating (may force emergency action)
+  
+- **Realistic Timeline** (Consensus):
+  - Year 1: Infrastructure stabilization + non-critical systems migration
+  - Year 2: Critical systems migration with 3+ month parallel running each
+  - Year 3: Optimization + on-prem decommissioning
+  - **Total: 36 months minimum**
 
-**Timeline Feasibility Analysis**:
+### Impact on Score
+- Network bottleneck: -3 points (adds 6-8 months if not resolved)
+- Infrastructure urgency: -2 points (may delay start by 3-6 months)
 
-**Phase 0 (Discovery)**: 3-6 months (currently in progress)
-- Stakeholder interviews: 2 of 11 complete
-- Shadow IT discovery: Not started (could take 2-3 months)
-- Skills assessment: Not started
-- Architecture analysis: Not started
-- Feasibility validation: Not started
+### Timeline Reality Check
+**Michael's 18-Month Breakdown** (Impossible):
+- Month 1-3: Planning
+- Month 4-15: Migration
+- Month 16-18: Optimization  
+**Problem**: Network alone is 6-8 months, infrastructure stabilization 3-6 months, critical systems need 3+ month parallel running
 
-**Phase 1 (Planning & Design)**: 6-9 months
-- Requirements & architecture: 3-4 months
-- Detailed technical design: 2-3 months
-- Proof of concepts: 2-3 months
+**Realistic 36-Month Breakdown**:
+- **Year 1** (Months 1-12):
+  - Months 1-3: Discovery, planning, four-way alignment
+  - Months 3-6: Infrastructure stabilization ($2.5M)
+  - Months 3-6: Network capacity resolution
+  - Months 6-12: Non-critical systems migration (prove competence)
+  
+- **Year 2** (Months 13-24):
+  - Critical systems migration (MES, ERP, Quality, Inventory)
+  - 3+ month parallel running for each critical system
+  - Stagger to reduce peak costs
+  
+- **Year 3** (Months 25-36):
+  - Remaining systems migration
+  - Optimization (cost management, right-sizing)
+  - On-prem decommissioning
+  - Achieve steady-state operations
 
-**Phase 2 (Foundation)**: 6-9 months  
-- Team training: 6 months (prerequisite)
-- Cloud environment setup: 2-3 months
-- Integration layer build: 4-6 months
-
-**Phase 3+ (Migration)**: 18-36 months
-- Phased system migration: 12-24 months
-- Stabilization and optimization: 6-12 months
-
-**Total Realistic Timeline**: 3-5 years (not 18 months)
-
-**Quick Wins Achievable** (to show progress):
-- Month 3: Cloud dev/test environments operational
-- Month 6: Customer portal proof-of-concept
-- Month 9: Integration layer pilot
-- Month 12: First non-critical system migrated
-
-**SOC 2 Compliance Path**:
-- If prioritized, achievable by end 2026 (22 months)
-- But may require compliance controls in existing system first
-- Then migrate once controls proven
-- Or fast-track specific compliance-critical systems
-
-**Timeline Feasibility Score Justification**:
-- Not Feasible as Stated: 30/100
-- 90-day wins: Achievable if properly defined (POC not production)
-- 18-month transformation: Not realistic, need 3-5 years
-- SOC 2 by 2026: Feasible if prioritized
-- Major risk: Expectations vs. reality will collide
-- CRITICAL: Must realign timeline before board presentation
-
----
-
-## Overall Feasibility Summary
-
-| Dimension | Score | Assessment | Critical Issues |
-|-----------|-------|------------|-----------------|
-| **Business** | 85/100 | Highly Feasible | None - strong business case |
-| **Technical** | 45/100 | Very Challenging | Black boxes, shadow IT, brittleness |
-| **Organizational** | 35/100 | Very Challenging | Skills gap, burnout, SAP trauma |
-| **Financial** | 50/100 | Uncertain | Budget unknown, expectations misaligned |
-| **Timeline** | 30/100 | Not Feasible | 18 months unrealistic, need 3-5 years |
-| **OVERALL** | **52/100** | **MODERATE - High Risk** | Multiple critical risks |
+### Mitigation Required
+- ✅ Reset board expectations to 3-year timeline
+- ✅ Resolve network capacity immediately (30-day decision)
+- ✅ Infrastructure stabilization starts NOW (don't wait for migration)
+- ✅ Phase gates at 12-month intervals with go/no-go decisions
+- ✅ Celebrate Year 1 non-critical system migrations (build momentum)
 
 ---
 
-## Go/No-Go Decision Framework
+## Organizational Feasibility: 55/100 (Moderate-High Risk)
 
-### Conditions for "GO" Decision:
+**Previous Score**: 60/100  
+**Change**: ⬇️ -5 points  
+**Key Factors**: Operational discipline concerns, repeated failure pattern, cultural change required
 
-**MUST RESOLVE (Blockers)**:
-1. ✅ **Align Timeline Expectations**: Michael, Sarah, CFO, and Board must agree on realistic timeline
-2. ✅ **Secure Budget**: CFO must commit to multi-year budget with realistic cost expectations
-3. ✅ **Complete Shadow IT Discovery**: Cannot migrate without knowing what exists
-4. ✅ **Retention Plan**: Lock in key staff through migration completion
-5. ✅ **Skills Development Plan**: 6-month training program with external augmentation
+### Strengths (+)
+- Jennifer (CFO) has learned from SAP failure (realistic, has kill criteria)
+- Sarah (IT Director) has 15 years institutional knowledge (trusted by all)
+- Robert (VP Ops) is engaged and has clear requirements
+- Kevin (Infrastructure Manager) is data-driven and solution-oriented
+- All four stakeholders WANT modernization to succeed
 
-**SHOULD RESOLVE (Major Risks)**:
-6. ⚠️ **Test Environment**: Build production-equivalent cloud test environments immediately
-7. ⚠️ **Black Box Inventory**: Complete COM+ component inventory and replacement plan
-8. ⚠️ **Union Engagement**: Proactive engagement on automation impacts
-9. ⚠️ **CFO Confidence**: Build Jennifer's confidence with realistic expectations
-10. ⚠️ **Define "Do Not Touch"**: Explicit list of systems that cannot change
+### Critical Constraints (-)
+- **Four-Way Alignment Missing** (Critical):
+  - Michael, Jennifer, Robert, Sarah, Kevin have NOT met together
+  - Each has concerns/requirements, but no unified plan
+  - 15 days to board presentation, alignment has not happened yet
+  
+- **Trust Deficit** (Confirmed):
+  - All four stakeholders trust Sarah MORE than Michael (60 days in)
+  - Michael must earn trust through delivery (MFA 90-day win)
+  - If conflict arises, stakeholders will believe Sarah over Michael
+  
+- **Operational Discipline Risk** (New):
+  - Kevin's confidence: 50/50 organization can maintain cloud discipline
+  - Culture: "Build, accumulate, never clean up"
+  - Evidence: 847 Crystal Reports (need 200), 30+ Access databases
+  - Risk: Same culture in cloud = no cost savings
+  
+- **Repeated Failure Pattern** (New):
+  - Kevin has seen 3 failed modernization attempts in 15 years
+  - Pattern: "Big vision, mounting costs, reality hits, stalls, leader leaves"
+  - SAP 2018 ($2.3M write-off), Cloud initiative 18 months ago (stalled)
+  - Organizational PTSD creates skepticism
+  
+- **Three Veto Powers Uncoordinated** (Critical):
+  - Jennifer (budget veto)
+  - Robert (CEO relationship veto)
+  - Kevin (infrastructure collapse passive veto)
+  - None coordinated yet
 
----
+### Impact on Score
+- Operational discipline concerns: -3 points (core risk to ROI)
+- Repeated failure pattern: -2 points (organizational trauma)
 
-## Recommendations
-
-### Before Phase 1 Begins:
-
-**CRITICAL PRIORITY (Must Do)**:
-1. **Interview CFO Jennifer Walsh** - Understand budget reality, build confidence
-2. **Align Michael + Sarah on Timeline** - Resolve "90 days vs years" contradiction
-3. **Board Presentation Preparation** - Realistic plan with achievable milestones
-4. **Shadow IT Discovery** - Comprehensive inventory of undocumented systems
-5. **Skills Assessment** - Honest evaluation of team capabilities
-6. **Retention Plan** - Lock in key staff with bonuses/incentives
-
-**HIGH PRIORITY (Should Do)**:
-7. **Test Environment Modernization** - Cloud dev/test as Phase 0 deliverable
-8. **Black Box Component Inventory** - Complete list with replacement options
-9. **Hardware EOL Assessment** - Risk analysis and emergency migration plan
-10. **Integration Layer Design** - Architecture for decoupling systems
-
-### Scope Recommendations:
-
-**Phased Approach** (Must adopt):
-- **Phase 1**: Foundation (environments, training, integration layer)
-- **Phase 2**: Compliance Critical (systems needed for SOC 2)
-- **Phase 3**: Business Value (customer portal, analytics)
-- **Phase 4**: Infrastructure Migration (remaining systems)
-- **Phase 5**: Legacy Retirement (decommission old systems)
-
-**Quick Wins** (Build credibility):
-- Month 3: Cloud dev/test environments
-- Month 6: Customer portal POC
-- Month 9: Integration layer pilot
-- Month 12: First system migrated
-
-**"Do Not Touch" Acceptance**:
-- PLC integration: Never touch
-- EDI gateway: Work around
-- Payroll: Integrate but don't migrate
-- MES system: Long-term replacement plan
+### Mitigation Required
+- ✅ Four-way alignment meeting within 2 weeks (BEFORE board presentation)
+- ✅ Michael aligns WITH Sarah (leverage her credibility)
+- ✅ Acknowledge SAP trauma explicitly (show this time is different)
+- ✅ Pre-migration culture change (rationalize environment, prove cleanup capability)
+- ✅ Operational discipline governance from Day 1
+- ✅ Break the pattern: Ground truth BEFORE promises
 
 ---
 
-## Confidence in Assessment
+## Operational Feasibility: 60/100 (Moderate Risk)
 
-**Current Confidence**: LOW (2 of 11 interviews complete, 18%)
+**Previous Score**: 60/100  
+**Change**: → No change  
+**Key Factors**: Robert's requirements clear, parallel running quantified, union engagement needed
 
-**Confidence will improve with**:
-- Interview 3 (CFO) - Financial feasibility clarity
-- Interview 4 (VP Ops) - Operational constraints clarity
-- Interview 5 (Infrastructure) - Technical feasibility refinement
-- Interviews 6-11 - Complete picture of complexity
+### Strengths (+)
+- Robert (VP Ops) engaged and has clear requirements
+- Parallel running requirement understood (3+ months for critical systems)
+- 4-hour Sunday maintenance windows available
+- Christmas shutdown for tactical upgrades
+- Factory floor immersion opportunity (Robert requires for Michael)
 
-**Next Review Milestones**:
-- After Interview 5: 50% confidence (reassess go/no-go)
-- After Interview 11: 90% confidence (final feasibility)
-- End of Phase 0: 100% confidence (validated feasibility)
+### Critical Constraints (-)
+- **24/5 Production Schedule**:
+  - $10K/minute downtime cost ($240K/day)
+  - Robert's max: 4 hours unplanned downtime
+  - Zero tolerance for production impact
+  
+- **Parallel Running Complexity**:
+  - MES: 90+ days parallel running
+  - 7-9 other critical systems need parallel running
+  - Data sync between old/new systems (error-prone)
+  - 24/5 monitoring of BOTH environments
+  - Rollback capability essential
+  
+- **Union Engagement** (Not Yet Started):
+  - 180 UAW workers, Jimmy Garcia (steward)
+  - Robert's #1 requirement: Early engagement
+  - Lost contract negotiation 2019 (tension exists)
+  - Work stoppage risk if jobs threatened
+  - Adds 3-6 months to timeline
+  
+- **Robert's Five Questions** (Unanswered):
+  1. What are operational benefits (not just cost)?
+  2. How ensure zero downtime?
+  3. Union engagement strategy?
+  4. How earn team's trust?
+  5. What if this fails?
+
+### Mitigation Required
+- ✅ Answer Robert's five questions BEFORE board presentation
+- ✅ Interview Jimmy Garcia (union steward) as Interview 6
+- ✅ No layoffs commitment (attrition only, retraining programs)
+- ✅ Parallel running plan with Robert (system-by-system)
+- ✅ Michael factory floor immersion (Robert's requirement)
+- ✅ Frame as "operational excellence" not "cost reduction"
 
 ---
 
-## Red Flags That Would Change Assessment to "NO GO":
+## Risk Summary
 
-1. ❌ **CFO refuses multi-year budget commitment**
-2. ❌ **Board insists on 18-month timeline despite evidence**
-3. ❌ **Key staff exodus before retention plan implemented**
-4. ❌ **Shadow IT discovery reveals insurmountable dependencies**
-5. ❌ **Black box components make core migration impossible**
-6. ❌ **Union threatens work stoppage over automation**
-7. ❌ **Hardware critical failure before migration ready**
-8. ❌ **Michael and Sarah cannot align on approach**
+### Critical Path Risks (Must Resolve Immediately):
+1. **Four-way alignment missing** - 15 days to board presentation
+2. **Infrastructure crisis** - Exponential failures, need $2.5M Year 1
+3. **Network bottleneck** - Adds 6-8 months if not resolved
+4. **Timeline misalignment** - 18 months vs. 3 years reality
+5. **Budget realism gap** - Year 1-2 costs DOUBLE, not understood
+6. **Three veto powers uncoordinated** - Jennifer, Robert, Kevin
+
+### High Impact Risks:
+7. **Cloud cost spiral** - 50/50 chance of zero ROI
+8. **Expertise gap** - $1.4-2M staffing unbudgeted
+9. **Parallel running** - $800K-1.2M unbudgeted
+10. **Hidden costs** - $1-2M/year unbudgeted
+11. **Licensing trap** - $800K catch-up needed
+12. **Union engagement** - Not yet started, Robert's #1 priority
+13. **SAP trauma** - Organizational PTSD not acknowledged
+14. **Trust deficit** - Michael must align with Sarah
+
+**Total Risks Identified**: 29 (8 Critical, 14 High, 7 Medium)
 
 ---
 
-**Document Control**  
-**Created**: 2025-11-04  
-**Last Updated**: 2025-11-04  
-**Next Review**: After Interview 5 (50% stakeholder coverage)  
-**Confidence Level**: LOW (18% discovery complete)  
-**Version**: 1.0 (PRELIMINARY)
+## Feasibility Trajectory
+
+### If Current Path Continues (No Course Correction):
+- **Feasibility Score**: Continues declining (40/100 by Interview 11)
+- **Likelihood of Success**: 20-30%
+- **Likely Outcome**:
+  - Michael presents unrealistic plan to board (18 months, 50% savings)
+  - Jennifer publicly challenges or withholds budget
+  - OR: Jennifer approves, costs escalate, 20% variance kill criteria triggers in Q2-Q3 FY2025
+  - Initiative scaled back or cancelled
+  - Michael departs, pattern repeats
+
+### If Course Corrected (Four-Way Alignment):
+- **Feasibility Score**: Stabilizes then improves (60/100 → 70/100 by Phase 1 start)
+- **Likelihood of Success**: 60-70%
+- **Likely Outcome**:
+  - Four-way alignment produces realistic plan (3 years, $10-15M, phase gates)
+  - Board approves with eyes open (honest assessment builds trust)
+  - Infrastructure stabilization prevents crisis
+  - Network resolution removes bottleneck
+  - Non-critical systems migrate successfully Year 1 (proof of competence)
+  - Critical systems migrate Year 2 with parallel running
+  - Optimization Year 3, achieve steady-state
+  - Breakeven Year 6-7 (IF operational discipline maintained)
+
+---
+
+## Go/No-Go Recommendation
+
+### Current Recommendation: CONDITIONAL GO
+
+**Conditions That MUST Be Met**:
+
+1. **Four-Way Alignment Meeting** (Within 2 weeks):
+   - Attendees: Michael + Jennifer + Robert + Sarah + Kevin
+   - Output: Unified plan all five can support publicly
+   - All constraints on table (budget, timeline, infrastructure, staffing, operational)
+   
+2. **Realistic Timeline** (3 years, not 18 months):
+   - Year 1: Infrastructure + non-critical systems
+   - Year 2: Critical systems with parallel running
+   - Year 3: Optimization + decommissioning
+   
+3. **Realistic Budget** ($10-15M over 3 years):
+   - Infrastructure: $2.5M Year 1
+   - Staffing: $1.4-2M Year 1, $300K/year ongoing
+   - Parallel running: $800K-1.2M
+   - Hidden costs: $1-2M/year
+   - Licensing: $800K catch-up
+   - Contingency: 20% (Jennifer's requirement)
+   
+4. **Network Capacity Resolution** (Within 30 days):
+   - Decision: Circuit upgrade OR Azure Data Box
+   - Budget: $60K+ approved
+   
+5. **Infrastructure Stabilization** (Start immediately):
+   - $2.5M Year 1 budget secured
+   - Critical hardware replaced before migration
+   
+6. **Union Engagement** (Interview 6):
+   - Jimmy Garcia interviewed
+   - No layoffs commitment
+   - Retraining programs
+   
+7. **Operational Discipline Commitment**:
+   - Pre-migration rationalization (prove cleanup capability)
+   - Day 1 governance (cost reviews, auto-shutdown, chargeback)
+   - Leadership modeling and rewarding discipline
+
+**If conditions met**: GO with cautious optimism (60-70% success probability)  
+**If conditions not met**: NO-GO (70-80% failure probability)
+
+---
+
+## Next Steps (Before Board Presentation - 15 Days)
+
+### Critical Actions:
+1. ✅ **Schedule four-way alignment meeting** (this week)
+2. ✅ **Build comprehensive cost model** (Kevin + Sarah + Jennifer)
+3. ✅ **Reset timeline to 3 years** (phase gates, realistic milestones)
+4. ✅ **Michael-Jennifer private alignment** (prevent public challenge)
+5. ✅ **Answer Robert's five questions** (operational benefits, zero downtime, union, trust, failure plan)
+
+### After Board Presentation (Assuming GO Approval):
+6. ✅ **Resolve network capacity** (30-day decision)
+7. ✅ **Secure infrastructure budget** ($2.5M Year 1)
+8. ✅ **Interview Jimmy Garcia** (union engagement)
+9. ✅ **Begin staffing** (recruit contractors, hire FTEs)
+10. ✅ **System inventory and documentation** (cannot migrate what you don't understand)
+
+---
+
+## Confidence Assessment
+
+**Overall Confidence**: 65%
+
+- **Technical Confidence**: 75% (infrastructure and network constraints now understood)
+- **Financial Confidence**: 70% (comprehensive cost data from Kevin)
+- **Timeline Confidence**: 80% (all four stakeholders independently confirm 3 years)
+- **Organizational Confidence**: 60% (need union interview, cultural change uncertain)
+- **Operational Confidence**: 65% (Robert's requirements clear, parallel running quantified)
+
+**What Would Increase Confidence to 80%+**:
+- Four-way alignment meeting completed successfully
+- Comprehensive cost model validated by Jennifer
+- Union interview completed (Jimmy Garcia)
+- Michael demonstrates trust-building (aligns with Sarah, delivers MFA)
+- Board presentation goes well (realistic plan, honest assessment)
+
+---
+
+## Feasibility Score History
+
+| Interview | Score | Change | Key Impact |
+|-----------|-------|--------|------------|
+| Baseline | 70/100 | - | Initial optimism |
+| Interview 1 (Michael) | 70/100 | → 0 | Vision established |
+| Interview 2 (Sarah) | 62/100 | ⬇️ -8 | Technical debt reality |
+| Interview 3 (Jennifer) | 58/100 | ⬇️ -4 | Financial constraints |
+| Interview 4 (Robert) | 58/100 | → 0 | Operational requirements |
+| **Interview 5 (Kevin)** | **50/100** | **⬇️ -8** | **Infrastructure crisis, network bottleneck, expertise gap** |
+
+**Trend**: ⬇️ Declining (each interview reveals more constraints)  
+**Trajectory**: Will continue declining unless course corrected at four-way alignment
+
+---
+
+**End of Feasibility Assessment**
+
+*Last Updated: After Interview 5 (Kevin Martinez)*  
+*Next Update: After Interview 6 (Jimmy Garcia) and Four-Way Alignment Meeting*  
+*Overall Score: 50/100 (Moderate-High Risk, Trending Down)*  
+*Recommendation: CONDITIONAL GO (requires four-way alignment and budget realism)*  
+*Confidence: 65%*  
+*Phase 0 - Discovery & Ideation*  
+*Contoso Manufacturing Azure Modernization Initiative*
