@@ -11,6 +11,7 @@
 ### High Power, High Interest (KEY PLAYERS - Manage Closely)
 
 #### **Jennifer Walsh - CFO**
+
 - **Role**: Chief Financial Officer
 - **Power Level**: CRITICAL (Controls budget, can veto project)
 - **Interest Level**: HIGH (Scarred by SAP, risk-averse)
@@ -41,6 +42,7 @@
 ---
 
 #### **Robert Turner - VP Operations**
+
 - **Role**: Vice President of Operations, CEO confidant
 - **Power Level**: HIGH (CEO's ear, controls operations)
 - **Interest Level**: HIGH (Needs better data, fears disruption)
@@ -72,6 +74,7 @@
 ---
 
 #### **Michael Chen - CTO**
+
 - **Role**: Chief Technology Officer (60 days tenure)
 - **Power Level**: HIGH (Executive mandate, board backing)
 - **Interest Level**: VERY HIGH (Career-defining, hired to do this)
@@ -103,6 +106,7 @@
 ---
 
 #### **CEO (Name TBD)**
+
 - **Role**: Chief Executive Officer
 - **Power Level**: ULTIMATE (Final decision authority)
 - **Interest Level**: HIGH (Hired Michael for this, accountable to PE firm)
@@ -134,6 +138,7 @@
 ---
 
 #### **Jimmy Garcia - Union Steward (UAW Local 599)**
+
 - **Role**: Union Steward, UAW Local 599 (Represents 180 UAW workers)
 - **Power Level**: HIGH (Can trigger strike authorization, contract enforcement)
 - **Interest Level**: HIGH (Technology changes affect members' jobs and livelihoods)
@@ -199,6 +204,7 @@
 ---
 
 #### **Dr. Patricia "Pat" Rodriguez - Quality Manager**
+
 - **Role**: Quality Manager (FDA, CMMC, ISO 13485 compliance)
 - **Power Level**: HIGH (Regulatory veto, compliance gatekeeper)
 - **Interest Level**: HIGH (Systems affect quality/compliance)
@@ -235,11 +241,46 @@
 - **Interview Status**: ✅ COMPLETE (Interview 7 - 2025-11-11, 68 minutes)
 - **Source**: Interview 7 (Dr. Patricia Rodriguez)
 
+#### **Maria Rodriguez - Manufacturing Supervisor, Second Shift**
+
+- **Role**: Manufacturing Supervisor, Second Shift (reports to Robert Turner)
+- **Power Level**: MEDIUM (Manages 60 operators, influences floor adoption)
+- **Interest Level**: VERY HIGH (Her team, production numbers, caught between union/management)
+- **Current Stance**: CAUTIOUSLY SUPPORTIVE ("Necessary, but must be done right. Not like SAP.")
+- **Influence on Project**: Critical for floor-level adoption. Can influence 60 second-shift operators.
+- **Tenure**: 18 years (operator 2007-2012, team lead 2012-2016, supervisor 2016-present)
+- **Union History**: Union member 15 years, management 3 years
+- **Key Concerns**:
+  - Repeating SAP disaster (3 weeks chaos, 50% drop, lost 3 people)
+  - Inadequate training (SAP was 2-hour PowerPoint)
+  - 30% productivity drop during MES transition
+  - Operator capability range (1/3 comfortable, 1/3 okay, 1/3 struggle)
+  - Job security and ability to learn
+  - Safety incidents during transition
+- **What They Need**:
+  - Michael to work 8-hour floor shift
+  - Real training: 4-phase (2 weeks classroom + 3-month pilot + rollout + 6 months support)
+  - Pilot on one line before full rollout
+  - MES migrated LAST
+  - 24/7 support with manufacturing knowledge
+  - Partnership, not top-down imposition
+- **What They Value**:
+  - Reliability (99.9% uptime, <1hr recovery)
+  - Speed (<1 second loads)
+  - Simplicity (minimal clicks, clear errors)
+  - Mobile MES, real-time dashboards, integration
+- **Success Vision (12 months)**: Lines transitioned, operators confident, system stable, morale good
+- **Failure Fear**: Rushed timeline, inadequate training, production drops, people quit
+- **Key Quote**: "My operators are smart, capable, adaptable. Give them real training, real support, real respect, and they'll deliver. But treat this like a technical project instead of a people project, it will fail."
+- **Interview Status**: ✅ COMPLETE (Interview 8 - 2025-11-05, 72 minutes)
+- **Source**: Interview 8 (Maria Rodriguez)
+
 ---
 
 ### High Power, Low Interest (KEEP SATISFIED)
 
 #### **Board of Directors**
+
 - **Role**: Governance, strategic oversight
 - **Power Level**: HIGH (Approve major investments)
 - **Interest Level**: MEDIUM (Want results, not details)
@@ -262,6 +303,7 @@
 ---
 
 #### **Stratton Partners (PE Firm)**
+
 - **Role**: Majority owner
 - **Power Level**: HIGH (Can replace CEO/executive team)
 - **Interest Level**: MEDIUM (Want operational efficiency, not involved in details)
@@ -286,6 +328,7 @@
 ### Low Power, High Interest (KEEP INFORMED)
 
 #### **Sarah Mitchell - IT Director**
+
 - **Role**: IT Director (15 years tenure)
 - **Power Level**: MEDIUM (Institutional knowledge, team loyalty)
 - **Interest Level**: VERY HIGH (Her team, her systems, her career)
@@ -324,6 +367,7 @@
 ---
 
 #### **Kevin Martinez - Infrastructure Manager**
+
 - **Role**: Infrastructure Manager (reports to Sarah)
 - **Power Level**: LOW (Individual contributor level)
 - **Interest Level**: HIGH (Cloud is his future)
@@ -347,6 +391,7 @@
 ---
 
 #### **Raj Patel - Lead ERP Developer**
+
 - **Role**: Lead ERP Developer (reports to Sarah)
 - **Power Level**: LOW (Individual contributor level)
 - **Interest Level**: HIGH (His code, his expertise)
@@ -370,6 +415,7 @@
 ---
 
 #### **Lisa Chen - Manufacturing IT**
+
 - **Role**: Manufacturing IT Support (reports to Sarah)
 - **Power Level**: LOW (Individual contributor level)
 - **Interest Level**: HIGH (Shop floor systems are critical)
@@ -393,6 +439,7 @@
 ---
 
 #### **IT Team (45 people)**
+
 - **Role**: Developers, infrastructure, support staff
 - **Power Level**: LOW (Collective medium power)
 - **Interest Level**: VERY HIGH (Their jobs, skills, future)
@@ -424,6 +471,7 @@
 ### Low Power, Low Interest (MONITOR)
 
 #### **Factory Floor Managers**
+
 - **Role**: Manufacturing supervisors and managers
 - **Power Level**: LOW (Operational level)
 - **Interest Level**: LOW (Unless it affects their operations)
@@ -471,6 +519,7 @@
 ```
 
 **Key Relationship Dynamics**:
+
 - **CEO ↔ Robert**: Best friends, CEO trusts Robert implicitly
 - **CEO ↔ Jennifer**: Relies on Jennifer for financial prudence
 - **Michael ↔ Sarah**: Natural tension (change vs. stability), must align
@@ -482,6 +531,7 @@
 ## Stakeholder Engagement Plan
 
 ### Phase 0 (Discovery - Current)
+
 - ✅ Michael Chen (CTO) - Interview 1 complete
 - ✅ Sarah Mitchell (IT Director) - Interview 2 complete
 - 🔄 Jennifer Walsh (CFO) - Interview 3 CRITICAL PRIORITY
@@ -494,12 +544,14 @@
 - ⏳ Arun Singh (Former SAP PM) - External perspective (optional)
 
 ### Phase 1 (Planning)
+
 - Board presentation (Michael with support from discovery insights)
 - IT team communication (Sarah leads, Michael supports)
 - Union engagement (Robert leads)
 - Customer communication plan
 
 ### Phase 2+ (Execution)
+
 - Regular CEO updates
 - Quarterly board updates
 - Monthly CFO financial reviews
@@ -510,16 +562,19 @@
 ## Critical Success Factors
 
 ### Must Have Support From:
+
 1. **Jennifer Walsh (CFO)** - Controls budget, can veto
 2. **Robert Turner (VP Ops)** - Controls operations, CEO's ear
 3. **Sarah Mitchell (IT Director)** - Has knowledge, team loyalty
 
 ### Must Keep Satisfied:
+
 4. **CEO** - Ultimate sponsor
 5. **Board** - Approve funding
 6. **Stratton Partners** - Patient but impatient
 
 ### Must Not Lose:
+
 7. **Key IT staff** - Knowledge holders
 8. **Union** - Can halt production
 
@@ -527,16 +582,16 @@
 
 ## Influence Strategies by Stakeholder
 
-| Stakeholder | Current Stance | Target Stance | Strategy | Timeframe |
-|-------------|----------------|---------------|----------|-----------|
-| Jennifer (CFO) | Skeptic/Blocker | Cautious Supporter | Reset expectations, show realism | Interview 3 |
-| Robert (VP Ops) | Cautiously Optimistic | Champion | Show operational benefits | Interview 4 |
-| Sarah (IT Dir) | Cautiously Supportive | Champion | Align timeline, value expertise | Phase 0 |
-| Michael (CTO) | Champion | Aligned Champion | Educate on complexity | Phase 0 |
-| IT Team | Mixed | Supportive | Training, engagement, honesty | Phase 0-1 |
-| Union | Unknown | Neutral/Supportive | Early engagement, no layoffs | Phase 1 |
-| CEO | Champion | Confident Champion | Deliver early wins | Phase 1 |
-| Board | Expectant | Confident | Strong plan, visible progress | Phase 1 |
+| Stakeholder     | Current Stance        | Target Stance      | Strategy                         | Timeframe   |
+| --------------- | --------------------- | ------------------ | -------------------------------- | ----------- |
+| Jennifer (CFO)  | Skeptic/Blocker       | Cautious Supporter | Reset expectations, show realism | Interview 3 |
+| Robert (VP Ops) | Cautiously Optimistic | Champion           | Show operational benefits        | Interview 4 |
+| Sarah (IT Dir)  | Cautiously Supportive | Champion           | Align timeline, value expertise  | Phase 0     |
+| Michael (CTO)   | Champion              | Aligned Champion   | Educate on complexity            | Phase 0     |
+| IT Team         | Mixed                 | Supportive         | Training, engagement, honesty    | Phase 0-1   |
+| Union           | Unknown               | Neutral/Supportive | Early engagement, no layoffs     | Phase 1     |
+| CEO             | Champion              | Confident Champion | Deliver early wins               | Phase 1     |
+| Board           | Expectant             | Confident          | Strong plan, visible progress    | Phase 1     |
 
 ---
 

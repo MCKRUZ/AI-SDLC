@@ -147,3 +147,46 @@
   - Approach: Microsoft Azure documentation, migration partners, case studies
   - Priority: HIGH
   - Context: Database migration is highest risk
+
+
+✅ **What is real operator capability on technology?** (ANSWERED)
+- **Answer**: 1/3 tech-comfortable, 1/3 okay, 1/3 struggle. Age factor but training quality matters most.
+- **Source**: Maria (Interview 8)
+
+✅ **What is realistic training timeline for major system change?** (ANSWERED)
+- **Answer**: Four-phase: 2 weeks classroom + 3-month pilot + gradual rollout (2 weeks + 2 weeks per line) + 6 months support
+- **Source**: Maria (Interview 8)
+
+✅ **How many Sunday maintenance windows available per year?** (ANSWERED)
+- **Answer**: 12 windows (1/month), 4 hours each = 48 hours/year total. Shared with mechanical/electrical. Sequential dependencies = years.
+- **Source**: Maria (Interview 8)
+
+✅ **What actually happened during SAP implementation?** (ANSWERED)
+- **Answer**: 3 weeks chaos, 50% production drop, 2-hour training, slow system, ultimate rollback. Lost 3 employees.
+- **Source**: Maria (Interview 8)
+
+### For Michael (URGENT):
+- ❓ **Will Michael commit to 8-hour floor shift on Maria's second shift within 30 days?** (Both Robert and Maria require)
+- ❓ **Is Michael willing to accept $9M training investment for MES operators alone?** ($50K × 180)
+- ❓ **Will Michael explicitly acknowledge SAP failure and explain what's different?** (Address trauma)
+
+### For Jennifer (URGENT):
+- ❓ **Does current budget model include $9M for operator training?** (Maria estimate vs likely $900K budgeted)
+- ❓ **Does budget include $12-15M total training across all roles?** (Not just operators)
+- ❓ **What is funding source for training investment?** (Operational vs capital budget)
+
+### For HR Director (Interview 11):
+- ❓ **What is HR's assessment of realistic training costs per operator?** (Validate Maria's $50K)
+- ❓ **Who will design/deliver four-phase training program?** (Need manufacturing-experienced trainers)
+- ❓ **What is change management resource capacity?** (180 operators + 45 IT + others)
+- ❓ **How to demonstrate "no layoffs" commitment visibly?** (Actions not words)
+
+### For Project Team:
+- ❓ **What is MES pilot program structure?** (Which line, operators, duration, success criteria)
+- ❓ **What is gradual rollout plan?** (Timeline per line, lessons learned process)
+- ❓ **What is 24/7 support model?** (Staffing, expertise, escalation)
+- ❓ **How will operators be involved in UAT?** (Usability under pressure, not just functional)
+
+### For Patricia (Quality):
+- ❓ **Does Patricia have explicit veto power on safety/quality systems?** (Maria says should, is it formalized?)
+- ❓ **What is safety validation approach for MES interface changes?** (Prevent confusion incidents)

@@ -120,6 +120,96 @@
 - **Pattern**: Labor relations could derail technical modernization
 - **Critical Next Step**: Must involve union early, interview Robert Turner (VP Ops) about this
 
+## THEME 11: SAP Trauma as Organizational PTSD
+
+**First Identified**: Interview 8 (Maria)  
+**Also Mentioned**: Interviews 2 (Sarah), 3 (Jennifer), 4 (Robert), 6 (Jimmy)
+
+**Description**: 2018 SAP created lasting trauma shaping current response to "modernization." Not just failed project, but traumatic experience affecting trust and willingness.
+
+**Evidence**:
+
+- Maria: "3 weeks chaos, 50% drop, 2-hour training, lost 3 employees"
+- "When corporate says 'new system,' people update resumes. That's the SAP legacy."
+
+**Impact**: Resistance, attrition risk, need to explicitly differentiate from SAP
+
+**Mitigation**: Acknowledge SAP, show what's different, build trust through early actions
+
+---
+
+## THEME 12: Training as Investment vs. Expense
+
+**First Identified**: Interview 8 (Maria)  
+**Also Mentioned**: Interview 6 (Jimmy)
+
+**Description**: Real training costs $50K/operator × 180 = $9M. This is investment in success, not expense to minimize. Inadequate training guarantees failure.
+
+**Evidence**:
+
+- Four-phase: 2 weeks classroom + 3-month pilot + rollout + 6 months support
+- "Less than losing 3 weeks production like SAP"
+- Operator range: 1/3 comfortable, 1/3 okay, 1/3 struggle
+
+**Impact**: $9M budget (likely not in model), 12-18 months duration
+
+**Success Factor**: Training quality directly determines adoption success
+
+---
+
+## THEME 13: Sunday Window Constraint as Timeline Reality
+
+**First Identified**: Interview 8 (Maria)  
+**Also Mentioned**: Interview 2 (Sarah)
+
+**Description**: Only 12 Sunday windows/year (48 hours total), shared with maintenance. This constraint alone proves multi-year timeline.
+
+**Evidence**:
+
+- "12 windows, 48 hours total for ALL IT changes"
+- Sequential dependencies (ERP → warehouse → MES)
+- "Years of Sunday mornings"
+
+**Impact**: 3-5 year minimum timeline from cutover math alone
+
+---
+
+## THEME 14: Floor-Level Partnership as Success Prerequisite
+
+**First Identified**: Interview 8 (Maria)  
+**Also Mentioned**: Interviews 4 (Robert), 6 (Jimmy)
+
+**Description**: Success requires genuine partnership, not top-down imposition. Michael floor shift is trust catalyst.
+
+**Evidence**:
+
+- Maria + Robert: "Work actual 8-hour shift, not tour"
+- "Partner with us, don't treat us like widgets"
+- "Technical project vs. people project"
+
+**Impact**: Michael's credibility depends on floor shift, operators in UAT/design
+
+**Success Factor**: "Smart, capable, adaptable people if given real support"
+
+---
+
+## THEME 15: Safety and Quality as Non-Negotiable Veto
+
+**First Identified**: Interview 8 (Maria)  
+**Also Mentioned**: Interview 7 (Patricia)
+
+**Description**: Systems affecting safety/quality require extra rigor. Patricia should have veto power. Operator confusion causes incidents.
+
+**Evidence**:
+
+- "SAP had close calls - wrong setup, missed quality checks"
+- "Patricia should have veto power. Robert should back her up."
+- Aerospace/medical parts = customer safety
+
+**Impact**: Extended testing, Patricia veto authority, cannot rush
+
+**Risk**: Worker injury, customer safety incidents, regulatory violations
+
 ---
 
 ## Weakening Themes (Not Recently Mentioned)

@@ -1,1216 +1,1584 @@
-# Risk Register - Contoso Manufacturing Azure Modernization
+# Risk Register - Azure Modernization Initiative
 
-**Project**: Azure Modernization Initiative  
-**Phase**: Phase 0 - Discovery & Ideation  
-**Last Updated**: After Interview 6 (Jimmy Garcia - Union Steward)  
-**Total Risks**: 33  
-**Risk Distribution**: 9 Critical, 16 High, 8 Medium
+**Last Updated**: 2025-11-05 (After Interview 9)  
+**Total Risks**: 44  
+**Status**: ACTIVE TRACKING
 
 ---
 
-## Risk Summary Dashboard
+## Risk Summary Statistics
 
 ### By Severity
-- **Critical (Show-stopper)**: 9 risks
-- **High (Major Impact)**: 16 risks  
-- **Medium (Moderate Impact)**: 8 risks
+- **CRITICAL (20-25)**: 10 risks
+- **HIGH (15-19)**: 14 risks
+- **MODERATE (10-14)**: 14 risks
+- **LOW (1-9)**: 6 risks
 
 ### By Category
-- **Financial**: 8 risks
-- **Technical**: 7 risks
-- **Organizational**: 9 risks
-- **Operational**: 5 risks
-- **Compliance/Legal**: 4 risks
+- **Timeline Risks**: 8 risks
+- **Capacity Risks**: 9 risks
+- **Technical Risks**: 7 risks
+- **Organizational Risks**: 8 risks
+- **Financial Risks**: 6 risks
+- **Operational Risks**: 6 risks
 
-### By Phase
-- **Pre-Migration/Phase 0-1**: 12 risks
-- **Phase 1 (Migration)**: 10 risks
-- **Post-Migration (Year 2+)**: 5 risks
-- **All Phases**: 2 risks
-
-### Critical Path Risks (Must Resolve Before Proceeding)
-1. R01 - Timeline Misalignment
-2. R02 - Executive Alignment Gap
-3. R07 - Budget Realism Gap
-4. R21 - Hardware Failure Cascade
-5. R22 - Network Capacity Bottleneck
-6. R10 - Union Negotiation Failure
-7. R14 - Three Veto Powers Uncoordinated
-8. R23 - Cloud Cost Spiral (No ROI)
+### Risk Velocity
+- **Worsening**: 8 risks (getting worse without intervention)
+- **Stable**: 31 risks (understood but not improving)
+- **Improving**: 5 risks (mitigation in progress)
 
 ---
 
-## CRITICAL RISKS (Show-stopper Impact)
+## CRITICAL RISKS (Score 20-25) - Top Priority
 
-## Risk 01: Timeline Misalignment
+### RISK-001: Timeline Compression Impossibility
+**Score**: 25/25 (CRITICAL)  
+**Category**: Timeline  
+**Status**: WORSENING
 
-**Category**: Organizational  
-**Probability**: Very High (95%)  
-**Impact**: Show-stopper  
-**Severity**: CRITICAL
+**Description**: Michael's 18-month timeline is mathematically impossible due to Sunday window constraint. Only 12 Sunday maintenance windows per year (4 hours each = 48 hours/year total) for ALL IT changes, shared with mechanical/electrical maintenance. Sequential dependencies (ERP → warehouse → MES) mean systems cannot be migrated in parallel. This single constraint alone proves 3-5 year minimum timeline.
 
-**Description**: Fundamental disconnect between Michael's 18-month promise and reality understood by Sarah (years not quarters), Jennifer (3-5 years), Robert (2-3 years per system), and Kevin (3 years minimum). Michael promised board 50% cost reduction in 18 months. All four other stakeholders independently state this is impossible.
+**Impact**: 
+- Project will miss all commitments
+- Board expectations completely misaligned
+- Credibility loss when timeline slips
+- Potential project cancellation when reality becomes clear
+
+**Likelihood**: 100% (certain to occur)
+
+**Root Cause**: 
+- Physical constraint (Sunday windows)
+- Mathematical reality (48 hours/year inadequate)
+- Sequential dependencies cannot be overcome
+- Michael's timeline based on optimism, not physics
+
+**Mitigation**:
+- Reset board expectations immediately with mathematical proof
+- Accept 36-60 month (3-5 year) timeline
+- Phase gates every 6-12 months with go/no-go decisions
+- Use Christmas shutdown for tactical upgrades (additional windows)
+
+**Owner**: Michael + Jennifer + Board  
+**Mitigation Cost**: $0 (acceptance of reality)  
+**First Identified**: Interview 2 (Sarah), Interview 8 (Maria - mathematical proof)
+
+---
+
+### RISK-002: Team Capacity Collapse
+**Score**: 24/25 (CRITICAL)  
+**Category**: Capacity  
+**Status**: WORSENING
+
+**Description**: IT team already underwater with BAU work (300+ open tickets, brutal on-call, 3-4 pages/night). Cannot absorb migration workload without additional capacity. Support team had 30% attrition in 18 months (3 of 10 people left). If people pulled for migration, BAU work stops. If migration added to current workload, people will quit due to burnout.
 
 **Impact**:
-- Board presentation in 30 days with unrealistic timeline
-- Lost credibility when timeline slips (Q1-Q2 FY2025)
-- Budget shortfall (18 months underfunds vs. 3-year need)
-- Rushed decisions causing quality/safety issues
-- Initiative cancellation when reality becomes apparent
-- Michael's departure, repeat of 18-month-ago failed attempt
+- BAU work fails (production support suffers)
+- Migration work fails (inadequate resources)
+- Attrition accelerates (lose institutional knowledge)
+- Project collapses under its own weight
 
-**Root Cause**: Michael hired to deliver fast results (board pressure), hasn't reconciled with operational reality yet.
+**Likelihood**: 95% (almost certain without mitigation)
 
-**Mitigation Strategy**:
-- Four-way alignment meeting (Michael + Jennifer + Robert + Sarah + Kevin) BEFORE board presentation
-- Present realistic 3-year timeline with phase gates
-- Year 1: Non-critical systems migration + infrastructure stabilization
-- Year 2: Critical systems migration with parallel running
-- Year 3: Optimization, decommissioning on-prem
-- Build credibility through honesty, not optimism
+**Root Cause**:
+- Team already at capacity (no slack)
+- On-call rotation brutal (3-4 pages/night)
+- No plan for backfill or contractors
+- Burnout already happening (3 left in 18 months)
 
-**Owner**: Michael Chen  
-**Status**: Open - URGENT (board presentation in ~15 days from Interview 3)
+**Mitigation**:
+- Hire 10-15 contractors minimum for migration work
+- Hire 6-9 contractors for support backfill
+- Address burnout BEFORE migration starts
+- Reduce on-call burden (shared with contractors)
+- Realistic timeline allows capacity to scale
 
----
-
-## Risk 02: Executive Alignment Gap
-
-**Category**: Organizational  
-**Probability**: Very High (90%)  
-**Impact**: Show-stopper  
-**Severity**: CRITICAL
-
-**Description**: Michael, Jennifer, Robert, Sarah, and Kevin have not sat down TOGETHER to reconcile their different perspectives. Each stakeholder has been interviewed separately and has concerns/requirements, but no unified plan exists. Michael has vision, Jennifer has budget concerns, Robert has operational requirements, Sarah has technical reality, Kevin has infrastructure constraints. All five have mentioned lack of alignment.
-
-**Impact**:
-- Decisions made without full context
-- Budget approved by Jennifer doesn't match operational needs
-- Robert vetoes via CEO when operational constraints ignored
-- Infrastructure collapse (Kevin's passive veto) if not addressed
-- Contradictory messages to board
-- Initiative stalls when forced to reconcile (same as 18 months ago)
-
-**Root Cause**: Stakeholders interviewed separately, no facilitated session to build unified understanding.
-
-**Mitigation Strategy**:
-- **Four-way alignment session within 2 weeks**:
-  - Attendees: Michael + Jennifer + Robert + Sarah + Kevin
-  - Duration: Half-day workshop
-  - Facilitator: External or trusted internal
-  - Agenda: Put ALL constraints on table
-    - Jennifer's budget reality ($3-5M over 3-5 years, Year 1 doubling)
-    - Robert's operational requirements (parallel running, no layoffs, union engagement)
-    - Sarah's technical debt (847 reports, black box code, team underwater)
-    - Kevin's infrastructure ($ 2.5M minimum, network bottleneck, expertise gap)
-  - Output: Unified plan all five can support publicly
-  - Success criteria: All five say "yes, this can work"
-
-**Owner**: Michael Chen (must convene and facilitate)  
-**Status**: Open - URGENT (must happen before board presentation)
+**Owner**: Sarah + Jennifer  
+**Mitigation Cost**: $4-6M over 3 years (contractors)  
+**First Identified**: Interview 2 (Sarah), Interview 9 (Tom - 30% attrition)
 
 ---
 
-## Risk 07: Budget Realism Gap
-
-**Category**: Financial  
-**Probability**: High (80%)  
-**Impact**: Show-stopper  
-**Severity**: CRITICAL
-
-**Description**: Major gap between Michael's expectations and financial reality:
-- Michael's promise: 50% cost reduction ($2.25M/year savings) in 18 months
-- Jennifer's analysis: Year 1 costs DOUBLE to $9-11M, savings Year 4+
-- Kevin's analysis: Year 1-2 costs $8.75-9.75M/year, long-term maybe $1.5M/year savings IF disciplined (50/50 chance of zero savings)
-- Michael appears unaware of: $2.5M infrastructure, $1.4-2M staffing, $800K-1.2M parallel running, $1-2M hidden costs
-
-**Current State**: $4.5M annual IT run costs  
-**Michael's Implied Budget**: Unknown, but promises 50% reduction to $2.25M  
-**Jennifer's Realistic Budget**: $3-5M over 3-5 years, with Year 1 doubling  
-**Kevin's Detailed Analysis**:
-- Year 1-2: $17.5-19.5M total ($8.75-9.75M/year)
-- Year 3+: $3.5M/year optimistic, $5M/year realistic
-
-**Gap**: $5-7M Year 1, unclear if Michael understands this
-
-**Impact**:
-- Jennifer publicly challenges Michael at board presentation if not aligned
-- Budget approval withheld or insufficient
-- Triggers Jennifer's 20% variance kill criteria mid-project
-- Initiative scaled back or cancelled when money runs out
-- Damages Michael's credibility permanently
-
-**Mitigation Strategy**:
-- Kevin + Sarah + Jennifer build comprehensive 5-year cost model including ALL costs
-- Present to Michael BEFORE board presentation
-- Include: Infrastructure ($2.5M), staffing ($1.4-2M Year 1), parallel running ($800K-1.2M), hidden costs ($1-2M/year), licensing catch-up ($800K)
-- Scenario planning: Optimistic ($3.5M/year long-term) vs. Realistic ($5M/year)
-- Michael presents REALISTIC budget to board, not aspirational
-- Build contingency (Jennifer's requirement)
-
-**Owner**: Jennifer Walsh + Kevin Martinez + Sarah Mitchell  
-**Status**: Open - URGENT (cost model needed within 15 days)
-
----
-
-## Risk 10: Union Negotiation Failure
-
-**Category**: Operational/Legal  
-**Probability**: High (70%)  
-**Impact**: Show-stopper  
-**Severity**: CRITICAL
-
-**Description**: Interview 6 with Jimmy Garcia (Union Steward, UAW Local 599) revealed critical union considerations. 180 UAW workers represented. Union contract Article 12 requires 120-day notice before major tech changes. Contract Article 15 (seniority) requires offering new roles to existing workers first with training. 2019 contract negotiation (87% strike authorization vote) created trust deficit. 2018 SAP trauma still remembered (3 weeks lost production, inadequate training, broken promises). If union surprised or jobs threatened without no-layoffs commitment, strike authorization likely (Jimmy estimates 80-90% yes vote).
-
-**Impact**:
-- Work stoppage = $240K/day in lost production ($1.68M/week)
-- 120-day notice requirement adds 4 months to timeline
-- Contract grievances delay implementation
-- Seniority rules prevent external hiring for cloud roles until existing workers offered first
-- Strike authorization damages company reputation, worker morale
-- Robert vetoes initiative via CEO if union not on board
-- Safety issues if workers resist new systems (work-to-rule)
-
-**Root Cause**: Technology modernization often leads to efficiency (fewer people needed). Union contract protects against layoffs without negotiation. Trust deficit from 2019 wage battle and 2018 SAP disaster.
-
-**Mitigation Strategy**:
-- **URGENT**: Michael + Jimmy + bargaining committee meeting within 30 days
-- Written no-layoffs commitment endorsed by CEO (THE non-negotiable per Jimmy)
-- 120-day Article 12 notice before MES/ERP floor system changes
-- Real training programs ($50K/person, not token $5K) with paid time
-- Seniority-compliant approach to new cloud roles (offer to existing workers first)
-- Give union seat at table (monthly meetings, feedback mechanism)
-- MES pilot with volunteer operators, 3-6 month parallel running
-- Early involvement = partnership; late involvement = adversarial fight
-- Robert sponsors union engagement (his relationship, his requirement)
-
-**Owner**: Michael Chen + Robert Turner  
-**Status**: Open - Interview complete, Michael-Jimmy meeting URGENT within 30 days
-
----
-
-## Risk 14: Three Veto Powers Uncoordinated
-
-**Category**: Organizational/Political  
-**Probability**: Very High (85%)  
-**Impact**: Show-stopper  
-**Severity**: CRITICAL
-
-**Description**: Three independent veto powers identified, none coordinated:
-1. **Jennifer (CFO)** - Controls budget, will publicly challenge if unrealistic
-2. **Robert (VP Ops)** - CEO's best friend, can veto via CEO relationship
-3. **Kevin (Infrastructure)** - Passive veto (infrastructure collapses if not addressed)
-
-Each can independently kill the initiative, and they haven't aligned on requirements yet.
-
-**Impact**:
-- Michael gains Jennifer's budget approval, but Robert vetoes via CEO
-- Or: Michael gains Robert's support, but Jennifer withholds budget
-- Or: Both approve, but infrastructure fails (Kevin's passive veto)
-- Initiative stalls, Michael loses credibility with all three
-- Repeat of pattern from 18 months ago (and 3x prior per Kevin)
-
-**Root Cause**: Power structure not mapped, stakeholders engaged separately, no coalition building.
-
-**Mitigation Strategy**:
-- Recognize all three must say "yes" for initiative to succeed
-- Four-way alignment meeting includes all three (+ Sarah + Kevin)
-- Address each veto power's concerns explicitly:
-  - Jennifer: Realistic budget, contingency, kill criteria, honest assessment
-  - Robert: Parallel running, no downtime, union engagement, operational benefits
-  - Kevin: Infrastructure investment, network resolution, staffing, operational discipline
-- Build coalition where all three support publicly
-- Create "Steering Committee" with all three (+ Michael + Sarah) for ongoing alignment
-
-**Owner**: Michael Chen (must orchestrate)  
-**Status**: Open - URGENT (board presentation approaching)
-
----
-
-## Risk 21: Hardware Failure Cascade
-
-**Category**: Technical  
-**Probability**: High (80%)  
-**Impact**: Show-stopper  
-**Severity**: CRITICAL
-
-**Description**: Infrastructure experiencing exponential hardware failure rates. Q2: 4 failures, Q3: 8 failures, Q4: 14 failures. 247 servers averaging 8.4 years old (3+ years past industry standard of 5 years). Storage at 87% capacity, will hit 90% crisis by Q2 2025. Trend indicates continued exponential growth.
-
-**Impact**:
-- Critical system failure during migration could derail entire initiative
-- May force emergency $1M+ spending on hardware replacement
-- Could extend timeline by 3-6 months if major system fails
-- Loss of data if storage hits capacity before backup infrastructure upgraded
-- Team distracted by constant firefighting instead of migration work
-
-**Root Cause**: $4.2M infrastructure refresh requested, only $800K approved. Jennifer cut budget 18 months ago citing "moving to cloud anyway." Infrastructure aged another 18 months without investment.
-
-**Mitigation Strategy**:
-- **Immediate**: Allocate $2.5M for infrastructure stabilization in Year 1 budget
-  - $1.2M SAN replacement/expansion (get 3-5 year runway)
-  - $800K critical server refresh (MES, ERP, DB servers)
-  - $300K backup infrastructure
-  - $150K monitoring tools
-- **Short-term**: Identify and replace highest-risk servers before migration starts
-- **Contingency**: Emergency hardware budget of $500K for unexpected failures
-
-**Owner**: Kevin Martinez  
-**Status**: Open - Urgent action required  
-**Dependencies**: Jennifer's budget approval
-
-**Notes**: Cannot defer all $4.2M, but must address $2.5M minimum to maintain stability during 12-24 month migration.
-
----
-
-## Risk 22: Network Capacity Bottleneck
-
-**Category**: Technical  
-**Probability**: High (100% if not addressed)  
-**Impact**: Show-stopper  
-**Severity**: CRITICAL
-
-**Description**: Current 200 Mbps internet circuit requires 6-7 MONTHS just to transfer 50TB of data to Azure. Cannot saturate circuit 24/7 as business requires it for operations. This adds 6-8 months to ANY migration timeline unless resolved.
-
-**Impact**:
-- Adds minimum 6-8 months to migration timeline
-- Delays entire Phase 1 (cannot start until data transfer complete)
-- Michael's 18-month timeline becomes impossible (network alone is 6-8 months)
-- Ongoing replication during parallel running consumes bandwidth
-- User experience degraded if hybrid apps (on-prem users hitting Azure) share limited bandwidth
-
-**Root Cause**: Network infrastructure adequate for current operations, not for cloud migration. 200 Mbps circuit installed 2018, sized for pre-cloud needs.
-
-**Mitigation Strategy**:
-- **Option A - Circuit Upgrade** (Kevin's recommendation for long-term):
-  - Upgrade to 1 Gbps circuit
-  - Cost: $60K upfront + $4K/month ($48K/year ongoing)
-  - Timeline: 30-60 days to provision
-  - Benefit: Reduces data transfer to 30-40 days + adequate for hybrid operations
-  
-- **Option B - Azure Data Box** (for initial bulk transfer):
-  - Microsoft ships physical storage device, copy data locally, ship back
-  - Cost: $3K per box × 3 boxes = $9K
-  - Timeline: 2-3 weeks total
-  - Limitation: Only for initial bulk transfer, doesn't help hybrid operations
-
-- **Recommended**: Data Box for initial bulk transfer + circuit upgrade for ongoing hybrid operations
-
-**Owner**: Kevin Martinez + Michael Chen  
-**Status**: Open - Decision required within 30 days
-
-**Notes**: This is a hard constraint - no amount of planning can overcome physics of data transfer. Must be resolved before migration starts or accept 6-8 month delay.
-
----
-
-## Risk 23: Cloud Cost Spiral (No ROI)
-
-**Category**: Financial  
-**Probability**: Medium-High (50%)  
-**Impact**: Major  
-**Severity**: CRITICAL
-
-**Description**: Kevin assesses 50/50 chance cloud costs will match on-prem ($5M/year) with NO savings, eliminating entire business case. Root cause: Organizational culture of "build, accumulate, never clean up" (847 Crystal Reports, 30+ Access databases). If this culture transfers to cloud, will result in 600+ underutilized VMs running 24/7 at $300/month each.
-
-**Impact**:
-- Eliminates expected $2.25M/year (50%) cost savings
-- Spent $10-15M on migration with zero ROI
-- Triggers Jennifer's kill criteria (benefits not materializing)
-- Damages credibility of IT leadership
-- Board loses confidence, future initiatives blocked
-
-**Root Cause**: Organizational culture - "We're good at capital budgeting, terrible at operational discipline." No cleanup culture, accumulate without deprecating.
-
-**Mitigation Strategy**:
-- **Pre-Migration**: Rationalize current environment (reduce 847 reports to 200, eliminate unused databases)
-- **Day 1 Cloud Operations**: Weekly cost reviews, auto-shutdown non-prod, strict tagging/chargeback
-- **Governance**: Approval required for new resources, 90-day review cycle, reserved instances
-- **Cultural Change**: Training on cost optimization, KPIs include cost efficiency, celebrate savings
-
-**Owner**: Kevin Martinez + Sarah Mitchell + Finance  
-**Status**: Open - Requires organizational change management plan
-
-**Notes**: This is THE risk to ROI. Kevin's confidence only 50/50 that organization can maintain discipline.
-
----
-
-## Risk 30: Union Contract Violation (Article 12)
-
-**Category**: Compliance/Legal  
-**Probability**: High (70%)  
-**Impact**: Show-stopper  
-**Severity**: CRITICAL
-
-**Description**: Union contract Article 12 REQUIRES 120-day notice before implementing major technology changes affecting union members. MES system, ERP floor interfaces, shop floor systems ALL fall under this provision. If company proceeds with migration without 120-day notice, union has legal grounds for grievance and work stoppage. "Major tech changes" = systems used by union members, process changes affecting roles. This is not optional - it's a contract requirement.
-
-**Impact**:
-- Contract violation triggers formal grievance process
-- Potential work stoppage ($240K/day)
-- Legal liability for contract breach
-- Damages labor-management relationship irreparably
-- 4 months added to timeline (120 days notice period)
-- Union gets review/negotiation rights during notice period
-- Cannot short-cut by claiming "just IT infrastructure"
-
-**Root Cause**: Union contract protects workers from surprise technology changes. Article 12 designed to give union time to assess impacts, negotiate training/redeployment, protect member interests.
-
-**Mitigation Strategy**:
-- Build 120-day notice into project timeline (between Phase 1 planning and Phase 2 execution)
-- Provide Article 12 notice BEFORE making changes to MES, ERP floor interfaces, shop systems
-- During 120-day period: Good-faith negotiation on training, transition, worker impacts
-- Legal review of all system changes to determine if Article 12 applies
-- Document compliance to protect against future grievances
-- Make union partnership from start, not adversarial compliance
-
-**Owner**: Michael Chen + Legal + HR + Robert Turner  
-**Status**: Open - CRITICAL PATH - Must be incorporated into timeline immediately
-
----
-
-## Risk 31: Strike Authorization and Work Stoppage
-
-**Category**: Operational/Legal  
-**Probability**: Medium (50% if no-layoffs not committed)  
-**Impact**: Show-stopper  
-**Severity**: CRITICAL
-
-**Description**: If Azure migration threatens jobs without written no-layoffs commitment, Jimmy Garcia estimates 80-90% strike authorization vote (87% in 2019 wage fight). Strike authorization gives union leverage to stop work if concerns not addressed. Cost: $240K/day production loss, $1.68M/week. Scenarios triggering strike: surprise layoffs, unsafe system rollout, contract violations (Article 12), bad-faith negotiations, broken promises.
-
-**Impact**:
-- Production halt = $240K/day, $1.68M/week
-- Damages company reputation (customers, investors, community)
-- Worker morale destroyed, best talent leaves
-- Robert's veto via CEO (operations cannot tolerate risk)
-- Media attention, regulatory scrutiny
-- Board loses confidence in leadership
-- Initiative cancelled to restore labor peace
-
-**Root Cause**: History of trust deficits (2019 contract battle, 2018 SAP broken promises), technology changes typically eliminate jobs, workers organize when threatened.
-
-**Mitigation Strategy**:
-- **PRIMARY**: Written no-layoffs commitment endorsed by CEO
-  - If cannot commit: Honest conversation about risks, negotiate protections
-  - Worst: Vague promises that erode trust
-- Early union engagement (Phase 0, before decisions locked)
-- Real training programs (months-long, paid, hands-on)
-- Seniority-compliant approach to new roles
-- Monthly union meetings, transparent communication
-- Partnership mindset: Union helps shape solution, not just reacts
-- Pilot approach with volunteer workers
-- Celebrate wins together
-
-**Owner**: Michael Chen + CEO + Robert Turner  
-**Status**: Open - Michael-Jimmy meeting within 30 days, no-layoffs decision URGENT
-
----
-
-## Risk 32: Training Adequacy and Seniority Compliance
-
-**Category**: Operational/Organizational  
-**Probability**: High (75%)  
-**Impact**: Major (Could become Show-stopper)  
-**Severity**: CRITICAL
-
-**Description**: Union contract Article 15 (seniority) requires offering new roles to existing workers FIRST with real training before external hiring. If Azure creates "cloud engineer" or "data analyst" roles and company lays off 12-year worker while hiring college grad, violates contract spirit. Jimmy's requirement: "Real training" ($50K/person, months-long, not token $5K). If training inadequate, existing workers can't perform new roles, BUT company still cannot hire externally per seniority rules. Migration blocked if cannot staff cloud roles.
-
-**Impact**:
-- Cannot staff critical cloud engineering roles if training fails
-- Seniority grievances if external hiring happens before offering internally
-- Training budget shock: $50K Ã— workers needing retraining
-- Extended timeline (6-12 months training before roles filled)
-- If training inadequate, lose both existing workers (can't perform) AND cannot hire new
-- Contract violation if skip training step
-
-**Root Cause**: Skills gap between current manufacturing IT roles and cloud engineering. Contract designed to protect long-tenure workers from being displaced by newer graduates.
-
-**Mitigation Strategy**:
-- Budget realistic training ($50K/person, not $5K token)
-- Design WITH union: What does "real training" look like?
-- Pilot program with volunteers (test approach, refine)
-- Months-long curriculum (not 2-day workshop)
-- Hands-on practice with paid time, dedicated instructors
-- Fair assessment process (give workers genuine shot)
-- ONLY AFTER real training + fair assessment: Discuss external hiring
-- Document everything to show good-faith effort
-
-**Owner**: HR + Michael Chen + Sarah Mitchell + Union  
-**Status**: Open - Training program design Phase 1 requirement
-
----
-
-## Risk 33: MES System Floor Adoption Resistance
-
+### RISK-008: MES Production Disruption
+**Score**: 22/25 (CRITICAL)  
 **Category**: Operational  
-**Probability**: High (70%)  
-**Impact**: Major  
-**Severity**: HIGH
+**Status**: STABLE (high risk but well understood)
 
-**Description**: 180 operators use MES daily. If interface changes significantly during migration, productivity drops during relearning period. If support inadequate (2 AM downtime issues), resistance builds. 2018 SAP trauma: 3 WEEKS lost production, 6-month nightmare, operators given 2-hour overview training. Union can "work-to-rule" (slow things down) if concerns ignored. Floor operators know what works - if not involved in testing/feedback, will find workarounds that bypass new system.
+**Description**: MES migration could disrupt 24/7 production operations costing $150K/hour when lines are down. 180 operators with 10-15 years muscle memory must learn new system. 30-35% of current support tickets are MES-related (most problematic system). Even with perfect execution, expect 20-30% productivity drop for 2-3 months.
 
 **Impact**:
-- Productivity drop 20-40% during relearning period
-- Quality issues from operator errors with unfamiliar interface
-- Workarounds that bypass controls, audit trails (SOC 2 risk)
-- Work-to-rule slowdown (union tactic if pushed too hard)
-- Safety incidents if operators confused by new system
-- Return to old system if adoption fails (migration failure)
+- Production revenue loss ($150K/hour per line)
+- Operator frustration and resistance
+- Quality issues during learning curve
+- Potential safety incidents from operator confusion
+- Customer order fulfillment delays
 
-**Root Cause**: Floor operators have 10-15 years muscle memory with current MES. Significant interface changes require retraining. If rushed or inadequate support, resistance inevitable.
+**Likelihood**: 85% (very likely without proper approach)
 
-**Mitigation Strategy**:
-- Pilot MES migration with ONE production line first (3-6 months parallel)
-- Recruit volunteer operators (union helps identify early adopters)
-- Involve operators in UAT, interface design feedback
-- Real training: Weeks-long, hands-on, production scenarios
-- 24/7 support during transition (not just day shift)
-- Keep parallel systems running until operators confident
-- Document lessons learned, refine approach before full rollout
-- Celebrate early adopters, build peer advocates
+**Root Cause**:
+- MES is mission-critical (production stops without it)
+- 180 operators across 3 shifts must all transition
+- Muscle memory from 10-15 years usage
+- System already problematic (30-35% of support tickets)
+- No room for error in 24/7 operation
 
-**Owner**: Sarah Mitchell + Robert Turner + Union + Manufacturing IT  
-**Status**: Open - MES pilot plan required before Phase 1
+**Mitigation**:
+- Migrate MES LAST (after proving approach on other systems)
+- Pilot program (one line, 3-6 months)
+- Parallel running (6-12 months minimum)
+- Four-phase training (2 weeks + 3 months + gradual rollout + 6 months support)
+- Floor-level support (all shifts, manufacturing background)
+- Rollback capability and clear decision criteria
+
+**Owner**: Robert + Maria + Sarah  
+**Mitigation Cost**: $1.5-1.8M for MES migration alone  
+**First Identified**: Interview 2 (Sarah), Interview 4 (Robert), Interview 8 (Maria)
 
 ---
 
-## HIGH RISKS (Major Impact)
-
-## Risk 03: Short-term Cost Increase
-
-**Category**: Financial  
-**Probability**: Very High (95%)  
-**Impact**: Major  
-**Severity**: HIGH
-
-**Description**: Jennifer's analysis shows Year 1 costs DOUBLE to $9-11M (from $4.5M current). Kevin's analysis confirms: Year 1-2 costs $8.75-9.75M/year. Includes infrastructure ($2.5M), migration ($6-8M), parallel running ($4.5M/year on-prem). Michael may not understand this reality yet.
-
-**Impact**:
-- Sticker shock when full costs revealed
-- Budget insufficient if Michael only planned for $4.5M ongoing
-- Jennifer withholds approval or forces scale-back
-- CFO skepticism damages initiative momentum
-
-**Root Cause**: Cloud requires investment BEFORE returns. Must run both environments during 12-24 month migration.
-
-**Mitigation Strategy**:
-- Present honest Year 1-2 cost doubling to Michael NOW
-- Get Jennifer's buy-in on multi-year budget ($10-15M over 3 years)
-- Frame as "investment thesis" not "run-rate cost"
-- Show breakeven in Year 3-4
-- Contingency budget for overruns (Jennifer's requirement)
-
-**Owner**: Jennifer Walsh + Kevin Martinez  
-**Status**: Open - Cost model needed before board presentation
-
----
-
-## Risk 04: SAP Trauma Influence
-
-**Category**: Organizational/Political  
-**Probability**: High (75%)  
-**Impact**: Major  
-**Severity**: HIGH
-
-**Description**: 2018 SAP implementation failure ($2.3M write-off) still influences all stakeholder thinking. Jennifer keeps memo in drawer. All four stakeholders (Michael, Sarah, Jennifer, Robert) referenced SAP failure unprompted. Organizational trauma creates skepticism toward ANY large technology initiative.
-
-**Impact**:
-- Higher burden of proof for Michael
-- Jennifer's veto trigger-ready ("not another SAP")
-- Board skeptical of IT promises
-- Conservative approach may under-resource initiative
-- Past failure creates self-fulfilling prophecy
-
-**Root Cause**: Previous CTO over-promised, under-delivered, created $2.3M loss and operational disruption.
-
-**Mitigation Strategy**:
-- Acknowledge SAP failure explicitly
-- Show what was learned ("honest assessment, realistic timeline")
-- Differentiate this initiative (proven technology, phased approach, kill criteria)
-- Leverage Jennifer's four non-negotiables (she learned from SAP)
-- Build trust through small wins before big commitments
-
-**Owner**: Michael Chen  
-**Status**: Open - Must be addressed in board presentation
-
----
-
-## Risk 05: Cyber Insurance Crisis (90 Days)
-
-**Category**: Compliance/Legal  
-**Probability**: Very High (90%)  
-**Impact**: Major  
-**Severity**: HIGH
-
-**Description**: Cyber insurance expires in 90 days, renewal requires MFA implementation. Cost jumps from $180K to $340K without MFA ($160K increase). Michael promised to deliver MFA in 90 days as a "quick win."
-
-**Impact**:
-- $160K annual cost increase if MFA not delivered
-- Loss of cyber insurance coverage (unacceptable risk)
-- Damages Michael's credibility if first promise fails
-- Distracts from Azure migration if firefighting insurance crisis
-
-**Root Cause**: Years of security underinvestment, now forced by insurance market.
-
-**Mitigation Strategy**:
-- Prioritize MFA implementation (before Azure migration)
-- Use proven solution (Azure AD MFA already licensed)
-- Pilot with IT team, then roll out company-wide
-- Training and communication plan for 200 users
-- Have Plan B for insurance if MFA delayed
-
-**Owner**: Michael Chen + Sarah Mitchell  
-**Status**: Open - 90 day clock ticking
-
----
-
-## Risk 08: Cost Savings Timeline Mismatch
-
-**Category**: Financial  
-**Probability**: Very High (90%)  
-**Impact**: Major  
-**Severity**: HIGH
-
-**Description**: 
-- Michael's promise: 50% savings ($2.25M/year) in 18 months
-- Jennifer's analysis: Savings Year 4+ (3-5 years out)
-- Kevin's analysis: Maybe $1.5M/year IF disciplined, by Year 4+ (50/50 chance of zero savings)
-
-Board expects savings in 18 months, but reality is 3-5 years minimum (if at all).
-
-**Impact**:
-- Board disappointed in Year 2 when costs still high
-- Pressure to show ROI before benefits materialize
-- Initiative cancelled mid-stream ("not delivering promised savings")
-- Michael's credibility damaged, possibly terminated
-
-**Root Cause**: Cloud requires upfront investment, savings come from decommissioning on-prem (which happens LAST).
-
-**Mitigation Strategy**:
-- Reset board expectations to 3-5 year timeframe
-- Show investment curve: Year 1-2 costs up, Year 3 breakeven, Year 4+ savings
-- Quantify non-financial benefits (reliability, security, agility)
-- Define intermediate success metrics (not just cost savings)
-- Be honest: "This is investment, not immediate cost reduction"
-
-**Owner**: Michael Chen + Jennifer Walsh  
-**Status**: Open - Must be addressed at board presentation
-
----
-
-## Risk 09: Sarah's Team Capacity
-
-**Category**: Organizational/Technical  
-**Probability**: Very High (85%)  
-**Impact**: Major  
-**Severity**: HIGH
-
-**Description**: Sarah's team already underwater (80% maintenance, 20% innovation), best people leaving. Cannot absorb Azure migration on top of current workload. Team exhausted, low morale. Kevin's infrastructure team similarly underwater (9 people supporting 247 servers, firefighting daily).
-
-**Impact**:
-- Migration stalls due to lack of capacity
-- Quality issues due to rushed work
-- More people quit (brain drain accelerates)
-- Burnout leads to mistakes, security issues
-- Timeline extends indefinitely
-
-**Root Cause**: Years of underinvestment, technical debt accumulated, no capacity for strategic work.
-
-**Mitigation Strategy**:
-- Hire contractors for Azure migration (don't burden existing team)
-- Kevin's plan: $1.4-2M Year 1 for cloud architects and engineers
-- Create separate "Cloud Migration Team" (don't add to BAU workload)
-- Address technical debt in parallel (rationalize 847 reports, etc.)
-- Celebrate and retain good people (Sarah's trust is critical)
-
-**Owner**: Sarah Mitchell + Kevin Martinez + Michael Chen  
-**Status**: Open - Staffing plan needed
-
----
-
-## Risk 11: Parallel Running Complexity
-
-**Category**: Operational/Technical  
-**Probability**: Very High (90%)  
-**Impact**: Major  
-**Severity**: HIGH
-
-**Description**: Robert requires 3+ month parallel running for MES and other critical systems. Kevin quantifies infrastructure cost at $800K-1.2M for 8-10 systems. Must run old and new simultaneously, sync data, monitor both 24/5, have rollback capability. Complexity often underestimated.
-
-**Impact**:
-- Cost overrun if not budgeted ($800K-1.2M infrastructure alone)
-- Data synchronization failures cause data loss or corruption
-- Production disruption if cutover goes wrong
-- Extended parallel running if issues found (months become years)
-- Robert loses confidence if production impacted
-
-**Root Cause**: Critical systems cannot tolerate downtime, must prove new system works before decommissioning old.
-
-**Mitigation Strategy**:
-- Budget explicitly for parallel running ($1M+ line item)
-- Phase systems (not all parallel at once)
-- MES last (highest risk, longest parallel window)
-- Invest in data sync tools and monitoring
-- Practice cutover (rehearsal in test environment)
-- Define rollback criteria and process
-
-**Owner**: Robert Turner + Kevin Martinez + Sarah Mitchell  
-**Status**: Open - Parallel running plan needed
-
----
-
-## Risk 12: Lost Source Code / Black Box Components
-
-**Category**: Technical  
-**Probability**: Medium-High (70%)  
-**Impact**: Major  
-**Severity**: HIGH
-
-**Description**: Sarah revealed: Lost source code for COM+ components, 30+ undocumented Access databases, 847 Crystal Reports with unknown dependencies. Cannot migrate what you don't understand. Reverse engineering required, may discover showstoppers.
-
-**Impact**:
-- Migration blocked for critical systems
-- Forced to rebuild from scratch (months of work)
-- Dependency mapping takes longer than expected
-- Hidden functionality lost in migration
-- Robert's "zero downtime" impossible if don't understand systems
-
-**Root Cause**: 15+ years of technical debt, turnover, no documentation.
-
-**Mitigation Strategy**:
-- Discovery phase: Inventory and document all systems FIRST
-- Prioritize systems with source code for early migration
-- Reverse engineer black box components (time and budget required)
-- Accept some systems may need rebuild vs. migrate
-- Engage original developers if possible (Sarah's institutional knowledge)
-- Add 30-50% contingency time for unknown unknowns
-
-**Owner**: Sarah Mitchell  
-**Status**: Open - Technical discovery workstream needed
-
----
-
-## Risk 15: Michael's Trust Deficit
-
-**Category**: Organizational/Political  
-**Probability**: High (75%)  
-**Impact**: Major  
-**Severity**: HIGH
-
-**Description**: Consistent pattern across all interviews: Sarah, Jennifer, and Robert all trust Sarah more than Michael. Michael only 60 days in, hasn't earned trust yet. If conflict arises between Michael's vision and Sarah's reality, stakeholders will believe Sarah.
-
-**Impact**:
-- Michael's proposals questioned or rejected
-- Sarah's assessment carries more weight with Jennifer and Robert
-- Michael seen as "outsider who doesn't understand us"
-- Coalition forms against Michael if he's not aligned with Sarah
-- Initiative stalls due to trust deficit
-
-**Root Cause**: Michael is new (60 days), Sarah has 15 years tenure and institutional knowledge.
-
-**Mitigation Strategy**:
-- Michael must align WITH Sarah, not against her
-- Leverage Sarah's credibility (she supports the plan publicly)
-- Joint presentations (Michael + Sarah) to board and stakeholders
-- Michael listens and incorporates Sarah's feedback
-- Sarah becomes Michael's "sponsor" to other stakeholders
-- Michael earns trust through delivering 90-day wins (MFA)
-
-**Owner**: Michael Chen  
-**Status**: Open - Trust building ongoing
-
----
-
-## Risk 16: Robert's Five Unanswered Questions
-
-**Category**: Organizational/Political  
-**Probability**: High (80%)  
-**Impact**: Major  
-**Severity**: HIGH
-
-**Description**: Robert has five questions Michael must answer before Robert supports to CEO:
-1. What operational benefits, not just cost savings?
-2. How will you ensure zero downtime?
-3. What's your union engagement strategy?
-4. How will you earn my team's trust?
-5. What happens if this fails?
-
-Michael hasn't answered these yet. Robert is CEO's confidant and holds effective veto power.
-
-**Impact**:
-- Robert doesn't support to CEO, initiative stalls
-- Michael proceeds without Robert, operations resists
-- CEO sides with Robert (his best friend) over Michael
-- Michael's authority undermined
-- Plant floor sabotages new systems if not on board
-
-**Root Cause**: Michael focused on technical/cost story, not operational/people story.
-
-**Mitigation Strategy**:
-- Michael answers all five questions explicitly (in writing)
-- Present to Robert for feedback/iteration
-- Incorporate into board presentation
-- Operational benefits: Real-time analytics, predictive maintenance, better quality data
-- Zero downtime: Parallel running, phased approach, 4-hour maintenance windows
-- Union: Early engagement with Jimmy, no layoffs commitment
-- Trust: Factory floor immersion (Robert's requirement), operational partnership
-- Failure plan: Phase gates, kill criteria, rollback capability
-
-**Owner**: Michael Chen  
-**Status**: Open - Robert waiting for answers
-
----
-
-## Risk 18: Lost Institutional Knowledge
-
-**Category**: Organizational/Technical  
-**Probability**: Medium-High (60%)  
-**Impact**: Major  
-**Severity**: HIGH
-
-**Description**: Sarah holds critical institutional knowledge (15 years). If she leaves or isn't engaged, knowledge walks out the door. Best people already leaving Sarah's team. Brain drain accelerates if people see "another failed initiative."
-
-**Impact**:
-- Lost understanding of why systems work the way they do
-- Unable to answer "why" questions during migration
-- Dependency mapping impossible without Sarah's knowledge
-- Migration quality suffers without her insight
-- If Sarah leaves, initiative nearly impossible
-
-**Root Cause**: Knowledge concentrated in few people, not documented.
-
-**Mitigation Strategy**:
-- Retain Sarah at all costs (pay, recognition, influence)
-- Document Sarah's knowledge (system inventory, dependency maps, business rules)
-- Cross-train team (Sarah mentors, knowledge spreads)
-- Celebrate and retain other key people (Mark, Priya from Kevin's team)
-- Make Sarah co-owner of initiative (not just Michael's initiative)
-- Success of initiative boosts Sarah's team morale (reduces attrition)
-
-**Owner**: Michael Chen + Sarah Mitchell  
-**Status**: Open - Retention and knowledge capture plan needed
-
----
-
-## Risk 24: Azure Expertise Gap
-
-**Category**: Organizational  
-**Probability**: High (90%)  
-**Impact**: Major  
-**Severity**: HIGH
-
-**Description**: Current team of 9 lacks Azure expertise. Strong in Windows/VMware/SQL, very weak in Azure/Linux/DevOps/IaC/cloud networking/cloud security. Only Mark has Azure training, never at scale. Cannot train fast enough while firefighting daily hardware failures. Need $1.4-2M Year 1 for contractors and new hires.
-
-**Impact**:
-- Poor architecture decisions (inefficient, not cost-optimized, not secure)
-- Quality issues during migration (data loss, downtime, functionality breaks)
-- Cost overruns (don't know how to optimize)
-- Security vulnerabilities (cloud security different from on-prem)
-- Slow migration pace (learning on the job)
-- Robert loses confidence if quality issues hit production
-
-**Root Cause**: Team hired/trained for on-prem Windows environment, no time to retrain while firefighting failures.
-
-**Mitigation Strategy**:
-- **Contractors (12-18 months)**:
-  - 2 senior cloud architects @ $200/hour × 2000 hours = $800K-1.2M
-  - 1 Azure security specialist (6-12 months) = $250-500K
-- **FTE Hires**: 2 cloud engineers @ $150K fully loaded = $300K/year ongoing
-- **Training**: Existing team Azure certifications = $50K
-- **Knowledge Transfer**: Contractors must document and train, not just do
-
-**Owner**: Kevin Martinez + Sarah Mitchell + Michael Chen  
-**Status**: Open - Staffing plan and budget required
-
----
-
-## Risk 25: Licensing Cost Trap
-
-**Category**: Financial  
-**Probability**: High (80%)  
-**Impact**: Major  
-**Severity**: HIGH
-
-**Description**: Azure Hybrid Benefit promises 40% compute savings by reusing existing Windows/SQL licenses. BUT requires active Software Assurance (SA). Contoso let SA lapse on 60% of servers during budget cuts 3 years ago. Must pay $800K to catch up on licensing BEFORE getting any benefit.
-
-**Impact**:
-- $800K unexpected cost in Year 1
-- Without catch-up, Azure compute costs 40% higher than planned
-- Over 3 years, no SA means $2-3M higher Azure costs
-- Triggers Jennifer's kill criteria if budget variance >20%
-
-**Root Cause**: Budget cuts 3 years ago eliminated SA renewals (short-term savings), decision made without considering future cloud migration impact.
-
-**Mitigation Strategy**:
-- **Year 1 Budget**: Add $800K line item for license catch-up
-- **Alternative**: Migrate to Linux where possible (no Windows licensing)
-- **Future**: Maintain SA going forward (penny-wise, pound-foolish to let lapse)
-
-**Owner**: Kevin Martinez + Jennifer Walsh  
-**Status**: Open - Budget allocation needed
-
----
-
-## Risk 26: Hidden Cloud Costs Surprise
-
-**Category**: Financial  
-**Probability**: High (70%)  
-**Impact**: Major  
-**Severity**: HIGH
-
-**Description**: $1-2M/year in hidden Azure costs that most people don't budget: data egress ($200-500K), Azure services "tax" ($150K for load balancers, IPs, firewall, logging), DR ($300K), management tools ($100-150K), training ($50K), consulting/support ($200-500K in Years 1-2).
-
-**Impact**:
-- Budget variance of 20-40% in Year 1
-- Triggers Jennifer's 20% variance kill criteria
-- Surprise bills cause budget crisis mid-migration
-- Forces cuts to other areas or initiative cancellation
-
-**Root Cause**: Focus on "compute" costs (VMs), ignore "plumbing" costs. Data egress not intuitive (ingress free, egress costs money).
-
-**Mitigation Strategy**:
-- **Comprehensive Cost Model**: Build detailed 5-year TCO including ALL costs (Kevin + Sarah + Jennifer)
-- **Monitoring**: Set up cost alerts from Day 1, weekly cost reviews
-- **Specific Line Items**: Compute, storage, networking, security, management, backup/DR, tools, support, training, consulting
-
-**Owner**: Kevin Martinez + Sarah Mitchell + Jennifer Walsh  
-**Status**: Open - Comprehensive cost model needed by board presentation (15 days)
-
----
-
-## Risk 27: Parallel Running Budget Gap
-
-**Category**: Financial  
-**Probability**: High (90%)  
-**Impact**: Major  
-**Severity**: HIGH
-
-**Description**: Robert requires 3+ month parallel running for critical systems (MES, ERP, quality, inventory, plus 4-6 others = 8-10 total). Kevin estimates infrastructure costs alone at $800K-1.2M. Michael appears unaware of this cost (per Kevin's knowledge), so likely not budgeted.
-
-**Impact**:
-- $800K-1.2M budget overrun mid-migration
-- Triggers Jennifer's 20% variance kill criteria
-- Cannot meet Robert's parallel running requirement without budget
-- Quality/safety risk if forced to cut corners on parallel running
-
-**Root Cause**: Parallel running requirement clear (Robert stated), but cost not quantified until Kevin's interview.
-
-**Cost Breakdown** (Kevin's estimates):
-- MES: $150-200K for 90-day parallel window
-- ERP: $100-150K for 60-day window
-- Quality Management: $80-100K for 60-day window
-- Inventory: $60-80K for 45-day window
-- 4-6 other critical systems: $400-600K combined
-- Total: $800K-1.2M
-
-**Mitigation Strategy**:
-- **Budget**: Add explicit $1M line item for "Parallel Running Infrastructure"
-- **Phasing**: Stagger migrations to reduce peak parallel cost
-- **Optimization**: Use Azure Dev/Test pricing, auto-scale, shut down if rollback
-
-**Owner**: Kevin Martinez + Robert Turner + Michael Chen  
-**Status**: Open - Budget allocation and phasing plan needed
-
----
-
-## MEDIUM RISKS (Moderate Impact)
-
-## Risk 06: SOC 2 Timeline Pressure (12 Months)
-
+### RISK-012: Validation Timeline Inadequacy
+**Score**: 22/25 (CRITICAL)  
 **Category**: Compliance  
-**Probability**: High (80%)  
-**Impact**: Moderate  
-**Severity**: MEDIUM
+**Status**: STABLE (not in current timeline)
 
-**Description**: $90M revenue dependent on SOC 2 compliance by month 12-18. Michael promised this as forcing function. Realistic timeline is 12-24 months with focused effort. Azure migration may distract from compliance work.
+**Description**: 8 systems require GMP validation (3-6 months each = 24-48 months total if sequential). Validation cannot be compressed without regulatory violations. Patricia estimates 18-24 months minimum even with risk-based approach. This timeline not reflected in Michael's 18-month plan.
 
 **Impact**:
-- Miss SOC 2 deadline, lose $90M revenue opportunity
-- Forced to choose: Azure migration or SOC 2 (can't do both simultaneously)
-- Michael's credibility damaged if misses forcing function promise
-- Business growth blocked without SOC 2
+- Regulatory violations if systems deployed without validation
+- FDA warning letters or consent decrees
+- Customer audit failures (aerospace, medical device)
+- Product recalls if quality systems not properly validated
+- Reputation damage and potential loss of key customers
 
-**Root Cause**: Competing priorities, limited team capacity.
+**Likelihood**: 100% (certain if timeline not adjusted)
 
-**Mitigation Strategy**:
-- Prioritize SOC 2 over Azure migration if necessary
-- Separate teams for compliance vs. migration
-- Leverage Azure for compliance (many controls built-in)
-- External consultant for SOC 2 audit prep
-- Phase 0 Azure discovery doesn't conflict with SOC 2 work
+**Root Cause**:
+- GMP systems require formal validation (regulatory requirement)
+- 8 systems need validation (not 1 or 2)
+- Each system: 3-6 months validation timeline
+- Validation must be in critical path (cannot be parallel)
+- Michael's timeline doesn't account for this
 
-**Owner**: Michael Chen + Compliance Lead  
-**Status**: Open - Prioritization decision needed
+**Mitigation**:
+- Integrate validation into critical path (not parallel)
+- Start validation planning immediately
+- Risk-based approach (focus on highest-risk systems)
+- Patricia has veto authority on readiness
+- External validators if needed to increase capacity
+
+**Owner**: Patricia + David  
+**Mitigation Cost**: $1.5-2.5M for validation work  
+**First Identified**: Interview 5 (David), Interview 7 (Patricia)
 
 ---
 
-## Risk 13: Christmas Cutover Myth
+### RISK-020: Union Relationship Breakdown
+**Score**: 20/25 (CRITICAL)  
+**Category**: Organizational  
+**Status**: WORSENING (not yet engaged)
 
-**Category**: Operational  
-**Probability**: Medium (50%)  
-**Impact**: Moderate  
-**Severity**: MEDIUM
-
-**Description**: Michael mentioned "Christmas cutover window" (Dec 23-Jan 2). Robert clarified this is 10 calendar days but only 6-7 usable work days with skeleton crew. Kevin agrees: Great for tactical upgrades, not strategic transformation. Last Christmas ERP upgrade: Planned 48 hours, actual 92 hours (barely made Jan 3 startup).
+**Description**: Union requires 120-day notice before any floor system changes. Michael hasn't engaged union yet. Late engagement becomes adversarial fight rather than partnership. 180+ union members can passively resist adoption, making project fail regardless of technical success.
 
 **Impact**:
-- Over-reliance on Christmas window for major changes
-- Insufficient time for complex cutovers
-- Skeleton crew if something goes wrong
-- Vendors/contractors unavailable Dec 24-Jan 2
-- If can't start production Jan 3: $240K/day loss
-- Sets unrealistic expectations for timeline compression
+- 4-6 month delay for 120-day notice period
+- Adversarial relationship (late engagement = fight)
+- Passive resistance from 180+ floor workers
+- Grievances and work slowdowns
+- Project failure despite technical success
 
-**Root Cause**: Christmas is only long shutdown window, tempting to use for big changes.
+**Likelihood**: 90% (very likely given current trajectory)
 
-**Mitigation Strategy**:
-- Use Christmas for single-system tactical upgrades only
-- Do NOT plan Azure migration major milestones for Christmas
-- Phase cutover over multiple maintenance windows (not all at once)
-- If using Christmas: Practice in test environment first, have full rollback plan
-- Budget for 4-hour Sunday maintenance windows throughout year (Robert provides)
+**Root Cause**:
+- Union not engaged yet (late = adversarial)
+- 120-day notice requirement not in timeline
+- No partnership approach designed
+- History of top-down imposition (SAP trauma)
+- Jimmy already defensive about being left out
 
-**Owner**: Robert Turner + Kevin Martinez  
-**Status**: Open - Realistic cutover strategy needed
+**Mitigation**:
+- Immediate Michael-Jimmy meeting (within 7 days)
+- Bargaining committee session (present partnership approach)
+- Floor workers involved in UAT and design
+- Training commitment ($9M+ for operators)
+- No layoffs commitment (visible actions not words)
+- Early involvement = partnership, late = fight
+
+**Owner**: Michael + Jimmy + Robert  
+**Mitigation Cost**: $0 (engagement), but delays timeline 4-6 months  
+**First Identified**: Interview 4 (Robert), Interview 6 (Jimmy)
 
 ---
 
-## Risk 17: Maintenance Window Scarcity
+### RISK-028: Budget Inadequacy
+**Score**: 20/25 (CRITICAL)  
+**Category**: Financial  
+**Status**: WORSENING (gaps growing with each interview)
 
-**Category**: Operational  
-**Probability**: Medium-High (65%)  
-**Impact**: Moderate  
-**Severity**: MEDIUM
-
-**Description**: Factory runs 24/5 (Mon-Fri), $10K/minute downtime cost. Maintenance windows are Sunday only, 4-hour max. Robert must coordinate with production planning. Cannot take downtime casually. Limits migration pace and testing opportunities.
+**Description**: Current budget allocation $3M vs. realistic need $18.5-26.5M (520-780% gap). Training alone $12-15M (largest single cost). Support contractors $2-3M. Validation $1.5-2.5M. Infrastructure $3-5M. Parallel running $1-2M. Hidden costs $1-2M/year. No adequate contingency.
 
 **Impact**:
-- Slow migration pace (can only make changes Sundays)
-- Limited testing windows (pressure to "get it right first time")
-- Production impact if maintenance overruns 4 hours
-- Difficult to troubleshoot issues (pressure to complete quickly)
+- Project underfunded by $15.5-23.5M
+- Will run out of money mid-stream
+- Forced to cut corners (quality, training, validation)
+- Partial implementation worse than no implementation
+- Board loses confidence, may cancel project
 
-**Root Cause**: 24/5 production schedule is business requirement, not optional.
+**Likelihood**: 100% (certain without budget revision)
 
-**Mitigation Strategy**:
-- Plan maintenance windows 6 months in advance (Robert coordinates with production)
-- Multiple 4-hour windows for single migration (not force completion)
-- Practice in test environment until confident (don't learn in production)
-- Parallel running reduces pressure (can rollback)
-- Christmas window for larger changes (but not full migration)
+**Root Cause**:
+- Michael's budget expectations too optimistic (50% of need)
+- Training costs grossly underestimated ($12-15M discovered)
+- Support contractors not budgeted ($2-3M)
+- Validation costs not included ($1.5-2.5M)
+- No realistic contingency (need $1.5-3M minimum)
 
-**Owner**: Robert Turner + Kevin Martinez  
-**Status**: Open - Maintenance window calendar needed
+**Mitigation**:
+- Jennifer update budget model immediately
+- Board presentation with realistic costs
+- Phased funding over 3-5 years
+- External validator to confirm estimates
+- PE firm engagement and approval
+
+**Owner**: Jennifer + Michael + Board + PE firm  
+**Mitigation Cost**: N/A (need $15.5-23.5M additional funding)  
+**First Identified**: Interview 2 (Sarah), Interview 3 (Jennifer), Interviews 7-9 (growing)
 
 ---
 
-## Risk 19: Customer-Facing System Downtime
+### RISK-033: MES Floor Adoption Resistance
+**Score**: 20/25 (CRITICAL)  
+**Category**: Organizational  
+**Status**: WORSENING (Michael has zero floor credibility)
 
-**Category**: Operational/Financial  
-**Probability**: Medium (50%)  
-**Impact**: Moderate  
-**Severity**: MEDIUM
-
-**Description**: Customer portal, order entry, and tracking systems are customer-facing. Downtime or quality issues directly impact customer experience and revenue. Must be more careful with these than internal systems.
+**Description**: 180 operators with 10-15 years muscle memory must unlearn habits and learn new system. Operator capability range: 1/3 tech-comfortable, 1/3 okay, 1/3 struggle. Michael has zero credibility on floor ("just another corporate guy with PowerPoint"). Without floor partnership, operators will passively resist through compliance without commitment.
 
 **Impact**:
-- Customer complaints and frustration
-- Lost sales if order entry down
-- Support call volume spikes
-- Damaged reputation with key accounts
-- Revenue impact if sustained issues
+- Adoption failure (people don't use system properly)
+- Workarounds and shadow processes
+- Quality issues from improper usage
+- Safety incidents from operator confusion
+- Attrition (operators quit rather than adapt)
+- Project technically successful but operationally failed
 
-**Root Cause**: Customers have zero tolerance for poor experience.
+**Likelihood**: 80% (very likely without floor partnership)
 
-**Mitigation Strategy**:
-- Migrate customer-facing systems LAST (after proving competence)
-- Longer parallel running for customer systems (6+ months)
-- Gradual traffic cutover (not all-at-once)
-- Enhanced monitoring and support for customer systems
-- Communication plan to customers before changes
-- Rollback plan immediately available
+**Root Cause**:
+- 10-15 years muscle memory difficult to overcome
+- Varied operator capability (1/3 will struggle)
+- Michael has no floor credibility (hasn't done the work)
+- Top-down approach breeds resistance
+- SAP trauma makes operators defensive
 
-**Owner**: Sarah Mitchell + Sales/Support Leaders  
-**Status**: Open - Customer system migration plan needed
+**Mitigation**:
+- Michael 8-hour floor shift (Maria's 2nd shift, within 30 days)
+- Partnership approach (involve operators in design/UAT)
+- Differentiated training (address capability range)
+- Pilot with volunteers (build champions)
+- Maria as champion (operators trust her)
+- Four-phase training ($9M investment)
+
+**Owner**: Michael + Maria + Robert  
+**Mitigation Cost**: $9M for MES training + Michael's time commitment  
+**First Identified**: Interview 4 (Robert), Interview 8 (Maria)
 
 ---
 
-## Risk 20: GMP/Validation Requirements
+### RISK-034: SAP Trauma Organizational PTSD
+**Score**: 20/25 (CRITICAL)  
+**Category**: Organizational  
+**Status**: STABLE (7 years old but still impactful)
 
+**Description**: 2018 SAP implementation created lasting organizational trauma (3 weeks chaos, 50% production drop, 3 employees lost, $3M wasted). 7 years later, when corporate says "new system," people update resumes. Not just failed project, but PTSD that affects trust, morale, and willingness to try again.
+
+**Impact**:
+- Preemptive resistance ("here we go again")
+- Attrition risk (people quit rather than go through SAP 2.0)
+- Trust deficit that must be overcome
+- Higher bar for proof and credibility
+- Organizational memory shapes current response
+
+**Likelihood**: 100% (trauma is real and persistent)
+
+**Root Cause**:
+- SAP was catastrophic (3 weeks chaos, 50% production drop)
+- Inadequate training (2 hours for complex system)
+- Top-down imposition (no floor involvement)
+- 3 employees lost (2 quit, 1 transferred)
+- Never properly acknowledged or addressed
+
+**Mitigation**:
+- Explicitly acknowledge SAP failure in all communications
+- Document what went wrong (2 hour training, big bang, no support)
+- Show what's different (pilot, real training, parallel running, support, rollback)
+- Differentiate from SAP (not just "trust us")
+- Build trust through early actions not promises
+
+**Owner**: Michael + Robert + HR Director  
+**Mitigation Cost**: $0 (acknowledgment) but affects every decision  
+**First Identified**: Interview 2 (Sarah), Interview 4 (Robert), Interview 8 (Maria details)
+
+---
+
+### RISK-038: Support Team Attrition During Migration
+**Score**: 20/25 (CRITICAL)  
+**Category**: Capacity  
+**Status**: WORSENING (already happening)
+
+**Description**: Support team already had 30% attrition in 18 months (3 of 10 left). Team burned out from 3-4 pages/night, brutal on-call rotation, "running on fumes." Adding migration workload without addressing burnout will cause more attrition. Loss of institutional knowledge at critical time.
+
+**Impact**:
+- More people quit (accelerating attrition)
+- Loss of institutional knowledge (how systems work)
+- Remaining team overwhelmed (death spiral)
+- BAU support suffers (production impact)
+- Migration support suffers (project delay)
+- Recruiting/training new people takes 6-12 months
+
+**Likelihood**: 90% (very likely without intervention)
+
+**Root Cause**:
+- Team already burned out (3-4 pages/night every night)
+- 30% attrition in 18 months (worse than typical IT)
+- On-call rotation brutal (1 week every 5 weeks)
+- Morale low, people "running on fumes"
+- No plan to address burnout before adding migration load
+
+**Mitigation**:
+- Address burnout BEFORE migration starts
+- Hire contractors to reduce on-call burden
+- Improve on-call rotation (6-8 person rotation instead of 5)
+- Retention bonuses for critical people
+- Career development and training opportunities
+- Realistic timeline allows capacity to scale properly
+
+**Owner**: Sarah + Tom + HR Director  
+**Mitigation Cost**: $500K retention bonuses + contractor costs  
+**First Identified**: Interview 9 (Tom)
+
+---
+
+### RISK-039: Support Capacity Inadequacy
+**Score**: 22/25 (CRITICAL)  
+**Category**: Capacity  
+**Status**: WORSENING
+
+**Description**: Current ticket volume 80-100/day will double to 150-200/day during migration. Supporting BOTH old and new systems simultaneously for 12-36 months. Same 10 people cannot handle this load. If migration added without capacity, support collapses and both BAU and migration suffer.
+
+**Impact**:
+- Support response times degrade (operators wait longer)
+- Ticket backlog explodes (300-350 → 500-600+)
+- Priority system breaks (everything becomes urgent)
+- BAU work suffers (production support inadequate)
+- Migration support suffers (can't handle questions/issues)
+- Support team quits (burnout accelerates)
+
+**Likelihood**: 95% (almost certain without mitigation)
+
+**Root Cause**:
+- Ticket volume will double (80-100 → 150-200/day)
+- Supporting old AND new systems (12-36 months)
+- Same 10 people expected to handle doubled workload
+- No contractors budgeted for support
+- No plan for capacity scaling
+
+**Mitigation**:
+- Hire 6-9 support contractors immediately
+  - 2-3 for BAU backfill ($300-450K/year)
+  - 4-6 for migration support ($1.2-1.8M/18 months)
+- Realistic timeline allows proper capacity planning
+- Knowledge base and documentation (reduce ticket volume)
+- Self-service tools where appropriate
+
+**Owner**: Sarah + Tom + Jennifer  
+**Mitigation Cost**: $2-3M for support contractors over migration period  
+**First Identified**: Interview 2 (Sarah capacity), Interview 9 (Tom specifics)
+
+---
+
+## HIGH RISKS (Score 15-19) - Urgent Attention Required
+
+### RISK-003: Infrastructure Readiness Gap
+**Score**: 19/25 (HIGH)  
+**Category**: Technical  
+**Status**: STABLE (understood, not funded)
+
+**Description**: Network infrastructure must be stabilized before migration can begin (6-8 months prerequisite work). Some segments still 100Mb (inadequate), others maxed out during shift changes. Cannot migrate without proper bandwidth. $2.5M Year 1 investment needed.
+
+**Impact**:
+- Cannot start migration until infrastructure ready (6-8 month delay)
+- Poor performance if migrated on inadequate infrastructure
+- User frustration and adoption resistance
+- Project delays cascade
+
+**Likelihood**: 100% (certain if not addressed)
+
+**Mitigation**:
+- $2.5M Year 1 infrastructure investment
+- Network remediation before migration starts
+- Treat as prerequisite, not parallel work
+
+**Owner**: Sarah + Kevin  
+**Mitigation Cost**: $2.5M Year 1  
+**First Identified**: Interview 2 (Sarah)
+
+---
+
+### RISK-004: Knowledge Transfer Failure
+**Score**: 17/25 (HIGH)  
+**Category**: Technical  
+**Status**: STABLE
+
+**Description**: Many custom applications built by developers who have since left company. Documentation is "minimal to nonexistent." Undocumented dependencies will break things during migration. Institutional knowledge exists in people's heads, not documentation.
+
+**Impact**:
+- Break systems during migration (unknown dependencies)
+- Extended troubleshooting (no documentation)
+- Delay while reverse-engineering systems
+- Potential data loss or corruption
+
+**Likelihood**: 70% (likely for at least some systems)
+
+**Mitigation**:
+- 6-month discovery phase to document systems
+- Dependency mapping before migration
+- Knowledge transfer from remaining staff
+- External consultants with system expertise
+
+**Owner**: Sarah + Application Development Team  
+**Mitigation Cost**: Included in 6-month discovery phase  
+**First Identified**: Interview 2 (Sarah)
+
+---
+
+### RISK-005: Oracle Licensing Cost Explosion
+**Score**: 16/25 (HIGH)  
+**Category**: Financial  
+**Status**: STABLE
+
+**Description**: Current Oracle licenses are perpetual (capex already paid). Cloud licensing is consumption-based (opex ongoing). Oracle cloud licensing notoriously expensive. May need to re-architect systems to avoid Oracle altogether, adding complexity and timeline.
+
+**Impact**:
+- Ongoing licensing costs higher than expected
+- May eat all projected cost savings
+- ROI case weakens or disappears
+- May require system re-architecture (delay + cost)
+
+**Likelihood**: 60% (likely to be expensive)
+
+**Mitigation**:
+- License audit and cost modeling upfront
+- Consider migration away from Oracle (PostgreSQL, SQL Server)
+- Negotiate volume licensing with Oracle
+- Include in financial model
+
+**Owner**: Sarah + Jennifer  
+**Mitigation Cost**: TBD (depends on licensing approach)  
+**First Identified**: Interview 2 (Sarah)
+
+---
+
+### RISK-006: Security Posture Degradation
+**Score**: 18/25 (HIGH)  
+**Category**: Technical  
+**Status**: STABLE
+
+**Description**: During migration, security patches delayed, security team spread thin, attack surface increases. Cloud introduces new security concerns (misconfiguration, access management, data exposure). David's team already at capacity.
+
+**Impact**:
+- Security incidents during migration
+- Data breaches or exposure
+- Compliance violations
+- Reputation damage
+- Regulatory penalties
+
+**Likelihood**: 65% (likely without proper security focus)
+
+**Mitigation**:
+- Prioritize security in migration planning
+- Security architecture review before migration
+- Dedicated security resources for cloud
+- Security training for team
+- Continuous security monitoring
+
+**Owner**: David + Sarah  
+**Mitigation Cost**: Included in contractor budget  
+**First Identified**: Interview 2 (Sarah), Interview 5 (David)
+
+---
+
+### RISK-007: Disaster Recovery Testing Gap
+**Score**: 15/25 (HIGH)  
+**Category**: Technical  
+**Status**: STABLE
+
+**Description**: Current DR is "basically nonexistent" per Michael. Cloud DR needs to be designed, tested, validated. DR testing will consume significant time and resources. Untested DR is no DR.
+
+**Impact**:
+- False sense of security (DR exists on paper only)
+- Actual disaster reveals DR doesn't work
+- Extended downtime during recovery
+- Data loss
+- Regulatory violations (DR required for GMP)
+
+**Likelihood**: 50% (DR will have gaps unless thoroughly tested)
+
+**Mitigation**:
+- DR design as part of architecture
+- Regular DR testing (quarterly minimum)
+- DR testing integrated into project timeline
+- Validation that DR meets RTO/RPO requirements
+
+**Owner**: Sarah + David  
+**Mitigation Cost**: Included in project timeline  
+**First Identified**: Interview 1 (Michael), Interview 2 (Sarah)
+
+---
+
+### RISK-009: Data Migration Complexity
+**Score**: 17/25 (HIGH)  
+**Category**: Technical  
+**Status**: STABLE
+
+**Description**: 15+ years of production data across multiple systems. Data quality issues, legacy formats, complex transformations. Data migration is 50-70% of total migration effort typically. GMP systems require validated data migration (adds 3-6 months per system).
+
+**Impact**:
+- Extended timeline (data migration takes longer than expected)
+- Data quality issues (garbage in, garbage out)
+- Production disruption during data cutover
+- Validation failures (GMP systems)
+- Potential data loss during migration
+
+**Likelihood**: 70% (data migration always complex)
+
+**Mitigation**:
+- Data quality assessment upfront (6 months)
+- Data migration strategy per system
+- Extensive testing before cutover
+- Parallel running to validate data accuracy
+- Validated data migration for GMP systems
+
+**Owner**: Sarah + DBAs + Patricia  
+**Mitigation Cost**: Included in validation budget  
+**First Identified**: Interview 2 (Sarah), Interview 7 (Patricia)
+
+---
+
+### RISK-010: Change Management Inadequacy
+**Score**: 18/25 (HIGH)  
+**Category**: Organizational  
+**Status**: WORSENING (no plan yet)
+
+**Description**: 300+ users (180 operators + 45 IT + 75 office staff) undergoing major change. No change management plan, no change management resources identified. Training budget grossly underestimated. HR Director interview pending to assess capacity.
+
+**Impact**:
+- Adoption failure (people don't change behavior)
+- Resistance and workarounds
+- Training inadequate (token training like SAP)
+- User frustration and low morale
+- Project technically successful but operationally failed
+
+**Likelihood**: 80% (very likely without proper change management)
+
+**Mitigation**:
+- Hire change management consultants
+- Comprehensive training program ($12-15M)
+- Communication plan (address SAP trauma)
+- Champion network (Maria, others)
+- Executive sponsorship visible (Michael floor shift)
+
+**Owner**: HR Director + Michael  
+**Mitigation Cost**: $12-15M training + change management consultants  
+**First Identified**: Interview 1 (Michael), Interviews 6-8 (scale of need)
+
+---
+
+### RISK-011: Vendor Lock-In Risk
+**Score**: 15/25 (HIGH)  
+**Category**: Strategic  
+**Status**: STABLE
+
+**Description**: Moving to Azure creates vendor lock-in. Difficult/expensive to migrate away if needed. Azure-specific services create dependencies. Pricing can change (typically increases over time). Exit strategy needed but not designed.
+
+**Impact**:
+- Limited negotiating power with Microsoft
+- Price increases over time erode savings
+- Difficult to switch vendors if needed
+- Architecture decisions constrain future options
+
+**Likelihood**: 60% (price increases likely over 5+ years)
+
+**Mitigation**:
+- Design for portability where possible
+- Avoid Azure-specific services where practical
+- Volume licensing negotiation
+- Cloud cost monitoring and optimization
+- Exit strategy documented
+
+**Owner**: Sarah + Jennifer  
+**Mitigation Cost**: $0 (design consideration)  
+**First Identified**: Interview 2 (Sarah), Interview 4 (Kevin via Robert)
+
+---
+
+### RISK-013: Compliance Scope Creep
+**Score**: 17/25 (HIGH)  
 **Category**: Compliance  
-**Probability**: Medium (50%)  
-**Impact**: Moderate  
-**Severity**: MEDIUM
+**Status**: STABLE
 
-**Description**: Some systems may have Good Manufacturing Practice (GMP) or validation requirements (pharmaceutical/medical device manufacturing). These systems require extensive documentation, testing, and qualification before changes. Migration complexity and cost much higher.
+**Description**: Current compliance: SOC 2, FDA (21 CFR Part 11), ISO 9001, CMMC (Level 2 pending). Cloud may trigger additional compliance requirements. Each new requirement adds 3-12 months timeline and $200-500K cost.
 
 **Impact**:
-- Migration timeline 2-3x longer for validated systems
-- Extensive testing and documentation required
-- Regulatory risk if validation inadequate
-- High cost (validation consultants expensive)
+- Timeline delays (3-12 months per new requirement)
+- Cost increases ($200-500K per requirement)
+- Regulatory audit failures
+- Customer contract violations
+- Loss of key customers (aerospace, medical device)
 
-**Root Cause**: Regulatory requirements for manufacturing systems (if applicable).
+**Likelihood**: 50% (some scope creep likely)
 
-**Mitigation Strategy**:
-- Inventory systems with GMP/validation requirements
-- Budget additional time and cost for validated systems
-- Engage validation consultants early
-- Migrate validated systems LAST (most complex)
-- Consider cloud validation frameworks (Azure offers guidance)
-- Interview Quality Manager to understand requirements
+**Mitigation**:
+- Compliance assessment upfront
+- Gap analysis for cloud environment
+- Engage customers early (understand their requirements)
+- Budget contingency for compliance work
 
-**Owner**: Quality Manager + Sarah Mitchell  
-**Status**: Open - Interview Quality Manager to assess
+**Owner**: David + Patricia  
+**Mitigation Cost**: $500K-1M contingency  
+**First Identified**: Interview 5 (David), Interview 7 (Patricia)
 
 ---
 
-## Risk 28: Operational Discipline Failure
+### RISK-014: Skills Gap in IT Team
+**Score**: 18/25 (HIGH)  
+**Category**: Capacity  
+**Status**: STABLE
 
+**Description**: IT team knows current on-premise systems but has zero Azure/cloud experience. Need 3-6 months training for entire team (45 people). Training while maintaining BAU is difficult. Support team specifically has no cloud skills and needs training.
+
+**Impact**:
+- Extended learning curve (mistakes during migration)
+- Over-reliance on contractors (knowledge doesn't transfer)
+- Team frustration (doing work they're not trained for)
+- Quality issues during migration
+- Continued dependence on contractors post-migration
+
+**Likelihood**: 80% (certain to have skills gap)
+
+**Mitigation**:
+- Comprehensive Azure training program (3-6 months)
+- Hands-on labs and sandbox environment
+- Contractors work alongside employees (knowledge transfer)
+- Certifications and career development
+- Realistic timeline allows for training
+
+**Owner**: Sarah + Tom  
+**Mitigation Cost**: $500K training + certification costs  
+**First Identified**: Interview 2 (Sarah), Interview 9 (Tom)
+
+---
+
+### RISK-015: Third-Party Integration Breakage
+**Score**: 16/25 (HIGH)  
+**Category**: Technical  
+**Status**: STABLE
+
+**Description**: Current systems integrate with customer portals, vendor systems, shipping systems, banking systems, etc. Cloud migration may break integrations. Third parties may not support cloud integration or require costly reconfiguration.
+
+**Impact**:
+- Business process disruption (can't get orders, can't ship, can't pay)
+- Manual workarounds (productivity loss)
+- Customer dissatisfaction
+- Vendor relationship strain
+- Extended timeline while fixing integrations
+
+**Likelihood**: 70% (at least some integrations will break)
+
+**Mitigation**:
+- Integration inventory and testing upfront
+- Engage third parties early (understand their requirements)
+- API strategy for cloud integrations
+- Fallback/rollback for critical integrations
+- Parallel running to validate integrations
+
+**Owner**: Sarah + Application Developers  
+**Mitigation Cost**: Included in project scope  
+**First Identified**: Interview 2 (Sarah)
+
+---
+
+### RISK-019: Board Impatience and Premature Go-Live
+**Score**: 18/25 (HIGH)  
 **Category**: Organizational  
-**Probability**: Medium (50%)  
-**Impact**: Major  
-**Severity**: MEDIUM-HIGH
+**Status**: WORSENING
 
-**Description**: Organizational culture of "build, accumulate, never clean up" (847 Crystal Reports when probably need 200, 30+ Access databases). If this culture transfers to cloud, will accumulate underutilized resources costing $300/month each. 600 such VMs = $2.16M/year wasted, eliminating ROI.
+**Description**: Board expects 18-month results. PE firm pressure for ROI. If timeline extends to 36-60 months, board may lose patience and force premature go-live. Rushing leads to SAP 2.0 scenario (3 weeks chaos, rollback).
 
 **Impact**:
-- Cloud costs match on-prem ($5M/year) with no savings
-- Spent $10-15M on migration for zero ROI
-- Missed opportunity for $1.5M/year savings (optimistic scenario)
-- Damages IT credibility with board and executives
+- Premature go-live before ready (repeat SAP)
+- Production disruption and chaos
+- Rollback after wasting time and money
+- Further erosion of trust
+- Board loses confidence, may cancel project entirely
 
-**Root Cause**: Current environment - capital already spent, no ongoing cost accountability. Cloud makes accumulation easier ("I'll spin up a VM" vs. requesting hardware).
+**Likelihood**: 60% (likely as timeline reality becomes clear)
 
-**Mitigation Strategy**:
-- **Pre-Migration Culture Change**: Rationalize BEFORE migrating (reduce 847 reports to 200, eliminate unused databases)
-- **Cloud Governance from Day 1**: Tagging policy, chargeback model, auto-shutdown non-prod, 90-day review cycle
-- **Cultural Reinforcement**: KPIs include cost efficiency, celebrate optimization
-- **Leadership Commitment**: Michael must model and reward discipline
+**Mitigation**:
+- Reset board expectations immediately (within 7 days)
+- Show mathematical proof of timeline (Sunday windows)
+- Phase gate approach with clear criteria
+- Demonstrate progress at each gate
+- External validation of timeline realism
 
-**Owner**: Michael Chen + Sarah Mitchell + All Business Unit Leaders  
-**Status**: Open - Requires organizational change management plan
-
-**Notes**: Kevin rates confidence at 50/50. This is an ORGANIZATIONAL challenge, not technical.
+**Owner**: Michael + Jennifer + Board  
+**Mitigation Cost**: $0 (communication and management)  
+**First Identified**: Interview 3 (Jennifer), Interview 4 (Robert)
 
 ---
 
-## Risk 29: Repeated Failure Pattern (Organizational Trauma)
+### RISK-021: Key Person Dependency
+**Score**: 17/25 (HIGH)  
+**Category**: Capacity  
+**Status**: STABLE
 
+**Description**: Critical people: Sarah (IT Director - knows everything), Kevin (Infrastructure Lead - on fire all the time), Steve (only support person with manufacturing background), Maria (MES Supervisor - operator champion). Loss of any one person could derail project. No succession plans.
+
+**Impact**:
+- Project delay or failure if key person leaves
+- Knowledge loss (documented nowhere else)
+- Team morale impact (others feel burden)
+- Scramble to replace or redistribute workload
+
+**Likelihood**: 40% (one person leaves during 3-5 year project)
+
+**Mitigation**:
+- Retention bonuses for critical people ($500K total)
+- Knowledge transfer and documentation
+- Backup/succession planning
+- Reduce workload to prevent burnout
+- Career development to retain talent
+
+**Owner**: Sarah + HR Director  
+**Mitigation Cost**: $500K retention bonuses  
+**First Identified**: Interview 2 (Sarah), Interview 4 (Robert), Interview 9 (Tom re: Steve)
+
+---
+
+### RISK-022: Cybersecurity Incident During Migration
+**Score**: 19/25 (HIGH)  
+**Category**: Technical  
+**Status**: WORSENING
+
+**Description**: During migration, security posture weakened (patches delayed, team distracted, misconfigurations). Attackers target companies during migrations (know defenses are down). Ransomware attack during migration could be catastrophic. Support team notes security incidents will increase during migration.
+
+**Impact**:
+- Ransomware shuts down operations (days/weeks)
+- Data breach (customer data, IP, financial)
+- Ransom payment ($500K-5M typical)
+- Regulatory penalties and lawsuits
+- Reputation damage and customer loss
+- Project delay of 3-6 months
+
+**Likelihood**: 30% (lower than other risks but high impact)
+
+**Mitigation**:
+- Security architecture review before migration
+- Continuous security monitoring during migration
+- Dedicated security resources (don't spread David's team thin)
+- Incident response plan tested and ready
+- Cyber insurance updated for cloud environment
+- Clear escalation paths for security incidents
+
+**Owner**: David + Sarah  
+**Mitigation Cost**: Included in contractor budget  
+**First Identified**: Interview 5 (David), Interview 9 (Tom - incidents increase)
+
+---
+
+### RISK-035: Safety Incidents During Transition
+**Score**: 15/25 (HIGH)  
+**Category**: Operational  
+**Status**: STABLE (new risk)
+
+**Description**: During SAP, operator confusion led to wrong job setups (worker safety hazard) and missed quality checks (customer safety - aerospace/medical parts). New MES interface changes could cause similar operator confusion at 2 AM when tired. Safety incidents have downstream liability implications.
+
+**Impact**:
+- Worker injury (operator sets up job wrong)
+- Customer safety incidents (quality check missed → defective part → product failure)
+- OSHA violations and penalties
+- Workers' compensation claims
+- Liability lawsuits (especially if customer safety)
+- Reputation damage with customers
+- Maria/Robert will halt migration if safety compromised
+
+**Likelihood**: 40% (lower with proper mitigation but possible)
+
+**Mitigation**:
+- Patricia has explicit veto power on safety/quality systems
+- Extended testing for safety-critical functions
+- Operator involvement in UAT (usability under pressure at 3 AM)
+- Clear error messages and confirmations for critical actions
+- Rollback capability if safety incidents occur
+- Safety validation as part of GMP validation
+
+**Owner**: Maria + Patricia + Robert  
+**Mitigation Cost**: Included in validation budget  
+**First Identified**: Interview 8 (Maria)
+
+---
+
+### RISK-036: Sunday Window Capacity Constraint
+**Score**: 15/25 (HIGH)  
+**Category**: Timeline  
+**Status**: STABLE (physical constraint)
+
+**Description**: Only 12 Sunday windows per year (4 hours each = 48 hours/year total) for ALL IT changes. Shared with mechanical and electrical maintenance (not exclusive to IT). Sequential dependencies (ERP → warehouse → MES) prevent parallelization. This single constraint proves 3-5 year minimum timeline independent of all other factors.
+
+**Impact**:
+- Multi-year timeline (3-5 years minimum) regardless of other factors
+- Cannot compress schedule without violating maintenance windows
+- Competition for Sunday windows with other maintenance
+- Extended parallel running costs (systems run in parallel for years)
+
+**Likelihood**: 100% (physical constraint, cannot be overcome)
+
+**Mitigation**:
+- Accept 3-5 year timeline as reality
+- Maximize parallel work (most work done during week, cutover on Sunday)
+- Use Christmas shutdown for tactical upgrades (additional windows)
+- Coordinate with mechanical/electrical teams for window scheduling
+- Optimize cutover procedures to minimize window time
+
+**Owner**: Sarah + Facilities + Manufacturing  
+**Mitigation Cost**: $0 (reality) but extends timeline  
+**First Identified**: Interview 2 (Sarah mentioned), Interview 8 (Maria mathematical proof)
+
+---
+
+### RISK-037: Training Budget Inadequacy
+**Score**: 16/25 (HIGH)  
+**Category**: Financial  
+**Status**: CRITICAL (massive gap)
+
+**Description**: Current budget likely has nominal training ($5K/person = $900K for 180 operators). Maria estimates $50K/person for four-phase training ($9M for MES operators alone). Total training across all roles (IT, supervisors, support, quality) likely $12-15M. This is 40-65% of total project budget and was grossly underestimated.
+
+**Impact**:
+- Inadequate training = adoption failure
+- Token training (like SAP) leads to chaos
+- Operators unprepared for new systems
+- Support team unable to troubleshoot
+- Quality issues from improper usage
+- Safety incidents from confusion
+- Project technically successful but operationally failed
+
+**Likelihood**: 100% (certain if not addressed)
+
+**Mitigation**:
+- Approve $12-15M training investment immediately
+- Four-phase training approach (Maria's framework):
+  - Phase 1: 2 weeks classroom
+  - Phase 2: 1-2 weeks hands-on practice
+  - Phase 3: 3-6 months pilot program
+  - Phase 4: 3-4 months gradual rollout + 6 months support
+- Differentiated training for capability range (1/3 comfortable, 1/3 okay, 1/3 struggle)
+- Manufacturing-experienced trainers (not IT reading scripts)
+- HR Director to design training program
+
+**Owner**: Jennifer + HR Director + Maria  
+**Mitigation Cost**: $12-15M (largest single cost item)  
+**First Identified**: Interview 6 (Jimmy real training), Interview 8 (Maria quantified)
+
+---
+
+### RISK-040: Help Desk Model Failure for Floor Systems
+**Score**: 18/25 (HIGH)  
+**Category**: Operational  
+**Status**: STABLE (new risk)
+
+**Description**: Current help desk model works for BAU but breaks down during major changes. Remote support insufficient for MES transition - operators at 2 AM can't wait 30-60 minutes when production is down. Floor workers need immediate help on the floor, not tickets and callbacks.
+
+**Impact**:
+- Operator frustration when help is too slow
+- Production downtime while waiting for support
+- Workarounds and shadow processes (operators fix it themselves incorrectly)
+- Escalations to supervisors and executives (Robert gets called)
+- Adoption resistance (system seen as unsupported)
+- Quality and safety issues from operators improvising
+
+**Likelihood**: 90% (very likely if help desk model used)
+
+**Mitigation**:
+- Design floor-level support model (not help desk)
+- Support staff ON THE FLOOR, all three shifts, 6-12 months
+- Manufacturing background required (understand workflows)
+- Embedded with operators (walking floor, seeing issues real-time)
+- Immediate response (not ticket queue)
+- Cost: $260K for 6 months support (2 people × $120K + overtime)
+
+**Owner**: Tom + Sarah + Maria  
+**Mitigation Cost**: $260K-520K depending on duration  
+**First Identified**: Interview 4 (Robert floor needs), Interview 9 (Tom model failure)
+
+---
+
+### RISK-041: Support Contractor Budget Inadequacy
+**Score**: 16/25 (HIGH)  
+**Category**: Financial  
+**Status**: CRITICAL (not budgeted)
+
+**Description**: Support needs 6-9 contractors for migration (2-3 backfill + 4-6 migration support). Cost $2-3M over migration period. This is separate from the 10-15 contractors Sarah mentioned for broader IT work. Support contractor costs not in anyone's budget.
+
+**Impact**:
+- Support capacity crisis (cannot scale without contractors)
+- Support team burnout (trying to do everything with current staff)
+- BAU work suffers (production support inadequate)
+- Migration work suffers (can't handle questions/issues)
+- Attrition accelerates (people quit due to overload)
+
+**Likelihood**: 100% (certain need)
+
+**Mitigation**:
+- Budget approval for $2-3M support contractors
+- Backfill contractors: 2-3 people × $75/hour × 40 hours/week × 52 weeks = $300-450K/year
+- Migration support: 4-6 people × $100/hour × 40 hours/week × 18 months = $1.2-1.8M
+- Add 30-50% for 24/7 coverage premiums during critical periods
+- Spread costs over multiple years in budget
+
+**Owner**: Jennifer + Sarah + Tom  
+**Mitigation Cost**: $2-3M (conservative estimate)  
+**First Identified**: Interview 2 (Sarah IT contractors), Interview 9 (Tom support-specific)
+
+---
+
+### RISK-042: Support Skills Gap for Cloud
+**Score**: 15/25 (HIGH)  
+**Category**: Capacity  
+**Status**: STABLE (new risk)
+
+**Description**: Support team knows current on-premise systems but has zero Azure/cloud experience. Need 3-6 months training for entire support team (10 people) on cloud troubleshooting, Azure-specific issues, new application interfaces. Training while maintaining BAU workload and brutal on-call rotation is unrealistic.
+
+**Impact**:
+- Extended learning curve (more tickets unresolved)
+- Poor support quality during migration
+- Operator frustration ("help desk doesn't know the system")
+- Over-reliance on contractors (knowledge doesn't transfer)
+- Longer resolution times (4-6 hours instead of 1-2 hours)
+
+**Likelihood**: 80% (certain skills gap)
+
+**Mitigation**:
+- Azure training for entire support team (3-6 months)
+- Hands-on labs with cloud systems before migration
+- Contractors work alongside support team (knowledge transfer)
+- Documentation and knowledge base built during migration
+- Realistic timeline allows for proper training
+
+**Owner**: Tom + Sarah  
+**Mitigation Cost**: Included in $500K IT training budget  
+**First Identified**: Interview 9 (Tom)
+
+---
+
+## MODERATE RISKS (Score 10-14) - Monitor and Manage
+
+### RISK-016: Scope Creep During Migration
+**Score**: 14/25 (MODERATE)  
+**Category**: Project Management  
+**Status**: STABLE
+
+**Description**: During migration, stakeholders will request enhancements ("while we're at it..."). Scope creep adds timeline and cost. Without strong change control, project balloons beyond original scope.
+
+**Impact**:
+- Timeline delays (3-6 months)
+- Cost increases (20-30%)
+- Team frustration and scope confusion
+- Original objectives diluted
+
+**Likelihood**: 60% (scope creep common in long projects)
+
+**Mitigation**:
+- Formal change control process
+- Phase 2 for enhancements (not during migration)
+- Strong project governance
+- Michael and Jennifer must enforce scope discipline
+
+**Owner**: Project Manager + Michael  
+**Mitigation Cost**: $0 (discipline)  
+**First Identified**: General project management risk
+
+---
+
+### RISK-017: User Acceptance Testing Inadequacy
+**Score**: 13/25 (MODERATE)  
+**Category**: Quality  
+**Status**: STABLE
+
+**Description**: UAT typically surface-level (functional testing only). Need operators involved in UAT (not just IT). Need testing under pressure at 2 AM (not just business hours). Inadequate UAT means issues discovered after go-live.
+
+**Impact**:
+- Issues discovered post-go-live (when costly to fix)
+- Operator frustration (system doesn't work for real workflows)
+- Rollback or extended parallel running
+- Additional costs to fix issues
+
+**Likelihood**: 50% (if UAT not rigorous)
+
+**Mitigation**:
+- Operators involved in UAT (Maria's requirement)
+- Testing under realistic conditions (night shift, production pressure)
+- Test scripts based on real workflows (not just happy path)
+- Adequate UAT time in schedule (not compressed)
+
+**Owner**: Maria + Sarah + Patricia  
+**Mitigation Cost**: Included in project timeline  
+**First Identified**: Interview 8 (Maria - operators must be involved)
+
+---
+
+### RISK-018: Communication Breakdown Between IT and Operations
+**Score**: 14/25 (MODERATE)  
 **Category**: Organizational  
-**Probability**: Medium (40%)  
-**Impact**: Show-stopper  
-**Severity**: MEDIUM-HIGH
+**Status**: IMPROVING (if Michael does floor shift)
 
-**Description**: Kevin has seen this pattern THREE times in 15 years: "Big vision, mounting costs, reality hits, initiative stalls, leader leaves, cycle repeats." SAP failure 2018 ($2.3M write-off) still remembered by all stakeholders. Organization has PTSD from failed transformation attempts.
+**Description**: IT and Operations speak different languages. IT focuses on technical success, Operations on production continuity. Without strong communication, IT makes decisions that don't work operationally.
 
 **Impact**:
-- Organization loses faith in IT leadership
-- Board stops funding transformation initiatives
-- Talent leaves (best people tired of false starts)
-- Company falls further behind competitors
-- Next attempt in 3-5 years starts with even lower trust
+- Technical solutions that don't work operationally
+- Operator resistance (feel unheard)
+- Rework and delays (fix after the fact)
+- Erosion of trust between IT and Operations
 
-**Root Cause**: Pattern recognition by Kevin - previous CTO's cloud initiative stalled 18 months ago, SAP failed 2018, other failed initiatives.
+**Likelihood**: 50% (if Michael doesn't bridge gap)
 
-**Common factors**:
-- Big promises to board without ground truth
-- Costs escalate beyond budget
-- Timeline slips
-- Executive leaves (voluntary or forced)
-- Initiative cancelled or scaled back
+**Mitigation**:
+- Michael floor shift (understand operations)
+- Regular IT-Operations meetings during migration
+- Operators on project steering committee
+- Maria as bridge between IT and floor
+- Robert ensures operational voice is heard
 
-**Mitigation Strategy**:
-- **THIS TIME: DIFFERENT APPROACH**:
-  - Ground truth BEFORE board promises (Phase 0 discovery)
-  - Four-way alignment (Michael + Jennifer + Robert + Sarah + Kevin) BEFORE committing
-  - Realistic budget with contingency
-  - 3-year timeline with phased milestones
-  - Kill criteria defined upfront (Jennifer's approach)
-  
-- **Acknowledge Trauma Explicitly**:
-  - "We know previous attempts failed"
-  - "Here's what we learned from SAP"
-  - "Here's how this time is different"
-  
-- **Build Coalition of Credible Voices**: Sarah (15 years), Jennifer (learned from SAP), Robert (CEO's confidant), Kevin (infrastructure reality)
-  
-- **Incremental Validation**: Phase gates, prove it works before scaling
-
-**Owner**: Michael Chen (must break the pattern)  
-**Status**: Open - Requires different leadership approach than predecessors
-
-**Notes**: This is the META-RISK that encompasses many others. If Michael repeats the pattern, organizational trauma deepens. The four-way alignment meeting is the key intervention to break the cycle.
+**Owner**: Michael + Robert + Maria  
+**Mitigation Cost**: $0 (communication)  
+**First Identified**: Interview 4 (Robert), Interview 8 (Maria)
 
 ---
 
-## Risk Summary by Category
+### RISK-023: Customization Debt in Cloud
+**Score**: 12/25 (MODERATE)  
+**Category**: Technical  
+**Status**: STABLE
 
-### Financial Risks (8)
-- R03: Short-term Cost Increase (HIGH)
-- R07: Budget Realism Gap (CRITICAL)
-- R08: Cost Savings Timeline Mismatch (HIGH)
-- R23: Cloud Cost Spiral (CRITICAL)
-- R25: Licensing Cost Trap (HIGH)
-- R26: Hidden Cloud Costs Surprise (HIGH)
-- R27: Parallel Running Budget Gap (HIGH)
-- R19: Customer-Facing System Downtime (MEDIUM)
+**Description**: Temptation to customize cloud applications to match old workflows. Customizations complicate upgrades and maintenance. "Lift and shift" approach may recreate existing problems in cloud.
 
-### Technical Risks (7)
-- R12: Lost Source Code / Black Box Components (HIGH)
-- R21: Hardware Failure Cascade (CRITICAL)
-- R22: Network Capacity Bottleneck (CRITICAL)
-- R11: Parallel Running Complexity (HIGH)
-- R24: Azure Expertise Gap (HIGH)
-- R06: SOC 2 Timeline Pressure (MEDIUM)
-- R20: GMP/Validation Requirements (MEDIUM)
+**Impact**:
+- Upgrade challenges (customizations break)
+- Vendor support issues (customizations not supported)
+- Higher ongoing maintenance costs
+- Miss opportunity to improve workflows
 
-### Organizational Risks (9)
-- R01: Timeline Misalignment (CRITICAL)
-- R02: Executive Alignment Gap (CRITICAL)
-- R04: SAP Trauma Influence (HIGH)
-- R09: Sarah's Team Capacity (HIGH)
-- R15: Michael's Trust Deficit (HIGH)
-- R18: Lost Institutional Knowledge (HIGH)
-- R28: Operational Discipline Failure (MEDIUM-HIGH)
-- R29: Repeated Failure Pattern (MEDIUM-HIGH)
-- R14: Three Veto Powers Uncoordinated (CRITICAL)
+**Likelihood**: 50% (customizations common without discipline)
 
-### Operational Risks (3)
-- R10: Union Negotiation Failure (CRITICAL)
-- R13: Christmas Cutover Myth (MEDIUM)
-- R17: Maintenance Window Scarcity (MEDIUM)
+**Mitigation**:
+- Minimize customizations (use standard functionality)
+- Business process re-engineering where appropriate
+- Configuration over customization
+- Document and track all customizations
 
-### Compliance/Legal Risks (2)
-- R05: Cyber Insurance Crisis (HIGH)
-- R20: GMP/Validation Requirements (MEDIUM)
+**Owner**: Sarah + Application Developers  
+**Mitigation Cost**: $0 (design discipline)  
+**First Identified**: Interview 2 (Sarah)
 
 ---
 
-## Critical Path to Success
+### RISK-024: Cloud Cost Optimization Failure
+**Score**: 13/25 (MODERATE)  
+**Category**: Financial  
+**Status**: STABLE
 
-### Must Resolve Before Board Presentation (15 days):
-1. ✅ **Four-way alignment meeting** (Michael + Jennifer + Robert + Sarah + Kevin)
-2. ✅ **Comprehensive cost model** ($10-15M over 3 years, including ALL costs)
-3. ✅ **Realistic timeline** (3 years with phase gates, not 18 months)
-4. ✅ **Michael-Jennifer budget alignment** (prevent public challenge)
-5. ✅ **Answer Robert's five questions** (get his support to CEO)
+**Description**: Cloud costs can spiral without active management. Easy to over-provision, forget to shut down resources, incur unexpected data egress charges. Without optimization, cloud may not deliver expected cost savings.
 
-### Must Resolve Before Phase 1 Start:
-6. ✅ **Network capacity resolution** (1 Gbps upgrade or Azure Data Box)
-7. ✅ **Infrastructure stabilization budget** ($2.5M secured)
-8. ✅ **Cloud expertise staffing** ($1.4-2M contractors/hires approved)
-9. ✅ **Union engagement** (Interview Jimmy, no layoffs commitment)
-10. ✅ **Parallel running budget** ($1M line item approved)
+**Impact**:
+- Higher than expected ongoing costs
+- ROI case weakens or disappears
+- Budget overruns in operational phase
+- Board dissatisfaction with "savings" that don't materialize
 
-### Must Maintain Ongoing:
-11. ✅ **Operational discipline** (weekly cost reviews, cleanup culture)
-12. ✅ **Trust building** (deliver 90-day wins, align with Sarah)
-13. ✅ **Coalition management** (keep Jennifer, Robert, Kevin aligned)
+**Likelihood**: 60% (cloud cost overruns common)
+
+**Mitigation**:
+- Cloud cost monitoring and optimization tools
+- Regular cost reviews (monthly minimum)
+- Right-sizing of resources
+- Reserved instances where appropriate
+- Chargebacks to departments (accountability)
+
+**Owner**: Sarah + Jennifer  
+**Mitigation Cost**: Included in Azure costs  
+**First Identified**: Interview 2 (Sarah), Interview 4 (Kevin via Robert)
 
 ---
 
-**End of Risk Register**
+### RISK-025: Email and Collaboration Disruption
+**Score**: 11/25 (MODERATE)  
+**Category**: Operational  
+**Status**: STABLE
 
-*Last Updated: After Interview 5 (Kevin Martinez)*  
-*Total Risks: 29 (8 Critical, 14 High, 7 Medium)*  
-*Next Update: After Interview 6 (Jimmy Garcia - Union Steward)*  
-*Phase 0 - Discovery & Ideation*  
-*Contoso Manufacturing Azure Modernization Initiative*
+**Description**: Moving email and collaboration to cloud (Microsoft 365) affects every user daily. If migration goes poorly, productivity suffers across organization. Smaller impact than MES but wider user base (300+ users).
+
+**Impact**:
+- Productivity loss (can't access email/files)
+- User frustration across organization
+- Communication breakdowns
+- Negative perception of entire migration
+
+**Likelihood**: 30% (Microsoft 365 migrations well-understood)
+
+**Mitigation**:
+- Pilot with IT team first
+- Phased rollout by department
+- Comprehensive training
+- Adequate support during transition
+- Rollback plan if major issues
+
+**Owner**: Sarah + Tom  
+**Mitigation Cost**: Included in project scope  
+**First Identified**: Interview 2 (Sarah)
+
+---
+
+### RISK-026: Document Management System Migration Complexity
+**Score**: 12/25 (MODERATE)  
+**Category**: Technical  
+**Status**: STABLE
+
+**Description**: Current document management likely has 15+ years of documents. Metadata, folder structures, permissions all need migration. Documents may be referenced by other systems (integrations).
+
+**Impact**:
+- Documents lost or inaccessible
+- Broken links from other systems
+- Productivity loss (can't find documents)
+- Compliance issues (GMP document retention)
+
+**Likelihood**: 40% (at least some issues likely)
+
+**Mitigation**:
+- Document migration strategy and testing
+- Parallel running (old and new for 3-6 months)
+- Extensive validation of document migration
+- GMP documents given extra scrutiny
+
+**Owner**: Sarah + Patricia  
+**Mitigation Cost**: Included in project scope  
+**First Identified**: Interview 2 (Sarah)
+
+---
+
+### RISK-027: Custom Application Re-Architecture
+**Score**: 14/25 (MODERATE)  
+**Category**: Technical  
+**Status**: STABLE
+
+**Description**: 8 legacy custom applications may not work in cloud without re-architecture. Some may need complete rewrites. Adds significant timeline and cost if not planned upfront.
+
+**Impact**:
+- Timeline delays (6-12 months per app if rewrite needed)
+- Cost increases ($500K-1M per app for rewrites)
+- May need to defer some apps to later phase
+- Functionality gaps if apps not migrated
+
+**Likelihood**: 60% (at least 2-3 apps will need major work)
+
+**Mitigation**:
+- Application assessment upfront (discovery phase)
+- Prioritize apps by business value
+- Consider commercial off-the-shelf (COTS) replacements
+- Phase approach (critical apps first, others later)
+
+**Owner**: Sarah + Application Developers  
+**Mitigation Cost**: $1-3M for rewrites (if needed)  
+**First Identified**: Interview 2 (Sarah)
+
+---
+
+### RISK-029: PE Firm Skepticism or Intervention
+**Score**: 14/25 (MODERATE)  
+**Category**: Financial  
+**Status**: UNKNOWN (PE firm position unclear)
+
+**Description**: Private equity firm ownership means capital investment scrutiny. PE firms typically want ROI within 3-5 years. Multi-year migration with uncertain ROI may not align with PE timeline. PE could intervene or cancel project.
+
+**Impact**:
+- Project cancellation mid-stream (waste of investment)
+- Pressure to cut scope or timeline (leads to failure)
+- Budget constraints (can't get full funding needed)
+- Management changes if PE loses confidence
+
+**Likelihood**: 40% (depends on PE firm position)
+
+**Mitigation**:
+- Engage PE firm early (get buy-in upfront)
+- Show clear ROI case (Jennifer's 3X model)
+- Phase approach with value delivered at each phase
+- Transparent reporting to PE on progress and ROI
+
+**Owner**: Michael + Jennifer + Board  
+**Mitigation Cost**: $0 (engagement and management)  
+**First Identified**: Interview 3 (Jennifer)
+
+---
+
+### RISK-030: Loss of Detroit Dynamics Contract
+**Score**: 13/25 (MODERATE)  
+**Category**: Business  
+**Status**: STABLE
+
+**Description**: Detroit Dynamics is key customer. During SAP, production disruption almost lost this contract (Robert had to escalate to CEO). If migration disrupts production or quality, could lose contract again.
+
+**Impact**:
+- Revenue loss (significant customer)
+- Reputation damage in automotive industry
+- Downstream effects (other customers see disruption)
+- Potential facility closure if revenue loss severe
+
+**Likelihood**: 20% (lower with proper execution but high impact)
+
+**Mitigation**:
+- Engage Detroit Dynamics early (customer communication)
+- Extra quality scrutiny on Detroit Dynamics parts
+- Avoid big bang (phased approach reduces risk)
+- Parallel running (fallback if issues)
+- Robert monitors closely (escalate quickly if issues)
+
+**Owner**: Robert + Sales/Account Management  
+**Mitigation Cost**: $0 (attention and communication)  
+**First Identified**: Interview 4 (Robert)
+
+---
+
+### RISK-031: Warehouse Management System Integration
+**Score**: 12/25 (MODERATE)  
+**Category**: Technical  
+**Status**: STABLE
+
+**Description**: WMS integrates with ERP (order fulfillment) and MES (material tracking). If WMS migration breaks integrations, shipping stops. Sequential dependencies (ERP → WMS → MES) add timeline.
+
+**Impact**:
+- Can't ship products (revenue impact)
+- Manual workarounds (productivity loss)
+- Customer order delays
+- Inventory accuracy issues
+
+**Likelihood**: 50% (integrations often break)
+
+**Mitigation**:
+- Integration testing before cutover
+- Parallel running to validate integrations
+- Sequential migration (ERP first, then WMS, then MES)
+- Rollback plan if integrations fail
+
+**Owner**: Sarah + Operations  
+**Mitigation Cost**: Included in project scope  
+**First Identified**: Interview 2 (Sarah)
+
+---
+
+### RISK-032: Quality Management System Validation
+**Score**: 14/25 (MODERATE)  
+**Category**: Compliance  
+**Status**: STABLE
+
+**Description**: QMS is GMP-validated system. Migration requires re-validation (3-6 months). QMS must be validated before production can use it. Cannot compress without regulatory violations.
+
+**Impact**:
+- Timeline delay if validation not in critical path
+- Cannot use new QMS until validated (old system must run)
+- Regulatory violations if used without validation
+- Customer audit failures
+
+**Likelihood**: 50% (if not planned properly)
+
+**Mitigation**:
+- Include QMS validation in critical path (not parallel)
+- Patricia leads validation effort
+- Risk-based validation approach (focus critical functions)
+- Test scripts aligned with GMP requirements
+
+**Owner**: Patricia + Sarah  
+**Mitigation Cost**: Included in $1.5-2.5M validation budget  
+**First Identified**: Interview 7 (Patricia)
+
+---
+
+### RISK-043: Knowledge Base and Documentation Gap
+**Score**: 14/25 (MODERATE)  
+**Category**: Operational  
+**Status**: STABLE (new risk)
+
+**Description**: Current knowledge base okay for current systems. Need to build from scratch for new systems - troubleshooting guides, FAQs, known issues, workarounds. Documentation must be created BEFORE migration, not after. Operators and support need this to be successful.
+
+**Impact**:
+- Support can't help users (no documentation)
+- Users frustrated (no self-service)
+- Repeat questions (support overwhelmed)
+- Training gaps (no reference materials)
+- Knowledge loss (tribal knowledge not captured)
+
+**Likelihood**: 60% (documentation often afterthought)
+
+**Mitigation**:
+- Dedicated resource for documentation (6-12 months)
+- Knowledge base articles written during pilot
+- Operators and support review documentation
+- Searchable, accessible format
+- Updated continuously as issues discovered
+
+**Owner**: Tom + Sarah + Training Team  
+**Mitigation Cost**: $100-200K for dedicated documentation resource  
+**First Identified**: Interview 9 (Tom)
+
+---
+
+### RISK-044: Vendor Support Model Unknown
+**Score**: 13/25 (MODERATE)  
+**Category**: Operational  
+**Status**: STABLE (new risk)
+
+**Description**: Moving to Azure and cloud applications means new vendors with unknown support models. What are their SLAs? Can we escalate 24/7? What's included in licensing vs. paid support? Need to understand vendor support BEFORE migration, not after.
+
+**Impact**:
+- Support gaps during critical issues
+- Longer resolution times (waiting on vendor)
+- Additional support costs (paid support contracts)
+- Finger-pointing between vendors ("not our problem")
+- Production impact while vendors troubleshoot
+
+**Likelihood**: 50% (some vendor support issues likely)
+
+**Mitigation**:
+- Vendor due diligence before migration
+- SLA negotiation and documentation
+- 24/7 support contracts where needed
+- Escalation procedures defined and tested
+- Understand what's included vs. paid support
+
+**Owner**: Sarah + Tom + Procurement  
+**Mitigation Cost**: Included in Azure licensing costs  
+**First Identified**: Interview 9 (Tom)
+
+---
+
+## LOW RISKS (Score 1-9) - Monitor
+
+### RISK-045: Network Latency Impact on MES Performance
+**Score**: 8/25 (LOW)  
+**Category**: Technical  
+**Status**: STABLE
+
+**Description**: MES requires <50ms latency. Cloud adds 20-30ms minimum. If network not optimized, latency could impact MES usability and operator productivity.
+
+**Impact**:
+- Operator frustration (slow system)
+- Productivity loss (waiting for screens)
+- Resistance to adoption
+- May need to keep MES on-premise if latency unacceptable
+
+**Likelihood**: 20% (likely manageable with proper network)
+
+**Mitigation**:
+- Network optimization (prerequisite work)
+- ExpressRoute or direct connect to Azure
+- Latency testing before MES migration
+- Keep MES on-premise if latency unacceptable
+
+**Owner**: Sarah + Network Engineers  
+**Mitigation Cost**: Included in infrastructure budget
+
+---
+
+### RISK-046: Data Egress Costs
+**Score**: 7/25 (LOW)  
+**Category**: Financial  
+**Status**: STABLE
+
+**Description**: Transferring data out of Azure incurs charges. Manufacturing generates significant data (MES logs, quality data, production data). Data egress costs could add up over time.
+
+**Impact**:
+- Higher than expected operational costs
+- Budget overruns
+- ROI case weakens
+
+**Likelihood**: 30% (will have some egress costs)
+
+**Mitigation**:
+- Understand data flows and egress patterns
+- Optimize data architecture to minimize egress
+- Monitor costs monthly
+- Include in financial model
+
+**Owner**: Sarah + Jennifer  
+**Mitigation Cost**: Included in Azure cost estimates
+
+---
+
+### RISK-047: Time Zone Coordination for Global Support
+**Score**: 6/25 (LOW)  
+**Category**: Operational  
+**Status**: STABLE
+
+**Description**: If using global Azure resources or offshore contractors, time zone coordination becomes complex. 24/7 support requires coverage across time zones.
+
+**Impact**:
+- Communication delays
+- Hand-off issues between shifts
+- Cultural/language barriers
+- Slower resolution times
+
+**Likelihood**: 20% (if offshore contractors used)
+
+**Mitigation**:
+- Prefer local/regional contractors
+- Clear handoff procedures if global team
+- Overlap hours for communication
+- Language skills assessment for contractors
+
+**Owner**: Tom + Sarah  
+**Mitigation Cost**: $0 (process design)
+
+---
+
+### RISK-048: Legacy Hardware End-of-Life
+**Score**: 8/25 (LOW)  
+**Category**: Technical  
+**Status**: STABLE
+
+**Description**: Current on-premise hardware aging. If migration timeline extends to 5 years, hardware may fail before migration complete. May need to replace hardware mid-migration.
+
+**Impact**:
+- Unplanned hardware replacement costs
+- System outages during migration
+- Timeline delays if critical hardware fails
+
+**Likelihood**: 30% (some hardware may fail over 5 years)
+
+**Mitigation**:
+- Hardware assessment and lifecycle planning
+- Replace critical hardware proactively
+- Maintain spares for aging equipment
+- Accelerate migration of systems on oldest hardware
+
+**Owner**: Sarah + Infrastructure Team  
+**Mitigation Cost**: $200-500K contingency for hardware
+
+---
+
+### RISK-049: Holiday Season Blackout Windows
+**Score**: 7/25 (LOW)  
+**Category**: Timeline  
+**Status**: STABLE
+
+**Description**: November/December are blackout period for changes (holiday season busy for manufacturing). Reduces available Sunday windows from 12 to 10 per year. Small additional timeline impact.
+
+**Impact**:
+- Fewer migration windows available
+- Timeline extends by 2-3 months over project life
+
+**Likelihood**: 100% (certain - holiday blackout is firm)
+
+**Mitigation**:
+- Plan around blackout windows
+- Use Christmas shutdown if available
+- Accept timeline impact
+- Don't try to force changes during blackout
+
+**Owner**: Sarah + Manufacturing  
+**Mitigation Cost**: $0 (timeline acceptance)
+
+---
+
+### RISK-050: Social Engineering Attacks During Transition
+**Score**: 9/25 (LOW)  
+**Category**: Security  
+**Status**: STABLE
+
+**Description**: Users confused by new systems are vulnerable to phishing and social engineering. Attackers may impersonate support or send fake training materials. Increased risk during migration period.
+
+**Impact**:
+- Credentials compromised
+- Malware infection
+- Data breach
+- Ransomware attack
+
+**Likelihood**: 20% (possible but lower priority than other risks)
+
+**Mitigation**:
+- Security awareness training during migration
+- Clear communication channels (how support will contact you)
+- Extra vigilance from security team
+- Incident response plan ready
+
+**Owner**: David + Tom  
+**Mitigation Cost**: Included in security budget
+
+---
+
+## Risk Mitigation Summary
+
+### By Priority
+
+**IMMEDIATE ACTION REQUIRED (CRITICAL RISKS)**:
+1. Timeline reset to 36-60 months (RISK-001)
+2. Hire contractors for capacity (RISK-002, RISK-039)
+3. MES migration strategy (RISK-008, RISK-033)
+4. Validation timeline integration (RISK-012)
+5. Union engagement (RISK-020)
+6. Budget revision to $18.5-26.5M (RISK-028, RISK-037, RISK-041)
+7. SAP acknowledgment (RISK-034)
+8. Address support burnout (RISK-038)
+9. Floor-level support model (RISK-040)
+
+**URGENT (HIGH RISKS)**:
+10. Infrastructure stabilization ($2.5M) (RISK-003)
+11. Support contractor budget ($2-3M) (RISK-041)
+12. Training budget ($12-15M) (RISK-037)
+13. Skills gap training (RISK-014, RISK-042)
+14. Board expectations management (RISK-019)
+
+### Total Mitigation Cost Estimate
+
+**One-Time Costs**:
+- IT contractors: $4-6M over 3 years
+- Support contractors: $2-3M over 18-36 months
+- Training: $12-15M over 12-18 months
+- Validation: $1.5-2.5M
+- Infrastructure: $2.5M Year 1
+- Retention bonuses: $500K
+- Documentation: $100-200K
+- Contingency: $1.5-3M
+**Subtotal**: $24.6-32.7M
+
+**Ongoing Costs**:
+- Azure infrastructure: Ramps from $3M to $4M/year
+- Hidden costs: $1-2M/year
+**Year 1-3**: Higher costs during parallel running
+
+**Total 5-Year Budget**: $30-40M (includes mitigation costs)
+
+---
+
+## Document Control
+
+**Version**: 2.0  
+**Last Updated**: 2025-11-05 (After Interview 9)  
+**Updated By**: Discovery Team  
+**Next Review**: After Interview 10 (IT Manager)  
+**Owner**: Project Risk Manager (TBD)
+
+**Change Log**:
+- v1.0 (2025-10-28): Initial risk register (25 risks)
+- v1.1 (2025-10-30): Added risks 26-30 after Jennifer interview
+- v1.2 (2025-11-01): Added risks 31-33 after David interview
+- v1.3 (2025-11-02): Updated after Jimmy interview
+- v1.4 (2025-11-04): Added risks 34-37 after Patricia/Maria interviews
+- v2.0 (2025-11-05): Major update after Tom interview - added 7 new risks (38-44), now 44 total, 10 critical
+
+---
+
+**STATUS**: Active risk tracking, 44 risks identified, 10 critical requiring immediate action, comprehensive mitigation strategy needed before Phase 1.
