@@ -2,55 +2,69 @@
 
 **Project**: Azure Modernization Initiative  
 **Phase**: Phase 0 - Discovery & Ideation  
-**Assessment Date**: After Interview 5 (Kevin Martinez)  
-**Overall Feasibility Score**: 50/100 (Moderate-High Risk, Trending Down ⬇️)  
-**Confidence Level**: 65%  
-**Recommendation**: CONDITIONAL GO (requires four-way alignment and budget realism)
+**Assessment Date**: After Interview 7 (Dr. Patricia Rodriguez - Quality Manager)  
+**Overall Feasibility Score**: 38/100 (Very High Risk, Trending Down ⬇️)  
+**Confidence Level**: 75%  
+**Recommendation**: CONDITIONAL GO (requires six-way alignment, validation Master Plan, $1.5-2.5M validation budget)
 
 ---
 
 ## Executive Summary
 
-After 5 of 11 stakeholder interviews, feasibility has **declined from 58/100 to 50/100**. Kevin's interview revealed critical infrastructure constraints that significantly impact technical, financial, and timeline feasibility. The initiative is technically POSSIBLE but faces HIGH RISK without immediate course correction.
+After 6 of 11 stakeholder interviews, feasibility has **declined from 50/100 to 45/100**. Jimmy Garcia's interview revealed critical union/labor constraints that significantly impact timeline and organizational feasibility. The initiative is technically POSSIBLE but faces HIGH RISK without immediate course correction on union engagement.
 
-**Critical Findings**:
+**Critical Findings from Interview 6**:
+- Union contract Article 12 requires 120-day notice before major tech changes (adds 4 months to timeline)
+- No-layoffs commitment is THE non-negotiable (everything else negotiable)
+- Seniority rules (Article 15) require offering new cloud roles to existing workers first with real training
+- Strike authorization likely if jobs threatened (80-90% yes vote estimate, cost $240K/day)
+- 2018 SAP trauma still remembered (3 weeks lost production, inadequate training)
+- 2019 contract battle created trust deficit (only got 1.5% raises vs 3% requested)
+- Training must be REAL ($50K/person, not token $5K)
+- Early involvement = partnership; late involvement = adversarial fight
+
+**Cumulative Findings (Interviews 1-6)**:
 - Infrastructure crisis (exponential hardware failures) adds $2.5M Year 1 requirement
-- Network bottleneck adds 6-8 months to timeline if not resolved
-- Year 1-2 costs DOUBLE to $8.75-9.75M/year (confirms Jennifer's assessment)
+- Network bottleneck adds 6-8 months to timeline
+- Year 1-2 costs DOUBLE to $8.75-9.75M/year
 - 50/50 chance cloud costs match on-prem with zero ROI
 - $1.4-2M staffing gap not budgeted
-- Four-way alignment has NOT occurred yet (15 days to board presentation)
+- 120-day union notice adds 4 months
+- Five-way alignment has NOT occurred yet (Michael + Jennifer + Robert + Sarah + Kevin + Union)
 
 **The initiative can succeed IF**:
-1. Four-way alignment meeting happens within 2 weeks
-2. Timeline reset to 3 years (not 18 months)
+1. Five-way alignment meeting happens within 2 weeks (now includes union consideration)
+2. Timeline reset to 3+ years with 120-day union notice built in
 3. Budget increased to $10-15M over 3 years
-4. Infrastructure stabilization funded ($2.5M Year 1)
-5. Network capacity resolved immediately
-6. Cloud expertise staffing approved ($1.4-2M Year 1)
-7. Operational discipline commitment from leadership
+4. Written no-layoffs commitment endorsed by CEO
+5. Michael-Jimmy-bargaining committee meeting within 30 days (URGENT)
+6. Infrastructure stabilization funded ($2.5M Year 1)
+7. Network capacity resolved immediately
+8. Cloud expertise staffing approved ($1.4-2M Year 1)
+9. Real training programs budgeted ($50K/person for retraining)
+10. Operational discipline commitment from leadership
 
-**Without these corrections**: Likelihood of failure is HIGH (70-80%).
+**Without these corrections**: Likelihood of failure is VERY HIGH (75-85%).
 
 ---
 
 ## Feasibility Scoring
 
-### Overall Score: 50/100 (Moderate-High Risk)
+### Overall Score: 38/100 (Very High Risk)
 
-**Previous Score** (After Interview 4): 58/100  
-**Change**: ⬇️ -8 points  
-**Trend**: Declining (each interview reveals more constraints)
+**Previous Score** (After Interview 6): 45/100  
+**Change**: ⬇️ -7 points  
+**Trend**: Declining (validation requirements significantly impact all dimensions)
 
 ### Component Scores
 
 | Dimension | Score | Change | Confidence | Status |
 |-----------|-------|--------|------------|--------|
-| **Technical Feasibility** | 55/100 | ⬇️ -10 | 75% | Moderate-High Risk |
-| **Financial Feasibility** | 45/100 | ⬇️ -5 | 70% | High Risk |
-| **Timeline Feasibility** | 35/100 | ⬇️ -5 | 80% | Very High Risk |
-| **Organizational Feasibility** | 55/100 | ⬇️ -5 | 60% | Moderate-High Risk |
-| **Operational Feasibility** | 60/100 | → 0 | 65% | Moderate Risk |
+| **Technical Feasibility** | 48/100 | ⬇️ -7 | 80% | High Risk |
+| **Financial Feasibility** | 32/100 | ⬇️ -8 | 80% | Very High Risk |
+| **Timeline Feasibility** | 25/100 | ⬇️ -5 | 90% | Very High Risk |
+| **Organizational Feasibility** | 45/100 | ⬇️ -5 | 75% | High Risk |
+| **Operational Feasibility** | 48/100 | ⬇️ -7 | 75% | High Risk |
 
 ---
 
@@ -106,11 +120,11 @@ After 5 of 11 stakeholder interviews, feasibility has **declined from 58/100 to 
 
 ---
 
-## Financial Feasibility: 45/100 (High Risk)
+## Financial Feasibility: 40/100 (High Risk)
 
-**Previous Score**: 50/100  
+**Previous Score**: 45/100  
 **Change**: ⬇️ -5 points  
-**Key Factors**: Hidden costs, parallel running unbudgeted, 50/50 chance of zero ROI
+**Key Factors**: Real training budget ($50K/person), hidden costs, parallel running unbudgeted, 50/50 chance of zero ROI
 
 ### Strengths (+)
 - Jennifer (CFO) understands investment-before-returns model
@@ -125,35 +139,45 @@ After 5 of 11 stakeholder interviews, feasibility has **declined from 58/100 to 
   - Breakdown: $2.5M infrastructure + $6-8M migration + $4.5M/year on-prem parallel
   - Total Year 1-2: $17.5-19.5M
   
-- **Hidden Costs** (New):
+- **Real Training Costs** (NEW):
+  - Union contract requires "real training" not "token training"
+  - Real training: $50K/person (months-long, paid time, hands-on)
+  - Token training: $5K/person (inadequate, violates contract spirit)
+  - If 20-30 workers need retraining for cloud roles: $1-1.5M
+  - This is NOT budgeted in Michael's plan
+  - Article 15 prevents external hiring until existing workers trained first
+  
+- **Hidden Costs**:
   - $1-2M/year in costs most people don't budget
   - Data egress: $200-500K/year
   - Azure services tax: $150K/year  
   - DR: $300K/year
   - Management tools: $100-150K/year
-  - Training: $50K/year
+  - Training: $50K/year (token) OR $1-1.5M (real, required by union)
   - Consulting: $200-500K Years 1-2
   
-- **Parallel Running** (New):
+- **Parallel Running**:
   - $800K-1.2M infrastructure costs for 8-10 critical systems
   - Likely not budgeted (Michael unaware per Kevin)
   - Application costs additional (total $1.5-2M)
   
-- **Licensing Trap** (New):
+- **Licensing Trap**:
   - $800K catch-up needed for Software Assurance
   - 60% of servers have lapsed SA (budget cuts 3 years ago)
   - Without catch-up: Azure costs 40% higher than planned
   
-- **Cloud Cost Spiral Risk** (New):
+- **Cloud Cost Spiral Risk**:
   - Kevin's confidence: 50/50 chance cloud costs match on-prem ($5M/year)
   - Zero savings if organizational culture doesn't change
   - "Build, accumulate, never clean up" culture
   - Risk: 600 underutilized VMs at $300/month = $2.16M/year wasted
 
 ### Impact on Score
+- Real training budget: -3 points ($1-1.5M unbudgeted requirement)
 - Hidden costs revelation: -2 points (budget gap triggers Jennifer's kill criteria)
 - Parallel running unbudgeted: -2 points ($800K-1.2M surprise)
 - 50/50 ROI risk: -1 point (may spend $10-15M for zero return)
+- Total drop from 45 to 40: -5 points
 
 ### Financial Reality Check
 **Michael's Promise**: 50% savings ($2.25M/year) in 18 months  
@@ -162,16 +186,17 @@ After 5 of 11 stakeholder interviews, feasibility has **declined from 58/100 to 
 - Year 3: Maybe $1M savings (if disciplined)
 - Year 4+: Maybe $1.5M/year savings (optimistic) OR $0 savings (realistic, 50/50 chance)
 
-**Cumulative Cash Flow**:
-- Year 1-2: -$8.5-10.5M (vs baseline)
-- Year 3: -$7.5-9.5M cumulative
-- Year 4: -$6-8M cumulative
-- Year 5: -$4.5-6.5M cumulative
-- **Breakeven**: Year 6-7 IF optimistic scenario
+**Cumulative Cash Flow** (Updated with training):
+- Year 1-2: -$9.5-12M (vs baseline, includes $1-1.5M training)
+- Year 3: -$8.5-11M cumulative
+- Year 4: -$7-9.5M cumulative
+- Year 5: -$5.5-8M cumulative
+- **Breakeven**: Year 6-8 IF optimistic scenario
 
 ### Mitigation Required
 - ✅ Comprehensive cost model including ALL costs (Kevin + Sarah + Jennifer)
-- ✅ Realistic budget $10-15M over 3 years with contingency
+- ✅ Realistic budget $12-18M over 3 years with contingency (up from $10-15M)
+- ✅ Real training budgeted ($1-1.5M, not token $50K)
 - ✅ Explicit parallel running line item ($1M)
 - ✅ Licensing catch-up budgeted ($800K)
 - ✅ Operational discipline from Day 1 (weekly cost reviews, auto-shutdown, 90-day cleanup)
@@ -179,11 +204,11 @@ After 5 of 11 stakeholder interviews, feasibility has **declined from 58/100 to 
 
 ---
 
-## Timeline Feasibility: 35/100 (Very High Risk)
+## Timeline Feasibility: 30/100 (Very High Risk)
 
-**Previous Score**: 40/100  
+**Previous Score**: 35/100  
 **Change**: ⬇️ -5 points  
-**Key Factors**: Network adds 6-8 months, hardware crisis urgent, 18 months impossible
+**Key Factors**: 120-day union notice adds 4 months, network adds 6-8 months, hardware crisis urgent, 18 months impossible
 
 ### Strengths (+)
 - Christmas shutdown provides tactical cutover windows
@@ -192,48 +217,66 @@ After 5 of 11 stakeholder interviews, feasibility has **declined from 58/100 to 
 
 ### Critical Constraints (-)
 - **Michael's Promise**: 18 months to completion
-- **All Four Stakeholders Say**: 3+ years minimum
+- **All Five Stakeholders Say**: 3+ years minimum
   - Sarah: "Years not quarters"
   - Jennifer: 3-5 years
   - Robert: 2-3 years per major system
   - Kevin: 3 years minimum
+  - Jimmy (Union): 120-day notice required before floor system changes
   
-- **Network Bottleneck** (New):
+- **Union Contract Article 12** (NEW):
+  - 120 days notice REQUIRED before MES, ERP floor interface, shop floor system changes
+  - This is legal requirement, not optional
+  - Adds 4 months to timeline (between Phase 1 planning and Phase 2 execution)
+  - Union gets review/negotiation rights during notice period
+  
+- **Network Bottleneck**:
   - 6-8 months JUST for data transfer (if not resolved)
   - This is before ANY migration work begins
   - Michael's 18 months becomes 24-26 months (network alone)
   
-- **Infrastructure Stabilization** (New):
+- **Infrastructure Stabilization**:
   - Immediate: 3-6 months to stabilize ($2.5M spend)
   - Must happen BEFORE migration can start safely
   - Hardware failures accelerating (may force emergency action)
   
 - **Realistic Timeline** (Consensus):
   - Year 1: Infrastructure stabilization + non-critical systems migration
-  - Year 2: Critical systems migration with 3+ month parallel running each
+  - Year 2: 120-day Article 12 notice + critical systems migration with 3+ month parallel running
   - Year 3: Optimization + on-prem decommissioning
-  - **Total: 36 months minimum**
+  - **Total: 36-40 months minimum (up from 36 months)**
 
 ### Impact on Score
-- Network bottleneck: -3 points (adds 6-8 months if not resolved)
+- Union 120-day notice: -3 points (adds 4 months to critical path)
+- Network bottleneck: -3 points (adds 6-8 months if not resolved)  
 - Infrastructure urgency: -2 points (may delay start by 3-6 months)
+- Total drop from 35 to 30: -5 points
 
 ### Timeline Reality Check
 **Michael's 18-Month Breakdown** (Impossible):
 - Month 1-3: Planning
 - Month 4-15: Migration
 - Month 16-18: Optimization  
-**Problem**: Network alone is 6-8 months, infrastructure stabilization 3-6 months, critical systems need 3+ month parallel running
+**Problem**: Network alone is 6-8 months, infrastructure stabilization 3-6 months, union notice 4 months, critical systems need 3+ month parallel running
 
-**Realistic 36-Month Breakdown**:
+**Realistic 40-Month Breakdown** (Updated):
 - **Year 1** (Months 1-12):
-  - Months 1-3: Discovery, planning, four-way alignment
+  - Months 1-3: Discovery, planning, five-way alignment, Michael-Jimmy meeting
   - Months 3-6: Infrastructure stabilization ($2.5M)
   - Months 3-6: Network capacity resolution
   - Months 6-12: Non-critical systems migration (prove competence)
   
-- **Year 2** (Months 13-24):
-  - Critical systems migration (MES, ERP, Quality, Inventory)
+- **Year 2** (Months 13-28):
+  - Months 13-17: Article 12 notice period (120 days) for floor systems
+  - Months 13-17: During notice: Union negotiation, training program design, pilot planning
+  - Months 18-28: Critical systems migration (MES, ERP, Quality, Inventory)
+  - Each system: 3+ months parallel running
+  
+- **Year 3** (Months 29-40):
+  - Optimization, cloud cost management
+  - On-prem decommissioning
+  - Union training programs complete
+  - Achieve operational discipline
   - 3+ month parallel running for each critical system
   - Stagger to reduce peak costs
   
@@ -252,70 +295,87 @@ After 5 of 11 stakeholder interviews, feasibility has **declined from 58/100 to 
 
 ---
 
-## Organizational Feasibility: 55/100 (Moderate-High Risk)
+## Organizational Feasibility: 50/100 (High Risk)
 
-**Previous Score**: 60/100  
+**Previous Score**: 55/100  
 **Change**: ⬇️ -5 points  
-**Key Factors**: Operational discipline concerns, repeated failure pattern, cultural change required
+**Key Factors**: Union engagement not yet done, 120-day notice required, no-layoffs decision needed, operational discipline concerns
 
 ### Strengths (+)
 - Jennifer (CFO) has learned from SAP failure (realistic, has kill criteria)
 - Sarah (IT Director) has 15 years institutional knowledge (trusted by all)
 - Robert (VP Ops) is engaged and has clear requirements
 - Kevin (Infrastructure Manager) is data-driven and solution-oriented
-- All four stakeholders WANT modernization to succeed
+- Jimmy (Union Steward) is open to partnership if engaged early and properly
+- All five stakeholders WANT modernization to succeed
 
 ### Critical Constraints (-)
-- **Four-Way Alignment Missing** (Critical):
+- **Five-Way Alignment Missing** (Critical):
   - Michael, Jennifer, Robert, Sarah, Kevin have NOT met together
+  - Union (Jimmy + bargaining committee) has NOT been engaged yet
   - Each has concerns/requirements, but no unified plan
-  - 15 days to board presentation, alignment has not happened yet
+  - ~10-15 days to board presentation, alignment has not happened yet
+  
+- **Union Engagement Not Done** (NEW - Critical):
+  - Jimmy has NOT met with Michael yet
+  - No-layoffs decision not made (CEO must endorse)
+  - Union contract requires 120-day notice (Article 12)
+  - Strike authorization risk if jobs threatened (80-90% yes vote likely)
+  - Training programs not designed ($50K/person real training, not $5K token)
+  - Seniority compliance not planned (Article 15)
   
 - **Trust Deficit** (Confirmed):
-  - All four stakeholders trust Sarah MORE than Michael (60 days in)
-  - Michael must earn trust through delivery (MFA 90-day win)
+  - All five stakeholders trust Sarah MORE than Michael (60 days in)
+  - Union trust deficit from 2019 contract battle and 2018 SAP disaster
+  - Michael must earn trust through delivery (MFA 90-day win) AND honest union engagement
   - If conflict arises, stakeholders will believe Sarah over Michael
   
-- **Operational Discipline Risk** (New):
+- **Operational Discipline Risk**:
   - Kevin's confidence: 50/50 organization can maintain cloud discipline
   - Culture: "Build, accumulate, never clean up"
   - Evidence: 847 Crystal Reports (need 200), 30+ Access databases
   - Risk: Same culture in cloud = no cost savings
   
-- **Repeated Failure Pattern** (New):
+- **Repeated Failure Pattern**:
   - Kevin has seen 3 failed modernization attempts in 15 years
   - Pattern: "Big vision, mounting costs, reality hits, stalls, leader leaves"
   - SAP 2018 ($2.3M write-off), Cloud initiative 18 months ago (stalled)
   - Organizational PTSD creates skepticism
   
-- **Three Veto Powers Uncoordinated** (Critical):
+- **Four Veto Powers Uncoordinated** (Now FIVE including union):
   - Jennifer (budget veto)
   - Robert (CEO relationship veto)
   - Kevin (infrastructure collapse passive veto)
+  - Jimmy/Union (strike authorization active veto)
   - None coordinated yet
 
 ### Impact on Score
-- Operational discipline concerns: -3 points (core risk to ROI)
-- Repeated failure pattern: -2 points (organizational trauma)
+- Union engagement not done: -3 points (critical path, could trigger strike)
+- No-layoffs decision pending: -2 points (THE non-negotiable per Jimmy)
 
 ### Mitigation Required
-- ✅ Four-way alignment meeting within 2 weeks (BEFORE board presentation)
+- ✅ Five-way alignment meeting within 2 weeks (BEFORE board presentation, now includes union consideration)
+- ✅ Michael-Jimmy-bargaining committee meeting within 30 days (URGENT)
+- ✅ No-layoffs commitment decision and CEO endorsement
 - ✅ Michael aligns WITH Sarah (leverage her credibility)
 - ✅ Acknowledge SAP trauma explicitly (show this time is different)
 - ✅ Pre-migration culture change (rationalize environment, prove cleanup capability)
 - ✅ Operational discipline governance from Day 1
+- ✅ Real training program design WITH union input
+- ✅ 120-day Article 12 notice built into timeline
 - ✅ Break the pattern: Ground truth BEFORE promises
 
 ---
 
-## Operational Feasibility: 60/100 (Moderate Risk)
+## Operational Feasibility: 55/100 (Moderate-High Risk)
 
 **Previous Score**: 60/100  
-**Change**: → No change  
-**Key Factors**: Robert's requirements clear, parallel running quantified, union engagement needed
+**Change**: ⬇️ -5 points  
+**Key Factors**: Union interview revealed additional constraints, MES adoption risk, training complexity
 
 ### Strengths (+)
 - Robert (VP Ops) engaged and has clear requirements
+- Jimmy (Union Steward) is open to partnership if engaged properly
 - Parallel running requirement understood (3+ months for critical systems)
 - 4-hour Sunday maintenance windows available
 - Christmas shutdown for tactical upgrades
@@ -328,32 +388,50 @@ After 5 of 11 stakeholder interviews, feasibility has **declined from 58/100 to 
   - Zero tolerance for production impact
   
 - **Parallel Running Complexity**:
-  - MES: 90+ days parallel running
+  - MES: 90+ days parallel running (now 3-6 months per union requirement)
   - 7-9 other critical systems need parallel running
   - Data sync between old/new systems (error-prone)
   - 24/5 monitoring of BOTH environments
   - Rollback capability essential
   
-- **Union Engagement** (Not Yet Started):
-  - 180 UAW workers, Jimmy Garcia (steward)
-  - Robert's #1 requirement: Early engagement
-  - Lost contract negotiation 2019 (tension exists)
-  - Work stoppage risk if jobs threatened
-  - Adds 3-6 months to timeline
+- **Union Requirements** (NOW UNDERSTOOD):
+  - 120-day notice required (Article 12) before floor system changes
+  - No-layoffs commitment THE non-negotiable
+  - Real training required ($50K/person, not $5K token)
+  - Seniority rules apply (Article 15) - existing workers get first shot at new roles
+  - Strike authorization risk if concerns not addressed (80-90% yes vote if jobs threatened)
+  - Work stoppage cost: $240K/day
+  - Michael-Jimmy meeting URGENT within 30 days
   
-- **Robert's Five Questions** (Unanswered):
-  1. What are operational benefits (not just cost)?
-  2. How ensure zero downtime?
-  3. Union engagement strategy?
-  4. How earn team's trust?
-  5. What if this fails?
+- **MES Floor Adoption Risk** (NEW):
+  - 180 operators with 10-15 years muscle memory
+  - If interface changes significantly: 20-40% productivity drop during relearning
+  - 2018 SAP trauma: 3 weeks lost production, inadequate training (2-hour overview)
+  - Resistance if support inadequate (2 AM downtime issues)
+  - Union can work-to-rule (slow down) if pushed too hard
+  - Operators must be involved in UAT and training design
+  
+- **Robert's Five Questions** (Partially Answered):
+  1. What are operational benefits (not just cost)? - ✅ Answered
+  2. How ensure zero downtime? - ✅ Parallel running plan
+  3. Union engagement strategy? - ✅ Jimmy interview complete, meeting needed
+  4. How earn team's trust? - ⏳ In progress (factory floor immersion pending)
+  5. What if this fails? - ⏳ Kill criteria defined by Jennifer
+
+### Impact on Score
+- MES floor adoption risk: -3 points (180 operators, productivity impact)
+- Training complexity: -2 points (real training required, not token)
 
 ### Mitigation Required
-- ✅ Answer Robert's five questions BEFORE board presentation
-- ✅ Interview Jimmy Garcia (union steward) as Interview 6
-- ✅ No layoffs commitment (attrition only, retraining programs)
+- ✅ Union interview complete (Jimmy Garcia Interview 6)
+- ⏳ Michael-Jimmy-bargaining committee meeting within 30 days (URGENT)
+- ⏳ No-layoffs commitment decision and CEO endorsement
+- ⏳ Real training program design WITH union input
+- ⏳ MES pilot with ONE line, volunteer operators, 3-6 months parallel
+- ⏳ Involve operators in UAT, interface design feedback
+- ⏳ 24/7 support during transition (not just day shift)
 - ✅ Parallel running plan with Robert (system-by-system)
-- ✅ Michael factory floor immersion (Robert's requirement)
+- ⏳ Michael factory floor immersion (Robert's requirement)
 - ✅ Frame as "operational excellence" not "cost reduction"
 
 ---

@@ -133,6 +133,110 @@
 
 ---
 
+#### **Jimmy Garcia - Union Steward (UAW Local 599)**
+- **Role**: Union Steward, UAW Local 599 (Represents 180 UAW workers)
+- **Power Level**: HIGH (Can trigger strike authorization, contract enforcement)
+- **Interest Level**: HIGH (Technology changes affect members' jobs and livelihoods)
+- **Current Stance**: OPEN TO PARTNERSHIP (if engaged early and properly)
+- **Current Confidence**: 5/10 → Could move to 8-9/10 with proper engagement
+- **Influence on Project**: Can authorize strike ($240K/day cost), invoke contract provisions, work-to-rule
+- **Veto Mechanism**: ACTIVE (Strike authorization if jobs threatened or contract violated)
+- **Key Concerns**:
+  - **#1 Non-Negotiable**: No layoffs (everything else negotiable if this guaranteed)
+  - Technology changes historically eliminate jobs
+  - 2019 contract battle trust deficit (wanted 3%, got 1.5%)
+  - 2018 SAP trauma (3 weeks lost production, inadequate training, broken promises)
+  - Seniority rules must be respected (Article 15)
+  - Real training required (not token)
+  - Early involvement = partnership; late involvement = adversarial fight
+- **What They Need**:
+  - Written no-layoffs commitment endorsed by CEO
+  - 120-day Article 12 notice before major tech changes (LEGAL REQUIREMENT)
+  - Real training programs ($50K/person, months-long, paid time)
+  - Seniority-compliant approach (existing workers first shot at new roles)
+  - Seat at table for decisions affecting floor (monthly meetings minimum)
+  - MES pilot with volunteers, 3-6 month parallel running
+  - Good-faith negotiations during 120-day notice period
+  - Actions not words (union has been burned before)
+- **What They Bring**:
+  - 180 workers' cooperation and adoption
+  - Institutional knowledge (operators know what works)
+  - Floor-level reality check (prevent ivory tower mistakes)
+  - Partnership if approached right
+  - Strike lever if pushed wrong
+- **Power Drivers**:
+  - **Formal**: Union contract (Articles 7, 12, 15), bargaining committee, strike authorization
+  - **Informal**: Workers trust Jimmy, Robert respects Jimmy ("good people"), long tenure/institutional knowledge
+- **Engagement Strategy**:
+  - **URGENT**: Michael + Jimmy + bargaining committee meeting within 30 days
+  - No-layoffs commitment decision (CEO endorses)
+  - Give union seat at table from start
+  - Work WITH union on training program design
+  - Use Robert as sponsor (his relationship)
+  - Monthly transparency meetings
+  - Pilot approach with volunteer operators
+  - Celebrate partnership successes
+- **Strike Risk Scenarios**:
+  - Surprise layoffs: 80-90% strike authorization likely
+  - Contract violations (Article 12 no notice): Formal grievance, potential strike
+  - Unsafe system rollout: Work-to-rule slowdown
+  - Bad-faith negotiations: Strike authorization vote
+  - Broken promises: Damages relationship irreparably
+- **Relationship to Others**:
+  - Robert respects Jimmy ("good people"), has good working relationship
+  - Represents factory floor workers (180 UAW)
+  - Bargaining committee behind him
+  - Trust deficit with management from 2019 contract battle
+  - Appreciates being interviewed in Phase 0 (rare)
+- **Interview Status**: ✅ COMPLETE (Interview 6 - 2025-11-08, 73 minutes)
+- **Source**: Interview 6 (Jimmy Garcia)
+- **Contract Details**:
+  - **Article 7 (Job Security)**: No layoffs without cause; tech changes don't count as cause
+  - **Article 12 (Tech Change)**: 120-day notice required before major tech changes affecting members
+  - **Article 15 (Seniority)**: New roles must be offered to existing workers first with training
+  - **Contract Renewal**: July 2026 (18 months) - negotiation window opening
+
+---
+
+#### **Dr. Patricia "Pat" Rodriguez - Quality Manager**
+- **Role**: Quality Manager (FDA, CMMC, ISO 13485 compliance)
+- **Power Level**: HIGH (Regulatory veto, compliance gatekeeper)
+- **Interest Level**: HIGH (Systems affect quality/compliance)
+- **Current Stance**: SUPPORTIVE IF DONE RIGHT
+- **Current Confidence**: 3/10 → Could move to 7-8/10 with validation plan
+- **Influence on Project**: Can block migrations that violate compliance, add 18-24 months for validation
+- **Veto Mechanism**: SOFT (Compliance escalation - can fail audits, invoke FDA/customer requirements)
+- **Key Concerns**:
+  - Validation debt (8 systems not properly validated)
+  - FDA inspection overdue (2.5 years)
+  - CMMC deadline (December 2025, $75M defense revenue)
+  - Detroit Dynamics audit (March 2026, $90M revenue)
+  - Change Control Board overwhelmed (80-120 changes needed)
+  - Data integrity (21 CFR Part 11, audit trails, electronic signatures)
+- **What They Need**:
+  - Validation Master Plan before Phase 1
+  - $1.5-2.5M validation budget
+  - 2-3 FTE validation specialists
+  - 18-24 months validation timeline
+  - Azure Government Cloud for defense (CMMC)
+  - No migrations during audit blackouts (Jan-Apr 2026, Jul-Aug 2026)
+  - 6-month parallel running for critical systems
+  - Data migration validation (100% reconciliation)
+- **What They Bring**:
+  - Regulatory expertise (FDA Part 11, CMMC, ISO 13485)
+  - Protects company from warning letters, audit failures
+  - Change Control Board leadership
+  - Quality system knowledge
+- **Engagement Strategy**:
+  - Add to six-way alignment meeting
+  - Validation assessment (Pat + Sarah + External Expert)
+  - Monthly Quality-IT sync
+  - Dedicated migration CCB (weekly)
+- **Interview Status**: ✅ COMPLETE (Interview 7 - 2025-11-11, 68 minutes)
+- **Source**: Interview 7 (Dr. Patricia Rodriguez)
+
+---
+
 ### High Power, Low Interest (KEEP SATISFIED)
 
 #### **Board of Directors**
@@ -340,30 +444,6 @@
 - **Source**: Interview 1 (Michael)
 
 ---
-
-#### **Union Representatives (UAW)**
-- **Role**: Labor union representatives
-- **Power Level**: MEDIUM (Can trigger work stoppages)
-- **Interest Level**: LOW (Unless jobs affected)
-- **Current Stance**: UNKNOWN (Depends on how changes presented)
-- **Influence on Project**: Can halt production if threatened
-- **Key Concerns**:
-  - Job losses from automation
-  - Changes to seniority or job classifications
-  - Worker rights and protections
-- **What They Need**:
-  - Early engagement and transparency
-  - No layoffs commitment honored
-  - Negotiation on significant changes
-  - Training for affected workers
-- **Engagement Strategy**:
-  - Work through Robert Turner's relationship
-  - Engage early before decisions made
-  - Frame as augmentation not replacement
-  - Negotiate workflow changes
-- **Power Amplification**: Can move to HIGH POWER if threatened
-- **Interview Status**: TBD (After Robert Turner interview)
-- **Source**: Interview 2 (Sarah)
 
 ---
 

@@ -2,25 +2,25 @@
 
 **Project**: Azure Modernization Initiative  
 **Phase**: Phase 0 - Discovery & Ideation  
-**Last Updated**: After Interview 5 (Kevin Martinez)  
-**Total Risks**: 29  
-**Risk Distribution**: 8 Critical, 14 High, 7 Medium
+**Last Updated**: After Interview 6 (Jimmy Garcia - Union Steward)  
+**Total Risks**: 33  
+**Risk Distribution**: 9 Critical, 16 High, 8 Medium
 
 ---
 
 ## Risk Summary Dashboard
 
 ### By Severity
-- **Critical (Show-stopper)**: 8 risks
-- **High (Major Impact)**: 14 risks  
-- **Medium (Moderate Impact)**: 7 risks
+- **Critical (Show-stopper)**: 9 risks
+- **High (Major Impact)**: 16 risks  
+- **Medium (Moderate Impact)**: 8 risks
 
 ### By Category
 - **Financial**: 8 risks
 - **Technical**: 7 risks
 - **Organizational**: 9 risks
-- **Operational**: 3 risks
-- **Compliance/Legal**: 2 risks
+- **Operational**: 5 risks
+- **Compliance/Legal**: 4 risks
 
 ### By Phase
 - **Pre-Migration/Phase 0-1**: 12 risks
@@ -156,33 +156,36 @@
 ## Risk 10: Union Negotiation Failure
 
 **Category**: Operational/Legal  
-**Probability**: Medium-High (60%)  
+**Probability**: High (70%)  
 **Impact**: Show-stopper  
 **Severity**: CRITICAL
 
-**Description**: 180 UAW workers, union steward Jimmy Garcia has NOT been engaged yet. Robert explicitly requires early union engagement. If automation/efficiency gains threaten jobs, union can trigger work stoppage. Lost contract negotiation 2019 (wages/benefits) created tension. If union surprised by layoffs or job changes, guaranteed problems.
+**Description**: Interview 6 with Jimmy Garcia (Union Steward, UAW Local 599) revealed critical union considerations. 180 UAW workers represented. Union contract Article 12 requires 120-day notice before major tech changes. Contract Article 15 (seniority) requires offering new roles to existing workers first with training. 2019 contract negotiation (87% strike authorization vote) created trust deficit. 2018 SAP trauma still remembered (3 weeks lost production, inadequate training, broken promises). If union surprised or jobs threatened without no-layoffs commitment, strike authorization likely (Jimmy estimates 80-90% yes vote).
 
 **Impact**:
-- Work stoppage = $240K/day in lost production
-- 1-week strike = $1.68M loss
+- Work stoppage = $240K/day in lost production ($1.68M/week)
+- 120-day notice requirement adds 4 months to timeline
 - Contract grievances delay implementation
-- Negative publicity, worker morale
+- Seniority rules prevent external hiring for cloud roles until existing workers offered first
+- Strike authorization damages company reputation, worker morale
 - Robert vetoes initiative via CEO if union not on board
-- Safety issues if workers resist new systems
+- Safety issues if workers resist new systems (work-to-rule)
 
-**Root Cause**: Technology modernization often leads to efficiency (fewer people needed). Union contract protects against layoffs without negotiation.
+**Root Cause**: Technology modernization often leads to efficiency (fewer people needed). Union contract protects against layoffs without negotiation. Trust deficit from 2019 wage battle and 2018 SAP disaster.
 
 **Mitigation Strategy**:
-- Interview Jimmy Garcia NEXT (Robert's #1 priority)
-- Engage union early (before finalizing plans)
-- Frame as "enabling growth" not "reducing headcount"
-- Commit to: No layoffs (attrition only), retraining programs, new roles (MES operators → data analysts)
-- Involve union in system design (UAT, training development)
-- Timeline: Union negotiation adds 3-6 months, plan accordingly
-- Have Robert sponsor union engagement (his relationship, his requirement)
+- **URGENT**: Michael + Jimmy + bargaining committee meeting within 30 days
+- Written no-layoffs commitment endorsed by CEO (THE non-negotiable per Jimmy)
+- 120-day Article 12 notice before MES/ERP floor system changes
+- Real training programs ($50K/person, not token $5K) with paid time
+- Seniority-compliant approach to new cloud roles (offer to existing workers first)
+- Give union seat at table (monthly meetings, feedback mechanism)
+- MES pilot with volunteer operators, 3-6 month parallel running
+- Early involvement = partnership; late involvement = adversarial fight
+- Robert sponsors union engagement (his relationship, his requirement)
 
-**Owner**: Robert Turner + Michael Chen  
-**Status**: Open - Interview Jimmy Garcia as Interview 6 (URGENT per Robert)
+**Owner**: Michael Chen + Robert Turner  
+**Status**: Open - Interview complete, Michael-Jimmy meeting URGENT within 30 days
 
 ---
 
@@ -327,6 +330,144 @@ Each can independently kill the initiative, and they haven't aligned on requirem
 **Status**: Open - Requires organizational change management plan
 
 **Notes**: This is THE risk to ROI. Kevin's confidence only 50/50 that organization can maintain discipline.
+
+---
+
+## Risk 30: Union Contract Violation (Article 12)
+
+**Category**: Compliance/Legal  
+**Probability**: High (70%)  
+**Impact**: Show-stopper  
+**Severity**: CRITICAL
+
+**Description**: Union contract Article 12 REQUIRES 120-day notice before implementing major technology changes affecting union members. MES system, ERP floor interfaces, shop floor systems ALL fall under this provision. If company proceeds with migration without 120-day notice, union has legal grounds for grievance and work stoppage. "Major tech changes" = systems used by union members, process changes affecting roles. This is not optional - it's a contract requirement.
+
+**Impact**:
+- Contract violation triggers formal grievance process
+- Potential work stoppage ($240K/day)
+- Legal liability for contract breach
+- Damages labor-management relationship irreparably
+- 4 months added to timeline (120 days notice period)
+- Union gets review/negotiation rights during notice period
+- Cannot short-cut by claiming "just IT infrastructure"
+
+**Root Cause**: Union contract protects workers from surprise technology changes. Article 12 designed to give union time to assess impacts, negotiate training/redeployment, protect member interests.
+
+**Mitigation Strategy**:
+- Build 120-day notice into project timeline (between Phase 1 planning and Phase 2 execution)
+- Provide Article 12 notice BEFORE making changes to MES, ERP floor interfaces, shop systems
+- During 120-day period: Good-faith negotiation on training, transition, worker impacts
+- Legal review of all system changes to determine if Article 12 applies
+- Document compliance to protect against future grievances
+- Make union partnership from start, not adversarial compliance
+
+**Owner**: Michael Chen + Legal + HR + Robert Turner  
+**Status**: Open - CRITICAL PATH - Must be incorporated into timeline immediately
+
+---
+
+## Risk 31: Strike Authorization and Work Stoppage
+
+**Category**: Operational/Legal  
+**Probability**: Medium (50% if no-layoffs not committed)  
+**Impact**: Show-stopper  
+**Severity**: CRITICAL
+
+**Description**: If Azure migration threatens jobs without written no-layoffs commitment, Jimmy Garcia estimates 80-90% strike authorization vote (87% in 2019 wage fight). Strike authorization gives union leverage to stop work if concerns not addressed. Cost: $240K/day production loss, $1.68M/week. Scenarios triggering strike: surprise layoffs, unsafe system rollout, contract violations (Article 12), bad-faith negotiations, broken promises.
+
+**Impact**:
+- Production halt = $240K/day, $1.68M/week
+- Damages company reputation (customers, investors, community)
+- Worker morale destroyed, best talent leaves
+- Robert's veto via CEO (operations cannot tolerate risk)
+- Media attention, regulatory scrutiny
+- Board loses confidence in leadership
+- Initiative cancelled to restore labor peace
+
+**Root Cause**: History of trust deficits (2019 contract battle, 2018 SAP broken promises), technology changes typically eliminate jobs, workers organize when threatened.
+
+**Mitigation Strategy**:
+- **PRIMARY**: Written no-layoffs commitment endorsed by CEO
+  - If cannot commit: Honest conversation about risks, negotiate protections
+  - Worst: Vague promises that erode trust
+- Early union engagement (Phase 0, before decisions locked)
+- Real training programs (months-long, paid, hands-on)
+- Seniority-compliant approach to new roles
+- Monthly union meetings, transparent communication
+- Partnership mindset: Union helps shape solution, not just reacts
+- Pilot approach with volunteer workers
+- Celebrate wins together
+
+**Owner**: Michael Chen + CEO + Robert Turner  
+**Status**: Open - Michael-Jimmy meeting within 30 days, no-layoffs decision URGENT
+
+---
+
+## Risk 32: Training Adequacy and Seniority Compliance
+
+**Category**: Operational/Organizational  
+**Probability**: High (75%)  
+**Impact**: Major (Could become Show-stopper)  
+**Severity**: CRITICAL
+
+**Description**: Union contract Article 15 (seniority) requires offering new roles to existing workers FIRST with real training before external hiring. If Azure creates "cloud engineer" or "data analyst" roles and company lays off 12-year worker while hiring college grad, violates contract spirit. Jimmy's requirement: "Real training" ($50K/person, months-long, not token $5K). If training inadequate, existing workers can't perform new roles, BUT company still cannot hire externally per seniority rules. Migration blocked if cannot staff cloud roles.
+
+**Impact**:
+- Cannot staff critical cloud engineering roles if training fails
+- Seniority grievances if external hiring happens before offering internally
+- Training budget shock: $50K Ã— workers needing retraining
+- Extended timeline (6-12 months training before roles filled)
+- If training inadequate, lose both existing workers (can't perform) AND cannot hire new
+- Contract violation if skip training step
+
+**Root Cause**: Skills gap between current manufacturing IT roles and cloud engineering. Contract designed to protect long-tenure workers from being displaced by newer graduates.
+
+**Mitigation Strategy**:
+- Budget realistic training ($50K/person, not $5K token)
+- Design WITH union: What does "real training" look like?
+- Pilot program with volunteers (test approach, refine)
+- Months-long curriculum (not 2-day workshop)
+- Hands-on practice with paid time, dedicated instructors
+- Fair assessment process (give workers genuine shot)
+- ONLY AFTER real training + fair assessment: Discuss external hiring
+- Document everything to show good-faith effort
+
+**Owner**: HR + Michael Chen + Sarah Mitchell + Union  
+**Status**: Open - Training program design Phase 1 requirement
+
+---
+
+## Risk 33: MES System Floor Adoption Resistance
+
+**Category**: Operational  
+**Probability**: High (70%)  
+**Impact**: Major  
+**Severity**: HIGH
+
+**Description**: 180 operators use MES daily. If interface changes significantly during migration, productivity drops during relearning period. If support inadequate (2 AM downtime issues), resistance builds. 2018 SAP trauma: 3 WEEKS lost production, 6-month nightmare, operators given 2-hour overview training. Union can "work-to-rule" (slow things down) if concerns ignored. Floor operators know what works - if not involved in testing/feedback, will find workarounds that bypass new system.
+
+**Impact**:
+- Productivity drop 20-40% during relearning period
+- Quality issues from operator errors with unfamiliar interface
+- Workarounds that bypass controls, audit trails (SOC 2 risk)
+- Work-to-rule slowdown (union tactic if pushed too hard)
+- Safety incidents if operators confused by new system
+- Return to old system if adoption fails (migration failure)
+
+**Root Cause**: Floor operators have 10-15 years muscle memory with current MES. Significant interface changes require retraining. If rushed or inadequate support, resistance inevitable.
+
+**Mitigation Strategy**:
+- Pilot MES migration with ONE production line first (3-6 months parallel)
+- Recruit volunteer operators (union helps identify early adopters)
+- Involve operators in UAT, interface design feedback
+- Real training: Weeks-long, hands-on, production scenarios
+- 24/7 support during transition (not just day shift)
+- Keep parallel systems running until operators confident
+- Document lessons learned, refine approach before full rollout
+- Celebrate early adopters, build peer advocates
+
+**Owner**: Sarah Mitchell + Robert Turner + Union + Manufacturing IT  
+**Status**: Open - MES pilot plan required before Phase 1
 
 ---
 

@@ -2,18 +2,18 @@
 
 **Project**: Azure Modernization Initiative  
 **Phase**: Phase 0 - Discovery & Ideation  
-**Last Updated**: After Interview 5 (Kevin Martinez)  
-**Total Contradictions**: 17
+**Last Updated**: After Interview 7 (Dr. Patricia Rodriguez - Quality Manager)  
+**Total Contradictions**: 23
 
 ---
 
 ## Executive Summary
 
-After 5 stakeholder interviews, 17 major contradictions identified between Michael's vision/promises and operational reality. Most critical: Timeline (18 months vs. 3+ years), Cost savings (50% in 18 months vs. Year 4+ if at all), and Budget (unknown vs. $10-15M over 3 years needed).
+After 6 stakeholder interviews, 20 major contradictions identified between Michael's vision/promises and operational reality. Interview 6 (Jimmy Garcia - Union Steward) revealed 3 additional critical contradictions around timeline (120-day notice requirement), labor relations (no engagement yet), and training (token vs. real).
 
-**Pattern**: Michael appears unaware of ground truth understood by Sarah, Jennifer, Robert, and Kevin. All four independently contradict Michael's core promises.
+**Pattern**: Michael appears unaware of ground truth understood by Sarah, Jennifer, Robert, Kevin, and Jimmy. All five independently contradict Michael's core promises.
 
-**Resolution Required**: Four-way alignment meeting BEFORE board presentation (~15 days away).
+**Resolution Required**: Five-way alignment meeting BEFORE board presentation (~10-15 days away), PLUS Michael-Jimmy-bargaining committee meeting within 30 days.
 
 ---
 
@@ -527,15 +527,127 @@ Michael is 60 days in, hasn't reconciled vision with operational ground truth ye
 9. **Resolve network bottleneck** - Upgrade or Data Box within 30 days
 10. **Secure infrastructure budget** - $2.5M Year 1
 11. **Begin staffing** - Recruit contractors/FTEs
-12. **Interview Jimmy Garcia** - Early union engagement
-13. **Budget parallel running** - $1M line item explicit
+12. ~~Interview Jimmy Garcia~~ - ✅ Complete (Interview 6)
+13. **Michael-Jimmy-bargaining committee meeting** - Within 30 days (URGENT)
+14. **No-layoffs decision** - CEO endorsement required
+15. **Budget parallel running** - $1M line item explicit
+16. **Budget real training** - $1-1.5M (not $50K token)
+
+---
+
+## Contradiction 18: Timeline - 18 Months vs. 40 Months (120-Day Notice)
+
+**Michael's Position**: 18-month timeline to complete Azure modernization.
+
+**Contradicting Evidence**:
+- **Union Contract Article 12**: Requires 120-day notice (4 months) before major tech changes affecting union members
+- **Jimmy's Clarification**: MES, ERP floor interfaces, shop floor systems ALL require Article 12 notice
+- **Cumulative Timeline Reality**:
+  - 18 months (Michael)
+  - +4 months (120-day union notice for floor systems)
+  - +6-8 months (network bottleneck if not resolved)
+  - +3-6 months (infrastructure stabilization)
+  - +parallel running extensions
+  - **TOTAL: 36-40 months minimum**
+
+**Severity**: CRITICAL - Legal requirement, not optional.
+
+**Impact**: 
+- Contract violation if notice not provided
+- Union grievance, potential work stoppage
+- 4 months added to critical path
+- Michael's 18-month promise becomes 40 months reality
+
+**Resolution Needed**:
+- Build 120-day notice into project timeline explicitly
+- Provide notice between Phase 1 planning and Phase 2 execution
+- Use notice period for good-faith negotiation on training/transition
+- Legal review of all system changes to determine Article 12 applicability
+- Reset board expectations to include union contract compliance time
+
+**Status**: OPEN - Must be addressed in board presentation and five-way alignment meeting
+
+---
+
+## Contradiction 19: Union Engagement - None vs. Required Immediately
+
+**Michael's Position**: Union has not been engaged yet (as of Interview 6). Michael hasn't met with Jimmy Garcia or bargaining committee. No decisions made on no-layoffs commitment.
+
+**Contradicting Evidence**:
+- **Robert's #1 Requirement** (Interview 4): Early union engagement before decisions locked
+- **Jimmy's Assessment** (Interview 6): "Early involvement = partnership; late involvement = adversarial fight"
+- **Union Power**: 180 UAW workers, strike authorization likely (80-90% yes) if jobs threatened
+- **Strike Cost**: $240K/day production loss
+- **2019 Contract Battle**: Created trust deficit, 87% strike authorization vote
+- **2018 SAP Trauma**: Union remembers broken promises, inadequate training, 6-month nightmare
+
+**Severity**: CRITICAL - Can trigger work stoppage, derail initiative.
+
+**Impact**:
+- If union surprised: Adversarial relationship, grievances, potential strike
+- Work stoppage: $240K/day, $1.68M/week
+- Robert vetoes via CEO if union not engaged
+- Board presentation without union strategy = incomplete plan
+- Late engagement makes everything harder
+
+**Resolution Needed**:
+- **URGENT**: Michael + Jimmy + bargaining committee meeting within 30 days
+- Written no-layoffs commitment decision (endorse by CEO)
+- Partnership approach from start, not compliance after decisions made
+- Give union seat at table for decisions affecting floor
+- Real training programs designed WITH union input
+- Robert sponsors union engagement (his relationship, his requirement)
+
+**Status**: OPEN - URGENT ACTION REQUIRED within 30 days
+
+---
+
+## Contradiction 20: Training Budget - Token vs. Real ($5K vs. $50K per person)
+
+**Michael's Position**: Not explicitly stated, but typical training budgets are $1-5K per person (workshops, certification courses, online learning).
+
+**Contradicting Evidence**:
+- **Union Contract Spirit**: Requires "real training" not "token training"
+- **Jimmy's Definition of Real Training**:
+  - Months-long programs (not 2-day workshops)
+  - Dedicated instructors, hands-on practice
+  - Paid time (regular wage while training)
+  - Fair opportunity to learn new skills
+  - **Cost: $50K per person** (not $5K token)
+- **Seniority Rules (Article 15)**: Existing workers get FIRST shot at new cloud roles with training
+- **2018 SAP Example**: 2-hour "overview" training was inadequate, contributed to 6-month nightmare
+- **Contract Compliance**: Cannot hire externally until existing workers given genuine training opportunity
+
+**Severity**: HIGH - Budget impact and legal compliance.
+
+**Impact**:
+- Token training ($5K): Violates contract spirit, workers can't perform new roles, migration blocked
+- If 20-30 workers need retraining: 
+  - Token budget: $100-150K
+  - Real budget: $1-1.5M
+  - **Shortfall: $900K-1.35M unbudgeted**
+- Without real training:
+  - Existing workers can't fill cloud roles
+  - Article 15 prevents external hiring
+  - Cannot staff migration team
+  - Initiative blocked
+
+**Resolution Needed**:
+- Budget realistic training: $50K per person Ã— workers needing retraining
+- Design training program WITH union (what does "real training" mean?)
+- Pilot program with volunteers to test approach
+- Document good-faith effort for contract compliance
+- Only AFTER real training + fair assessment: Discuss external hiring
+- Months-long curriculum, not token workshops
+
+**Status**: OPEN - Training program design required in Phase 1, budget must be adjusted
 
 ---
 
 **End of Contradictions Analysis**
 
-*Last Updated: After Interview 5 (Kevin Martinez)*  
-*Total Contradictions: 17 (7 Critical, 6 High, 4 Medium-High)*  
-*Next Update: After Interview 6 (Jimmy Garcia) and Four-Way Alignment Meeting*  
+*Last Updated: After Interview 6 (Jimmy Garcia - Union Steward)*  
+*Total Contradictions: 20 (9 Critical, 7 High, 4 Medium-High)*  
+*Next Update: After Five-Way Alignment Meeting and Michael-Jimmy Meeting*  
 *Phase 0 - Discovery & Ideation*  
 *Contoso Manufacturing Azure Modernization Initiative*
