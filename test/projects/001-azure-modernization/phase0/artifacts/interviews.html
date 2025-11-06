@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stakeholder Interviews - Phase 0 Discovery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Stakeholder Interviews</h1>
+            <h2>Phase 0 Discovery - Azure Modernization Initiative</h2>
+            <p class="subtitle">8 of 11 interviews completed (73%) | Total duration: 765 minutes (12.75 hours)</p>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Executive Summary</a></li>
+                <li><a href="interviews.html" class="active">Stakeholder Interviews (8)</a></li>
+                <li><a href="contradictions.html">Contradictions (16)</a></li>
+                <li><a href="risks.html">Risk Register (37)</a></li>
+                <li><a href="themes.html">Key Themes (15)</a></li>
+                <li><a href="feasibility.html">Feasibility Assessment</a></li>
+                <li><a href="timeline-budget.html">Timeline & Budget Reality</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Interview Overview</h2>
+            <p class="intro-text">Phase 0 discovery conducted 8 comprehensive stakeholder interviews across all organizational levels, from C-suite executives to floor operators. Each interview provided critical insights that progressively revealed the gap between initial assumptions and operational reality.</p>
+            
+            <div class="status-grid">
+                <div class="status-item">
+                    <div class="status-label">Completed</div>
+                    <div class="status-value">8 / 11</div>
+                    <div class="status-detail">73% progress</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">Total Duration</div>
+                    <div class="status-value">12.75hrs</div>
+                    <div class="status-detail">765 minutes total</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">Average Length</div>
+                    <div class="status-value">96min</div>
+                    <div class="status-detail">Per interview</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">Remaining</div>
+                    <div class="status-value">3</div>
+                    <div class="status-detail">Support, IT, HR</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interview 001 -->
+        <section class="content-section">
+            <div class="interview-header">
+                <h2>Interview 001: Michael Chen - CEO/CTO</h2>
+                <div class="interview-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Date</span>
+                        <span class="meta-value">October 28, 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">65 minutes</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Tenure</span>
+                        <span class="meta-value">2 years</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Stance</span>
+                        <span class="meta-value">🟢 STRONG SUPPORT</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Key Insights</h3>
+            <ul>
+                <li><strong>Vision:</strong> 18-month total timeline, 90-day quick wins, 50% operational cost reduction</li>
+                <li><strong>Driver:</strong> PE firm (Stratton Partners) mandate for digital transformation, board pressure</li>
+                <li><strong>Trigger:</strong> 3 critical system failures (>$500K each), SOC 2 compliance risk (30% revenue), customer portal demands</li>
+                <li><strong>Experience:</strong> Previous cloud migration at tech company (different industry, greenfield scenario)</li>
+                <li><strong>Concern:</strong> "Undocumented integration that's critical to operations" - fears breaking hidden dependencies</li>
+            </ul>
+
+            <h3>Critical Quote</h3>
+            <div class="quote-box">
+                "SAP failed because we tried to change everything at once. This time: incremental wins. We start with something visible but low-risk—maybe the customer portal. We show value in 90 days, not 18 months."
+                <cite>— Michael Chen, CEO</cite>
+            </div>
+
+            <h3>Initial Assessment</h3>
+            <p><strong>Strengths:</strong> Strategic vision, board/PE support, previous cloud experience, understands incremental approach</p>
+            <p><strong>Gaps:</strong> Only 60 days at company, doesn't know manufacturing complexity, optimistic timeline, underestimates organizational trauma from SAP</p>
+            <p><strong>Impact on Discovery:</strong> Set baseline expectations that subsequent interviews would challenge and correct</p>
+
+            <p class="intro-text"><em>Full interview transcript available in discovery documentation. Summary above captures key insights.</em></p>
+        </section>
+
+        <!-- Interview 002 -->
+        <section class="content-section">
+            <div class="interview-header">
+                <h2>Interview 002: Sarah Kim - IT Director</h2>
+                <div class="interview-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Date</span>
+                        <span class="meta-value">October 29, 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">120 minutes</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Tenure</span>
+                        <span class="meta-value">12 years</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Stance</span>
+                        <span class="meta-value">🟡 CAUTIOUS SUPPORT</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Key Insights</h3>
+            <ul>
+                <li><strong>Reality Check:</strong> 36-48 months realistic timeline (not 18 months)</li>
+                <li><strong>Capacity Crisis:</strong> Team at 110% capacity, can't absorb migration work without augmentation</li>
+                <li><strong>Technical Debt:</strong> SQL Server 2008 (EOL), 17 "do not touch" integrations, 30+ shadow IT Access databases</li>
+                <li><strong>SAP Trauma:</strong> Led 2018 SAP failure, lost 3 people, IT Director quit, infrastructure team worked 80-hour weeks</li>
+                <li><strong>Hidden Complexity:</strong> Undocumented 2 AM scripts, COM+ black boxes, unknown dependencies</li>
+            </ul>
+
+            <h3>Critical Quote</h3>
+            <div class="quote-box">
+                "Michael sees the architecture diagram and thinks 'this is simple, we can replatform in 18 months.' But that diagram doesn't show the undocumented scripts, the workarounds, the tribal knowledge, the edge cases that only happen once a quarter but are critical when they do."
+                <cite>— Sarah Kim, IT Director</cite>
+            </div>
+
+            <h3>Critical Revelations</h3>
+            <ul>
+                <li><strong>Maintenance Windows:</strong> Only 4-hour window Sunday 2-6 AM (competes with mechanical maintenance)</li>
+                <li><strong>Test Environment:</strong> 6 months out of date, untrusted for migration planning</li>
+                <li><strong>Skill Gaps:</strong> Team has zero Azure/cloud experience, will need 12+ months training</li>
+                <li><strong>Job Security Fears:</strong> "Is there a place for me after migration?" indicates personal anxiety</li>
+            </ul>
+
+            <h3>Impact on Discovery</h3>
+            <p>Sarah's interview was the first major reality check. It revealed the 200-300% timeline gap, capacity crisis, and organizational trauma that Michael didn't know about. This interview fundamentally reshaped understanding of project complexity.</p>
+
+            <p class="intro-text"><em>Full interview transcript available in discovery documentation. Summary above captures key insights.</em></p>
+        </section>
+
+        <!-- Interview 003 -->
+        <section class="content-section">
+            <div class="interview-header">
+                <h2>Interview 003: James Wilson - CFO</h2>
+                <div class="interview-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Date</span>
+                        <span class="meta-value">October 30, 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">68 minutes</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Tenure</span>
+                        <span class="meta-value">8 years</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Stance</span>
+                        <span class="meta-value">🟠 CONDITIONAL SUPPORT</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Key Insights</h3>
+            <ul>
+                <li><strong>Budget Reality:</strong> Realistic estimate $3-5M over 3-5 years (not Michael's implied $1-2M)</li>
+                <li><strong>SAP Financial Trauma:</strong> $8M investment, <$500K recovered value, took 7 years to financially recover</li>
+                <li><strong>Veto Power:</strong> "If I go to the board and say this is another $8M mistake, they'll listen" - active veto</li>
+                <li><strong>Trust Condition:</strong> Will support 100% IF Michael tells complete truth about costs and timeline</li>
+                <li><strong>ROI Reality:</strong> Year 1-2 will INCREASE costs (higher than on-prem), savings start Year 4+</li>
+            </ul>
+
+            <h3>Critical Quote</h3>
+            <div class="quote-box">
+                "The board will absolutely kill this if they think it's SAP 2.0. That means we need honest estimates, realistic timelines, and transparent risk assessment. I'd rather tell them it's $5M and 3 years up front than promise $2M and 18 months and blow past both."
+                <cite>— James Wilson, CFO</cite>
+            </div>
+
+            <h3>Budget Breakdown Provided</h3>
+            <ul>
+                <li>Azure infrastructure: $1.5-2M (3-5 years)</li>
+                <li>Migration effort: $1-1.5M (contractor support, team time)</li>
+                <li>Training/enablement: $300-500K (grossly underestimated - see Interview 8)</li>
+                <li>Risk/contingency: $200-300K</li>
+                <li><strong>Total (Initial):</strong> $3-5M over 3-5 years</li>
+            </ul>
+
+            <p class="warning-text">Note: Interview 8 (Maria Rodriguez) revealed training costs actually $12-15M, quintupling this estimate.</p>
+
+            <p class="intro-text"><em>Full interview transcript available in discovery documentation. Summary above captures key insights.</em></p>
+        </section>
+
+        <!-- Continue with remaining interviews... -->
+        <!-- Interview 004 -->
+        <section class="content-section">
+            <div class="interview-header">
+                <h2>Interview 004: Robert Garcia - Floor Supervisor</h2>
+                <div class="interview-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Date</span>
+                        <span class="meta-value">October 31, 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">65 minutes</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Tenure</span>
+                        <span class="meta-value">22 years</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Stance</span>
+                        <span class="meta-value">🟡 SKEPTICAL BUT OPEN</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Key Insights</h3>
+            <ul>
+                <li><strong>Institutional Knowledge:</strong> 22 years experience, knows every system, every workaround, every operator</li>
+                <li><strong>Floor Truth:</strong> "If operators don't trust the system, they'll write it down on paper and enter it later"</li>
+                <li><strong>MES Criticality:</strong> "MES goes down = production stops. We sit and wait. Cost $10K+/minute."</li>
+                <li><strong>Union Perspective:</strong> "You need to talk to Jimmy [Garcia, Union Steward] early, not after you've made decisions"</li>
+                <li><strong>Trust Test:</strong> "Michael should work a shift on the floor. 8 hours. 2nd or 3rd shift. Talk to my operators."</li>
+            </ul>
+
+            <h3>Critical Quote</h3>
+            <div class="quote-box">
+                "Corporate comes in with 'new system,' operators hear 'your job is at risk.' Doesn't matter if that's not what you meant. That's what they hear. You have to build trust first, and that takes time."
+                <cite>— Robert Garcia, Floor Supervisor</cite>
+            </div>
+
+            <h3>Five Critical Questions for Michael</h3>
+            <ol>
+                <li>What happens to operators who can't adapt to new systems?</li>
+                <li>How will you support 3rd shift when help desk closes at 5 PM?</li>
+                <li>What's your plan for the 2-3 month learning curve productivity drop?</li>
+                <li>How do you maintain safety when operators are distracted by new systems?</li>
+                <li>Will you commit to working a floor shift to understand our reality?</li>
+            </ol>
+
+            <p><strong>Impact:</strong> Robert represents institutional knowledge and floor-level reality that Michael lacks. His skepticism and five questions became critical success criteria.</p>
+
+            <p class="intro-text"><em>Full interview transcript available in discovery documentation. Summary above captures key insights.</em></p>
+        </section>
+
+        <!-- Interview 008 - Maria Rodriguez (Highlight as most impactful) -->
+        <section class="content-section" style="border: 3px solid var(--critical-color);">
+            <div class="interview-header">
+                <h2>Interview 008: Maria Rodriguez - MES Supervisor ⭐ HIGHEST IMPACT</h2>
+                <div class="interview-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Date</span>
+                        <span class="meta-value">November 5, 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">72 minutes</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Tenure</span>
+                        <span class="meta-value">18 years (15 floor, 3 mgmt)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Stance</span>
+                        <span class="meta-value">🟡 CAUTIOUSLY SUPPORTIVE</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-critical">
+                <h3>⚠️ Most Impactful Interview</h3>
+                <p>This interview revealed three game-changing discoveries that fundamentally changed project understanding: (1) Training costs are $12-15M not $300-500K, (2) Sunday maintenance windows mathematically prove 3-5 year timeline, (3) SAP trauma is organizational PTSD affecting all planning.</p>
+            </div>
+
+            <h3>Critical Discoveries</h3>
+            <ul>
+                <li><strong>Training Budget Shock:</strong> $9M for MES operators alone (180 operators × $50K each = $9M), likely $12-15M total across all roles</li>
+                <li><strong>Sunday Window Math:</strong> Only 48 hours/year available for ALL system cutovers, proves 3-5 year timeline independent of all other factors</li>
+                <li><strong>SAP Trauma Depth:</strong> 3 weeks of operational chaos (50% production drop), 3 employees lost, 7 years later still organizational PTSD</li>
+                <li><strong>MES Timeline Reality:</strong> 18-24 months for MES migration alone (pilot through stabilization), must be migrated LAST not first</li>
+                <li><strong>30% Productivity Drop:</strong> Minimum 2-3 months for operators to reach baseline productivity on new MES</li>
+            </ul>
+
+            <h3>Critical Quotes</h3>
+            <div class="quote-box">
+                "When corporate says 'new system,' people update their resumes. That's the legacy of SAP. You're not fighting technology. You're fighting trauma."
+                <cite>— Maria Rodriguez, MES Supervisor</cite>
+            </div>
+
+            <div class="quote-box">
+                "You can have the best technology in the world. But if my operators don't trust it, don't understand it, or can't use it, it's worthless. This is a people project that happens to involve technology."
+                <cite>— Maria Rodriguez, MES Supervisor</cite>
+            </div>
+
+            <h3>Training Cost Breakdown (New Discovery)</h3>
+            <ul>
+                <li><strong>MES Operators:</strong> $9M (180 operators × $50K each)
+                    <ul>
+                        <li>Classroom training: 2 weeks per line</li>
+                        <li>Hands-on practice: 3-month pilot</li>
+                        <li>Gradual rollout: 2 months per line</li>
+                        <li>24/7 support: 6 months post-rollout</li>
+                    </ul>
+                </li>
+                <li><strong>IT Team:</strong> $1.2-1.5M (Azure training, 12 months)</li>
+                <li><strong>Support Team:</strong> $500-750K (manufacturing context + Azure)</li>
+                <li><strong>Floor Supervisors:</strong> $750K-1M (15 supervisors × $50-65K)</li>
+                <li><strong>Quality/Compliance:</strong> $300-500K (GMP validation training)</li>
+                <li><strong>Total Training:</strong> $12-15M (60-65% of total project budget)</li>
+            </ul>
+
+            <h3>Sunday Window Constraint (Mathematical Proof)</h3>
+            <p><strong>Available Windows:</strong> Sunday 2-6 AM only (4 hours)</p>
+            <p><strong>Cannot Use:</strong> 1st Sunday (preventive maintenance), 5th Sunday (extended maintenance)</p>
+            <p><strong>Actual Available:</strong> ~12 Sundays/year × 4 hours = 48 hours/year</p>
+            <p><strong>Per-System Cutover:</strong> 4-12 hours (cutover + validation + rollback if needed)</p>
+            <p><strong>Mathematics:</strong> 8 systems × 6 hours average = 48 hours minimum = 1 year if perfect execution</p>
+            <p><strong>Reality:</strong> Nothing is perfect, parallel running periods, validation time = 3-5 years minimum</p>
+
+            <h3>Impact on Project</h3>
+            <ul>
+                <li>Budget increased from $5.5-9.5M to $16.5-23.5M (due to training costs)</li>
+                <li>Timeline impossibility proven mathematically (not just estimation)</li>
+                <li>Feasibility score dropped from 43/100 to 38/100</li>
+                <li>5 new themes identified (SAP PTSD, training as investment, Sunday constraint, floor partnership, safety veto)</li>
+                <li>4 new risks added (all rated HIGH or CRITICAL)</li>
+                <li>Michael floor shift requirement elevated to CRITICAL</li>
+            </ul>
+
+            <a href="interview-008-detail.html" class="btn btn-primary">View Full 72-Minute Interview Transcript →</a>
+        </section>
+
+        <!-- Remaining Interviews Summary -->
+        <section class="content-section">
+            <h2>Remaining Interviews (3 of 11)</h2>
+            <p class="intro-text">Three interviews remain to complete Phase 0 discovery. Each represents a critical perspective not yet fully explored.</p>
+
+            <div class="finding-card">
+                <h4>Interview 009: Support Lead (Tom Bradley)</h4>
+                <p><strong>Priority:</strong> HIGH</p>
+                <p><strong>Focus Areas:</strong></p>
+                <ul>
+                    <li>Customer-facing systems downtime impact</li>
+                    <li>Revenue risk from support issues</li>
+                    <li>Support team capacity and morale</li>
+                    <li>24/7 support model during migration</li>
+                </ul>
+                <p><strong>Key Questions:</strong> How does support team handle doubled ticket volume? What's the customer impact of system instability? What's support team turnover risk?</p>
+            </div>
+
+            <div class="finding-card">
+                <h4>Interview 010: IT Manager (Alex Kumar)</h4>
+                <p><strong>Priority:</strong> HIGH</p>
+                <p><strong>Focus Areas:</strong></p>
+                <ul>
+                    <li>Team morale and retention risk</li>
+                    <li>Day-to-day operational reality</li>
+                    <li>Infrastructure prerequisites timeline</li>
+                    <li>Cloud skills development plan</li>
+                </ul>
+                <p><strong>Key Questions:</strong> What's IT team flight risk during migration? How long for infrastructure prerequisites? What's realistic cloud skills timeline?</p>
+            </div>
+
+            <div class="finding-card">
+                <h4>Interview 011: HR Director (Linda Park)</h4>
+                <p><strong>Priority:</strong> HIGH</p>
+                <p><strong>Focus Areas:</strong></p>
+                <ul>
+                    <li>Organizational change capacity</li>
+                    <li>Training program design and delivery</li>
+                    <li>Retention strategies and compensation</li>
+                    <li>Change management resources</li>
+                </ul>
+                <p><strong>Key Questions:</strong> What's HR capacity for 180+ operator training? How to source manufacturing-experienced trainers? What's realistic per-operator training cost validation?</p>
+            </div>
+        </section>
+
+        <!-- Interview Insights Summary -->
+        <section class="content-section">
+            <h2>Cross-Interview Insights</h2>
+            
+            <h3>Trust Hierarchy (Institutional Knowledge vs New Leadership)</h3>
+            <p>Interviews revealed a clear trust hierarchy based on tenure and experience:</p>
+            <ul>
+                <li><strong>High Trust:</strong> Robert (22 years), Sarah (12 years), Maria (18 years), Jennifer (15 years) - Floor trusts long-term employees</li>
+                <li><strong>Lower Trust Initially:</strong> Michael (2 years), David (18 months) - Must earn trust through action, not position</li>
+                <li><strong>Critical Insight:</strong> Michael and team must partner with institutional knowledge holders, not override them</li>
+            </ul>
+
+            <h3>The SAP Shadow</h3>
+            <p>SAP failure in 2018 appeared in 7 of 8 interviews, revealing lasting organizational trauma:</p>
+            <ul>
+                <li><strong>Duration of Chaos:</strong> 3 weeks of 50% production drop (Maria)</li>
+                <li><strong>Financial Impact:</strong> $8M investment, <$500K value, 7-year recovery (James)</li>
+                <li><strong>People Impact:</strong> 3 employees lost, IT Director quit, 80-hour weeks (Sarah)</li>
+                <li><strong>Lasting Effect:</strong> "New system" = resume updates 7 years later (Maria)</li>
+                <li><strong>Lesson:</strong> This is not ancient history. This is active organizational trauma requiring explicit acknowledgment and learning.</li>
+            </ul>
+
+            <h3>The People-First Reality</h3>
+            <p>Every interview reinforced that technology is the easy part:</p>
+            <ul>
+                <li><strong>Training:</strong> $12-15M (60-65% of budget) - more than Azure infrastructure</li>
+                <li><strong>Support:</strong> $2-3M for contractors to handle doubled volume</li>
+                <li><strong>Capacity:</strong> Cannot absorb migration work without augmentation</li>
+                <li><strong>Skills:</strong> 12 months minimum for Azure proficiency</li>
+                <li><strong>Trust:</strong> Floor shift, union partnership, institutional knowledge respect</li>
+                <li><strong>Conclusion:</strong> This is a people project with technology components, not vice versa</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Phase 0 Discovery Final Readout | Generated: November 6, 2025</p>
+            <p>Stakeholder Interviews: 8 of 11 completed (73%) | Total Duration: 765 minutes</p>
+        </div>
+    </footer>
+</body>
+</html>

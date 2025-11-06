@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 0 Discovery Final Readout - Azure Modernization Initiative</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Phase 0 Discovery Final Readout</h1>
+            <h2>Azure Cloud Modernization Initiative</h2>
+            <p class="subtitle">Precision Manufacturing Inc. | Discovery Period: Oct 28 - Nov 5, 2025</p>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="index.html" class="active">Executive Summary</a></li>
+                <li><a href="interviews.html">Stakeholder Interviews (8)</a></li>
+                <li><a href="contradictions.html">Contradictions (16)</a></li>
+                <li><a href="risks.html">Risk Register (37)</a></li>
+                <li><a href="themes.html">Key Themes (15)</a></li>
+                <li><a href="feasibility.html">Feasibility Assessment</a></li>
+                <li><a href="timeline-budget.html">Timeline & Budget Reality</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Problem Statement & Discovery Process -->
+        <section class="content-section">
+            <h2>Problem Statement</h2>
+            <p class="intro-text">Precision Manufacturing Inc., a 450-employee manufacturing company acquired by private equity firm Stratton Partners, is evaluating a comprehensive Azure cloud modernization initiative affecting 8+ critical systems that support 24/7 manufacturing operations.</p>
+            
+            <h3>Background & Context</h3>
+            <p>The organization currently operates on aging on-premises infrastructure (SQL Server 2008, Windows Server 2012) with increasing system failures, security risks, and maintenance burden. The PE firm has mandated digital transformation within their standard 3-year portfolio timeline. New CTO Michael Chen was hired 2 months ago with a mandate to modernize the technology stack.</p>
+            
+            <h3>Initial Proposal</h3>
+            <ul>
+                <li><strong>Timeline:</strong> 18 months total, with 90-day "quick wins"</li>
+                <li><strong>Budget:</strong> $3M (implied from initial discussions)</li>
+                <li><strong>Approach:</strong> Incremental migration starting with customer portal</li>
+                <li><strong>Goals:</strong> 50% operational cost reduction, SOC 2 compliance, customer portal modernization</li>
+            </ul>
+
+            <h3>Systems in Scope</h3>
+            <ul>
+                <li><strong>ERP System:</strong> Financial, HR, procurement (50+ integrations)</li>
+                <li><strong>MES (Manufacturing Execution System):</strong> 180+ operators, 3 shifts, 3 production lines, 24/7 operations</li>
+                <li><strong>WMS (Warehouse Management):</strong> Inventory, shipping, receiving</li>
+                <li><strong>QMS (Quality Management):</strong> GMP-validated, regulatory compliance</li>
+                <li><strong>Document Management:</strong> Engineering drawings, work instructions, SOPs</li>
+                <li><strong>Email & Collaboration:</strong> 450 users, 24/7 operations</li>
+                <li><strong>Custom Applications:</strong> ~8 legacy applications (COM+ components, Access databases)</li>
+                <li><strong>Network & Infrastructure:</strong> On-premises data center, VPN, security appliances</li>
+            </ul>
+
+            <h3>Why This Matters</h3>
+            <p><strong>Critical Business Drivers:</strong></p>
+            <ul>
+                <li><strong>Compliance Risk:</strong> Largest customer (Detroit Dynamics, 30% of revenue) mandated SOC 2 Type II by end of 2026</li>
+                <li><strong>System Failures:</strong> 3 critical outages in past year (>$500K each in lost production and expedite fees)</li>
+                <li><strong>Security Vulnerabilities:</strong> Outdated systems (SQL 2008, Win Server 2012) out of support</li>
+                <li><strong>Customer Demands:</strong> Modern customer portal, real-time order tracking, API integrations</li>
+                <li><strong>Operational Inefficiency:</strong> Manual processes, batch overnight jobs taking 6+ hours, frequent failures</li>
+            </ul>
+
+            <h3>Phase 0 Discovery Process</h3>
+            <p>To validate the feasibility of this initiative, we conducted a comprehensive Phase 0 discovery following these principles:</p>
+            
+            <div class="finding-card">
+                <h4>Discovery Methodology</h4>
+                <ul>
+                    <li><strong>Stakeholder Interviews:</strong> Conducted 8 of 11 planned interviews (73% complete) across all organizational levels:
+                        <ul>
+                            <li>Executive Leadership (CEO, CFO, VP Operations)</li>
+                            <li>Technical Leadership (IT Director, CTO, IT Manager)</li>
+                            <li>Operations (Floor Supervisor, MES Supervisor, Quality Manager)</li>
+                            <li>Support & HR (Support Lead, HR Director - pending)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Interview Framework:</strong> Used Five Whys (root cause analysis) and Jobs-to-be-Done frameworks to understand motivations and constraints</li>
+                    <li><strong>Total Interview Time:</strong> 765 minutes (12.75 hours) of structured conversations</li>
+                    <li><strong>Artifact Creation:</strong> Comprehensive documentation including:
+                        <ul>
+                            <li>Full interview transcripts with analysis</li>
+                            <li>Contradiction register (16 conflicts identified)</li>
+                            <li>Risk register (37 risks identified)</li>
+                            <li>Theme tracking (15 patterns across interviews)</li>
+                            <li>Feasibility assessment with scoring methodology</li>
+                        </ul>
+                    </li>
+                    <li><strong>Validation Approach:</strong> Cross-referenced all findings across multiple stakeholders, escalated contradictions, tracked feasibility score evolution</li>
+                </ul>
+            </div>
+
+            <h3>Discovery Principles</h3>
+            <p>This discovery followed several key principles to ensure accuracy:</p>
+            <ul>
+                <li><strong>Evidence-Based:</strong> Every claim traced to specific interview sources</li>
+                <li><strong>Multi-Perspective:</strong> Validated findings across organizational levels (executive, technical, operational, floor)</li>
+                <li><strong>Assumption Testing:</strong> Explicitly tested all initial assumptions (timeline, budget, capacity, approach)</li>
+                <li><strong>Root Cause Focus:</strong> Used Five Whys to get beyond symptoms to underlying causes</li>
+                <li><strong>Trust Hierarchy Recognition:</strong> Weighted institutional knowledge (22-year veterans) higher than new leadership assumptions</li>
+                <li><strong>Mathematical Validation:</strong> Used quantitative proof where possible (Sunday maintenance windows, training costs, capacity calculations)</li>
+                <li><strong>Historical Learning:</strong> Explicitly investigated 2018 SAP failure to avoid repeating mistakes</li>
+            </ul>
+
+            <div class="alert alert-info">
+                <h3>Discovery Outcome</h3>
+                <p>This discovery process revealed significant gaps between the initial proposal and operational reality. The following sections detail these findings and provide recommendations for path forward.</p>
+            </div>
+        </section>
+
+        <!-- Discovery Status -->
+        <section class="status-card critical">
+            <h2>🚨 Discovery Status: CRITICAL FINDINGS</h2>
+            <div class="status-grid">
+                <div class="status-item">
+                    <div class="status-label">Completion</div>
+                    <div class="status-value">73%</div>
+                    <div class="status-detail">8 of 11 interviews complete</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">Feasibility Score</div>
+                    <div class="status-value declining">36/100</div>
+                    <div class="status-detail">Down from initial 70/100</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">Timeline Reality</div>
+                    <div class="status-value">36-60 months</div>
+                    <div class="status-detail">Not 18 months as proposed</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">Budget Reality</div>
+                    <div class="status-value">$18.5-26.5M</div>
+                    <div class="status-detail">Up from $3M allocation</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Executive Summary -->
+        <section class="content-section">
+            <h2>Executive Summary</h2>
+            
+            <div class="alert alert-critical">
+                <h3>⚠️ Critical Finding: Project as Currently Scoped is Not Feasible</h3>
+                <p>After conducting 8 comprehensive stakeholder interviews across all organizational levels, the discovery team has identified fundamental gaps between the proposed project parameters and operational reality. The current 18-month timeline and $3M budget are mathematically impossible given organizational constraints, technical complexity, and human capital requirements.</p>
+            </div>
+
+            <h3>Key Findings</h3>
+            
+            <div class="finding-card">
+                <h4>1. Timeline Impossibility (Mathematical Proof)</h4>
+                <p><strong>Proposed:</strong> 18 months total</p>
+                <p><strong>Reality:</strong> 36-60 months minimum (3-5 years)</p>
+                <p><strong>Proof:</strong> Only 48 hours/year of maintenance windows (Sunday 2-6 AM) available for cutover activities. With 8+ critical systems requiring 4-12 hours each for cutover, parallel running, and validation, the mathematics prove a multi-year timeline independent of any other factors.</p>
+                <ul>
+                    <li>Infrastructure prerequisites: 6-9 months before first migration</li>
+                    <li>Skills development: 12 months Azure training for IT team</li>
+                    <li>MES migration alone: 18-24 months (pilot through stabilization)</li>
+                    <li>GMP validation: 24-48 months for quality systems</li>
+                    <li>Sunday window constraint: 48 hours/year = 3-5 year absolute minimum</li>
+                </ul>
+            </div>
+
+            <div class="finding-card">
+                <h4>2. Budget Gap: 617-883% Underestimate</h4>
+                <p><strong>Proposed:</strong> $3M</p>
+                <p><strong>Reality:</strong> $18.5-26.5M</p>
+                <p><strong>Primary Driver:</strong> Training costs ($12-15M) representing 60-65% of total budget</p>
+                <ul>
+                    <li>MES operator training: $9M (180 operators × $50K each)</li>
+                    <li>Support team training: $500K-750K</li>
+                    <li>IT team training: $1.2M-1.5M</li>
+                    <li>Floor supervisors: $750K-1M</li>
+                    <li>Quality/compliance: $300-500K</li>
+                    <li>Azure infrastructure: $2-3M</li>
+                    <li>Validation work: $1.5-2.5M</li>
+                    <li>Contractors: $2-3M</li>
+                </ul>
+            </div>
+
+            <div class="finding-card">
+                <h4>3. Organizational Trauma from 2018 SAP Failure</h4>
+                <p>The 2018 SAP implementation created lasting organizational trauma that significantly impacts this initiative:</p>
+                <ul>
+                    <li>3 weeks of operational chaos (50% production drop)</li>
+                    <li>3 employees lost during/after implementation</li>
+                    <li>7 years later: "People update resumes when corporate says 'new system'"</li>
+                    <li>Floor operators: "We're not doing that again" is universal response</li>
+                    <li>Trust must be rebuilt through partnership, not mandates</li>
+                </ul>
+            </div>
+
+            <div class="finding-card">
+                <h4>4. This is a People Project (60-70% of Budget)</h4>
+                <p>Technology is the easy part. The hard part is:</p>
+                <ul>
+                    <li>Training 180+ operators who know machines but struggle with computers</li>
+                    <li>Supporting 24/7 operations during 18-24 month learning curve</li>
+                    <li>Managing 30% productivity drop (2-3 months minimum)</li>
+                    <li>Preventing safety incidents during transition period</li>
+                    <li>Maintaining union partnership and trust</li>
+                    <li>Retaining institutional knowledge holders</li>
+                </ul>
+            </div>
+
+            <div class="finding-card">
+                <h4>5. Support Team in Crisis (Not in Current Plan)</h4>
+                <p>30% attrition rate, existing team at breaking point:</p>
+                <ul>
+                    <li>Current: 10 people supporting 450 users + 8 critical systems</li>
+                    <li>During migration: Ticket volume expected to double</li>
+                    <li>Manufacturing expertise gap: Only 1 of 10 has manufacturing background</li>
+                    <li>Contractors needed: $2-3M for 24/7 coverage during migration</li>
+                    <li>Hiring timeline: 12-18 months for manufacturing-experienced staff</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Critical Contradictions -->
+        <section class="content-section">
+            <h2>Critical Contradictions Requiring Resolution</h2>
+            <p class="intro-text">The discovery process identified 16 contradictions between stakeholder expectations, with 8 rated as CRITICAL requiring immediate resolution before proceeding.</p>
+
+            <div class="contradiction-card critical">
+                <h4>Contradiction #1: Timeline Expectations</h4>
+                <p><strong>Michael Chen (CEO):</strong> "18 months total, 90-day quick wins"</p>
+                <p><strong>Stakeholder Consensus:</strong> "36-60 months minimum, infrastructure prerequisites 6-9 months before first migration"</p>
+                <p><strong>Mathematical Reality:</strong> Sunday windows (48 hours/year) prove 3-5 years minimum</p>
+                <p><strong>Gap:</strong> 200-300% timeline underestimate</p>
+                <p><strong>Resolution Required:</strong> Board must approve 3-5 year timeline or project cannot proceed</p>
+            </div>
+
+            <div class="contradiction-card critical">
+                <h4>Contradiction #10: Total Project Cost</h4>
+                <p><strong>Michael's Implication:</strong> $3-5M total</p>
+                <p><strong>Discovery Reality:</strong> $18.5-26.5M</p>
+                <p><strong>Training Alone:</strong> $12-15M (wasn't in budget model at all)</p>
+                <p><strong>Gap:</strong> 617-883% budget underestimate</p>
+                <p><strong>Resolution Required:</strong> Board/PE firm must approve $18.5-26.5M investment or project cannot proceed</p>
+            </div>
+
+            <a href="contradictions.html" class="btn btn-primary">View All 16 Contradictions →</a>
+        </section>
+
+        <!-- Top Risks -->
+        <section class="content-section">
+            <h2>Critical Risks (Score 20-25 / 25)</h2>
+            <p class="intro-text">37 total risks identified, with 8 rated as CRITICAL (20-25/25). These risks represent existential threats to project success.</p>
+
+            <div class="risk-grid">
+                <div class="risk-card critical">
+                    <h4>RISK-001: Timeline Compression Impossibility</h4>
+                    <div class="risk-score">25/25</div>
+                    <p>Mathematical proof that 18 months is impossible. Sunday windows alone prove 3-5 years minimum.</p>
+                </div>
+                
+                <div class="risk-card critical">
+                    <h4>RISK-002: Team Capacity Collapse</h4>
+                    <div class="risk-score">24/25</div>
+                    <p>IT team already at 110% capacity. Adding migration work without additional resources = burnout and attrition.</p>
+                </div>
+
+                <div class="risk-card critical">
+                    <h4>RISK-034: SAP Trauma Organizational PTSD</h4>
+                    <div class="risk-score">20/25</div>
+                    <p>2018 SAP failure created lasting trauma. "New system" announcement triggers resume updates and resistance.</p>
+                </div>
+
+                <div class="risk-card critical">
+                    <h4>RISK-039: Support Capacity Inadequacy</h4>
+                    <div class="risk-score">22/25</div>
+                    <p>Support team at breaking point (30% attrition). Migration will double ticket volume with no plan to address.</p>
+                </div>
+            </div>
+
+            <a href="risks.html" class="btn btn-primary">View All 37 Risks →</a>
+        </section>
+
+        <!-- Feasibility Assessment -->
+        <section class="content-section">
+            <h2>Feasibility Assessment: 36/100 (Conditional GO)</h2>
+            
+            <div class="feasibility-chart">
+                <div class="feasibility-bar">
+                    <div class="bar-segment technical" style="width: 13%;" title="Technical: 65/100">
+                        <span>Technical: 65</span>
+                    </div>
+                    <div class="bar-segment financial" style="width: 8%;" title="Financial: 40/100">
+                        <span>Financial: 40</span>
+                    </div>
+                    <div class="bar-segment resource" style="width: 5%;" title="Resource: 25/100">
+                        <span>Resource: 25</span>
+                    </div>
+                    <div class="bar-segment operational" style="width: 10%;" title="Operational: 50/100">
+                        <span>Operational: 50</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-warning">
+                <h3>Recommendation: CONDITIONAL GO</h3>
+                <p><strong>Project can proceed ONLY if ALL 10 critical conditions are met:</strong></p>
+                <ol>
+                    <li>Timeline reset to 36-60 months (3-5 years) with board approval</li>
+                    <li>Budget approved at $18.5-26.5M (not $3M)</li>
+                    <li>Michael completes 8-hour floor shift within 30 days</li>
+                    <li>Union engagement initiated within 7 days (partnership approach)</li>
+                    <li>Support team augmentation planned ($2-3M for contractors)</li>
+                    <li>Training budget secured ($12-15M) with 4-phase program designed</li>
+                    <li>Four-way leadership alignment (Michael + Jennifer + Sarah + Robert)</li>
+                    <li>PE firm accepts multi-year investment cycle (not quick flip)</li>
+                    <li>Partnership approach adopted (not top-down mandate)</li>
+                    <li>SAP lessons learned documented and applied</li>
+                </ol>
+                <p class="warning-text"><strong>DO NOT PROCEED if any condition cannot be met. Proceeding without all conditions = 90% chance of catastrophic failure ("SAP 2.0").</strong></p>
+            </div>
+
+            <a href="feasibility.html" class="btn btn-primary">View Full Feasibility Analysis →</a>
+        </section>
+
+        <!-- Key Themes -->
+        <section class="content-section">
+            <h2>Key Themes from Discovery</h2>
+            <div class="theme-grid">
+                <div class="theme-card">
+                    <h4>SAP Trauma as Organizational PTSD</h4>
+                    <p>7 mentions across interviews. 2018 failure created lasting fear and skepticism that must be addressed.</p>
+                </div>
+                <div class="theme-card">
+                    <h4>Capacity Crisis</h4>
+                    <p>7 mentions. IT and support teams underwater, cannot absorb migration work without augmentation.</p>
+                </div>
+                <div class="theme-card">
+                    <h4>Timeline Compression Impossibility</h4>
+                    <p>8 mentions. Every stakeholder says 18 months is impossible. Sunday windows prove 3-5 years minimum.</p>
+                </div>
+                <div class="theme-card">
+                    <h4>Training as Investment vs. Expense</h4>
+                    <p>$12-15M for comprehensive training (60-65% of total budget). This is success prerequisite, not optional.</p>
+                </div>
+            </div>
+            <a href="themes.html" class="btn btn-primary">View All 15 Themes →</a>
+        </section>
+
+        <!-- Next Steps -->
+        <section class="content-section">
+            <h2>Immediate Actions Required (Within 7 Days)</h2>
+            <div class="action-list">
+                <div class="action-item urgent">
+                    <h4>1. Michael-Maria Floor Shift</h4>
+                    <p>Schedule 8-hour actual shift on 2nd shift (2 PM - 10 PM). Enter work orders in MES during production crunch. Talk to operators with 20 years experience. Build credibility and understanding.</p>
+                    <p><strong>Owner:</strong> Michael Chen | <strong>Deadline:</strong> Within 30 days</p>
+                </div>
+                
+                <div class="action-item urgent">
+                    <h4>2. Budget Reality Discussion</h4>
+                    <p>Jennifer + Michael + Sarah align on $18.5-26.5M reality. Update board presentation to reflect training costs ($12-15M), support contractors ($2-3M), infrastructure ($2-3M), validation ($1.5-2.5M).</p>
+                    <p><strong>Owner:</strong> Jennifer Walsh, Michael Chen | <strong>Deadline:</strong> Before board presentation (~10-15 days)</p>
+                </div>
+
+                <div class="action-item urgent">
+                    <h4>3. Floor Communication</h4>
+                    <p>Address rumors about "new system" before they spread further. Operators already anxious. Uncertainty is damaging morale and productivity.</p>
+                    <p><strong>Owner:</strong> Michael Chen, Robert Garcia, Maria Rodriguez | <strong>Deadline:</strong> Within 7 days</p>
+                </div>
+
+                <div class="action-item urgent">
+                    <h4>4. Board Timeline Reset</h4>
+                    <p>Prepare presentation showing 3-5 year realistic timeline with mathematical proof (Sunday windows). Prevent Jennifer from publicly contradicting Michael at board meeting.</p>
+                    <p><strong>Owner:</strong> Michael Chen, Jennifer Walsh | <strong>Deadline:</strong> Before board presentation (~10-15 days)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interviews Summary -->
+        <section class="content-section">
+            <h2>Stakeholder Interviews Completed (8 of 11)</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Interview</th>
+                        <th>Stakeholder</th>
+                        <th>Role</th>
+                        <th>Duration</th>
+                        <th>Key Insight</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Michael Chen</td>
+                        <td>CEO/CTO</td>
+                        <td>65 min</td>
+                        <td>Vision: 18 months, cost savings, quick wins</td>
+                        <td><a href="interview-001.html">View →</a></td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>Sarah Kim</td>
+                        <td>IT Director</td>
+                        <td>120 min</td>
+                        <td>Reality: 36-48 months, capacity crisis, SAP trauma</td>
+                        <td><a href="interview-002.html">View →</a></td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>James Wilson</td>
+                        <td>CFO</td>
+                        <td>68 min</td>
+                        <td>Budget veto power, SAP financial trauma, needs honest costs</td>
+                        <td><a href="interview-003.html">View →</a></td>
+                    </tr>
+                    <tr>
+                        <td>004</td>
+                        <td>Robert Garcia</td>
+                        <td>Floor Supervisor</td>
+                        <td>65 min</td>
+                        <td>22 years experience, floor truth, union perspective</td>
+                        <td><a href="interview-004.html">View →</a></td>
+                    </tr>
+                    <tr>
+                        <td>005</td>
+                        <td>Jennifer Martinez</td>
+                        <td>VP Operations</td>
+                        <td>78 min</td>
+                        <td>Manufacturing criticality, MES concerns, support needs</td>
+                        <td><a href="interview-005.html">View →</a></td>
+                    </tr>
+                    <tr>
+                        <td>006</td>
+                        <td>Linda Park</td>
+                        <td>HR Director</td>
+                        <td>73 min</td>
+                        <td>Training costs $12-15M, change management strategy</td>
+                        <td><a href="interview-006.html">View →</a></td>
+                    </tr>
+                    <tr>
+                        <td>007</td>
+                        <td>David Foster</td>
+                        <td>CTO</td>
+                        <td>85 min</td>
+                        <td>Architecture complexity, 24-48 month validation timeline</td>
+                        <td><a href="interview-007.html">View →</a></td>
+                    </tr>
+                    <tr>
+                        <td>008</td>
+                        <td>Maria Rodriguez</td>
+                        <td>MES Supervisor</td>
+                        <td>72 min</td>
+                        <td>Sunday windows math, SAP PTSD, $9M operator training</td>
+                        <td><a href="interview-008.html">View →</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="interviews.html" class="btn btn-primary">View All Interview Details →</a>
+        </section>
+
+        <!-- Recommendation -->
+        <section class="content-section recommendation">
+            <h2>Final Recommendation</h2>
+            <div class="recommendation-box">
+                <h3>CONDITIONAL GO - Proceed Only If All 10 Conditions Met</h3>
+                <p>The Azure modernization initiative is technically feasible and strategically important. However, the current project parameters (18 months, $3M budget) are mathematically impossible and will lead to failure if not corrected.</p>
+                
+                <p><strong>The project CAN succeed if approached as a 3-5 year, $18.5-26.5M people-focused transformation with union partnership and floor-level involvement.</strong></p>
+
+                <p><strong>The project WILL fail if approached as an 18-month, $3M technical migration with top-down mandates.</strong></p>
+
+                <h4>Critical Success Factors:</h4>
+                <ol>
+                    <li>Reset timeline expectations to reality (36-60 months)</li>
+                    <li>Secure adequate funding ($18.5-26.5M)</li>
+                    <li>Invest in people (training, support, change management)</li>
+                    <li>Build trust through partnership (not mandates)</li>
+                    <li>Learn from SAP failure (document and apply lessons)</li>
+                    <li>Engage union early (120-day notice, MOU negotiation)</li>
+                    <li>Augment support capacity ($2-3M contractors)</li>
+                    <li>Respect institutional knowledge (22-year floor veterans)</li>
+                    <li>Maintain safety and quality as absolute priorities</li>
+                    <li>Accept that this is a people project with technology components</li>
+                </ol>
+
+                <div class="recommendation-decision">
+                    <p><strong>Decision Required:</strong> Will the board and PE firm approve realistic timeline and budget?</p>
+                    <p><strong>If YES:</strong> Proceed to Phase 1 (Specification & Planning) with partnership approach</p>
+                    <p><strong>If NO:</strong> Cancel or defer project until conditions can be met</p>
+                    <p><strong>DO NOT:</strong> Proceed with unrealistic parameters hoping to "figure it out later" - this path leads to SAP 2.0</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Phase 0 Discovery Final Readout | Generated: November 6, 2025</p>
+            <p>Project: Azure Cloud Modernization Initiative | Organization: Precision Manufacturing Inc.</p>
+            <p>Discovery Team: Discovery Facilitator, Feasibility Analyzer | 8 of 11 stakeholder interviews completed (73%)</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Register - Phase 0 Discovery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Risk Register</h1>
+            <h2>37 Risks Identified | 8 Critical</h2>
+            <p class="subtitle">Comprehensive risk assessment from Phase 0 discovery</p>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Executive Summary</a></li>
+                <li><a href="interviews.html">Stakeholder Interviews (8)</a></li>
+                <li><a href="contradictions.html">Contradictions (16)</a></li>
+                <li><a href="risks.html" class="active">Risk Register (37)</a></li>
+                <li><a href="themes.html">Key Themes (15)</a></li>
+                <li><a href="feasibility.html">Feasibility Assessment</a></li>
+                <li><a href="timeline-budget.html">Timeline & Budget Reality</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Risk Overview</h2>
+            <div class="status-grid">
+                <div class="status-item">
+                    <div class="status-label">Total Risks</div>
+                    <div class="status-value">37</div>
+                    <div class="status-detail">Identified across 8 interviews</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">Critical (20-25)</div>
+                    <div class="status-value declining">8</div>
+                    <div class="status-detail">Immediate action required</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">High (15-19)</div>
+                    <div class="status-value">12</div>
+                    <div class="status-detail">Proactive mitigation</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">Moderate/Low (1-14)</div>
+                    <div class="status-value">17</div>
+                    <div class="status-detail">Monitor</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Critical Risks (Score 20-25/25)</h2>
+            
+            <div class="risk-card critical">
+                <h4>RISK-001: Timeline Compression Impossibility</h4>
+                <div class="risk-score">25/25</div>
+                <p><strong>Probability:</strong> Very High (90%) if 18-month timeline mandated</p>
+                <p><strong>Impact:</strong> Catastrophic (Project failure, financial loss, organizational trauma)</p>
+                <p><strong>Description:</strong> Mathematical proof that 18 months is impossible. Sunday maintenance windows (48 hours/year) alone prove 3-5 year minimum timeline. Attempting 18-month timeline will result in rushed work, inadequate testing, production outages, and ultimate project failure.</p>
+                <p><strong>Evidence:</strong> Alex (Interview 10) mathematical calculation, Maria (Interview 8) Sunday window constraint, Sarah (Interview 2) infrastructure prerequisites 6-9 months</p>
+                <p><strong>Mitigation:</strong> Reset timeline to 36-60 months with board approval</p>
+            </div>
+
+            <div class="risk-card critical">
+                <h4>RISK-002: Team Capacity Collapse</h4>
+                <div class="risk-score">24/25</div>
+                <p><strong>Probability:</strong> Very High (85%) without augmentation</p>
+                <p><strong>Impact:</strong> Severe (IT team burnout, attrition, operational collapse)</p>
+                <p><strong>Description:</strong> IT team already at 110% capacity maintaining current systems. Adding migration work without additional resources will cause burnout, attrition, and collapse of both operations and migration.</p>
+                <p><strong>Evidence:</strong> Sarah (Interview 2) team capacity analysis, Alex (Interview 10) 25% flight risk assessment</p>
+                <p><strong>Mitigation:</strong> Hire contractors ($2-3M), augment team before starting migration</p>
+            </div>
+
+            <div class="risk-card critical">
+                <h4>RISK-034: SAP Trauma Organizational PTSD</h4>
+                <div class="risk-score">20/25</div>
+                <p><strong>Probability:</strong> High (75%) if not explicitly addressed</p>
+                <p><strong>Impact:</strong> Severe (Resistance, resume updates, project failure)</p>
+                <p><strong>Description:</strong> 2018 SAP implementation created lasting organizational trauma. "New system" announcement triggers anxiety and resume updates even 7 years later. Must explicitly acknowledge past, demonstrate learning, and rebuild trust.</p>
+                <p><strong>Evidence:</strong> Maria (Interview 8) "3 weeks chaos, 3 people lost", Sarah (Interview 2) IT trauma, James (Interview 3) financial trauma</p>
+                <p><strong>Mitigation:</strong> Document SAP lessons learned, partnership approach, no layoffs commitment, Michael floor shift</p>
+            </div>
+
+            <div class="risk-card critical">
+                <h4>RISK-039: Support Capacity Inadequacy</h4>
+                <div class="risk-score">22/25</div>
+                <p><strong>Probability:</strong> Very High (90%) without augmentation</p>
+                <p><strong>Impact:</strong> Severe (Support collapse, customer impact, revenue risk)</p>
+                <p><strong>Description:</strong> Support team at breaking point (30% attrition). Migration will double ticket volume with no plan to address. Only 1 of 10 support staff has manufacturing background, creating friction and quality issues.</p>
+                <p><strong>Evidence:</strong> Tom (Interview 9) support crisis details</p>
+                <p><strong>Mitigation:</strong> Hire contractors ($2-3M), manufacturing-experienced staff (12-18 month lead time)</p>
+            </div>
+
+            <!-- Additional critical risks -->
+            <div class="risk-card critical">
+                <h4>RISK-008: MES Production Disruption</h4>
+                <div class="risk-score">22/25</div>
+                <p><strong>Description:</strong> MES downtime = production stops immediately ($10K+/minute). Migration carries extreme production risk requiring extensive pilot testing and 6-12 month parallel running period.</p>
+            </div>
+
+            <div class="risk-card critical">
+                <h4>RISK-012: Validation Timeline Inadequacy</h4>
+                <div class="risk-score">22/25</div>
+                <p><strong>Description:</strong> GMP-validated systems require 24-48 months of validation work. Current timeline doesn't account for validation requirements, creating regulatory and customer risk.</p>
+            </div>
+
+            <div class="risk-card critical">
+                <h4>RISK-020: Union Relationship Breakdown</h4>
+                <div class="risk-score">20/25</div>
+                <p><strong>Description:</strong> Union contract Article 12 requires 120-day notice for technology changes. No union engagement yet. Failure to engage early = adversarial relationship = strike authorization risk.</p>
+            </div>
+
+            <div class="risk-card critical">
+                <h4>RISK-028: Budget Inadequacy</h4>
+                <div class="risk-score">20/25</div>
+                <p><strong>Description:</strong> Current $3M allocation insufficient for actual $18.5-26.5M requirement. Proceeding without adequate funding guarantees scope cuts, quality compromises, and project failure.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>High Priority Risks (12 Risks, Score 15-19/25)</h2>
+            <p class="intro-text">These risks require proactive mitigation plans and weekly monitoring.</p>
+            
+            <ul>
+                <li><strong>RISK-003:</strong> Skills Gap Severity (18/25) - IT team zero Azure experience, 12 months training minimum</li>
+                <li><strong>RISK-005:</strong> Shadow IT Discovery (16/25) - 30+ undocumented Access databases, unknown dependencies</li>
+                <li><strong>RISK-007:</strong> Maintenance Window Conflicts (18/25) - Sunday windows shared with mechanical maintenance</li>
+                <li><strong>RISK-011:</strong> Quality System Migration Risk (18/25) - GMP validation requirements, customer notification</li>
+                <li><strong>RISK-015:</strong> Technical Debt Accumulation (15/25) - Legacy debt plus migration shortcuts</li>
+                <li><strong>RISK-019:</strong> Change Fatigue (17/25) - Organization already exhausted, SAP trauma</li>
+                <li><strong>RISK-024:</strong> Customer Notification Requirements (16/25) - Major customers must be notified</li>
+                <li><strong>RISK-027:</strong> Contractor Dependency Risk (17/25) - Heavy reliance on contractors</li>
+                <li><strong>RISK-033:</strong> MES Floor Adoption Resistance (18/25) - Operators may reject new system</li>
+                <li><strong>RISK-035:</strong> Safety Incidents During Transition (15/25) - New systems = distraction = safety risk</li>
+                <li><strong>RISK-036:</strong> Sunday Window Capacity Constraint (15/25) - Only 48 hours/year available</li>
+                <li><strong>RISK-037:</strong> Training Budget Inadequacy (16/25) - $12-15M not in budget</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Risk Mitigation Priority Matrix</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Risk ID</th>
+                        <th>Risk Name</th>
+                        <th>Score</th>
+                        <th>Priority</th>
+                        <th>Mitigation Status</th>
+                        <th>Owner</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>RISK-001</td>
+                        <td>Timeline Compression Impossibility</td>
+                        <td>25/25</td>
+                        <td>P0</td>
+                        <td>OPEN - Requires board decision</td>
+                        <td>Michael Chen</td>
+                    </tr>
+                    <tr>
+                        <td>RISK-002</td>
+                        <td>Team Capacity Collapse</td>
+                        <td>24/25</td>
+                        <td>P0</td>
+                        <td>OPEN - Requires contractor hiring</td>
+                        <td>Sarah Kim</td>
+                    </tr>
+                    <tr>
+                        <td>RISK-039</td>
+                        <td>Support Capacity Inadequacy</td>
+                        <td>22/25</td>
+                        <td>P0</td>
+                        <td>OPEN - Requires staffing plan</td>
+                        <td>Tom Bradley</td>
+                    </tr>
+                    <tr>
+                        <td>RISK-008</td>
+                        <td>MES Production Disruption</td>
+                        <td>22/25</td>
+                        <td>P0</td>
+                        <td>OPEN - Requires pilot program</td>
+                        <td>Maria Rodriguez</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>Risk Velocity & Trending</h2>
+            <div class="alert alert-warning">
+                <h3>⚠️ Risk Trend: Worsening</h3>
+                <p><strong>Interview 1:</strong> Initial assessment - relatively optimistic</p>
+                <p><strong>Interview 2-4:</strong> Reality emerges - risks escalate</p>
+                <p><strong>Interview 5-7:</strong> Complexity deepens - new risks identified</p>
+                <p><strong>Interview 8:</strong> Major discoveries - 4 new risks, several severity upgrades</p>
+                <p><strong>Overall Trend:</strong> Risk profile worsening as discovery reveals more constraints</p>
+                <p><strong>Conclusion:</strong> Early intervention critical before risks materialize</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Phase 0 Discovery Final Readout | Generated: November 6, 2025</p>
+        </div>
+    </footer>
+</body>
+</html>

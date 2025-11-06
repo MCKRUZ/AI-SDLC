@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contradictions - Phase 0 Discovery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Discovery Contradictions</h1>
+            <h2>16 Conflicts Requiring Resolution</h2>
+            <p class="subtitle">8 Critical | 6 High | 2 Moderate</p>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Executive Summary</a></li>
+                <li><a href="interviews.html">Stakeholder Interviews (8)</a></li>
+                <li><a href="contradictions.html" class="active">Contradictions (16)</a></li>
+                <li><a href="risks.html">Risk Register (37)</a></li>
+                <li><a href="themes.html">Key Themes (15)</a></li>
+                <li><a href="feasibility.html">Feasibility Assessment</a></li>
+                <li><a href="timeline-budget.html">Timeline & Budget Reality</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Overview</h2>
+            <p class="intro-text">Discovery process identified 16 critical contradictions between stakeholder expectations, assumptions, and reality. 8 are rated as CRITICAL requiring immediate resolution before project can proceed.</p>
+            
+            <div class="alert alert-warning">
+                <h3>⚠️ Resolution Required</h3>
+                <p>All CRITICAL contradictions must be resolved before Phase 1. Proceeding with unresolved contradictions will lead to project failure.</p>
+            </div>
+        </section>
+
+        <!-- CRITICAL CONTRADICTIONS -->
+        <section class="content-section">
+            <h2>Critical Contradictions (8)</h2>
+
+            <div class="contradiction-card critical">
+                <h4>CONTRADICTION 1: Timeline Expectations [CRITICAL]</h4>
+                <p><strong>Michael Chen (CEO):</strong> "18 months total, 90-day quick wins"</p>
+                <p><strong>Stakeholder Consensus (Sarah, Jennifer, Robert, David, Patricia, Maria, Alex):</strong> "36-60 months minimum, infrastructure prerequisites alone are 6-9 months before first migration"</p>
+                <p><strong>Mathematical Proof (Alex, Maria):</strong> Sunday windows = 48 hours/year available = 3-5 years minimum for 8 systems</p>
+                
+                <p><strong>Gap:</strong> 200-300% timeline underestimate</p>
+                <p><strong>Source:</strong> All 8 interviews</p>
+                <p><strong>Impact:</strong> If 18-month timeline mandated, project will fail catastrophically</p>
+                
+                <p><strong>Resolution Required:</strong></p>
+                <ul>
+                    <li>Board must approve 36-60 month realistic timeline</li>
+                    <li>Michael must present mathematical proof to board</li>
+                    <li>PE firm must accept multi-year investment cycle</li>
+                    <li>Quick wins redefined as pilot programs, not production migrations</li>
+                </ul>
+                
+                <p><strong>Resolution Dependency:</strong> Must be resolved before budget approval (Contradiction #10)</p>
+            </div>
+
+            <div class="contradiction-card critical">
+                <h4>CONTRADICTION 10: Total Project Cost [CRITICAL]</h4>
+                <p><strong>Michael's Implication:</strong> $3-5M total</p>
+                <p><strong>Jennifer's Initial Estimate:</strong> $3-5M over 3-5 years</p>
+                <p><strong>Discovery Reality (After Interview 8):</strong> $18.5-26.5M total</p>
+                
+                <p><strong>Primary Driver - Training Costs:</strong></p>
+                <ul>
+                    <li>Maria (MES Supervisor): $9M for 180 MES operators alone</li>
+                    <li>Linda (HR): $12-15M total training across all roles</li>
+                    <li>This is 60-65% of total project budget</li>
+                    <li>Not in original budget model at all</li>
+                </ul>
+                
+                <p><strong>Gap:</strong> 617-883% budget underestimate</p>
+                <p><strong>Source:</strong> Interviews 3 (Jennifer), 8 (Maria), 6 (Linda)</p>
+                <p><strong>Impact:</strong> Board/PE approval required for $18.5-26.5M investment</p>
+                
+                <p><strong>Resolution Required:</strong></p>
+                <ul>
+                    <li>Complete financial model with all costs visible</li>
+                    <li>Board approval for $18.5-26.5M investment</li>
+                    <li>PE firm acceptance of Year 1-2 cost increases</li>
+                    <li>Training budget secured ($12-15M)</li>
+                    <li>Support contractor budget secured ($2-3M)</li>
+                </ul>
+            </div>
+
+            <div class="contradiction-card critical">
+                <h4>CONTRADICTION 7: Training Capacity & Cost [CRITICAL]</h4>
+                <p><strong>Original Assumption:</strong> $300-500K training budget (Jennifer's estimate)</p>
+                <p><strong>Discovery Reality:</strong> $12-15M training budget required</p>
+                
+                <p><strong>Per-Role Breakdown:</strong></p>
+                <ul>
+                    <li>MES Operators: $9M (180 × $50K) - Maria Interview</li>
+                    <li>IT Team: $1.2-1.5M (12-month Azure training)</li>
+                    <li>Support Team: $500-750K</li>
+                    <li>Floor Supervisors: $750K-1M (15 supervisors)</li>
+                    <li>Quality/Compliance: $300-500K</li>
+                </ul>
+                
+                <p><strong>Gap:</strong> 2400-5000% training cost underestimate</p>
+                <p><strong>Source:</strong> Interview 8 (Maria), Interview 6 (Linda)</p>
+                
+                <p><strong>Resolution Required:</strong></p>
+                <ul>
+                    <li>Secure $12-15M training budget</li>
+                    <li>Source manufacturing-experienced trainers (4-6 month lead time)</li>
+                    <li>Design 4-phase training program</li>
+                    <li>Accept 18-24 month training delivery timeline</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- Continue with more contradictions... -->
+        <section class="content-section">
+            <h2>High Priority Contradictions (6)</h2>
+            
+            <div class="contradiction-card">
+                <h4>CONTRADICTION 5: Team Capacity [HIGH]</h4>
+                <p><strong>Michael's Assumption:</strong> "Current IT team can handle migration while maintaining operations"</p>
+                <p><strong>Sarah's Reality:</strong> "Team at 110% capacity, cannot absorb additional work"</p>
+                <p><strong>Resolution:</strong> Hire contractors ($2-3M) or delay project until team augmented</p>
+            </div>
+
+            <div class="contradiction-card">
+                <h4>CONTRADICTION 13: Approach (Top-Down vs Partnership) [HIGH]</h4>
+                <p><strong>Michael's Initial Approach:</strong> "We'll tell them what's happening"</p>
+                <p><strong>Floor Reality (Robert, Maria, Jimmy):</strong> "Partnership required, not mandates"</p>
+                <p><strong>Resolution:</strong> Michael floor shift, union engagement, institutional knowledge respect</p>
+            </div>
+
+            <!-- Additional contradictions would go here -->
+        </section>
+
+        <section class="content-section">
+            <h2>Resolution Matrix</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Contradiction</th>
+                        <th>Severity</th>
+                        <th>Status</th>
+                        <th>Owner</th>
+                        <th>Deadline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>C01: Timeline (18mo vs 36-60mo)</td>
+                        <td><span style="color: var(--critical-color); font-weight: 600;">CRITICAL</span></td>
+                        <td>OPEN</td>
+                        <td>Michael + Board</td>
+                        <td>Before board presentation</td>
+                    </tr>
+                    <tr>
+                        <td>C10: Budget ($3M vs $18.5-26.5M)</td>
+                        <td><span style="color: var(--critical-color); font-weight: 600;">CRITICAL</span></td>
+                        <td>OPEN</td>
+                        <td>Jennifer + Michael</td>
+                        <td>Within 7 days</td>
+                    </tr>
+                    <tr>
+                        <td>C07: Training ($300K vs $12-15M)</td>
+                        <td><span style="color: var(--critical-color); font-weight: 600;">CRITICAL</span></td>
+                        <td>OPEN</td>
+                        <td>Linda + Jennifer</td>
+                        <td>Within 14 days</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Phase 0 Discovery Final Readout | Generated: November 6, 2025</p>
+        </div>
+    </footer>
+</body>
+</html>

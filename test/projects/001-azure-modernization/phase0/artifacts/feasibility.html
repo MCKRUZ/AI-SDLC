@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feasibility Assessment - Phase 0 Discovery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Feasibility Assessment</h1>
+            <h2>Overall Score: 36/100 (Conditional GO)</h2>
+            <p class="subtitle">Declining from initial 70/100 as reality emerged through discovery</p>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Executive Summary</a></li>
+                <li><a href="interviews.html">Stakeholder Interviews (8)</a></li>
+                <li><a href="contradictions.html">Contradictions (16)</a></li>
+                <li><a href="risks.html">Risk Register (37)</a></li>
+                <li><a href="themes.html">Key Themes (15)</a></li>
+                <li><a href="feasibility.html" class="active">Feasibility Assessment</a></li>
+                <li><a href="timeline-budget.html">Timeline & Budget Reality</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Executive Summary</h2>
+            
+            <div class="alert alert-warning">
+                <h3>⚠️ Recommendation: CONDITIONAL GO</h3>
+                <p><strong>Project can proceed ONLY if ALL 10 critical conditions are met. Proceeding without all conditions = 90% chance of catastrophic failure.</strong></p>
+            </div>
+
+            <div class="feasibility-chart">
+                <h3>Feasibility Score Breakdown</h3>
+                <div class="feasibility-bar">
+                    <div class="bar-segment technical" style="width: 13%;" title="Technical: 65/100">
+                        <span>Technical: 65</span>
+                    </div>
+                    <div class="bar-segment financial" style="width: 8%;" title="Financial: 40/100">
+                        <span>Financial: 40</span>
+                    </div>
+                    <div class="bar-segment resource" style="width: 5%;" title="Resource: 25/100">
+                        <span>Resource: 25</span>
+                    </div>
+                    <div class="bar-segment operational" style="width: 10%;" title="Operational: 50/100">
+                        <span>Operational: 50</span>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 1rem;"><strong>Overall: 36/100</strong> (Average weighted by importance)</p>
+            </div>
+
+            <h3>Score Trend Through Discovery</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Interview</th>
+                        <th>Overall Score</th>
+                        <th>Change</th>
+                        <th>Key Discovery</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Initial (Pre-Discovery)</td>
+                        <td>70/100</td>
+                        <td>Baseline</td>
+                        <td>Optimistic initial assessment</td>
+                    </tr>
+                    <tr>
+                        <td>Interview 2 (Sarah)</td>
+                        <td>55/100</td>
+                        <td>⬇️ -15</td>
+                        <td>Reality check: 36-48 months, capacity crisis</td>
+                    </tr>
+                    <tr>
+                        <td>Interview 3 (Jennifer)</td>
+                        <td>50/100</td>
+                        <td>⬇️ -5</td>
+                        <td>Budget inadequate, PE firm unknown</td>
+                    </tr>
+                    <tr>
+                        <td>Interview 5 (Kevin)</td>
+                        <td>46/100</td>
+                        <td>⬇️ -4</td>
+                        <td>Infrastructure prerequisites, parallel running</td>
+                    </tr>
+                    <tr>
+                        <td>Interview 7 (Patricia)</td>
+                        <td>43/100</td>
+                        <td>⬇️ -3</td>
+                        <td>Validation 24-48 months</td>
+                    </tr>
+                    <tr>
+                        <td>Interview 8 (Maria)</td>
+                        <td>38/100</td>
+                        <td>⬇️ -5</td>
+                        <td>Training $12-15M, Sunday windows, SAP trauma</td>
+                    </tr>
+                    <tr>
+                        <td>Interview 9 (Tom)</td>
+                        <td>36/100</td>
+                        <td>⬇️ -2</td>
+                        <td>Support crisis, $2-3M contractors</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>Detailed Feasibility Analysis</h2>
+
+            <div class="finding-card">
+                <h4>Technical Feasibility: 65/100 (MODERATE)</h4>
+                <p><strong>Assessment:</strong> Technically possible but complex</p>
+                
+                <p><strong>Strengths:</strong></p>
+                <ul>
+                    <li>Azure platform proven and mature</li>
+                    <li>Clear migration patterns available</li>
+                    <li>Vendor support available for all systems</li>
+                    <li>Technology risks manageable with proper planning</li>
+                </ul>
+                
+                <p><strong>Challenges:</strong></p>
+                <ul>
+                    <li>8+ critical systems with complex integrations</li>
+                    <li>17 "do not touch" legacy integrations</li>
+                    <li>30+ shadow IT Access databases (undocumented)</li>
+                    <li>GMP validation requirements for quality systems</li>
+                    <li>Zero Azure expertise in current team</li>
+                </ul>
+                
+                <p><strong>Mitigation:</strong> Hire Azure-experienced contractors, 12-month training program, phased approach with pilots</p>
+            </div>
+
+            <div class="finding-card">
+                <h4>Financial Feasibility: 40/100 (LOW)</h4>
+                <p><strong>Assessment:</strong> Requires 617-883% budget increase</p>
+                
+                <p><strong>Current Situation:</strong></p>
+                <ul>
+                    <li>Allocated: $3M</li>
+                    <li>Required: $18.5-26.5M</li>
+                    <li>Gap: $15.5-23.5M</li>
+                    <li>Primary driver: Training costs ($12-15M) not in original model</li>
+                </ul>
+                
+                <p><strong>ROI Timeline:</strong></p>
+                <ul>
+                    <li>Year 1-2: Costs INCREASE (double current spend)</li>
+                    <li>Year 3-4: Breaking even</li>
+                    <li>Year 5+: Savings materialize (50% reduction achievable)</li>
+                </ul>
+                
+                <p><strong>Mitigation:</strong> Secure board/PE firm approval for realistic budget, accept multi-year investment cycle</p>
+            </div>
+
+            <div class="finding-card">
+                <h4>Resource Feasibility: 25/100 (CRITICAL)</h4>
+                <p><strong>Assessment:</strong> Severe resource constraints across all teams</p>
+                
+                <p><strong>Critical Issues:</strong></p>
+                <ul>
+                    <li><strong>IT Team:</strong> At 110% capacity, cannot absorb migration work, 25% flight risk</li>
+                    <li><strong>Support Team:</strong> 30% attrition, breaking point, only 1 of 10 has manufacturing background</li>
+                    <li><strong>Skills Gap:</strong> Zero Azure experience, 12 months training minimum</li>
+                    <li><strong>Trainers:</strong> Manufacturing-experienced trainers require 4-6 month sourcing</li>
+                    <li><strong>Floor Operators:</strong> 180 operators need comprehensive training ($9M)</li>
+                </ul>
+                
+                <p><strong>Mitigation:</strong> Hire contractors ($2-3M for IT), hire support staff (12-18 months), source trainers (4-6 months), comprehensive training program</p>
+            </div>
+
+            <div class="finding-card">
+                <h4>Operational Feasibility: 50/100 (MODERATE)</h4>
+                <p><strong>Assessment:</strong> Possible with partnership approach, impossible with top-down mandate</p>
+                
+                <p><strong>Critical Success Factors:</strong></p>
+                <ul>
+                    <li>Union partnership (120-day notice, MOU negotiation)</li>
+                    <li>Floor-level involvement (Michael floor shift, operator input)</li>
+                    <li>Institutional knowledge respect (Robert, Maria, 22+ year veterans)</li>
+                    <li>SAP lessons learned applied (explicit acknowledgment, different approach)</li>
+                    <li>Safety and quality maintained (no compromise, veto power)</li>
+                </ul>
+                
+                <p><strong>Major Obstacles:</strong></p>
+                <ul>
+                    <li>SAP trauma (organizational PTSD 7 years later)</li>
+                    <li>24/7 manufacturing (cannot stop production)</li>
+                    <li>Sunday window constraint (48 hours/year = 3-5 years minimum)</li>
+                    <li>30% productivity drop during learning curve (2-3 months minimum)</li>
+                    <li>Trust deficit (new leadership vs institutional knowledge)</li>
+                </ul>
+                
+                <p><strong>Mitigation:</strong> Partnership not mandates, Michael floor shift, union engagement, pilot programs with volunteers, comprehensive support</p>
+            </div>
+
+            <div class="finding-card">
+                <h4>Timeline Feasibility: 25/100 (CRITICAL)</h4>
+                <p><strong>Assessment:</strong> 18 months mathematically impossible</p>
+                
+                <p><strong>Mathematical Proof:</strong></p>
+                <ul>
+                    <li>Sunday windows: 48 hours/year available</li>
+                    <li>8 systems × 6 hours average = 48 hours minimum</li>
+                    <li>Perfect execution = 1 year minimum</li>
+                    <li>Reality (parallel running, validation, issues) = 3-5 years</li>
+                </ul>
+                
+                <p><strong>Additional Timeline Constraints:</strong></p>
+                <ul>
+                    <li>Infrastructure prerequisites: 6-9 months before first migration</li>
+                    <li>Skills development: 12 months Azure training</li>
+                    <li>MES migration alone: 18-24 months (must be LAST)</li>
+                    <li>GMP validation: 24-48 months for quality systems</li>
+                    <li>Support hiring: 12-18 months for manufacturing-experienced staff</li>
+                </ul>
+                
+                <p><strong>Conclusion:</strong> 36-60 months realistic, 18 months impossible</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>10 Critical Conditions for Success</h2>
+            <p class="intro-text">Project can proceed ONLY if ALL 10 conditions are met. Missing any condition significantly increases failure risk.</p>
+
+            <div class="alert alert-critical">
+                <h3>⚠️ ALL Conditions Must Be Met</h3>
+                <p>These are not negotiable. Proceeding without all 10 conditions = 90% chance of catastrophic failure ("SAP 2.0").</p>
+            </div>
+
+            <ol style="font-size: 1.1rem; line-height: 1.8;">
+                <li><strong>Timeline Reset:</strong> Board approves 36-60 months (not 18 months) with mathematical proof presented</li>
+                
+                <li><strong>Budget Approval:</strong> Board/PE firm approves $18.5-26.5M (not $3M) with full transparency on costs</li>
+                
+                <li><strong>Michael Floor Shift:</strong> Michael completes 8-hour shift on 2nd shift within 30 days (builds credibility and understanding)</li>
+                
+                <li><strong>Union Engagement:</strong> Union partnership initiated within 7 days, 120-day notice given, MOU negotiation begins</li>
+                
+                <li><strong>Support Augmentation:</strong> Support team contractors hired ($2-3M), manufacturing-experienced staff sourcing initiated (12-18 months)</li>
+                
+                <li><strong>Training Program:</strong> Training budget secured ($12-15M), 4-phase program designed, manufacturing trainers sourced (4-6 months)</li>
+                
+                <li><strong>Four-Way Alignment:</strong> Michael + Jennifer + Sarah + Robert unified on approach, timeline, budget, and partnership model</li>
+                
+                <li><strong>PE Firm Acceptance:</strong> PE firm accepts multi-year investment cycle (not quick flip), Year 1-2 cost increases approved</li>
+                
+                <li><strong>Partnership Approach:</strong> Top-down mandates abandoned, floor-level involvement, institutional knowledge respected</li>
+                
+                <li><strong>SAP Lessons Learned:</strong> 2018 failure documented, lessons applied, explicit acknowledgment to organization</li>
+            </ol>
+
+            <div class="recommendation-box">
+                <h3>Decision Framework</h3>
+                
+                <p><strong>IF All 10 Conditions Met:</strong></p>
+                <p>✅ PROCEED to Phase 1 with 70-80% probability of success</p>
+                <p>This becomes a 36-60 month, $18.5-26.5M people-focused transformation with union partnership and floor-level involvement.</p>
+                
+                <p><strong>IF Any Condition Cannot Be Met:</strong></p>
+                <p>❌ CANCEL or DEFER project until conditions can be met</p>
+                <p>Better to defer than to repeat SAP failure.</p>
+                
+                <p><strong>DO NOT Under Any Circumstances:</strong></p>
+                <p>⛔ Proceed with unrealistic parameters (18 months, $3M, top-down mandates) hoping to "figure it out later"</p>
+                <p>This path leads to SAP 2.0 with 90% certainty.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Phase 0 Discovery Final Readout | Generated: November 6, 2025</p>
+        </div>
+    </footer>
+</body>
+</html>
