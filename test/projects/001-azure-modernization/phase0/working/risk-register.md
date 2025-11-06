@@ -1,7 +1,7 @@
 # Risk Register - Azure Modernization Initiative
 
-**Last Updated**: 2025-11-05 (After Interview 9)  
-**Total Risks**: 44  
+**Last Updated**: 2025-11-06 (After Interviews 10-11)  
+**Total Risks**: 55  
 **Status**: ACTIVE TRACKING
 
 ---
@@ -9,18 +9,18 @@
 ## Risk Summary Statistics
 
 ### By Severity
-- **CRITICAL (20-25)**: 10 risks
-- **HIGH (15-19)**: 14 risks
-- **MODERATE (10-14)**: 14 risks
+- **CRITICAL (20-25)**: 11 risks
+- **HIGH (15-19)**: 17 risks
+- **MODERATE (10-14)**: 21 risks
 - **LOW (1-9)**: 6 risks
 
 ### By Category
-- **Timeline Risks**: 8 risks
-- **Capacity Risks**: 9 risks
-- **Technical Risks**: 7 risks
-- **Organizational Risks**: 8 risks
-- **Financial Risks**: 6 risks
-- **Operational Risks**: 6 risks
+- **Timeline Risks**: 9 risks
+- **Capacity Risks**: 11 risks
+- **Technical Risks**: 8 risks
+- **Organizational Risks**: 12 risks
+- **Financial Risks**: 7 risks
+- **Operational Risks**: 8 risks
 
 ### Risk Velocity
 - **Worsening**: 8 risks (getting worse without intervention)
@@ -391,6 +391,51 @@
 **Owner**: Sarah + Tom + Jennifer  
 **Mitigation Cost**: $2-3M for support contractors over migration period  
 **First Identified**: Interview 2 (Sarah capacity), Interview 9 (Tom specifics)
+
+---
+
+### RISK-051: Key IT Personnel Flight Risk
+**Score**: 20/25 (CRITICAL)  
+**Category**: Organizational  
+**Status**: WORSENING
+
+**Description**: 25% of IT team (5 of 20 people) are at flight risk, with key personnel explicitly stating they will leave if project becomes "SAP 2.0." Kevin (infrastructure lead, 11 years tenure) explicitly said he'll leave if the approach isn't realistic. Rachel (senior developer, 8 years) is already looking at jobs. Three others at moderate risk. Losing these people during migration would be catastrophic due to lost institutional knowledge and execution capability.
+
+**Impact**:
+- Loss of critical institutional knowledge
+- Project timeline delays (6-12 months per key person lost)
+- Cost: $50-75K direct replacement cost per person
+- Cost: $200-500K indirect per key person (timeline delays, knowledge transfer)
+- Remaining team demoralized, triggering attrition cascade
+- Project failure if multiple key people leave simultaneously
+
+**Likelihood**: 85% (almost certain if project proceeds with unrealistic timeline/resources)
+
+**Root Cause**:
+- SAP trauma still affecting team psychology
+- Current team already burned out (80-95% capacity)
+- Fear of repeating "SAP 2.0" experience
+- Perception that management doesn't understand reality
+- Lack of confidence in project approach
+
+**Mitigation**:
+- Retention strategy with financial incentives ($400-500K total)
+  - Tier 1 (Kevin, Tom, key leads): $15-20K each (5-7 people)
+  - Tier 2 (Rachel, Steve, seniors): $10-12K each (8-10 people)
+  - Tier 3 (solid contributors): $5-8K each (10-15 people)
+  - Structure: 50% at 12 months, 50% at 24 months
+- Career development opportunities (Azure skills, architecture exposure)
+- Realistic timeline (36-48 months) reduces burnout fear
+- Adequate contractor support (no 60-hour weeks for 3 years)
+- Demonstrate management understands reality (Michael floor shift)
+- Psychological safety and involvement in planning
+
+**Owner**: Michael + Linda + Sarah  
+**Mitigation Cost**: $400-500K (retention) + opportunity cost $1-3M if not retained  
+**First Identified**: Interview 10 (Alex Kumar)
+
+**Alex's Warning**:
+> "If Kevin leaves, we're in serious trouble. He's the only one who really understands our infrastructure. And if this becomes 'SAP 2.0,' he's already told me he's out."
 
 ---
 
@@ -977,6 +1022,146 @@
 
 ---
 
+### RISK-052: Support Staff Hiring Timeline Constraint
+**Score**: 17/25 (HIGH)  
+**Category**: Capacity  
+**Status**: WORSENING
+
+**Description**: Takes 12-18 months to hire 4-6 support staff with manufacturing background. Manufacturing IT talent is rare (most IT contractors specialize in banks, healthcare). 20-30% decline rate on offers. 3-4 months to productivity for new hires. Cannot start migration without adequate support staffing, but hiring takes over a year. This creates a critical path constraint on project start date.
+
+**Timeline Breakdown**:
+- Months 1-3: Sourcing and screening (manufacturing experience rare)
+- Months 4-6: Interviewing and offers (20-30% decline rate)
+- Months 7-9: Onboarding first hires (3-4 months to productivity)
+- Months 10-12: Onboarding later hires
+- Months 15-18: All 4-6 people fully productive
+
+**Impact**:
+- Cannot start migration for 12-18 months (support prerequisite)
+- Timeline extends by over a year from decision
+- Contractor costs increase (need contractors during hiring period)
+- Risk of inadequate support if rushing hiring
+- Floor trust issues if support inadequate
+
+**Likelihood**: 95% (hiring process is what it is)
+
+**Root Cause**:
+- Manufacturing IT talent pool is small
+- Support requires both IT AND manufacturing knowledge
+- Current 20-30% offer decline rate
+- 3-4 month ramp-up time for manufacturing context
+
+**Mitigation**:
+- Start hiring IMMEDIATELY if project approved (don't wait for Phase 1)
+- Use contractors during 12-18 month hiring period ($300-450K)
+- Partner with manufacturing-focused recruiting firms (TEKsystems, Insight Global)
+- Offer competitive compensation for scarce talent
+- Realistic expectations on timeline impact
+
+**Owner**: Linda + Tom + Recruiting  
+**Mitigation Cost**: $60-110K recruiting fees + $300-450K contractors during hiring  
+**First Identified**: Interview 11 (Linda Park Follow-up)
+
+---
+
+### RISK-053: Union Resistance to Technology Changes
+**Score**: 16/25 (HIGH)  
+**Category**: Organizational  
+**Status**: STABLE (new risk)
+
+**Description**: Floor operators are unionized (UAW Local 428). Technology changes that affect work rules, workflows, or job security require union negotiation. Poor union relations could result in passive resistance (work-to-rule, grievances) or active resistance (work slowdowns, potential strikes). Manufacturing cannot afford work stoppages. Union partnership approach is essential but takes 3-6 months for engagement and MOU negotiation.
+
+**Union Concerns to Address**:
+- Job security (no layoffs due to technology)
+- Training adequacy (80-100 hours on paid time)
+- Support availability (24/7 during transition)
+- Work rules (negotiate changes collaboratively, not mandate)
+- Gradual rollout (parallel running, not force-switch)
+
+**Impact**:
+- Work slowdowns could reduce productivity 20-40%
+- Grievances could halt changes mid-implementation
+- Union contract violation could trigger work stoppage
+- Loss of union trust makes future changes impossible
+- Operators refuse to use new systems (passive resistance)
+
+**Likelihood**: 60% (moderate-high if not addressed proactively)
+
+**Root Cause**:
+- Technology changes affect union contract work rules
+- History of top-down mandates without consultation
+- Job security concerns with automation
+- Lack of early union engagement
+
+**Mitigation**:
+- **Phase 1: Early Engagement** (before public announcements)
+  - Meet with Local 428 leadership
+  - Explain what's being considered (not decided)
+  - Ask for input and concerns
+- **Phase 2: Collaborative Planning**
+  - Include union rep in planning discussions
+  - Address concerns proactively
+  - Negotiate contractual implications
+  - Document in Memorandum of Understanding (MOU)
+- **Phase 3: Member Communication**
+  - Joint town halls (management + union)
+  - Transparent about timeline, training, support
+  - Regular updates through union channels
+- **Key commitments**:
+  - No layoffs due to technology change
+  - Training on paid time (80-100 hours)
+  - Gradual rollout with parallel running
+  - Partnership approach, not mandates
+
+**Owner**: Michael + Jennifer + Union Relations + Linda  
+**Mitigation Cost**: Time and management attention (3-6 months engagement)  
+**First Identified**: Interview 11 (Linda Park Follow-up)
+
+---
+
+### RISK-054: Contractor Sourcing Lead Time
+**Score**: 15/25 (HIGH)  
+**Category**: Capacity  
+**Status**: STABLE (new risk)
+
+**Description**: Manufacturing-experienced IT contractors require 2-3 month lead time to source and onboard. Good contractors are booked 3-6 months out. Most IT contractors specialize in banks, healthcare, retail - not manufacturing. The pool of contractors who understand manufacturing workflows, constraints, and culture is small. Cannot "just hire contractors" when project starts - must plan 3-6 months ahead.
+
+**Contractor Requirements**:
+- IT infrastructure specialists with manufacturing experience
+- Application developers who understand MES/ERP
+- Database specialists familiar with manufacturing data models
+- Network architects with manufacturing floor experience
+- Support staff with manufacturing background
+
+**Impact**:
+- 2-3 month delay in project start if not planned ahead
+- Higher costs (premium for manufacturing experience: $150-250/hour)
+- Settling for less qualified contractors (lack of manufacturing context)
+- Onboarding friction (learning manufacturing domain during project)
+- Timeline delays while waiting for contractor availability
+
+**Likelihood**: 70% (likely to encounter delays)
+
+**Root Cause**:
+- Small pool of manufacturing IT contractors
+- High demand for scarce talent (booked months ahead)
+- Sourcing through general agencies yields wrong skill mix
+- Manufacturing domain knowledge not easy to acquire quickly
+
+**Mitigation**:
+- Start contractor sourcing IMMEDIATELY if project proceeds
+- Use manufacturing-focused firms (TEKsystems manufacturing practice, Insight Global, ISA)
+- Build relationships with contractors during planning phase
+- Book contractors 3-6 months ahead of need
+- Budget for premium rates ($150-250/hour vs. $100-150/hour general IT)
+- Consider hybrid model: general IT contractors + manufacturing SME consultants
+
+**Owner**: Sarah + Alex + Linda + Procurement  
+**Mitigation Cost**: $5-7M total (IT contractors $3-4M + Support contractors $2-3M)  
+**First Identified**: Interview 11 (Linda Park Follow-up)
+
+---
+
 ## MODERATE RISKS (Score 10-14) - Monitor and Manage
 
 ### RISK-016: Scope Creep During Migration
@@ -1365,6 +1550,68 @@
 
 ---
 
+### RISK-055: Manufacturing Trainer Availability
+**Score**: 13/25 (MODERATE)  
+**Category**: Organizational  
+**Status**: STABLE (new risk)
+
+**Description**: Manufacturing-experienced trainers who can teach software in manufacturing context are specialized and rare. Generic software trainers don't understand manufacturing workflows, safety requirements, or floor culture. Takes 4-6 months lead time to source and onboard qualified trainers. Without manufacturing context, training will be ineffective and operators won't trust the training.
+
+**Trainer Requirements**:
+- Understand manufacturing workflows and terminology
+- Can relate software to actual floor operations
+- Credible to floor operators (not "corporate trainers")
+- Available for 6-12 month training delivery period
+- Can work with operators across all shifts
+
+**Sourcing Options**:
+1. **Manufacturing Training Firms** (ToolingU, MasterControl)
+   - Cost: $150-250/hour (premium)
+   - Lead time: 3-6 months
+   - Pros: Experienced, credible
+   - Cons: Expensive, limited availability
+
+2. **Retired Manufacturing Professionals**
+   - Cost: $75-150/hour (moderate)
+   - Need to recruit through networks
+   - Pros: Highly credible, lower cost
+   - Cons: May lack training experience
+
+3. **Hybrid Approach** (RECOMMENDED)
+   - Software vendor trainers + manufacturing SME
+   - Team teaching approach
+   - Cost: $200-300/hour combined
+   - Lead time: 4-6 months
+
+**Impact**:
+- Ineffective training if wrong trainers used
+- Operator resistance ("they don't understand our work")
+- Lower adoption rates due to poor training quality
+- Need to retrain later (doubling training costs)
+- Timeline delays waiting for qualified trainers
+
+**Likelihood**: 50% (moderate - can be mitigated with early planning)
+
+**Root Cause**:
+- Small pool of manufacturing-experienced trainers
+- Most software trainers lack manufacturing context
+- 4-6 month lead time to source and vet trainers
+- Need credibility with floor operators
+
+**Mitigation**:
+- Start trainer sourcing during planning phase (don't wait for Phase 1)
+- Use hybrid approach (software vendor + manufacturing SME)
+- Recruit retired manufacturing professionals through networks
+- Budget for premium rates to secure qualified trainers
+- Allow 4-6 months lead time for sourcing
+- Vet trainers with floor supervisors for credibility
+
+**Owner**: Linda + HR Training Team + Vendor Management  
+**Mitigation Cost**: Included in $12.5-16M training budget  
+**First Identified**: Interview 11 (Linda Park Follow-up)
+
+---
+
 ## LOW RISKS (Score 1-9) - Monitor
 
 ### RISK-045: Network Latency Impact on MES Performance
@@ -1524,22 +1771,27 @@
 ### By Priority
 
 **IMMEDIATE ACTION REQUIRED (CRITICAL RISKS)**:
-1. Timeline reset to 36-60 months (RISK-001)
-2. Hire contractors for capacity (RISK-002, RISK-039)
-3. MES migration strategy (RISK-008, RISK-033)
-4. Validation timeline integration (RISK-012)
-5. Union engagement (RISK-020)
-6. Budget revision to $18.5-26.5M (RISK-028, RISK-037, RISK-041)
-7. SAP acknowledgment (RISK-034)
-8. Address support burnout (RISK-038)
-9. Floor-level support model (RISK-040)
+1. Timeline reset to 36-48 months minimum (RISK-001)
+2. Hire contractors for capacity (RISK-002, RISK-039, RISK-054)
+3. Retention strategy for key personnel (RISK-051) - $400-500K
+4. MES migration strategy (RISK-008, RISK-033)
+5. Validation timeline integration (RISK-012)
+6. Union engagement and partnership (RISK-020, RISK-053)
+7. Budget revision to $22-31M (RISK-028, RISK-037, RISK-041, RISK-052)
+8. SAP acknowledgment and trauma healing (RISK-034)
+9. Address support burnout (RISK-038, RISK-052)
+10. Floor-level support model (RISK-040)
+11. Start support staff hiring immediately (RISK-052)
 
 **URGENT (HIGH RISKS)**:
-10. Infrastructure stabilization ($2.5M) (RISK-003)
-11. Support contractor budget ($2-3M) (RISK-041)
-12. Training budget ($12-15M) (RISK-037)
-13. Skills gap training (RISK-014, RISK-042)
-14. Board expectations management (RISK-019)
+12. Infrastructure stabilization ($2.5M) (RISK-003)
+13. Support contractor budget ($2-3M) (RISK-041, RISK-054)
+14. Training budget ($12-15M) (RISK-037, RISK-055)
+15. Skills gap training (RISK-014, RISK-042)
+16. Board expectations management (RISK-019)
+17. Start contractor sourcing (2-3 month lead time) (RISK-054)
+18. Union partnership approach (RISK-053)
+19. Manufacturing trainer sourcing (4-6 month lead time) (RISK-055)
 
 ### Total Mitigation Cost Estimate
 
@@ -1578,7 +1830,8 @@
 - v1.3 (2025-11-02): Updated after Jimmy interview
 - v1.4 (2025-11-04): Added risks 34-37 after Patricia/Maria interviews
 - v2.0 (2025-11-05): Major update after Tom interview - added 7 new risks (38-44), now 44 total, 10 critical
+- v2.1 (2025-11-06): Added 5 new risks (51-55) after Interviews 10-11 (Alex Kumar, Linda Park follow-up), now 55 total, 11 critical
 
 ---
 
-**STATUS**: Active risk tracking, 44 risks identified, 10 critical requiring immediate action, comprehensive mitigation strategy needed before Phase 1.
+**STATUS**: Active risk tracking, 55 risks identified, 11 critical requiring immediate action, comprehensive mitigation strategy needed before Phase 1.
