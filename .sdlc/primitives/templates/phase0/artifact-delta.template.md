@@ -1,485 +1,317 @@
 # Artifact Delta Update Template
 
-**Purpose**: Standardized format for documenting incremental changes to Phase 0 artifacts.
+**Purpose**: Track incremental changes to Phase 0 artifacts throughout the discovery process.
 
 **Version**: 1.0  
 **Last Updated**: 2025-11-07  
-**Location**: `test/.sdlc/primitives/templates/phase0/artifact-delta_template.md`
+**Location**: `test/.sdlc/primitives/templates/phase0/artifact-delta-update_template.md`
 
 ---
 
 ## When to Use This Template
 
-Use this template to document changes when:
-- Updating an artifact based on new interview insights
-- Incorporating stakeholder feedback
-- Refining based on additional analysis
-- Resolving contradictions
-- Addressing validation gaps
+Use delta updates when:
+- An interview reveals new information requiring artifact updates
+- Contradictions are discovered requiring reconciliation
+- Risk scores or feasibility assessments change
+- Stakeholder alignment shifts
 
-**DO NOT use for**:
-- Initial artifact creation (use the main artifact templates)
-- Complete rewrites (create new version instead)
+**DO NOT use for**: Initial artifact creation (use the base templates) or final versions (use artifact-name.final.md).
 
 ---
 
-## Delta Update Document Structure
+## Delta Update Document
 
 ```markdown
-# Artifact Delta Update - [Artifact Name]
+# Delta Update: [Artifact Name] - v[N] to v[N+1]
 
-**Artifact**: [e.g., Problem Statement / Feasibility Report / Risk Register / Success Criteria]  
-**Update Date**: [YYYY-MM-DD]  
-**Previous Version**: [e.g., v1 / v2]  
-**New Version**: [e.g., v2 / v3]  
-**Updated By**: [Name/Role]  
-**Session**: [Session number if applicable]
+**Update Date**: YYYY-MM-DD  
+**Session**: [Session ID - e.g., session-001-contoso-azure]  
+**Updated By**: [Facilitator name]  
+**Trigger**: [What caused this update]
 
 ---
 
-## Update Trigger
+## Update Trigger Context
 
-**What prompted this update?**
+**Source**: Interview [N] with [Stakeholder Name + Role]  
+**Key Findings**: 
+- [Finding 1]
+- [Finding 2]
+- [Finding 3]
 
-[Check all that apply]
-- [ ] New interview(s) completed: Interview #[N] with [Role]
-- [ ] Stakeholder feedback received from: [Name/Role]
-- [ ] Contradiction identified that needed resolution
-- [ ] Five Whys analysis revealed deeper root cause
-- [ ] Quantitative data obtained that wasn't available before
-- [ ] Validation gap identified in review
-- [ ] Other: [Describe]
-
-**Specific Trigger Description**:
-[1-2 sentences explaining exactly what prompted this update]
+**Why Update Required**: [1-2 sentence explanation of why this necessitates artifact changes]
 
 ---
 
-## Summary of Changes
+## Changes Made
 
-**High-Level Summary**:
-[2-3 sentences describing what changed and why]
+### Additions
 
-**Change Magnitude**: [Minor / Moderate / Significant]
-- Minor: Clarifications, typo fixes, minor additions (<10% of content)
-- Moderate: New sections, substantial additions (10-30% of content)
-- Significant: Major restructuring, new insights (>30% of content)
+**New Sections Added**:
+- **[Section Name]**: [Why added]
+  - Source: [Interview N with Person]
+  - Content summary: [Brief description]
+  - Confidence: [High/Medium/Low]
 
-**Change Type**: [Additive / Corrective / Refinement / Restructure]
-
----
-
-## Detailed Changes
-
-### 1. Additions
-
-**New content added to the artifact:**
-
-#### Addition 1: [Section Name or Topic]
-- **Location**: [Section/subsection where added]
-- **Content Added**: [Brief description of what was added]
-- **Rationale**: [Why this was added]
-- **Source**: [Interview #N with Role, or other source]
-- **Impact**: [How this changes understanding]
-
-**Example**:
-```
-Addition 1: Technical Constraint - Legacy System Dependencies
-
-Location: Section 4 - Constraints
-Content Added: Added constraint about 15-year-old ERP system that can't be decommissioned until Q4 2026 due to audit requirements
-Rationale: Interview #5 with CTO revealed this critical timeline dependency that affects migration sequencing
-Source: Interview #005-cto-interview.md, page 3
-Impact: Extends minimum timeline from 12 months to 18 months
-```
-
-#### Addition 2: [Section Name or Topic]
-[Repeat structure]
-
-[Continue for all additions]
+**New Items in Existing Sections**:
+- **[Section] → [Item Added]**: [Description]
+  - Source: [Interview N]
+  - Rationale: [Why this matters]
+  - Dependencies: [What depends on this]
 
 ---
 
-### 2. Modifications
+### Modifications
 
-**Existing content that was changed:**
+**Changed Assessments**:
+- **[Assessment Changed]**: 
+  - **Previous**: [Old value/description]
+  - **New**: [New value/description]
+  - **Change Magnitude**: [+/- amount or significant/moderate/minor]
+  - **Reason**: [Why changed - cite source]
+  - **Validated By**: [Stakeholder who confirmed or contradicted]
 
-#### Modification 1: [Section Name or Topic]
-- **Location**: [Section/subsection that was modified]
-- **Original Content**: [What it said before]
-- **Updated Content**: [What it says now]
-- **Rationale**: [Why this was changed]
-- **Source**: [What informed this change]
-- **Impact**: [How this affects understanding]
+**Updated Estimates**:
+- **[Estimate Type]**: 
+  - **Was**: [Original estimate]
+  - **Now**: [Updated estimate]
+  - **Variance**: [Percentage or absolute difference]
+  - **Impact**: [What this affects]
 
-**Example**:
-```
-Modification 1: Business Impact Quantification
-
-Location: Section 2 - Business Impact
-Original Content: "Customer complaints have increased significantly"
-Updated Content: "Customer complaints increased 340% YoY (from 12/month to 53/month), resulting in estimated $180K in churn"
-Rationale: Interview #3 with Support Lead provided specific metrics
-Source: Interview #003-support-lead-interview.md, Support ticket data referenced
-Impact: Strengthens business case with quantified impact
-```
-
-#### Modification 2: [Section Name or Topic]
-[Repeat structure]
-
-[Continue for all modifications]
+**Refined Descriptions**:
+- **[Section/Item]**: 
+  - **Enhancement**: [What was clarified/refined]
+  - **Source**: [Where better info came from]
 
 ---
 
-### 3. Removals
+### Removals
 
-**Content that was removed or replaced:**
+**Deprecated Sections**:
+- **[Section Removed]**: [Why removed]
+  - Reason for deprecation: [Invalidated by what]
+  - Moved to: [If relocated to another artifact]
 
-#### Removal 1: [Section Name or Topic]
-- **Location**: [Section/subsection where removed]
-- **Content Removed**: [Brief description of what was removed]
-- **Rationale**: [Why this was removed]
-- **Replaced With**: [What replaced it, or "Nothing - content was incorrect"]
-- **Impact**: [How this changes understanding]
-
-**Example**:
-```
-Removal 1: Incorrect Timeline Assumption
-
-Location: Section 7 - Success Criteria, Timeline metric
-Content Removed: "Project can be completed in 6 months"
-Rationale: Interview #4 with Dev Lead revealed 6-month timeline is impossible due to testing requirements
-Replaced With: "Project requires minimum 12 months (6 months development + 6 months testing/validation)"
-Impact: Timeline expectations now realistic based on operational constraints
-```
-
-#### Removal 2: [Section Name or Topic]
-[Repeat structure]
-
-[Continue for all removals]
-
----
-
-### 4. Contradiction Resolutions
-
-**Contradictions addressed in this update:**
-
-#### Contradiction 1: [Topic]
-- **Stakeholders Involved**: [Role A] vs [Role B]
-- **Contradiction**: [Describe the conflicting information]
-- **Resolution Approach**: [How we resolved it]
-- **Outcome**: [What we determined to be accurate]
-- **Artifact Impact**: [How artifact was updated]
-
-**Example**:
-```
-Contradiction 1: Project Budget
-
-Stakeholders Involved: CEO vs CFO
-Contradiction: CEO stated budget is $500K; CFO stated maximum available is $300K with additional $200K requiring board approval
-Resolution Approach: Scheduled alignment meeting with both; reviewed actual budget allocation documents
-Outcome: Current approved budget is $300K; $200K additional is contingent on Phase 0 feasibility results
-Artifact Impact: Updated budget constraint section to reflect $300K firm, $500K conditional
-```
-
-#### Contradiction 2: [Topic]
-[Repeat structure]
-
-[Continue for all contradictions addressed]
-
----
-
-### 5. Root Cause Deepening
-
-**Five Whys analysis that was extended:**
-
-#### Root Cause Update 1: [Topic]
-- **Original Root Cause** (from previous version): [What we thought]
-- **Deepened Analysis**: [Additional Why questions asked]
-- **New/Refined Root Cause**: [What we now understand]
-- **Source**: [Interview that revealed deeper layer]
-- **Artifact Impact**: [How problem statement or analysis updated]
-
-**Example**:
-```
-Root Cause Update 1: Why customers aren't using mobile app
-
-Original Root Cause (v1): "App is slow"
-Deepened Analysis (v2): 
-- Why is app slow? → Large image files
-- Why large image files? → No compression
-- Why no compression? → Dev team didn't know how
-- Why didn't they know? → No training budget
-- Why no training budget? → Company prioritizes shipping features over quality
-
-New/Refined Root Cause: Company culture prioritizes speed over quality, leading to technical debt accumulation and lack of engineering best practices
-Source: Interview #006-dev-lead-interview.md
-Artifact Impact: Problem statement now addresses organizational/cultural dimension, not just technical
-```
-
-[Continue for all root cause deepening]
+**Deleted Items**:
+- **[Item Removed]**: [Why removed]
+  - Superseded by: [What replaced it, if applicable]
 
 ---
 
 ## Impact Analysis
 
-### Artifact Quality Impact
+### Quantitative Changes
 
-**Before This Update**:
-- Quality Score: [X]/10
-- Completeness: [X]%
-- Evidence Support: [Strong / Moderate / Weak]
-- Clarity: [High / Medium / Low]
+**Feasibility Score**:
+- Previous: [X]/100
+- Current: [Y]/100
+- Delta: [+/- Z] points
+- Trend: [Improving/Declining/Stable]
+- Interpretation: [What this means]
 
-**After This Update**:
-- Quality Score: [Y]/10 (△ [+/-Z])
-- Completeness: [Y]% (△ [+/-Z]%)
-- Evidence Support: [Strong / Moderate / Weak]
-- Clarity: [High / Medium / Low]
+**Risk Register**:
+- Previous Risk Count: [X]
+- Current Risk Count: [Y]
+- Net Change: [+/- Z] risks
+- Breakdown:
+  - New Risks: [Count] - [Brief list]
+  - Escalated Risks: [Count] - [Which ones]
+  - Mitigated Risks: [Count] - [Which ones]
 
-**Key Quality Improvements**:
-- [Improvement 1]
-- [Improvement 2]
-- [Improvement 3]
+**Timeline Estimates**:
+- Previous Range: [Min-Max months]
+- Current Range: [Min-Max months]
+- Shift: [+/- months]
+- Confidence: [Higher/Lower/Same]
 
-### Downstream Impact
-
-**How this update affects other artifacts:**
-
-| Affected Artifact | Impact | Action Required |
-|-------------------|--------|-----------------|
-| [e.g., Feasibility Report] | [Description of impact] | [✅ Updated / ⏳ Needs Update / ➖ No action needed] |
-| [e.g., Risk Register] | [Description of impact] | [✅ Updated / ⏳ Needs Update / ➖ No action needed] |
-| [e.g., Success Criteria] | [Description of impact] | [✅ Updated / ⏳ Needs Update / ➖ No action needed] |
-
-### Phase 0 Metrics Impact
-
-**Feasibility Score**: [Previous: X/100] → [Current: Y/100] (△ [+/-Z])
-- Technical: [X→Y]
-- Business: [X→Y]
-- Resource: [X→Y]
-- Timeline: [X→Y]
-
-**Risk Count**: [Previous: X] → [Current: Y] (△ [+/-Z])
-- Critical (≥20): [X→Y]
-- High (15-19): [X→Y]
-- Medium (10-14): [X→Y]
-- Low (<10): [X→Y]
-
-**Timeline Estimate**: [Previous: X months] → [Current: Y months] (△ [+/-Z])
-
-**Budget Estimate**: [Previous: $X] → [Current: $Y] (△ [+/-$Z])
-
-**Recommendation**: [Previous: GO/CONDITIONAL/NO-GO] → [Current: GO/CONDITIONAL/NO-GO]
+**Budget Estimates**:
+- Previous Range: $[Min]-$[Max]
+- Current Range: $[Min]-$[Max]
+- Variance: [+/- $amount or %]
+- Confidence: [Higher/Lower/Same]
 
 ---
 
-## Validation
+### Qualitative Changes
 
-### Change Validation Checklist
+**Stakeholder Alignment**:
+- Previous State: [Description]
+- Current State: [Description]
+- Change: [Improved/Worsened/Unchanged]
+- Key Shifts: [What changed in stakeholder positions]
 
-Verify this update maintains artifact quality:
+**Contradictions**:
+- Previous: [X] unresolved contradictions
+- Current: [Y] unresolved contradictions
+- Resolved: [List which contradictions were resolved]
+- New: [List new contradictions discovered]
 
-- [ ] All new claims are supported by interview evidence or analysis
-- [ ] Sources are cited (interview #, document, data source)
-- [ ] Contradictions are resolved or explicitly noted as unresolved
-- [ ] Root causes are traced (Five Whys applied)
-- [ ] Quantitative data is included where possible
-- [ ] Technical accuracy verified (if applicable)
-- [ ] Logical consistency maintained across artifact
-- [ ] New content uses appropriate template sections
-- [ ] Cross-references to other artifacts updated
-
-### Stakeholder Review
-
-**Reviewed By**: [Name/Role] on [YYYY-MM-DD]  
-**Review Outcome**: [✅ Approved / 🔄 Revisions Requested / ❌ Rejected]  
-**Feedback**: [Summary of reviewer feedback]  
-**Actions Taken**: [How feedback was addressed]
+**Confidence Level**:
+- Previous: [High/Medium/Low] confidence in [aspect]
+- Current: [High/Medium/Low] confidence
+- Reason: [Why confidence changed]
 
 ---
 
-## Next Steps
+## Cascading Updates Required
 
-### Immediate Actions
+**Other Artifacts Affected**:
+- **[Artifact Name]**: [What needs to update in that artifact]
+  - Section: [Specific section]
+  - Type: [Add/Modify/Remove]
+  - Priority: [Urgent/Normal/Low]
 
-1. **[Action]**
-   - Owner: [Name/Role]
-   - Due: [Date]
-   - Status: [Not Started / In Progress / Complete]
-
-2. **[Action]**
-   - Owner: [Name/Role]
-   - Due: [Date]
-   - Status: [Not Started / In Progress / Complete]
-
-### Future Updates Planned
-
-**Known Gaps Remaining** (to be addressed in future versions):
-- [Gap 1 - requires Interview #X to complete]
-- [Gap 2 - waiting for [data/info/clarification]]
-- [Gap 3 - depends on [other artifact/decision]]
-
-**Next Version Trigger**:
-[What will cause the next update - e.g., "After Interview #7 with Operations Manager" or "After stakeholder feedback session"]
+**Validation Needed**:
+- [ ] Cross-check with [Related Artifact]
+- [ ] Validate with [Stakeholder]
+- [ ] Update traceability matrix
+- [ ] Recalculate [Dependent calculation]
 
 ---
 
-## Document Metadata
+## Next Actions
 
-**Previous Version**: v[N] ([YYYY-MM-DD])  
-**Current Version**: v[N+1] ([YYYY-MM-DD])  
-**Days Between Versions**: [N] days  
-**Update Session**: Session [N]  
-**Time to Update**: [X] hours  
-**Words Added/Modified**: [X] words  
+**Immediate** (Do before next interview):
+- [ ] [Action 1]
+- [ ] [Action 2]
 
-**Version History Context**:
-- v1: [Date] - Initial creation
-- v2: [Date] - [Brief description of v2 changes]
-- v3: [Date] - [Brief description of v3 changes - THIS VERSION]
+**Short-term** (Within current step):
+- [ ] [Action 1]
+- [ ] [Action 2]
+
+**Before Phase Completion**:
+- [ ] [Action 1]
+- [ ] [Action 2]
 
 ---
 
-## Appendix: Full Change Diff
+## Update Log
 
-**If helpful, include a side-by-side comparison**:
+| Version | Date | Trigger | Change Summary | Confidence |
+|---------|------|---------|----------------|------------|
+| v1 | YYYY-MM-DD | Initial creation | Created base artifact | Medium |
+| v2 | YYYY-MM-DD | Interview 3 | Added risk X, updated timeline | Medium |
+| v3 | YYYY-MM-DD | Interview 5 | Contradiction resolved, feasibility dropped | High |
+| v[N+1] | YYYY-MM-DD | [This update] | [Summary of this delta] | [Level] |
 
-```
-BEFORE (v[N]):
-[Relevant excerpt showing before state]
+---
 
-AFTER (v[N+1]):
-[Same section showing after state]
+## Notes
+
+**Open Questions**:
+- [Question that needs answering]
+- [Assumption that needs validating]
+
+**Parking Lot** (Items noted but not yet actioned):
+- [Item 1]
+- [Item 2]
+
+**Lessons Learned**:
+- [What did we learn from this update process?]
 ```
 
 ---
 
-**END OF DELTA UPDATE DOCUMENT**
+## Usage Instructions
 
-This delta update template ensures:
-- All changes are documented with rationale
-- Sources are cited
-- Impact is analyzed
-- Quality is validated
-- Downstream effects are tracked
-- Traceability is maintained
+### How to Create a Delta Update
 
-Use this template every time you update a major Phase 0 artifact (problem statement, feasibility report, risk register, success criteria).
-```
+**Step 1: Copy Template**
+- Create new file: `working/[artifact-name]-delta-v[N]-to-v[N+1].md`
+- Copy this template
+
+**Step 2: Fill Header**
+- Date, trigger, facilitator name
+- Brief context of what prompted the update
+
+**Step 3: Document Changes**
+- Be specific: What changed, why, and based on what source
+- Always cite the interview/source that drove the change
+- Quantify changes where possible
+
+**Step 4: Analyze Impact**
+- Update scores, counts, estimates
+- Identify cascading effects on other artifacts
+- Note validation needs
+
+**Step 5: Plan Next Steps**
+- What needs to happen now
+- What can wait
+- What needs stakeholder confirmation
+
+**Step 6: Update Artifact**
+- Apply changes to the working artifact file
+- Increment version number
+- Archive the delta document for traceability
 
 ---
 
-## Usage Examples
-
-### Example 1: Problem Statement Update After Interview
+## Example Excerpt
 
 ```markdown
-# Artifact Delta Update - Problem Statement
+# Delta Update: Feasibility Assessment - v2 to v3
 
-**Artifact**: Problem Statement  
-**Update Date**: 2025-10-30  
-**Previous Version**: v1  
-**New Version**: v2  
-**Updated By**: Discovery Facilitator  
-**Session**: Session 2
+**Update Date**: 2024-10-15  
+**Session**: session-001-contoso-azure  
+**Updated By**: Discovery Team  
+**Trigger**: Interview 5 revealed maintenance window constraints
 
 ---
 
-## Update Trigger
+## Update Trigger Context
 
-**What prompted this update?**
-- [x] New interview(s) completed: Interview #4 with VP Operations
-- [x] Contradiction identified that needed resolution
-- [ ] Stakeholder feedback received from: [Name/Role]
+**Source**: Interview 5 with Sarah Kim (IT Director)  
+**Key Findings**: 
+- Only 4 Sunday maintenance windows per year (48 hours total)
+- Each system requires minimum 8 hours downtime for major changes
+- No flexibility to extend windows due to 24/7 operations
 
-**Specific Trigger Description**:
-Interview #4 with VP Operations revealed that the "slow system" complaint from executives is actually about batch processing that blocks morning access, not general system performance. This contradicts Interview #1 CEO's statement about "system being slow all day."
-
----
-
-## Summary of Changes
-
-**High-Level Summary**:
-Updated problem definition to focus on batch processing window blocking first-shift access rather than general performance. Added quantified impact ($50K/month in first-shift delays). Resolved contradiction between CEO and VP Operations perspectives.
-
-**Change Magnitude**: Moderate  
-**Change Type**: Corrective
+**Why Update Required**: The maintenance window constraints mathematically invalidate the 18-month timeline assumption.
 
 ---
 
-## Detailed Changes
+## Changes Made
 
-### 1. Additions
+### Modifications
 
-#### Addition 1: Quantified Business Impact
-- **Location**: Section 2.2 - Financial Impact
-- **Content Added**: "Batch processing failures occur 2x/month, causing average 3-hour first-shift delays. At $180/hour labor cost × 60 first-shift workers × 3 hours × 2 occurrences = $64,800/month in idle labor costs."
-- **Rationale**: VP Operations provided specific metrics
-- **Source**: Interview #004-vp-operations-interview.md, page 2
-- **Impact**: Strengthens business case with quantified monthly impact
-
-### 2. Modifications
-
-#### Modification 1: Problem Definition - Root Cause
-- **Location**: Section 1.1 - Core Problem
-- **Original Content**: "The system is slow, causing productivity issues."
-- **Updated Content**: "Batch processing window (12 AM - 6 AM) frequently extends past 6 AM due to increasing data volumes, blocking first-shift access and causing $65K/month in idle labor."
-- **Rationale**: Five Whys analysis with VP Operations revealed specific bottleneck
-- **Source**: Interview #004, Five Whys session
-- **Impact**: Problem now addresses specific technical constraint vs. vague "slow system"
-
-### 3. Contradiction Resolutions
-
-#### Contradiction 1: "System Slowness"
-- **Stakeholders Involved**: CEO vs VP Operations
-- **Contradiction**: CEO said "system is slow all day"; VP Operations said "system performs fine except first 2 hours of first shift"
-- **Resolution Approach**: Asked VP Operations about CEO's complaint; learned CEO visits plant at 7 AM (during problem window)
-- **Outcome**: Problem is limited to morning batch processing window, not general performance
-- **Artifact Impact**: Updated problem scope from "general slowness" to "batch processing blocking morning access"
+**Changed Assessments**:
+- **Timeline Feasibility**: 
+  - **Previous**: 18 months (optimistic but possible)
+  - **New**: 36-48 months (realistic given constraints)
+  - **Change Magnitude**: 2-3x longer
+  - **Reason**: 48 hours/year ÷ 8 hours/migration = 6 systems/year. With 8 systems = 1.3 years minimum. Add testing, rollback capacity, contingency = 36-48 months.
+  - **Validated By**: Sarah Kim confirmed calculation, Robert Chen (Operations) confirmed no window flexibility
 
 ---
 
 ## Impact Analysis
 
-### Artifact Quality Impact
-**Before This Update**:
-- Quality Score: 6/10
-- Completeness: 70%
-- Evidence Support: Moderate
-- Clarity: Medium
+### Quantitative Changes
 
-**After This Update**:
-- Quality Score: 8/10 (△ +2)
-- Completeness: 85% (△ +15%)
-- Evidence Support: Strong
-- Clarity: High
+**Feasibility Score**:
+- Previous: 68/100
+- Current: 45/100
+- Delta: -23 points
+- Trend: Declining sharply
+- Interpretation: Timeline constraint creates major feasibility concern. Project is no longer "challenging but achievable" - now "requires significant scope or timeline changes."
 
-**Key Quality Improvements**:
-- Problem now specific and measurable
-- Root cause identified through Five Whys
-- Business impact quantified
-
-### Phase 0 Metrics Impact
-**Feasibility Score**: 65/100 → 70/100 (△ +5)
-- Timeline: 60→65 (narrower scope = faster)
-- Business: 70→75 (stronger business case with quantified impact)
-
-**Timeline Estimate**: 12 months → 8-10 months (△ -2 to -4 months)
+**Timeline Estimates**:
+- Previous Range: 18-24 months
+- Current Range: 36-48 months
+- Shift: +18-24 months
+- Confidence: High (mathematically proven constraint)
 ```
 
 ---
 
-## Tips for Effective Delta Updates
+## File Metadata
 
-1. **Be Specific**: Don't say "updated based on feedback" - say exactly what changed and why
-2. **Cite Sources**: Every claim should reference an interview, data source, or analysis
-3. **Show Impact**: Don't just document changes - explain how they affect feasibility, timeline, budget
-4. **Resolve Contradictions**: Use delta updates as opportunity to explicitly address conflicting information
-5. **Maintain Traceability**: Future readers should understand the evolution of thinking
-6. **Version Consistently**: v1 → v2 → v3, not v1 → v2a → v2-final
-7. **Update Downstream**: If problem statement changes, flag that feasibility and risks may need updates
-
----
-
-**END OF ARTIFACT DELTA UPDATE TEMPLATE**
+**Template Version**: 1.0  
+**Intended For**: Phase 0 discovery working artifacts  
+**Maintenance**: Update this template if delta tracking patterns emerge  
+**Related**: 
+- `problem-statement_template.md` (what gets updated)
+- `feasibility-report_template.md` (what gets updated)
+- `risk-register_template.md` (what gets updated)
+- `phase0-context-tracker_template.md` (tracks these deltas)
