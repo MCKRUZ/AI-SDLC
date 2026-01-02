@@ -143,6 +143,53 @@ The constitution REQUIRES the following approvals before Phase 1 completion:
 
 **Do not mark constitution complete without required sign-offs.**
 
+## Self-Review Protocol
+
+Execute these gates IN ORDER during self-review. Do not skip gates.
+
+### Gate 1: Completeness Scan (BLOCKING)
+
+Scan the ENTIRE artifact for placeholder patterns:
+
+| Pattern | Found? | Action |
+|---------|--------|--------|
+| `_[` | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
+| `[Continue` | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
+| `[TBD]` | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
+| `[TODO]` | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
+| `XXX` | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
+| Empty sections | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
+
+**Gate 1 FAIL**: Return artifact for completion. Do not proceed to Gate 2.
+
+### Gate 2: Count Validation (BLOCKING)
+
+Verify stated counts match actual documented items:
+
+| Item | Stated | Actual | Match? |
+|------|--------|--------|--------|
+| Core values defined | ___ | ___ | ☐ |
+| Hard constraints from Phase 0 (100% required) | ___ | ___ | ☐ |
+| Soft constraints from Phase 0 (90% required) | ___ | ___ | ☐ |
+| Decision frameworks | ___ | ___ | ☐ |
+| Required sign-offs obtained | 4 | ___ | ☐ |
+
+**Gate 2 FAIL**: Maximum score = 50/100. Note specific mismatches.
+
+### Gate 3: Quality Assessment
+
+Only if Gates 1-2 pass, apply quality criteria from this skill's checklist.
+
+### Score Calculation
+
+| Gate 1 | Gate 2 | Max Score |
+|--------|--------|-----------|
+| FAIL | — | 0 |
+| PASS | FAIL | 50 |
+| PASS | PASS | 100 |
+
+**Output format**: `Gate 1: [PASS/FAIL] | Gate 2: [PASS/FAIL] | Gate 3: [X]/100 | Final: [X]/100`
+
 ## Output
 
 - Project constitution document
