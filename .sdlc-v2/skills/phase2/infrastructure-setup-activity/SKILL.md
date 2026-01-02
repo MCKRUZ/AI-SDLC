@@ -4,6 +4,10 @@ description: >
   Set up repository structure, CI/CD pipelines, and development environments.
   Creates infrastructure foundation for implementation. Use when creating
   repos, configuring pipelines, or setting up environments.
+required_inputs:
+  - architecture.md
+  - test-plan.md
+depends_on: []
 ---
 # Infrastructure Setup Activity
 

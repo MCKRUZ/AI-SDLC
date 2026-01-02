@@ -4,6 +4,11 @@ description: >
   Test features against acceptance criteria, execute test cases, and
   report bugs. Ensures quality before release. Use when testing features
   or reporting defects.
+required_inputs:
+  - spec.md
+  - test-plan.md
+depends_on:
+  - development-activity
 ---
 # QA Testing Activity
 

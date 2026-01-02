@@ -10,6 +10,8 @@ required_inputs:
   - organization-context.md
   - risk-register.md
   - constraints.md
+depends_on:
+  - requirements-analysis-activity
 ---
 # Product Definition Activity
 

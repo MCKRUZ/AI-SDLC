@@ -4,6 +4,11 @@ description: >
   Plan sprints by allocating tasks to team capacity, respecting dependencies.
   Creates sprint plans with goals and commitments. Use when planning sprints
   or balancing workload.
+required_inputs:
+  - task-breakdown.md
+  - dependency-map.md
+depends_on:
+  - task-planning-activity
 ---
 
 # Sprint Planning Activity

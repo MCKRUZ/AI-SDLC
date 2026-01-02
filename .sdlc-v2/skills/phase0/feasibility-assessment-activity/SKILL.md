@@ -4,6 +4,11 @@ description: >
   Assess project viability across technical, business, resource, and timeline
   dimensions. Produces scored feasibility report with go/no-go recommendation.
   Use when evaluating whether a project should proceed.
+required_inputs:
+  - organization-context.md
+  - technical-stack-context.md
+depends_on:
+  - stakeholder-discovery-activity
 ---
 # Feasibility Assessment Activity
 

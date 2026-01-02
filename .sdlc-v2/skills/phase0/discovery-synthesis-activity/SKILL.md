@@ -5,6 +5,11 @@ description: >
   problem statement, risk register, and success criteria. Identifies patterns
   and contradictions across stakeholder input. Use when producing final
   Phase 0 deliverables.
+required_inputs:
+  - organization-context.md
+depends_on:
+  - stakeholder-discovery-activity
+  - feasibility-assessment-activity
 ---
 # Discovery Synthesis Activity
 

@@ -10,6 +10,9 @@ required_inputs:
   - risk-register.md
   - feasibility-report.md
   - phase1-handoff-package.md
+depends_on:
+  - architecture-design-activity
+  - product-definition-activity
 ---
 # Constitution Definition Activity
 

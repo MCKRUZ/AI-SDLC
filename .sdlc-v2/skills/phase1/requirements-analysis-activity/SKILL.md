@@ -10,6 +10,7 @@ required_inputs:
   - success-criteria.md
   - organization-context.md
   - feasibility-report.md
+depends_on: []
 ---
 
 # Requirements Analysis Activity

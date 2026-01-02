@@ -4,6 +4,10 @@ description: >
   Decompose user stories into implementable tasks with estimates and
   dependencies. Creates task breakdown and dependency map. Use when
   breaking down work or estimating effort.
+required_inputs:
+  - spec.md
+  - architecture.md
+depends_on: []
 ---
 # Task Planning Activity
 

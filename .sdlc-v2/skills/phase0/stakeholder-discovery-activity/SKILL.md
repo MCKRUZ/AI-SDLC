@@ -5,6 +5,9 @@ description: >
   points, and validate problem understanding. Includes interview techniques
   (Five Whys, Jobs-to-be-Done), question frameworks, and transcript templates.
   Use when interviewing stakeholders or documenting discovery conversations.
+required_inputs:
+  - organization-context.md
+depends_on: []
 ---
 
 # Stakeholder Discovery Activity

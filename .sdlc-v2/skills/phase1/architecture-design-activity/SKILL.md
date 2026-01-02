@@ -10,6 +10,8 @@ required_inputs:
   - technical-stack-context.md
   - organization-context.md
   - risk-register.md
+depends_on:
+  - requirements-analysis-activity
 ---
 # Architecture Design Activity
 

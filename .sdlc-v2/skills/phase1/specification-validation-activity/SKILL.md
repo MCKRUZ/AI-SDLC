@@ -6,6 +6,11 @@ description: >
   before Phase 2. Use when completing Phase 1 or reviewing specifications.
 required_inputs:
   - phase1-handoff-package.md
+depends_on:
+  - requirements-analysis-activity
+  - architecture-design-activity
+  - product-definition-activity
+  - constitution-definition-activity
 ---
 # Specification Validation Activity
 

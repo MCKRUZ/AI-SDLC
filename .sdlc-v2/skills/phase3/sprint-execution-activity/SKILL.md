@@ -4,6 +4,9 @@ description: >
   Facilitate sprint execution including daily standups, sprint planning,
   reviews, and retrospectives. Manages story files and tracks progress.
   Use when running sprints or facilitating ceremonies.
+required_inputs:
+  - sprint-plan.md
+depends_on: []
 ---
 # Sprint Execution Activity
 

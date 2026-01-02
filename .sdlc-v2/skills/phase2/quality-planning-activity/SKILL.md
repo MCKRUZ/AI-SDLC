@@ -4,6 +4,10 @@ description: >
   Design testing strategy, define quality metrics, and create test plan.
   Establishes quality approach for implementation. Use when defining
   test strategy or quality gates.
+required_inputs:
+  - spec.md
+  - architecture.md
+depends_on: []
 ---
 # Quality Planning Activity
 

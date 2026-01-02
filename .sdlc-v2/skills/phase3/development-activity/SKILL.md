@@ -4,6 +4,10 @@ description: >
   Implement features according to specifications and coding standards.
   Create pull requests with proper documentation. Use when writing code
   or creating PRs.
+required_inputs:
+  - spec.md
+  - architecture.md
+depends_on: []
 ---
 # Development Activity
 
