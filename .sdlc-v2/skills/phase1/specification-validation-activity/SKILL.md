@@ -4,6 +4,8 @@ description: >
   Validate all Phase 1 artifacts for completeness, consistency, and quality.
   Ensures specs, architecture, PRD, and constitution meet quality gates
   before Phase 2. Use when completing Phase 1 or reviewing specifications.
+required_inputs:
+  - phase1-handoff-package.md
 ---
 # Specification Validation Activity
 

@@ -5,6 +5,11 @@ description: >
   stories and acceptance criteria. Uses INVEST principles for story
   quality. Use when writing specs, creating user stories, or defining
   acceptance criteria.
+required_inputs:
+  - problem-statement.final.md
+  - success-criteria.md
+  - organization-context.md
+  - feasibility-report.md
 ---
 
 # Requirements Analysis Activity

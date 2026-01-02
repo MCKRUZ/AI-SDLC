@@ -4,6 +4,12 @@ description: >
   Create product requirements document (PRD), define MVP scope, and
   prioritize features using RICE or MoSCoW frameworks. Use when writing
   PRDs, scoping MVP, or prioritizing backlog.
+required_inputs:
+  - problem-statement.final.md
+  - success-criteria.md
+  - organization-context.md
+  - risk-register.md
+  - constraints.md
 ---
 # Product Definition Activity
 

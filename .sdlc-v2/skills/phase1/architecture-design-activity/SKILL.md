@@ -4,6 +4,12 @@ description: >
   Design system architecture using C4 model, make technology decisions
   with ADRs, and define non-functional requirements. Use when creating
   architecture diagrams, selecting technologies, or documenting decisions.
+required_inputs:
+  - problem-statement.final.md
+  - constraints.md
+  - technical-stack-context.md
+  - organization-context.md
+  - risk-register.md
 ---
 # Architecture Design Activity
 

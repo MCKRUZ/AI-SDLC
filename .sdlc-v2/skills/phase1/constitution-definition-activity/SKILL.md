@@ -4,6 +4,12 @@ description: >
   Establish project values, constraints, and decision-making frameworks
   that guide the team throughout implementation. Use when defining project
   principles or creating decision frameworks.
+required_inputs:
+  - constraints.md
+  - organization-context.md
+  - risk-register.md
+  - feasibility-report.md
+  - phase1-handoff-package.md
 ---
 # Constitution Definition Activity
 
