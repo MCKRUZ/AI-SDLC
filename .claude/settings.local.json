@@ -5,7 +5,8 @@
       "Bash(claude setup-token:*)",
       "Bash(claude auth:*)",
       "Bash(powershell:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

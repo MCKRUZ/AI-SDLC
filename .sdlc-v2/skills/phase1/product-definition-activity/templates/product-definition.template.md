@@ -433,10 +433,6 @@ This Product Requirements Document (PRD) defines **the product vision, strategy,
 
 ---
 
-_[Continue for all features]_
-
----
-
 ## Feature Prioritization
 
 ### Prioritization Framework: RICE

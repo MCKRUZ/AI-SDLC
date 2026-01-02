@@ -57,19 +57,6 @@ This requirements specification (spec) defines **what the system must do** - the
 
 ## Requirements Conventions
 
-### Requirement Formatting
-
-Each requirement follows this structure:
-
-**[REQ-XXX]**: [Requirement statement]
-- **Category**: [Functional area]
-- **Priority**: [Critical | High | Medium | Low]
-- **Source**: [Phase 0 interview/need reference]
-- **Rationale**: [Why this requirement exists]
-- **Acceptance Criteria**: [How we know it's done]
-- **Dependencies**: [Other requirements this depends on]
-- **Test Strategy**: [How to validate]
-
 ### Language Conventions
 
 - **SHALL/MUST**: Mandatory requirement - must be implemented
@@ -97,9 +84,6 @@ This section maps requirements back to Phase 0 stakeholder needs:
 
 | Phase 0 Need/Pain Point | Interview Source | Requirements Addressing This | Coverage |
 |------------------------|------------------|------------------------------|----------|
-| [Stakeholder need 1] | [Interview #1, timestamp] | REQ-001, REQ-005, USR-002 | [Complete/Partial/Planned] |
-| [Stakeholder need 2] | [Interview #2, timestamp] | REQ-012, USR-008 | [Complete/Partial/Planned] |
-| [Stakeholder need 3] | [Interview #3, timestamp] | REQ-020, REQ-021, USR-015 | [Complete/Partial/Planned] |
 
 **Coverage Score**: [X]% of Phase 0 needs addressed
 
@@ -180,10 +164,6 @@ This section maps requirements back to Phase 0 stakeholder needs:
 
 ---
 
-_[Continue for all requirements in this domain]_
-
----
-
 <!-- DOMAIN: [Name] | EXPECTED_REQUIREMENTS: [NUMBER] -->
 
 ### Domain 2: [Domain Name - e.g., "Data Processing"]
@@ -202,45 +182,7 @@ _[Continue for all requirements in this domain]_
 
 ---
 
-_[Continue for all domains]_
-
----
-
 ## User Stories
-
-### Story Format
-
-Each user story follows this structure:
-
-**[USR-XXX]**: [Story Title]
-
-**As a** [role/persona],  
-**I want** [capability/feature],  
-**So that** [benefit/value].
-
-**Details**:
-- **Priority**: [Critical | High | Medium | Low]
-- **Story Points**: [Estimation - 1, 2, 3, 5, 8, 13, 21]
-- **Sprint/Release**: [When planned]
-- **Persona**: [Which persona this serves]
-- **Related Requirements**: [REQ-XXX references]
-
-**Acceptance Criteria**:
-- [ ] **Given** [context/precondition], **When** [action], **Then** [expected outcome]
-- [ ] **Given** [context/precondition], **When** [action], **Then** [expected outcome]
-- [ ] **Given** [context/precondition], **When** [action], **Then** [expected outcome]
-
-**Definition of Done**:
-- [ ] Code implemented and peer reviewed
-- [ ] Unit tests written and passing
-- [ ] Integration tests written and passing
-- [ ] Acceptance criteria verified
-- [ ] Documentation updated
-- [ ] Code merged to main branch
-
-**Notes**: [Additional context]
-
----
 
 ### Epic 1: [Epic Name - High-Level Feature Group]
 
@@ -282,47 +224,11 @@ Each user story follows this structure:
 
 ---
 
-_[Continue for all stories in this epic]_
-
----
-
 ### Epic 2: [Another Epic Name]
-
-_[Continue with stories for this epic]_
 
 ---
 
 ## Business Rules
-
-### Business Rule Format
-
-**[BUS-XXX]**: [Rule Name]
-
-**Category**: [Validation | Calculation | Workflow | Authorization | etc.]  
-**Priority**: [Critical | High | Medium | Low]
-
-**Rule Statement**:
-[Clear, unambiguous statement of the rule using IF-THEN format where appropriate]
-
-**Conditions**:
-- **IF** [condition 1]
-- **AND** [condition 2]
-- **THEN** [action/outcome]
-- **ELSE** [alternative action]
-
-**Examples**:
-- ✅ **Valid**: [Example that follows the rule]
-- ❌ **Invalid**: [Example that violates the rule]
-
-**Rationale**: [Why this rule exists - business or regulatory reason]
-
-**Enforcement Point**: [Where in system this rule is enforced]
-
-**Applied In**: [Which requirements use this rule - REQ-XXX references]
-
-**Exception Handling**: [What happens when rule is violated]
-
----
 
 ### Validation Rules
 
@@ -449,54 +355,7 @@ State C → State D (when [condition])
 
 ---
 
-_[Continue for all business rules]_
-
----
-
 ## Data Requirements
-
-### Data Requirement Format
-
-**[DATA-XXX]**: [Data Entity Name]
-
-**Category**: [Master Data | Transaction Data | Reference Data | Configuration Data]  
-**Priority**: [Critical | High | Medium | Low]
-
-**Description**: [What this data represents]
-
-**Attributes**:
-
-| Attribute Name | Data Type | Required | Validation Rules | Default Value | Notes |
-|----------------|-----------|----------|------------------|---------------|-------|
-| [Attribute 1] | [Type] | [Yes/No] | [Rules] | [Default] | [Notes] |
-| [Attribute 2] | [Type] | [Yes/No] | [Rules] | [Default] | [Notes] |
-
-**Relationships**:
-- **Has One**: [Related entity] via [foreign key]
-- **Has Many**: [Related entity] via [foreign key]
-- **Belongs To**: [Parent entity] via [foreign key]
-
-**Business Rules**: [BUS-XXX references that apply to this data]
-
-**Validation Rules**:
-- [Validation rule 1]
-- [Validation rule 2]
-
-**Data Lifecycle**:
-- **Creation**: [When/how created]
-- **Updates**: [When/how updated]
-- **Deletion**: [Hard delete, soft delete, or archive]
-- **Retention**: [How long kept]
-
-**Privacy/Security**:
-- **Classification**: [Public | Internal | Confidential | Restricted]
-- **PII**: [Yes/No - what constitutes PII]
-- **Encryption**: [At rest/in transit requirements]
-- **Access Control**: [Who can access]
-
-**Used In Requirements**: [REQ-XXX references]
-
----
 
 ### DATA-001: [First Data Entity]
 
@@ -547,56 +406,7 @@ _[Continue for all business rules]_
 
 ---
 
-_[Continue for all data entities]_
-
----
-
 ## Integration Requirements
-
-### Integration Requirement Format
-
-**[INT-XXX]**: [Integration Name]
-
-**Integration Type**: [REST API | SOAP | Webhook | Message Queue | File Transfer | Database]  
-**Direction**: [Inbound | Outbound | Bidirectional]  
-**Priority**: [Critical | High | Medium | Low]
-
-**Description**: [What this integration does and why]
-
-**External System**: [Name and brief description of external system]
-
-**Integration Pattern**:
-- **Synchronous**: [Real-time request/response]
-- **Asynchronous**: [Message-based, eventual consistency]
-- **Batch**: [Scheduled bulk transfers]
-
-**Technical Details**:
-- **Protocol**: [HTTP/HTTPS, AMQP, SFTP, etc.]
-- **Authentication**: [API key, OAuth 2.0, Basic Auth, etc.]
-- **Data Format**: [JSON, XML, CSV, etc.]
-- **Frequency**: [Real-time, hourly, daily, on-demand]
-
-**Data Flow**:
-- **Trigger**: [What initiates the integration]
-- **Input**: [What data is sent/received]
-- **Output**: [What data is returned/produced]
-- **Volume**: [Expected transaction volume]
-
-**Error Handling**:
-- **Timeout**: [How long to wait before timeout]
-- **Retry Logic**: [Retry count, backoff strategy]
-- **Failure Handling**: [What happens when integration fails]
-- **Dead Letter Queue**: [If applicable]
-
-**Business Rules**: [BUS-XXX references that apply]
-
-**Monitoring & Alerting**:
-- [What to monitor]
-- [When to alert]
-
-**Used In Requirements**: [REQ-XXX references]
-
----
 
 ### INT-001: [First Integration]
 
@@ -666,33 +476,7 @@ _[Continue for all data entities]_
 
 ---
 
-_[Continue for all integrations]_
-
----
-
 ## Edge Cases & Error Conditions
-
-### Edge Case Format
-
-**[EDGE-XXX]**: [Edge Case Description]
-
-**Scenario**: [Detailed description of the edge case]
-
-**Likelihood**: [Common | Uncommon | Rare]  
-**Impact**: [High | Medium | Low]
-
-**System Behavior**:
-[How the system should handle this edge case]
-
-**User Experience**:
-[What the user sees/experiences]
-
-**Example**:
-[Concrete example illustrating the edge case]
-
-**Affected Requirements**: [REQ-XXX references]
-
----
 
 ### EDGE-001: [First Edge Case]
 
@@ -713,32 +497,6 @@ _[Continue for all integrations]_
 [Concrete example]
 
 **Affected Requirements**: REQ-010, REQ-015
-
----
-
-### Error Condition Format
-
-**[ERR-XXX]**: [Error Condition Name]
-
-**Condition**: [What triggers this error]
-
-**Severity**: [Critical | High | Medium | Low | Informational]
-
-**System Response**:
-- **Immediate Action**: [What system does immediately]
-- **Logging**: [What gets logged]
-- **User Notification**: [What user sees]
-- **Recovery**: [How to recover]
-
-**Error Code**: [Unique error identifier]
-
-**Error Message**: "[User-friendly error message]"
-
-**Technical Details**: "[Technical error details for logs]"
-
-**Prevention**: [How to prevent this error]
-
-**Affected Requirements**: [REQ-XXX references]
 
 ---
 
@@ -763,10 +521,6 @@ _[Continue for all integrations]_
 **Prevention**: [Validation checks, defensive coding, etc.]
 
 **Affected Requirements**: REQ-025
-
----
-
-_[Continue for all edge cases and error conditions]_
 
 ---
 
@@ -814,9 +568,6 @@ _[Continue for all edge cases and error conditions]_
 
 | Constitution Item | Spec Section | How Requirement Aligns | Validation |
 |-------------------|--------------|------------------------|------------|
-| [Principle 1] | [Requirements list] | [How requirements follow principle] | [✓ Aligned / ⚠ Partial / ✗ Conflict] |
-| [NFR from constitution] | [Requirements list] | [How requirements support NFR] | [✓ Supports / ⚠ Partial / ✗ Conflicts] |
-| [Constraint from constitution] | [Requirements list] | [How requirements respect constraint] | [✓ Respects / ⚠ Unknown / ✗ Violates] |
 
 **Alignment Score**: [X]% of constitution items properly addressed
 
@@ -828,9 +579,6 @@ _[Continue for all edge cases and error conditions]_
 
 | Requirement ID | Title | Domain | Dependencies |
 |----------------|-------|--------|--------------|
-| REQ-001 | [Title] | [Domain] | None |
-| REQ-005 | [Title] | [Domain] | REQ-001 |
-| USR-001 | [Title] | [Domain] | REQ-001, REQ-005 |
 
 **Total Critical**: [X] requirements
 
@@ -840,8 +588,6 @@ _[Continue for all edge cases and error conditions]_
 
 | Requirement ID | Title | Domain | Dependencies |
 |----------------|-------|--------|--------------|
-| REQ-010 | [Title] | [Domain] | REQ-001 |
-| USR-005 | [Title] | [Domain] | REQ-010 |
 
 **Total High**: [X] requirements
 
@@ -851,7 +597,6 @@ _[Continue for all edge cases and error conditions]_
 
 | Requirement ID | Title | Domain | Dependencies |
 |----------------|-------|--------|--------------|
-| REQ-020 | [Title] | [Domain] | None |
 
 **Total Medium**: [X] requirements
 
@@ -861,7 +606,6 @@ _[Continue for all edge cases and error conditions]_
 
 | Requirement ID | Title | Domain | Dependencies |
 |----------------|-------|--------|--------------|
-| REQ-050 | [Title] | [Domain] | None |
 
 **Total Low**: [X] requirements
 
@@ -903,8 +647,6 @@ REQ-001 (Foundation)
 
 | ID | Question | Stakeholder | Priority | Status | Resolution |
 |----|----------|-------------|----------|--------|------------|
-| Q-001 | [Question needing clarification] | [Who to ask] | [H/M/L] | [Open/Answered] | [Answer or TBD] |
-| Q-002 | [Question needing clarification] | [Who to ask] | [H/M/L] | [Open/Answered] | [Answer or TBD] |
 
 ---
 
@@ -912,8 +654,6 @@ REQ-001 (Foundation)
 
 | ID | Assumption | Rationale | Risk if Wrong | Validation Plan |
 |----|------------|-----------|---------------|-----------------|
-| A-001 | [Assumption made] | [Why we assumed this] | [Impact if assumption is wrong] | [How to validate] |
-| A-002 | [Assumption made] | [Why we assumed this] | [Impact if assumption is wrong] | [How to validate] |
 
 ---
 
@@ -921,8 +661,6 @@ REQ-001 (Foundation)
 
 | ID | Decision Needed | Options | Target Date | Owner |
 |----|-----------------|---------|-------------|-------|
-| D-001 | [Decision to be made] | [Option A, B, C] | [Date] | [Name] |
-| D-002 | [Decision to be made] | [Option A, B, C] | [Date] | [Name] |
 
 ---
 

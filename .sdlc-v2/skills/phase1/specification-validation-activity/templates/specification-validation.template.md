@@ -246,27 +246,21 @@
 
 | ID | Issue | Artifact | Recommendation |
 |----|-------|----------|----------------|
-| C-1 | [Description] | [Artifact] | [Fix action] |
-| C-2 | [Description] | [Artifact] | [Fix action] |
 
 ### High Issues (Should Fix)
 
 | ID | Issue | Artifact | Recommendation |
 |----|-------|----------|----------------|
-| H-1 | [Description] | [Artifact] | [Fix action] |
-| H-2 | [Description] | [Artifact] | [Fix action] |
 
 ### Medium Issues (May Defer)
 
 | ID | Issue | Artifact | Recommendation |
 |----|-------|----------|----------------|
-| M-1 | [Description] | [Artifact] | [Fix action] |
 
 ### Low Issues (Optional)
 
 | ID | Issue | Artifact | Recommendation |
 |----|-------|----------|----------------|
-| L-1 | [Description] | [Artifact] | [Fix action] |
 
 ---
 

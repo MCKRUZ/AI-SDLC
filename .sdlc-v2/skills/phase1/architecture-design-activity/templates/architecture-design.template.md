@@ -209,10 +209,6 @@ This architecture document defines **how the system will be built** to fulfill t
 
 ---
 
-_[Continue for all components]_
-
----
-
 ### Component Interaction Diagram
 
 ```
@@ -477,9 +473,6 @@ CREATE TABLE Users (
 **Retention Policies**:
 | Data Type | Retention Period | Archive Strategy | Deletion Strategy |
 |-----------|------------------|------------------|-------------------|
-| [Transaction data] | [7 years] | [Move to cold storage] | [Hard delete after retention] |
-| [User data] | [Account lifetime + 2 years] | [N/A] | [Soft delete, GDPR compliant] |
-| [Log data] | [90 days] | [Compress and archive] | [Automated cleanup] |
 
 ---
 
@@ -836,16 +829,11 @@ public class OrderProcessor : BackgroundService
 
 | Component | Current Size | Max Vertical Size | When to Scale Horizontally |
 |-----------|--------------|-------------------|---------------------------|
-| [Database] | [Size] | [Max] | [Trigger condition] |
-| [Cache] | [Size] | [Max] | [Trigger condition] |
 
 ### Bottleneck Analysis
 
 | Potential Bottleneck | Likelihood | Impact | Mitigation Strategy |
 |---------------------|------------|--------|---------------------|
-| [Database connections] | [H/M/L] | [H/M/L] | [Connection pooling, read replicas] |
-| [API rate limits] | [H/M/L] | [H/M/L] | [Caching, request queuing] |
-| [Memory pressure] | [H/M/L] | [H/M/L] | [Pagination, streaming] |
 
 ### Load Testing Requirements
 
@@ -1200,24 +1188,17 @@ _logger.LogInformation(
 
 ---
 
-_[Continue for all significant architecture decisions]_
-
----
-
 ## Risk Assessment
 
 ### Architecture Risks
 
 | Risk | Likelihood | Impact | Mitigation | Owner |
 |------|------------|--------|------------|-------|
-| [Risk 1] | [H/M/L] | [H/M/L] | [Strategy] | [Name] |
-| [Risk 2] | [H/M/L] | [H/M/L] | [Strategy] | [Name] |
 
 ### Technical Debt
 
 | Debt Item | Rationale | Plan to Address | Target Date |
 |-----------|-----------|-----------------|-------------|
-| [Item 1] | [Why we accepted this] | [How we'll fix it] | [Date] |
 
 ---
 

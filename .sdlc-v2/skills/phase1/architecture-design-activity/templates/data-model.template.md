@@ -140,8 +140,6 @@ This data model document defines **how data is structured, stored, and related**
 - **Core Entities**: [List of entities]
 - **Key Relationships**: [Primary relationships]
 
-_[Continue for all domains]_
-
 ---
 
 ## Entity Definitions
@@ -467,10 +465,6 @@ public class User
 
 #### Sample SQL
 [CREATE TABLE and sample C# entity]
-
----
-
-_[Continue for ALL entities in the system]_
 
 ---
 
@@ -1052,10 +1046,9 @@ WHERE IsActive = 1;
 | Orders | Orders | Transaction | 1,000,000 | No | Customer orders |
 | OrderItems | Orders | Transaction | 3,000,000 | No | Line items |
 | Products | Catalog | Master | 10,000 | No | Product catalog |
-| [Additional entities...] | [...] | [...] | [...] | [...] | [...] |
 
-**Total Entities**: [X]  
-**Total Est. Rows Year 1**: [Y]  
+**Total Entities**: [X]
+**Total Est. Rows Year 1**: [Y]
 **Entities with PII**: [Z]
 
 ---

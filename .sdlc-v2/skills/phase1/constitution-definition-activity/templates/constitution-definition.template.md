@@ -95,16 +95,18 @@ These principles guide all project decisions. When facing trade-offs or ambiguit
 
 ---
 
-_[Continue for all core principles - typically 3-7 total]_
-
 ### Principle Hierarchy
 
 When principles conflict, this hierarchy determines priority:
 
-1. **[Highest Priority Principle]** - Never compromise on this
-2. **[Second Priority Principle]** - Prefer this, but can negotiate
-3. **[Third Priority Principle]** - Important but flexible
-4. **[Additional Principles...]**
+**1. [Highest Priority Principle]**
+- Never compromise on this
+
+**2. [Second Priority Principle]**
+- Prefer this, but can negotiate
+
+**3. [Third Priority Principle]**
+- Important but flexible
 
 **Decision Framework**: [How to resolve conflicts between principles]
 
@@ -359,21 +361,18 @@ When principles conflict, this hierarchy determines priority:
 #### Technology Stack Constraints
 | Constraint | Description | Rationale | Type | Negotiability |
 |------------|-------------|-----------|------|---------------|
-| [Technology] | [What's required/prohibited] | [Why this constraint exists] | [Hard/Soft] | [Can it be changed?] |
 | Programming Language | [e.g., "Must use C# .NET 8+"] | [e.g., "Team expertise, existing codebase"] | Hard | Low - team lacks other skills |
 | Database | [e.g., "Must use SQL Server or PostgreSQL"] | [e.g., "Data integrity, transaction support"] | Soft | Medium - could consider alternatives |
 
 #### Infrastructure Constraints
 | Constraint | Description | Rationale | Type | Negotiability |
 |------------|-------------|-----------|------|---------------|
-| [Infrastructure] | [What's required/prohibited] | [Why this exists] | [Hard/Soft] | [Can it be changed?] |
 | Cloud Provider | [e.g., "Must use Azure"] | [e.g., "Enterprise agreement, existing infrastructure"] | Hard | Low - contractual |
 | Deployment | [e.g., "Kubernetes required"] | [e.g., "Standardization, orchestration"] | Soft | Medium - could use alternatives |
 
 #### Integration Constraints
 | Constraint | Description | Rationale | Type | Negotiability |
 |------------|-------------|-----------|------|---------------|
-| [Integration] | [What's required/prohibited] | [Why this exists] | [Hard/Soft] | [Can it be changed?] |
 | Identity Provider | [e.g., "Must integrate with Active Directory"] | [e.g., "SSO requirement"] | Hard | Low - enterprise policy |
 | Monitoring | [e.g., "Must send logs to Splunk"] | [e.g., "Centralized monitoring"] | Soft | High - tooling choice |
 
@@ -470,11 +469,6 @@ This section documents the prioritized quality attributes using a framework such
 
 | Rank | Quality Attribute | Business Driver | Architectural Impact | Trade-offs |
 |------|-------------------|-----------------|----------------------|------------|
-| 1 | [e.g., Security] | [Why most important - e.g., "Customer data protection"] | [e.g., "Defense-in-depth, encryption everywhere"] | [e.g., "May slow performance, increase complexity"] |
-| 2 | [e.g., Performance] | [Why important] | [Architectural approach] | [What we sacrifice] |
-| 3 | [e.g., Scalability] | [Why important] | [Architectural approach] | [What we sacrifice] |
-| 4 | [e.g., Maintainability] | [Why important] | [Architectural approach] | [What we sacrifice] |
-| 5 | [e.g., Usability] | [Why important] | [Architectural approach] | [What we sacrifice] |
 
 ---
 
@@ -498,8 +492,6 @@ Document specific quality attribute scenarios using this format:
 - **Response**: [e.g., "Failover to replica"]
 - **Measure**: [e.g., "Service restored within 30 seconds, zero data loss"]
 
-_[Continue for all critical quality attribute scenarios]_
-
 ---
 
 ### Trade-off Decisions
@@ -516,8 +508,6 @@ Document explicit trade-offs made between conflicting quality attributes:
 - **Rationale**: [Why this choice aligns with business priorities]
 - **Accepted Consequences**: [What we give up]
 - **Mitigation**: [How we minimize the downside]
-
-_[Continue for all major trade-offs]_
 
 ---
 
@@ -551,10 +541,6 @@ Each significant architecture decision should be documented using this format:
 
 ---
 
-_[Create ADR entries for all significant architecture decisions]_
-
----
-
 ## Validation & Compliance Matrix
 
 ### Phase 0 Trace ability
@@ -563,9 +549,6 @@ This matrix ensures the constitution addresses all Phase 0 findings:
 
 | Phase 0 Item | Constitution Section | How Addressed | Status |
 |--------------|---------------------|----------------|--------|
-| [Constraint from Phase 0] | [Section name] | [How it's addressed] | [✓ Complete / ⚠ Partial / ✗ Missing] |
-| [NFR from Phase 0] | [Section name] | [How it's addressed] | [✓ Complete / ⚠ Partial / ✗ Missing] |
-| [Risk from Phase 0] | [Section name] | [How it's mitigated] | [✓ Complete / ⚠ Partial / ✗ Missing] |
 
 **Coverage Score**: [X]% of Phase 0 items addressed
 
