@@ -8,7 +8,7 @@ required_inputs:
   - task-breakdown.md
   - dependency-map.md
 depends_on:
-  - task-planning-activity
+  - task-planning
 ---
 
 # Sprint Planning Activity
@@ -72,6 +72,62 @@ For each sprint:
 **Output**: Sprint plans
 
 Using [templates/sprint-plan.template.md](templates/sprint-plan.template.md).
+
+## Count Validation
+
+Before marking this activity complete, verify counts match:
+
+### Sprint Planning Count Check
+
+| Item Type | Stated/Expected | Actually Documented | Match? |
+|-----------|-----------------|---------------------|--------|
+| Sprints planned | [X] | [Count them] | [ ] |
+| Total tasks allocated | [X] | [Count across sprints] | [ ] |
+| Tasks per sprint | [X] | [Count per sprint] | [ ] |
+| Story points per sprint | [X] | [Per sprint] | [ ] |
+| Story points total | [X] | [Sum all sprints] | [ ] |
+| Team members assigned | [X] | [Count] | [ ] |
+| Capacity calculated | [X] | [Per sprint] | [ ] |
+| Milestones identified | [X] | [Count] | [ ] |
+
+**If counts don't match**:
+- Document missing items, OR
+- Correct the stated count, OR
+- Explicitly note why fewer items exist (with justification)
+
+**Do not proceed with mismatched counts unexplained.**
+
+## Activity Completion Criteria
+
+This activity is NOT complete until ALL of the following are true:
+
+### Content Completeness
+- [ ] All required sections have substantive content
+- [ ] No placeholder text remains (`[TBD]`, `[Continue...]`, etc.)
+- [ ] All stated counts match actual documented items
+- [ ] All sprints have goals defined
+- [ ] All required artifacts are generated
+
+### Quality Standards
+- [ ] Sprint goals are user-facing
+- [ ] Capacity calculations include focus factor
+- [ ] Dependencies are respected
+- [ ] 20% buffer maintained
+- [ ] Terminology consistent with project glossary
+
+### Traceability
+- [ ] Task breakdown referenced
+- [ ] Dependency map incorporated
+- [ ] All tasks allocated to sprints
+- [ ] Outputs clearly identified for execution
+
+### Handoff Readiness
+- [ ] Sprint plans saved in correct location
+- [ ] Documents follow naming convention
+- [ ] Team can begin Sprint 0
+- [ ] Next activity can begin with this output
+
+**Do not begin execution until all criteria are met.**
 
 ## Output
 

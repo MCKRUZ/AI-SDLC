@@ -77,6 +77,60 @@ Using templates:
 - [templates/repository-structure.template.md](templates/repository-structure.template.md)
 - [templates/environment-config.template.md](templates/environment-config.template.md)
 
+## Count Validation
+
+Before marking this activity complete, verify counts match:
+
+### Infrastructure Setup Count Check
+
+| Item Type | Stated/Expected | Actually Documented | Match? |
+|-----------|-----------------|---------------------|--------|
+| CI/CD pipeline stages | [X] | [Count] | [ ] |
+| Environments configured | [X] | [Count] | [ ] |
+| Repository branches defined | [X] | [Count] | [ ] |
+| Code owners assigned | [X] | [Count] | [ ] |
+| Quality gates configured | [X] | [Count] | [ ] |
+
+**If counts don't match**:
+- Document missing items, OR
+- Correct the stated count, OR
+- Explicitly note why fewer items exist (with justification)
+
+**Do not proceed with mismatched counts unexplained.**
+
+## Activity Completion Criteria
+
+This activity is NOT complete until ALL of the following are true:
+
+### Content Completeness
+- [ ] All required sections have substantive content
+- [ ] No placeholder text remains (`[TBD]`, `[Continue...]`, etc.)
+- [ ] All stated counts match actual documented items
+- [ ] All infrastructure components configured
+- [ ] All required artifacts are generated
+
+### Quality Standards
+- [ ] Repository structure follows best practices
+- [ ] CI/CD pipeline is functional
+- [ ] All environments are accessible
+- [ ] Developer onboarding documented
+- [ ] Terminology consistent with project glossary
+
+### Traceability
+- [ ] Architecture referenced for setup
+- [ ] Test plan integrated into CI/CD
+- [ ] Quality gates defined
+- [ ] Outputs clearly identified for execution
+
+### Handoff Readiness
+- [ ] Infrastructure docs saved in correct location
+- [ ] Repository is accessible to team
+- [ ] Developer guide is comprehensive
+- [ ] Team can begin development
+- [ ] Next activity can begin with this output
+
+**Do not begin development until all criteria are met.**
+
 ## Output
 
 - Repository with structure

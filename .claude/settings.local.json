@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(claude auth --help:*)",
-      "Bash(claude setup-token:*)"
+      "Bash(claude setup-token:*)",
+      "Bash(claude auth:*)",
+      "Bash(powershell:*)",
+      "Bash(echo:*)"
     ],
     "deny": [],
     "ask": []

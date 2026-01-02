@@ -1,9 +1,15 @@
 # Requirements Specification Template
 
-**Project Name**: [Descriptive name for this initiative]  
-**Date**: [YYYY-MM-DD]  
-**Version**: [v1.0, v2.0, etc.]  
-**Status**: [Draft | Under Review | Approved]  
+<!-- VALIDATION MARKERS - Do not remove -->
+<!-- STATED_REQUIREMENT_COUNT: [NUMBER] -->
+<!-- STATED_USER_STORY_COUNT: [NUMBER] -->
+<!-- STATED_BUSINESS_RULE_COUNT: [NUMBER] -->
+<!-- These markers are used by validation to verify counts match content -->
+
+**Project Name**: [Descriptive name for this initiative]
+**Date**: [YYYY-MM-DD]
+**Version**: [v1.0, v2.0, etc.]
+**Status**: [Draft | Under Review | Approved]
 **Specification Owner**: [Name/Role]
 
 ---
@@ -103,6 +109,8 @@ This section maps requirements back to Phase 0 stakeholder needs:
 
 ## Functional Requirements by Domain
 
+<!-- DOMAIN: [Name] | EXPECTED_REQUIREMENTS: [NUMBER] -->
+
 ### Domain 1: [Domain Name - e.g., "User Management"]
 
 #### Overview
@@ -175,6 +183,8 @@ This section maps requirements back to Phase 0 stakeholder needs:
 _[Continue for all requirements in this domain]_
 
 ---
+
+<!-- DOMAIN: [Name] | EXPECTED_REQUIREMENTS: [NUMBER] -->
 
 ### Domain 2: [Domain Name - e.g., "Data Processing"]
 

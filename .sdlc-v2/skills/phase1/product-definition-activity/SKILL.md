@@ -11,7 +11,7 @@ required_inputs:
   - risk-register.md
   - constraints.md
 depends_on:
-  - requirements-analysis-activity
+  - requirements-analysis
 ---
 # Product Definition Activity
 

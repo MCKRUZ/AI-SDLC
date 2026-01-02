@@ -8,7 +8,7 @@ required_inputs:
   - organization-context.md
   - technical-stack-context.md
 depends_on:
-  - stakeholder-discovery-activity
+  - stakeholder-discovery
 ---
 # Feasibility Assessment Activity
 
@@ -80,6 +80,61 @@ For each score < 4:
 ### Step 6: Document
 
 Use [templates/feasibility-report.template.md](templates/feasibility-report.template.md)
+
+## Count Validation
+
+Before marking this activity complete, verify counts match:
+
+### Feasibility Count Check
+
+| Item Type | Stated/Expected | Actually Documented | Match? |
+|-----------|-----------------|---------------------|--------|
+| Dimensions assessed | 4 | [Count them] | [ ] |
+| Risks identified (Critical) | [X] | [Count] | [ ] |
+| Risks identified (High) | [X] | [Count] | [ ] |
+| Risks identified (Total) | [X] | [Count] | [ ] |
+| Mitigations proposed | [X] | [Count] | [ ] |
+| Constraints documented | [X] | [Count] | [ ] |
+
+**If counts don't match**:
+- Document missing items, OR
+- Correct the stated count, OR
+- Explicitly note why fewer items exist (with justification)
+
+**Do not proceed with mismatched counts unexplained.**
+
+## Activity Completion Criteria
+
+This activity is NOT complete until ALL of the following are true:
+
+### Content Completeness
+- [ ] All required sections have substantive content
+- [ ] No placeholder text remains (`[TBD]`, `[Continue...]`, etc.)
+- [ ] All stated counts match actual documented items
+- [ ] All four dimensions scored with evidence
+- [ ] All required artifacts are generated
+
+### Quality Standards
+- [ ] Scores are justified with specific evidence
+- [ ] Risks identified for all scores < 4
+- [ ] Mitigations are actionable
+- [ ] Recommendation follows decision framework
+- [ ] Terminology consistent with project glossary
+
+### Traceability
+- [ ] Interview synthesis referenced
+- [ ] Technical landscape considered
+- [ ] Organizational context incorporated
+- [ ] Outputs clearly identified for synthesis activity
+
+### Handoff Readiness
+- [ ] Feasibility report saved in correct location
+- [ ] Report follows naming convention
+- [ ] Scores within valid ranges
+- [ ] Recommendation clearly stated
+- [ ] Next activity can begin with this output
+
+**Do not request synthesis until all criteria are met.**
 
 ## Output
 

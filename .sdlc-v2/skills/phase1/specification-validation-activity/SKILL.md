@@ -7,10 +7,10 @@ description: >
 required_inputs:
   - phase1-handoff-package.md
 depends_on:
-  - requirements-analysis-activity
-  - architecture-design-activity
-  - product-definition-activity
-  - constitution-definition-activity
+  - requirements-analysis
+  - architecture-design
+  - product-definition
+  - constitution-definition
 ---
 # Specification Validation Activity
 
@@ -27,6 +27,42 @@ before planning begins. You verify completeness, consistency, and alignment.
 - **Gap Identification**: Missing requirements or decisions
 
 ## Workflow
+
+### Pre-Validation Completeness Check
+
+**CRITICAL**: Execute these checks BEFORE proceeding to quality scoring. If any check fails, STOP validation and return the artifact to its owning activity for completion.
+
+#### Placeholder Text Scan
+
+Search each artifact for the following patterns. Finding ANY of these is a validation blocker:
+
+| Pattern | Artifact | Found? | Action if Found |
+|---------|----------|--------|-----------------|
+| `[Continue...` | All | [ ] | Return to owning activity |
+| `[Follow same format...]` | All | [ ] | Return to owning activity |
+| `[TBD]` or `TBD` | All | [ ] | Flag for explicit resolution |
+| `[Name]` or `[Date]` placeholders | All | [ ] | Must be filled or explicitly marked N/A |
+| `_[` (italicized placeholder) | All | [ ] | Return to owning activity |
+| `XXX` as placeholder | All | [ ] | Return to owning activity |
+
+#### Section Completeness Scan
+
+For each major section in each artifact, verify:
+- [ ] Section has actual content (not just headers)
+- [ ] Section content is substantive (>3 sentences for prose sections)
+- [ ] Tables have data rows (not just headers)
+- [ ] Lists have items (not empty)
+
+#### Completeness Gate Decision
+
+| Result | Action |
+|--------|--------|
+| All checks pass | Proceed to quality scoring |
+| 1-2 minor issues (TBD in non-critical fields) | Flag issues, proceed with reduced score ceiling |
+| Any placeholder patterns found | **STOP** - Return to owning activity |
+| Any empty sections | **STOP** - Return to owning activity |
+
+**Do NOT proceed to quality scoring if completeness gate fails.**
 
 ### Step 1: Validate Specification
 
@@ -93,6 +129,76 @@ Using [quality-gates.reference.md](quality-gates.reference.md):
 **Output**: Validation report
 
 Using [templates/validation-report.template.md](templates/validation-report.template.md).
+
+## Scoring Calibration Guide
+
+Use these guidelines to ensure consistent, accurate scoring across validations.
+
+### Completeness Score Deductions
+
+| Issue Found | Deduction | Notes |
+|-------------|-----------|-------|
+| Placeholder section (entire section missing content) | -15 points | Per section |
+| Placeholder text within section | -10 points | Per occurrence |
+| Claimed item not documented | -5 points | Per item |
+| Section <50% complete | -10 points | Per section |
+| Missing required section entirely | -20 points | Per section |
+
+### Quality Score Deductions
+
+| Issue Found | Deduction | Notes |
+|-------------|-----------|-------|
+| Ambiguous requirement (vague terms) | -2 points | Per requirement |
+| Requirement missing acceptance criteria | -3 points | Per requirement |
+| User story failing INVEST | -2 points | Per story |
+| ADR missing for major decision | -5 points | Per decision |
+| NFR without measurable target | -3 points | Per NFR |
+| Business rule with unclear logic | -2 points | Per rule |
+
+### Consistency Score Deductions
+
+| Issue Found | Deduction | Notes |
+|-------------|-----------|-------|
+| Terminology mismatch across artifacts | -5 points | Per term |
+| NFR without architecture support | -10 points | Per NFR |
+| Requirement without PRD traceability | -3 points | Per requirement |
+| Phase 0 item not traced | -5 points | Per item |
+| Conflicting statements across artifacts | -10 points | Per conflict |
+
+### Traceability Score Deductions
+
+| Issue Found | Deduction | Notes |
+|-------------|-----------|-------|
+| Phase 0 constraint not addressed | -10 points | Per constraint |
+| Phase 0 risk without mitigation | -5 points | Per risk |
+| Requirement without Phase 0 source | -3 points | Per requirement |
+| Feature without requirement backing | -5 points | Per feature |
+
+### Score Interpretation Guide
+
+| Score Range | Interpretation | Action |
+|-------------|---------------|--------|
+| 90-100 | Excellent - Ready for Phase 2 | Approve |
+| 80-89 | Good - Minor fixes needed | Conditional approve with fix list |
+| 70-79 | Acceptable - Significant gaps exist | Conditional approve with remediation plan |
+| 60-69 | Below Standard - Major rework required | Return to Phase 1 activities |
+| <60 | Unacceptable - Fundamental issues | Restart Phase 1 with guidance |
+
+### Calibration Examples
+
+**Example 1: Requirements Spec**
+- Claims 25 requirements, only 10 documented = -75 points (15 × -5)
+- 3 placeholder sections = -30 points (3 × -10)
+- Starting score 100, deductions 105 = Score: 0 (floor)
+- **Action**: Return immediately, do not score other categories
+
+**Example 2: Architecture**
+- 1 ADR documented, 5 major decisions = -20 points (4 × -5)
+- Scalability section generic (no numbers) = -15 points
+- Starting score 100, deductions 35 = Score: 65
+- **Action**: Conditional pass, require ADRs and scalability details
+
+**Be rigorous. Generous scoring lets problems reach Phase 2 where they're expensive to fix.**
 
 ## Output
 

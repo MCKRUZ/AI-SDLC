@@ -1,9 +1,13 @@
 # Architecture Document Template
 
-**Project Name**: [Descriptive name for this initiative]  
-**Date**: [YYYY-MM-DD]  
-**Version**: [v1.0, v2.0, etc.]  
-**Status**: [Draft | Under Review | Approved]  
+<!-- VALIDATION MARKERS - Do not remove -->
+<!-- EXPECTED_ADR_COUNT: [NUMBER] -->
+<!-- PROJECT_COMPLEXITY: [Low/Medium/High/Very High] -->
+
+**Project Name**: [Descriptive name for this initiative]
+**Date**: [YYYY-MM-DD]
+**Version**: [v1.0, v2.0, etc.]
+**Status**: [Draft | Under Review | Approved]
 **Solution Architect**: [Name/Role]
 
 ---
@@ -807,47 +811,52 @@ public class OrderProcessor : BackgroundService
 
 ## Scalability Architecture
 
-### Horizontal Scaling
+**This section is REQUIRED and must contain specific numbers, not just general statements.**
 
-**Stateless Services**:
-- All application services are stateless
-- State stored in Redis/Database
-- Any instance can handle any request
+### Capacity Targets
 
-**Auto-Scaling Configuration**:
-| Component | Min | Max | Scale Metric | Threshold |
-|-----------|-----|-----|--------------|-----------|
-| API Service | 3 | 20 | CPU | 70% |
-| Worker Service | 2 | 10 | Queue depth | 100 messages |
-| Database Read Replica | 1 | 5 | Connection count | 80% |
+| Metric | Current Expected | Design Capacity | Peak Capacity |
+|--------|-----------------|-----------------|---------------|
+| Requests/second | [X] | [10X] | [20X] |
+| Concurrent users | [X] | [10X] | [20X] |
+| Data volume | [X GB/TB] | [Growth projection] | [Max supported] |
+| Transaction volume | [X/day] | [Projection] | [Max supported] |
 
----
+**Design Capacity should be minimum 10x current expected load.**
 
-### Database Scaling
+### Horizontal Scaling Strategy
 
-**Vertical Scaling**:
-- Current: [Specs]
-- Max planned: [Specs]
-- When to scale: [Metrics trigger]
+| Component | Scaling Trigger | Min Instances | Max Instances | Scale Increment | Cooldown |
+|-----------|----------------|---------------|---------------|-----------------|----------|
+| [Web API] | CPU > 70% | 2 | 20 | 2 | 5 min |
+| [Worker] | Queue depth > 100 | 1 | 10 | 1 | 3 min |
+| [Database] | Connection > 80% | [Strategy] | [Limit] | [Approach] | N/A |
 
-**Horizontal Scaling**:
-- **Read Replicas**: Up to 5 replicas for read traffic
-- **Sharding** (if applicable): [Sharding key, strategy]
-- **Partitioning**: [Range/List/Hash partitioning strategy]
+### Vertical Scaling Limits
 
----
+| Component | Current Size | Max Vertical Size | When to Scale Horizontally |
+|-----------|--------------|-------------------|---------------------------|
+| [Database] | [Size] | [Max] | [Trigger condition] |
+| [Cache] | [Size] | [Max] | [Trigger condition] |
 
-### Data Growth Strategy
+### Bottleneck Analysis
 
-**Current Projections**:
-- Year 1: [Data size]
-- Year 2: [Data size]
-- Year 3: [Data size]
+| Potential Bottleneck | Likelihood | Impact | Mitigation Strategy |
+|---------------------|------------|--------|---------------------|
+| [Database connections] | [H/M/L] | [H/M/L] | [Connection pooling, read replicas] |
+| [API rate limits] | [H/M/L] | [H/M/L] | [Caching, request queuing] |
+| [Memory pressure] | [H/M/L] | [H/M/L] | [Pagination, streaming] |
 
-**Strategies**:
-- Data archival after [timeframe]
-- Table partitioning by [date/region/etc]
-- Index maintenance automation
+### Load Testing Requirements
+
+| Test Type | Target | Success Criteria |
+|-----------|--------|------------------|
+| Baseline | Current expected load | Response time < [X]ms p95 |
+| Stress | 10x current load | System remains stable |
+| Spike | 5x sudden increase | Recovery within [X] minutes |
+| Soak | 2x load for 24 hours | No memory leaks, stable response |
+
+**Do not approve architecture without specific scalability numbers.**
 
 ---
 

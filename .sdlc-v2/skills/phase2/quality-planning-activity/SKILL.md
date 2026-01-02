@@ -80,6 +80,60 @@ Per environment:
 
 Using [templates/test-plan.template.md](templates/test-plan.template.md).
 
+## Count Validation
+
+Before marking this activity complete, verify counts match:
+
+### Quality Planning Count Check
+
+| Item Type | Stated/Expected | Actually Documented | Match? |
+|-----------|-----------------|---------------------|--------|
+| Test types defined | [X] | [Count (unit, integration, e2e)] | [ ] |
+| Quality metrics with targets | [X] | [Count] | [ ] |
+| Automation opportunities | [X] | [Count] | [ ] |
+| Quality gates defined | [X] | [Count per environment] | [ ] |
+| Test coverage targets | [X] | [Percentage] | [ ] |
+
+**If counts don't match**:
+- Document missing items, OR
+- Correct the stated count, OR
+- Explicitly note why fewer items exist (with justification)
+
+**Do not proceed with mismatched counts unexplained.**
+
+## Activity Completion Criteria
+
+This activity is NOT complete until ALL of the following are true:
+
+### Content Completeness
+- [ ] All required sections have substantive content
+- [ ] No placeholder text remains (`[TBD]`, `[Continue...]`, etc.)
+- [ ] All stated counts match actual documented items
+- [ ] All test layers defined
+- [ ] All required artifacts are generated
+
+### Quality Standards
+- [ ] Test strategy covers all requirements
+- [ ] Metrics have specific targets
+- [ ] Automation approach is practical
+- [ ] Quality gates have pass/fail criteria
+- [ ] Terminology consistent with project glossary
+
+### Traceability
+- [ ] Spec requirements mapped to tests
+- [ ] Architecture NFRs addressed
+- [ ] Compliance requirements covered
+- [ ] Outputs clearly identified for execution
+
+### Handoff Readiness
+- [ ] Test plan saved in correct location
+- [ ] Plan follows naming convention
+- [ ] QA team can execute plan
+- [ ] CI/CD integration defined
+- [ ] Next activity can begin with this output
+
+**Do not begin testing until all criteria are met.**
+
 ## Output
 
 - Test plan document

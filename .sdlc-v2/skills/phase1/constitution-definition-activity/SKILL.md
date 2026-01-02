@@ -11,8 +11,8 @@ required_inputs:
   - feasibility-report.md
   - phase1-handoff-package.md
 depends_on:
-  - architecture-design-activity
-  - product-definition-activity
+  - architecture-design
+  - product-definition
 ---
 # Constitution Definition Activity
 
@@ -86,6 +86,62 @@ Example:
 **Output**: Constitution document
 
 Using [templates/constitution.template.md](templates/constitution.template.md).
+
+## Phase 0 Coverage Verification
+
+Before completing the constitution, verify EVERY Phase 0 item is explicitly addressed:
+
+### Hard Constraints Coverage (100% Required)
+
+| Phase 0 ID | Constraint Description | Constitution Section | How Addressed | ✓ |
+|------------|----------------------|---------------------|---------------|---|
+| TC-001 | [From Phase 0] | [Section reference] | [Explanation] | [ ] |
+| TC-002 | [From Phase 0] | [Section reference] | [Explanation] | [ ] |
+| TC-003 | [From Phase 0] | [Section reference] | [Explanation] | [ ] |
+| ... | ... | ... | ... | ... |
+
+**Coverage Requirement**: 100% of hard constraints must have explicit constitution sections.
+
+### Soft Constraints Coverage (90% Required)
+
+| Phase 0 ID | Constraint Description | Constitution Section | How Addressed | ✓ |
+|------------|----------------------|---------------------|---------------|---|
+| SC-001 | [From Phase 0] | [Section reference] | [Explanation] | [ ] |
+| ... | ... | ... | ... | ... |
+
+### Risk Mitigation Mapping
+
+| Phase 0 Risk ID | Risk Description | Constitution/Architecture Mitigation | ADR? | ✓ |
+|-----------------|------------------|-------------------------------------|------|---|
+| RISK-001 | [From Phase 0 risk register] | [Mitigation approach] | [Y/N] | [ ] |
+| RISK-002 | [From Phase 0 risk register] | [Mitigation approach] | [Y/N] | [ ] |
+| ... | ... | ... | ... | ... |
+
+**Coverage Requirement**:
+- All Critical (P0) risks: 100% must have documented mitigation
+- All High (P1) risks: 100% must have documented mitigation
+- Medium (P2) risks: 80% should have documented mitigation
+
+### Success Criteria Traceability
+
+| Phase 0 Success Criterion | Phase 1 Artifact | How Measured | ✓ |
+|--------------------------|------------------|--------------|---|
+| [Criterion 1] | [spec/architecture/prd] | [Measurement approach] | [ ] |
+| [Criterion 2] | [spec/architecture/prd] | [Measurement approach] | [ ] |
+| ... | ... | ... | ... |
+
+### Sign-off Requirements
+
+The constitution REQUIRES the following approvals before Phase 1 completion:
+
+| Role | Required? | Name | Status |
+|------|-----------|------|--------|
+| Technical Lead | **YES** | [Name] | [ ] Approved |
+| Security Lead | **YES** | [Name] | [ ] Approved |
+| Product Owner | **YES** | [Name] | [ ] Approved |
+| Compliance Officer | If regulated | [Name] | [ ] Approved / N/A |
+
+**Do not mark constitution complete without required sign-offs.**
 
 ## Output
 

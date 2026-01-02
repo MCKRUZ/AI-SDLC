@@ -11,7 +11,7 @@ required_inputs:
   - organization-context.md
   - risk-register.md
 depends_on:
-  - requirements-analysis-activity
+  - requirements-analysis
 ---
 # Architecture Design Activity
 
@@ -69,8 +69,60 @@ For each significant choice:
 3. Choose and document rationale
 4. Note trade-offs
 
-Use [adr-patterns.reference.md](adr-patterns.reference.md) and 
+Use [adr-patterns.reference.md](adr-patterns.reference.md) and
 [templates/adr.template.md](templates/adr.template.md).
+
+## Architecture Decision Record (ADR) Requirements
+
+### Mandatory ADRs
+
+The following architectural decisions REQUIRE formal ADR documentation. Do not mark architecture complete without these:
+
+| ADR | Decision Topic | Required? | Status |
+|-----|---------------|-----------|--------|
+| ADR-001 | Architecture Style (monolith/microservices/serverless/hybrid) | **ALWAYS** | [ ] |
+| ADR-002 | Primary Database Selection | **ALWAYS** | [ ] |
+| ADR-003 | Authentication/Authorization Approach | **ALWAYS** | [ ] |
+| ADR-004 | API Design Approach (REST/GraphQL/gRPC) | **ALWAYS** | [ ] |
+| ADR-005 | Hosting/Infrastructure Platform | **ALWAYS** | [ ] |
+
+### Conditional ADRs
+
+Document these if the technology/pattern is used:
+
+| ADR | Decision Topic | Trigger | Status |
+|-----|---------------|---------|--------|
+| ADR-XXX | AI/ML Service Integration | If AI features present | [ ] |
+| ADR-XXX | Message Queue Selection | If async processing used | [ ] |
+| ADR-XXX | Caching Strategy | If caching layer present | [ ] |
+| ADR-XXX | Search Technology | If search features present | [ ] |
+| ADR-XXX | File Storage Approach | If file handling present | [ ] |
+
+### Minimum ADR Counts by Complexity
+
+| Project Complexity | Minimum ADRs Required |
+|-------------------|----------------------|
+| Low | 3 |
+| Medium | 5 |
+| High | 8 |
+| Very High | 10+ |
+
+**Current Project Complexity**: [Assess from Phase 0]
+**Required ADR Count**: [From table above]
+**Actual ADR Count**: [Count documented ADRs]
+
+### ADR Quality Check
+
+Each ADR must include:
+- [ ] Context (why decision needed)
+- [ ] Decision (what was decided)
+- [ ] Consequences (positive and negative)
+- [ ] Alternatives Considered (at least 2)
+- [ ] Status (Proposed/Accepted/Deprecated)
+- [ ] Decision Makers (names)
+- [ ] Date
+
+**Do not count ADRs missing required elements toward the minimum count.**
 
 ### Step 5: Create Component Diagrams (C4 Level 3)
 

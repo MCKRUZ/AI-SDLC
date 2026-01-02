@@ -91,6 +91,54 @@ Using [templates/spec.template.md](templates/spec.template.md):
 3. Include glossary
 4. Document assumptions
 
+## Completion Verification
+
+Before marking this activity complete, execute these verification checks:
+
+### Requirement Count Validation
+
+| Metric | Value |
+|--------|-------|
+| Stated Total Requirements | [Enter number from Executive Summary] |
+| Actually Documented Requirements | [Count all REQ-XXX entries] |
+| **Match** | YES / NO |
+
+**If counts don't match**: Either document missing requirements OR correct the stated count in Executive Summary. Do not proceed with mismatched counts.
+
+### Domain Coverage Check
+
+| Domain | Expected Reqs | Documented Reqs | Complete? |
+|--------|---------------|-----------------|-----------|
+| [Domain 1] | [X] | [Y] | [ ] |
+| [Domain 2] | [X] | [Y] | [ ] |
+| [Domain 3] | [X] | [Y] | [ ] |
+
+**All domains listed in the spec must have actual documented requirements, not placeholders.**
+
+### User Story Verification
+
+| Metric | Count |
+|--------|-------|
+| Total User Stories Claimed | [X] |
+| Stories with Full Acceptance Criteria | [Y] |
+| Stories with INVEST Scores | [Z] |
+
+**All three counts must match.**
+
+### Completeness Criteria Checklist
+
+The requirements specification is NOT complete until ALL of the following are true:
+
+- [ ] All requirements documented with full detail (no placeholders)
+- [ ] All user stories have testable acceptance criteria
+- [ ] All business rules documented with clear IF-THEN logic
+- [ ] All data entities defined with complete attributes
+- [ ] All integrations documented with error handling
+- [ ] Stated counts match actual documented counts
+- [ ] No placeholder text exists anywhere in document
+
+**Quality Gate**: Run this checklist before requesting validation. If any item unchecked, continue work on this activity.
+
 ## Output
 
 - Technical specification document

@@ -64,6 +64,58 @@ For detailed techniques, see [interview-techniques.reference.md](interview-techn
 3. Flag new contradictions
 4. Revise problem statement draft if needed
 
+## Count Validation
+
+Before marking this activity complete, verify counts match:
+
+### Interview Count Check
+
+| Item Type | Stated/Expected | Actually Documented | Match? |
+|-----------|-----------------|---------------------|--------|
+| Stakeholders interviewed | [X] | [Count] | [ ] |
+| Pain points documented | [X] | [Count] | [ ] |
+| Five Whys applied | [X] | [Count] | [ ] |
+| Jobs-to-be-Done explored | [X] | [Count] | [ ] |
+| Contradictions noted | [X] | [Count] | [ ] |
+
+**If counts don't match**:
+- Document missing items, OR
+- Correct the stated count, OR
+- Explicitly note why fewer items exist (with justification)
+
+**Do not proceed with mismatched counts unexplained.**
+
+## Activity Completion Criteria
+
+This activity is NOT complete until ALL of the following are true:
+
+### Content Completeness
+- [ ] All required sections have substantive content
+- [ ] No placeholder text remains (`[TBD]`, `[Continue...]`, etc.)
+- [ ] All stated counts match actual documented items
+- [ ] All tables have data (not just headers)
+- [ ] All required artifacts are generated
+
+### Quality Standards
+- [ ] Content is clear and unambiguous
+- [ ] Direct quotes captured for key statements
+- [ ] Five Whys depth achieved (at least 3 levels)
+- [ ] Jobs-to-be-Done framework applied
+- [ ] Terminology consistent with project glossary
+
+### Traceability
+- [ ] Interview inputs referenced
+- [ ] Outputs clearly identified for synthesis activity
+- [ ] Contradictions traced to specific sources
+
+### Handoff Readiness
+- [ ] Transcript saved in correct location
+- [ ] Transcript follows naming convention
+- [ ] Synthesis updated with findings
+- [ ] Next activity can begin with this output
+
+**Do not request synthesis until all criteria are met.**
+
 ## Output
 
 - Interview transcript using template

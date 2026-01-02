@@ -77,6 +77,62 @@ See [impediment-handling.reference.md](impediment-handling.reference.md).
 
 Using [templates/sprint-summary.template.md](templates/sprint-summary.template.md).
 
+## Count Validation
+
+Before marking this activity complete, verify counts match:
+
+### Sprint Execution Count Check
+
+| Item Type | Stated/Expected | Actually Documented | Match? |
+|-----------|-----------------|---------------------|--------|
+| Stories committed to sprint | [X] | [Count] | [ ] |
+| Stories completed | [X] | [Count] | [ ] |
+| Story points completed | [X] | [Sum] | [ ] |
+| Daily standups held | [X] | [Count] | [ ] |
+| Impediments tracked | [X] | [Count] | [ ] |
+| Impediments resolved | [X] | [Count] | [ ] |
+| Retro action items | [X] | [Count] | [ ] |
+
+**If counts don't match**:
+- Document missing items, OR
+- Correct the stated count, OR
+- Explicitly note why fewer items exist (with justification)
+
+**Do not proceed with mismatched counts unexplained.**
+
+## Activity Completion Criteria
+
+This activity is NOT complete until ALL of the following are true:
+
+### Content Completeness
+- [ ] All required sections have substantive content
+- [ ] No placeholder text remains (`[TBD]`, `[Continue...]`, etc.)
+- [ ] All stated counts match actual documented items
+- [ ] All ceremonies completed
+- [ ] All required artifacts are generated
+
+### Quality Standards
+- [ ] Sprint goal achieved or explained
+- [ ] Story files complete with acceptance criteria
+- [ ] Velocity accurately calculated
+- [ ] Retro actions are actionable
+- [ ] Terminology consistent with project glossary
+
+### Traceability
+- [ ] Sprint plan referenced
+- [ ] Stories linked to requirements
+- [ ] Impediments tracked to resolution
+- [ ] Outputs clearly identified for next sprint
+
+### Handoff Readiness
+- [ ] Sprint summary saved
+- [ ] Velocity metrics updated
+- [ ] Retro actions assigned
+- [ ] Team ready for next sprint
+- [ ] Next sprint can begin
+
+**Do not close sprint until all criteria are met.**
+
 ## Output
 
 - Story files for sprint

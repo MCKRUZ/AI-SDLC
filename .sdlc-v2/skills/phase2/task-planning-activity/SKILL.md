@@ -26,6 +26,39 @@ scheduling.
 
 ## Workflow
 
+### Phase 1 Traceability Verification
+
+Before beginning Phase 2 work, verify all Phase 1 outputs are available and traced:
+
+#### Required Phase 1 Inputs
+
+| Phase 1 Artifact | Location Verified | Loaded | Status |
+|-----------------|-------------------|--------|--------|
+| Constitution (constitution.md) | [ ] | [ ] | |
+| Requirements Spec (spec.md) | [ ] | [ ] | |
+| Architecture (architecture.md) | [ ] | [ ] | |
+| PRD (prd.md) | [ ] | [ ] | |
+| Validation Report | [ ] | [ ] | |
+
+#### Phase 1 → Phase 2 Mapping
+
+| Phase 1 Item | Phase 2 Coverage | How Addressed |
+|--------------|------------------|---------------|
+| Each MVP feature from PRD | Sprint/task assignment | [ ] Mapped |
+| Each Critical requirement | Task with acceptance criteria | [ ] Mapped |
+| Each High requirement | Task with acceptance criteria | [ ] Mapped |
+| Architecture components | Environment setup items | [ ] Mapped |
+| NFRs from constitution | Testing/validation tasks | [ ] Mapped |
+
+#### Traceability Requirement
+
+- 100% of Critical requirements must map to Phase 2 tasks
+- 100% of High requirements must map to Phase 2 tasks
+- 80% of Medium requirements should map (remainder explicitly deferred)
+- Architecture must inform environment setup
+
+**Do not proceed with planning if Phase 1 artifacts are missing or incomplete.**
+
 ### Step 1: Review Specifications
 
 **Input**: Spec with user stories, architecture
@@ -74,6 +107,61 @@ See [dependency-mapping.reference.md](dependency-mapping.reference.md).
 Using templates:
 - [templates/task-breakdown.template.md](templates/task-breakdown.template.md)
 - [templates/dependency-map.template.md](templates/dependency-map.template.md)
+
+## Count Validation
+
+Before marking this activity complete, verify counts match:
+
+### Task Planning Count Check
+
+| Item Type | Stated/Expected | Actually Documented | Match? |
+|-----------|-----------------|---------------------|--------|
+| User stories from spec | [X] | [Count in task breakdown] | [ ] |
+| Tasks created | [X] | [Count them] | [ ] |
+| Tasks with estimates | [X] | [Count with hours] | [ ] |
+| Critical path tasks | [X] | [Count] | [ ] |
+| Dependencies identified | [X] | [Count] | [ ] |
+| Total estimated hours | [X] | [Sum] | [ ] |
+| Story points total | [X] | [Sum] | [ ] |
+
+**If counts don't match**:
+- Document missing items, OR
+- Correct the stated count, OR
+- Explicitly note why fewer items exist (with justification)
+
+**Do not proceed with mismatched counts unexplained.**
+
+## Activity Completion Criteria
+
+This activity is NOT complete until ALL of the following are true:
+
+### Content Completeness
+- [ ] All required sections have substantive content
+- [ ] No placeholder text remains (`[TBD]`, `[Continue...]`, etc.)
+- [ ] All stated counts match actual documented items
+- [ ] All stories decomposed into tasks
+- [ ] All required artifacts are generated
+
+### Quality Standards
+- [ ] Tasks are appropriately sized (1-8 hours)
+- [ ] Estimates include uncertainty levels
+- [ ] Dependencies are classified
+- [ ] Critical path is identified
+- [ ] Terminology consistent with project glossary
+
+### Traceability
+- [ ] Phase 1 artifacts referenced
+- [ ] All tasks trace to stories
+- [ ] Dependencies documented
+- [ ] Outputs clearly identified for next activity
+
+### Handoff Readiness
+- [ ] Task breakdown saved in correct location
+- [ ] Dependency map saved
+- [ ] Documents follow naming convention
+- [ ] Next activity can begin with this output
+
+**Do not request sprint planning until all criteria are met.**
 
 ## Output
 
