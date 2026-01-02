@@ -296,6 +296,17 @@ Verify stated counts match actual documented items:
 
 **Gate 2 FAIL**: Maximum score = 50/100. Note specific mismatches.
 
+**Count Resolution Rule** (if mismatch persists after iteration 2):
+1. If actual count < stated count by MORE than 50%: Generate additional items to reach stated count
+2. If actual count < stated count by LESS than 50%: Update stated count to match actual
+3. If actual count > stated count: Update stated count to match actual
+4. After resolution, re-verify counts match before proceeding to Gate 3
+
+Example:
+- Stated: 12, Actual: 5 (58% gap) → Generate 7 more items
+- Stated: 12, Actual: 10 (17% gap) → Change stated to 10
+- Stated: 8, Actual: 12 → Change stated to 12
+
 ### Gate 3: Quality Assessment
 
 Only if Gates 1-2 pass, apply quality criteria from this skill's checklist.
