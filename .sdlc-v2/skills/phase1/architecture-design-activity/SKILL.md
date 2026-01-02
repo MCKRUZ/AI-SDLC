@@ -124,6 +124,82 @@ Each ADR must include:
 
 **Do not count ADRs missing required elements toward the minimum count.**
 
+### Phase 0 Risk Mitigation ADRs
+
+In addition to technology ADRs, you MUST create ADRs that document how the architecture mitigates critical Phase 0 risks.
+
+**Required Input**: Load `risk-register.md` from Phase 0 inputs.
+
+#### Risk-to-ADR Mapping
+
+For each Phase 0 risk, determine if an architectural ADR is needed:
+
+| Risk Level | ADR Required? | Rationale |
+|------------|---------------|-----------|
+| P0 (Critical) | **YES - Mandatory** | Architecture must explicitly address |
+| P1 (High) | **YES - Mandatory** | Architecture must explicitly address |
+| P2 (Medium) | If architecture-related | Document if architecture impacts risk |
+| P3 (Low) | No | Track in risk register only |
+
+#### Risk Mitigation ADR Checklist
+
+Review each P0/P1 risk from Phase 0 and create corresponding ADRs:
+
+| Phase 0 Risk ID | Risk Description | Architecture Mitigation | ADR ID | Status |
+|-----------------|------------------|------------------------|--------|--------|
+| RISK-001 | [From risk register] | [How architecture addresses] | ADR-0XX | [ ] |
+| RISK-00X | [From risk register] | [How architecture addresses] | ADR-0XX | [ ] |
+
+**Populate this table from the actual Phase 0 risk-register.md**
+
+#### Risk Mitigation ADR Format
+
+Each risk mitigation ADR must include:
+
+```
+### ADR-0XX: Mitigate [Risk Name] Through [Approach]
+
+**Date**: [Date]
+**Status**: Accepted
+**Deciders**: [Names]
+**Related Risk**: [RISK-XXX from Phase 0]
+
+**Context**:
+Phase 0 identified [RISK-XXX]: [Risk description from risk register].
+This risk has [Likelihood] likelihood and [Impact] impact (Score: X).
+
+**Decision**:
+The architecture mitigates this risk by [specific architectural approach].
+
+**How This Mitigates the Risk**:
+1. [Specific mechanism 1]
+2. [Specific mechanism 2]
+3. [Specific mechanism 3]
+
+**Residual Risk**:
+After this mitigation, the residual risk level is [High/Medium/Low] because [reason].
+
+**Contingency (if mitigation fails)**:
+If this mitigation proves insufficient, we will [fallback approach].
+
+**Consequences**:
+- **Positive**: [Benefits of this approach]
+- **Negative**: [Costs or trade-offs]
+- **Risks**: [Any new risks introduced]
+```
+
+#### Minimum Risk ADR Count
+
+| P0/P1 Risks in Phase 0 | Minimum Risk ADRs Required |
+|------------------------|---------------------------|
+| 1-3 risks | All must have ADRs |
+| 4-6 risks | All must have ADRs |
+| 7+ risks | All P0, plus top 5 P1 by score |
+
+**These Risk Mitigation ADRs are IN ADDITION TO the 5 mandatory technology ADRs.**
+
+**Total ADR Requirement** = Technology ADRs (5 minimum) + Risk Mitigation ADRs (all P0/P1)
+
 ### Step 5: Create Component Diagrams (C4 Level 3)
 
 **Output**: Component diagrams for critical containers
