@@ -108,9 +108,17 @@ Document these if the technology/pattern is used:
 | High | 8 |
 | Very High | 10+ |
 
+**NOTE**: These are MINIMUM counts. Actual ADR count should be driven by:
+1. Number of P0/P1 risks requiring architectural mitigation
+2. Number of major technology selections beyond the 5 mandatory ones
+3. Number of quality attribute trade-offs documented
+4. Number of conditional technologies used
+
 **Current Project Complexity**: [Assess from Phase 0]
-**Required ADR Count**: [From table above]
+**Minimum Required**: [From table above]
 **Actual ADR Count**: [Count documented ADRs]
+
+**Validation**: ADR count ≥ Minimum AND all P0/P1 risks covered
 
 ### ADR Quality Check
 
@@ -197,9 +205,14 @@ If this mitigation proves insufficient, we will [fallback approach].
 | 4-6 risks | All must have ADRs |
 | 7+ risks | All P0, plus top 5 P1 by score |
 
-**These Risk Mitigation ADRs are IN ADDITION TO the 5 mandatory technology ADRs.**
+**These Risk Mitigation ADRs are IN ADDITION TO technology and architectural pattern ADRs.**
 
-**Total ADR Requirement** = Technology ADRs (5 minimum) + Risk Mitigation ADRs (all P0/P1)
+**Total ADR Requirement** = Technology ADRs (one per major choice) + Architectural Pattern ADR + Risk Mitigation ADRs (all P0/P1)
+
+**Minimum Total**: 5 ADRs, but actual count should be driven by:
+- Number of P0/P1 risks from Phase 0
+- Number of major technology selections
+- Number of quality attribute trade-offs
 
 ### Step 5: Create Component Diagrams (C4 Level 3)
 
@@ -253,13 +266,27 @@ Verify stated counts match actual documented items:
 
 | Item | Stated | Actual | Match? |
 |------|--------|--------|--------|
-| ADRs documented (per EXPECTED_ADR_COUNT marker) | ___ | ___ | ☐ |
-| Technology ADRs (ADR-001 to ADR-005) | 5 | ___ | ☐ |
-| Risk mitigation ADRs (all P0/P1) | ___ | ___ | ☐ |
 | Components documented | ___ | ___ | ☐ |
 | NFRs with measurable targets | ___ | ___ | ☐ |
 
+**ADR Coverage Validation** (instead of fixed count):
+
+| Requirement | Check | Found? |
+|-------------|-------|--------|
+| ADR for each P0 risk | Cross-reference feasibility report | ☐ |
+| ADR for each P1 risk | Cross-reference feasibility report | ☐ |
+| ADR for primary technology choices | At least: language, framework, database, cloud | ☐ |
+| ADR for architectural pattern | e.g., microservices, monolith, serverless | ☐ |
+| Minimum 5 ADRs total | Count actual ADRs | ☐ |
+
 **Gate 2 FAIL**: Maximum score = 50/100. Note specific mismatches.
+
+**ADR Scoring:**
+- Missing P0 risk ADR: -20 points (BLOCKING if any missing)
+- Missing P1 risk ADR: -10 points each
+- Below minimum 5 ADRs: -15 points
+- Missing primary technology ADR: -10 points
+- Missing architectural pattern ADR: -10 points
 
 **Count Resolution Rule** (if mismatch persists after iteration 2):
 1. If actual count < stated count by MORE than 50%: Generate additional items to reach stated count

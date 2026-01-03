@@ -1,7 +1,15 @@
 # Architecture Document Template
 
-<!-- VALIDATION MARKERS - Do not remove -->
-<!-- EXPECTED_ADR_COUNT: [NUMBER] -->
+<!-- ADR REQUIREMENTS:
+Document one ADR for each of the following:
+1. Each P0 and P1 risk from the feasibility report (REQUIRED)
+2. Each major technology selection (framework, database, cloud services)
+3. Each quality attribute trade-off decision
+4. Any architectural pattern selection (microservices vs monolith, etc.)
+
+The number of ADRs will vary by project complexity. Minimum: 5 ADRs.
+-->
+
 <!-- PROJECT_COMPLEXITY: [Low/Medium/High/Very High] -->
 
 **Project Name**: [Descriptive name for this initiative]
@@ -1164,6 +1172,16 @@ _logger.LogInformation(
 ---
 
 ## Architecture Decision Records
+
+Document ADRs for all major architectural decisions. Each ADR must follow the standard format below.
+
+**Required ADR Coverage:**
+- [ ] All P0 risks from feasibility report have mitigation ADRs
+- [ ] All P1 risks from feasibility report have mitigation ADRs
+- [ ] All major technology selections have justification ADRs
+- [ ] All quality attribute trade-offs have decision ADRs
+
+**Minimum ADR Count**: 5 (but actual count should match project needs based on risks and decisions)
 
 ### ADR-001: [Decision Title]
 
