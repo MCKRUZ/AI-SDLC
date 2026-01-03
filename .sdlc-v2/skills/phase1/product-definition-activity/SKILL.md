@@ -1,5 +1,6 @@
 ---
 name: product-definition-activity
+activity_type: creation
 description: >
   Create product requirements document (PRD), define MVP scope, and
   prioritize features using RICE or MoSCoW frameworks. Use when writing

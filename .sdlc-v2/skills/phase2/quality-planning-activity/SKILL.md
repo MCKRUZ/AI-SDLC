@@ -1,5 +1,6 @@
 ---
 name: quality-planning-activity
+activity_type: creation
 description: >
   Design testing strategy, define quality metrics, and create test plan.
   Establishes quality approach for implementation. Use when defining

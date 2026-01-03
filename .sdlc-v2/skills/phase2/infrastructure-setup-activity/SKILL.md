@@ -1,5 +1,6 @@
 ---
 name: infrastructure-setup-activity
+activity_type: creation
 description: >
   Set up repository structure, CI/CD pipelines, and development environments.
   Creates infrastructure foundation for implementation. Use when creating

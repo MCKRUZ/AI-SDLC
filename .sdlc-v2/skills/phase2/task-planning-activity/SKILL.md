@@ -1,5 +1,6 @@
 ---
 name: task-planning-activity
+activity_type: creation
 description: >
   Decompose user stories into implementable tasks with estimates and
   dependencies. Creates task breakdown and dependency map. Use when

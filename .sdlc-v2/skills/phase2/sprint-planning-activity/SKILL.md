@@ -1,5 +1,6 @@
 ---
 name: sprint-planning-activity
+activity_type: creation
 description: >
   Plan sprints by allocating tasks to team capacity, respecting dependencies.
   Creates sprint plans with goals and commitments. Use when planning sprints

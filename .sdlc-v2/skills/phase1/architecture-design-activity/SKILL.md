@@ -1,5 +1,6 @@
 ---
 name: architecture-design-activity
+activity_type: creation
 description: >
   Design system architecture using C4 model, make technology decisions
   with ADRs, and define non-functional requirements. Use when creating

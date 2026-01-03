@@ -1,5 +1,6 @@
 ---
 name: feasibility-assessment-activity
+activity_type: creation
 description: >
   Assess project viability across technical, business, resource, and timeline
   dimensions. Produces scored feasibility report with go/no-go recommendation.

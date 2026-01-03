@@ -1,5 +1,6 @@
 ---
 name: sprint-execution-activity
+activity_type: creation
 description: >
   Facilitate sprint execution including daily standups, sprint planning,
   reviews, and retrospectives. Manages story files and tracks progress.

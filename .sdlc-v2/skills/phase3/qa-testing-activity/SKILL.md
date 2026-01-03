@@ -1,5 +1,10 @@
 ---
 name: qa-testing-activity
+activity_type: validation
+validates:
+  - development-code.md
+  - story-implementation.md
+  - pull-request.md
 description: >
   Test features against acceptance criteria, execute test cases, and
   report bugs. Ensures quality before release. Use when testing features
@@ -262,54 +267,53 @@ This activity is NOT complete until ALL of the following are true:
 
 **Do not approve release until all criteria are met.**
 
-## Self-Review Protocol
+## Self-Review Protocol (Validation Activity)
+
+This is a VALIDATION activity. Self-review evaluates the quality of the testing report, NOT the quality of the code being tested.
 
 Execute these gates IN ORDER during self-review. Do not skip gates.
 
-### Gate 1: Completeness Scan (BLOCKING)
+### Gate 1: Report Completeness (BLOCKING)
 
-Scan the ENTIRE artifact for placeholder patterns:
+Verify the testing report structure is complete:
 
-| Pattern | Found? | Action |
-|---------|--------|--------|
-| `_[` | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
-| `[Continue` | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
-| `[TBD]` | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
-| `[TODO]` | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
-| `XXX` | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
-| Empty sections | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
+| Check | Required | Found? |
+|-------|----------|--------|
+| Test execution summary with pass/fail rates | Yes | ☐ |
+| All acceptance criteria tested status | Yes | ☐ |
+| Bug reports with severity classifications | Yes | ☐ |
+| All items in `validates` list evaluated | Yes | ☐ |
+| Test coverage metrics | Yes | ☐ |
+| Sign-off section | Yes | ☐ |
 
-**Gate 1 FAIL**: Return artifact for completion. Do not proceed to Gate 2.
+**Gate 1 FAIL conditions:**
+- Missing required sections: Score = 0
+- Not all code artifacts tested: Score = 0
 
-### Gate 2: Count Validation (BLOCKING)
+**Note**: Placeholder patterns in BUG REPORTS (like "Missing error handling in login") are VALID - they document issues found. Only scan for placeholders in the report's own structure, not in descriptions of code defects.
 
-Verify stated counts match actual documented items:
+### Gate 2: Assessment Quality (BLOCKING)
 
-| Item | Stated | Actual | Match? |
-|------|--------|--------|--------|
-| Acceptance criteria tested | ___ | ___ | ☐ |
-| Test cases created | ___ | ___ | ☐ |
-| Test cases executed | ___ | ___ | ☐ |
-| Bugs found (Critical) | ___ | ___ | ☐ |
-| Bugs found (High) | ___ | ___ | ☐ |
-| Regression tests run | ___ | ___ | ☐ |
+| Check | Required | Found? |
+|-------|----------|--------|
+| Each test case has pass/fail status | Yes | ☐ |
+| Bugs categorized by severity (Critical/High/Medium/Low) | Yes | ☐ |
+| Each bug has reproduction steps | Yes | ☐ |
+| Test coverage documented | Yes | ☐ |
+| Regression testing completed | Yes | ☐ |
 
-**Gate 2 FAIL**: Maximum score = 50/100. Note specific mismatches.
+**Gate 2 FAIL**: Maximum score = 50/100. Note what's missing.
 
-**Count Resolution Rule** (if mismatch persists after iteration 2):
-1. If actual count < stated count by MORE than 50%: Generate additional items to reach stated count
-2. If actual count < stated count by LESS than 50%: Update stated count to match actual
-3. If actual count > stated count: Update stated count to match actual
-4. After resolution, re-verify counts match before proceeding to Gate 3
+### Gate 3: Decision Quality
 
-Example:
-- Stated: 12, Actual: 5 (58% gap) → Generate 7 more items
-- Stated: 12, Actual: 10 (17% gap) → Change stated to 10
-- Stated: 8, Actual: 12 → Change stated to 12
+Only if Gates 1-2 pass, evaluate:
 
-### Gate 3: Quality Assessment
-
-Only if Gates 1-2 pass, apply quality criteria from this skill's checklist.
+| Criterion | Weight | Score |
+|-----------|--------|-------|
+| Test decision (pass/fail) matches test results | 30% | ___ |
+| Bug reports are reproducible and specific | 30% | ___ |
+| Test coverage is adequate for acceptance criteria | 25% | ___ |
+| Report is objective (documenting actual test results) | 15% | ___ |
 
 ### Score Calculation
 
@@ -320,6 +324,21 @@ Only if Gates 1-2 pass, apply quality criteria from this skill's checklist.
 | PASS | PASS | 100 |
 
 **Output format**: `Gate 1: [PASS/FAIL] | Gate 2: [PASS/FAIL] | Gate 3: [X]/100 | Final: [X]/100`
+
+### Important: What NOT to Penalize
+
+Do NOT reduce score for:
+- Bugs found in code (that's the job!)
+- Test failures documented in report
+- Recommendations for code fixes
+- Fail decisions (if justified by test results)
+
+DO reduce score for:
+- Missing testing of required artifacts
+- Bugs without reproduction steps
+- Test coverage gaps not documented
+- Test decision that doesn't match test results
+- Structural incompleteness of the report itself
 
 ## Output
 

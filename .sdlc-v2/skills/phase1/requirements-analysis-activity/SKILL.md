@@ -1,5 +1,6 @@
 ---
 name: requirements-analysis-activity
+activity_type: creation
 description: >
   Transform problem statements into technical specifications with user
   stories and acceptance criteria. Uses INVEST principles for story

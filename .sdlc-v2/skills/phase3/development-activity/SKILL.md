@@ -1,5 +1,6 @@
 ---
 name: development-activity
+activity_type: creation
 description: >
   Implement features according to specifications and coding standards.
   Create pull requests with proper documentation. Use when writing code

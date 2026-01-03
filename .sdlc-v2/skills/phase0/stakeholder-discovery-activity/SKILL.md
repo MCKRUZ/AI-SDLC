@@ -1,5 +1,6 @@
 ---
 name: stakeholder-discovery-activity
+activity_type: creation
 description: >
   Conduct stakeholder interviews to gather requirements, understand pain
   points, and validate problem understanding. Includes interview techniques

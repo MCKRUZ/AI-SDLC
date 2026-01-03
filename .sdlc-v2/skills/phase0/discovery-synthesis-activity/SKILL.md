@@ -1,5 +1,6 @@
 ---
 name: discovery-synthesis-activity
+activity_type: creation
 description: >
   Synthesize discovery findings into validated Phase 0 artifacts including
   problem statement, risk register, and success criteria. Identifies patterns

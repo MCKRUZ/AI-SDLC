@@ -1,5 +1,11 @@
 ---
 name: specification-validation-activity
+activity_type: validation
+validates:
+  - requirements-analysis.md
+  - architecture-design.md
+  - product-definition.md
+  - constitution-definition.md
 description: >
   Validate all Phase 1 artifacts for completeness, consistency, and quality.
   Ensures specs, architecture, PRD, and constitution meet quality gates
@@ -200,52 +206,53 @@ Use these guidelines to ensure consistent, accurate scoring across validations.
 
 **Be rigorous. Generous scoring lets problems reach Phase 2 where they're expensive to fix.**
 
-## Self-Review Protocol
+## Self-Review Protocol (Validation Activity)
+
+This is a VALIDATION activity. Self-review evaluates the quality of the validation report, NOT the quality of upstream artifacts being validated.
 
 Execute these gates IN ORDER during self-review. Do not skip gates.
 
-### Gate 1: Completeness Scan (BLOCKING)
+### Gate 1: Report Completeness (BLOCKING)
 
-Scan the ENTIRE artifact for placeholder patterns:
+Verify the validation report structure is complete:
 
-| Pattern | Found? | Action |
-|---------|--------|--------|
-| `_[` | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
-| `[Continue` | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
-| `[TBD]` | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
-| `[TODO]` | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
-| `XXX` | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
-| Empty sections | ☐ Yes / ☐ No | If Yes → STOP, Score = 0 |
+| Check | Required | Found? |
+|-------|----------|--------|
+| Executive Summary with overall status | Yes | ☐ |
+| Quality Score table with weighted scores | Yes | ☐ |
+| Issue Summary by severity | Yes | ☐ |
+| All artifacts in `validates` list evaluated | Yes | ☐ |
+| Gate Decision (PASS/CONDITIONAL/FAIL) | Yes | ☐ |
+| Sign-off section | Yes | ☐ |
 
-**Gate 1 FAIL**: Return artifact for completion. Do not proceed to Gate 2.
+**Gate 1 FAIL conditions:**
+- Missing required sections: Score = 0
+- Not all artifacts evaluated: Score = 0
 
-### Gate 2: Count Validation (BLOCKING)
+**Note**: Placeholder patterns in FINDINGS (like "Missing acceptance criteria for USR-004") are VALID - they document issues found. Only scan for placeholders in the report's own structure, not in descriptions of upstream issues.
 
-Verify stated counts match actual documented items:
+### Gate 2: Assessment Quality (BLOCKING)
 
-| Item | Stated | Actual | Match? |
-|------|--------|--------|--------|
-| Artifacts validated | 4 | ___ | ☐ |
-| Issues identified | ___ | ___ | ☐ |
-| Phase 0 items traced | ___ | ___ | ☐ |
-| Requirements validated | ___ | ___ | ☐ |
+| Check | Required | Found? |
+|-------|----------|--------|
+| Each artifact has Status (Pass/Conditional/Fail) | Yes | ☐ |
+| Issues categorized by severity (Critical/High/Medium/Low) | Yes | ☐ |
+| Each issue has a recommendation | Yes | ☐ |
+| Cross-artifact consistency checked | Yes | ☐ |
+| Traceability to Phase 0 documented | Yes | ☐ |
 
-**Gate 2 FAIL**: Maximum score = 50/100. Note specific mismatches.
+**Gate 2 FAIL**: Maximum score = 50/100. Note what's missing.
 
-**Count Resolution Rule** (if mismatch persists after iteration 2):
-1. If actual count < stated count by MORE than 50%: Generate additional items to reach stated count
-2. If actual count < stated count by LESS than 50%: Update stated count to match actual
-3. If actual count > stated count: Update stated count to match actual
-4. After resolution, re-verify counts match before proceeding to Gate 3
+### Gate 3: Decision Quality
 
-Example:
-- Stated: 12, Actual: 5 (58% gap) → Generate 7 more items
-- Stated: 12, Actual: 10 (17% gap) → Change stated to 10
-- Stated: 8, Actual: 12 → Change stated to 12
+Only if Gates 1-2 pass, evaluate:
 
-### Gate 3: Quality Assessment
-
-Only if Gates 1-2 pass, apply quality criteria from this skill's checklist.
+| Criterion | Weight | Score |
+|-----------|--------|-------|
+| Gate decision matches findings | 30% | ___ |
+| Recommendations are actionable | 25% | ___ |
+| Issues are specific and locatable | 25% | ___ |
+| Report is objective (not generating new content) | 20% | ___ |
 
 ### Score Calculation
 
@@ -256,6 +263,20 @@ Only if Gates 1-2 pass, apply quality criteria from this skill's checklist.
 | PASS | PASS | 100 |
 
 **Output format**: `Gate 1: [PASS/FAIL] | Gate 2: [PASS/FAIL] | Gate 3: [X]/100 | Final: [X]/100`
+
+### Important: What NOT to Penalize
+
+Do NOT reduce score for:
+- Issues found in upstream artifacts (that's the job!)
+- Incomplete upstream artifacts being reported
+- Recommendations that reference problems
+- Conditional or Fail decisions (if justified by findings)
+
+DO reduce score for:
+- Missing validation of required artifacts
+- Unclear or non-actionable recommendations
+- Gate decision that doesn't match severity of findings
+- Structural incompleteness of the report itself
 
 ## Output
 

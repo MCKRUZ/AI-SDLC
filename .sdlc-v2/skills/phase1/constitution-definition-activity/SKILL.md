@@ -1,5 +1,6 @@
 ---
 name: constitution-definition-activity
+activity_type: creation
 description: >
   Establish project values, constraints, and decision-making frameworks
   that guide the team throughout implementation. Use when defining project
